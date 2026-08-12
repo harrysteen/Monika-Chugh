@@ -202,3 +202,33 @@ body {
   background-color: #422207;
   color: var(--bg-cream);
 }
+
+/* ------------------------------------------------------------- */
+/* SECTION 7 - INFINITE MARQUEE LOOP                            */
+/* ------------------------------------------------------------- */
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  display: flex;
+  user-select: none;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  animation: marqueeScroll 30s linear infinite;
+  will-change: transform;
+}
+
