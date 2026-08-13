@@ -11,10 +11,8 @@ import NinthSection from '../components/NinthSection';
 import TenthSection from '../components/TenthSection';
 import EleventhSection from '../components/EleventhSection';
 import TwelfthSection from '../components/TwelfthSection';
-import AboutSection from '../components/AboutSection';
-import PortfolioGrid from '../components/PortfolioGrid';
-import TypographySpecimen from '../components/TypographySpecimen';
-import ContactSection from '../components/ContactSection';
+import ThirteenthSection from '../components/ThirteenthSection';
+import FourteenthSection from '../components/FourteenthSection';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -33,10 +31,8 @@ export default function Home() {
       <TenthSection />
       <EleventhSection />
       <TwelfthSection />
-      <AboutSection />
-      <PortfolioGrid />
-      <TypographySpecimen />
-      <ContactSection />
+      <ThirteenthSection />
+      <FourteenthSection />
       <Footer />
     </main>
   );
