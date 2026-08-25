@@ -3,39 +3,83 @@
 export default function MyStoryPurpose() {
   return (
     <section className="py-5 bg-cream position-relative" id="story-purpose">
-      <div className="container px-3 px-md-4 px-lg-5">
-        <div className="purpose-pattern-bg p-4 p-md-5 rounded-4 shadow-sm text-center border border-cream position-relative overflow-hidden">
+      <div className="container-fluid px-3 px-md-4 px-xl-5" style={{ maxWidth: '1380px' }}>
+        
+        {/* Background Card with subtle floral watermark */}
+        <div 
+          className="position-relative overflow-hidden text-center rounded-3 p-4 p-md-5"
+          style={{
+            backgroundColor: '#FAF5ED',
+            backgroundImage: "linear-gradient(rgba(250, 245, 237, 0.85), rgba(250, 245, 237, 0.85)), url('/images/home_section5_bg.svg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            border: '1px solid #EBDBCB'
+          }}
+        >
           
-          {/* Subtle Background Watermark Leaf Pattern */}
-          <div 
-            className="position-absolute top-0 start-0 w-100 h-100 opacity-10 pointer-events-none"
-            style={{
-              backgroundImage: `url('/images/section_5_bg.svg')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
-          />
-
-          <div className="position-relative z-2 max-w-75 mx-auto" style={{ maxWidth: '820px' }}>
+          <div className="mx-auto py-2 py-md-4" style={{ maxWidth: '1100px' }}>
             
-            <span className="font-handwriting fs-2 text-bronze d-block mb-1" style={{ color: '#A44E0E' }}>
-              purpose behind my work
-            </span>
-            <h2 className="font-big-header display-5 fw-normal text-dark mb-4">
-              Inspiring Authentic Living & Soulful Well-being
-            </h2>
+            {/* Header */}
+            <div className="mb-4 pb-2">
+              <span 
+                className="d-block mb-1" 
+                style={{ 
+                  fontFamily: "'Italianno', cursive", 
+                  fontSize: '34px', 
+                  color: '#A44E0E',
+                  lineHeight: 1.2
+                }}
+              >
+                purpose behind my work
+              </span>
+              <h2 
+                className="fw-normal" 
+                style={{ 
+                  fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
+                  fontSize: '40px',
+                  color: '#422207',
+                  letterSpacing: '0.01em',
+                  lineHeight: 1.25
+                }}
+              >
+                Pirate ipsum me main blimey fluke
+              </h2>
+            </div>
 
-            <p className="font-paragraph text-body fs-6 leading-relaxed mb-4" style={{ color: '#4A423B' }}>
-              At the heart of every project I undertake is a passion for helping individuals reconnect with their innate wisdom and live authentically. I believe that creativity is not merely a tool for artistic output—it is a sacred bridge to self-awareness, emotional liberation, and personal harmony.
+            {/* Paragraph 1 */}
+            <p 
+              className="mb-4" 
+              style={{ 
+                fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
+                fontSize: '15.5px', 
+                color: '#4A423B', 
+                lineHeight: '1.85',
+                fontWeight: 300
+              }}
+            >
+              Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke sails overhaul man jib schooner. Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke sails overhaul man jib schooner.
             </p>
 
-            <p className="font-paragraph text-body fs-6 leading-relaxed mb-0" style={{ color: '#4A423B' }}>
-              Through initiatives like <strong className="fw-bold text-dark" style={{ color: '#422207' }}>AROGINI</strong>, I integrate holistic mindfulness, creative reflection, and empowering dialogues to encourage balance in mind, body, and spirit. My hope is to leave every reader and listener with a renewed sense of purpose and peace.
+            {/* Paragraph 2 with bold AROGINI */}
+            <p 
+              className="mb-0" 
+              style={{ 
+                fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
+                fontSize: '15.5px', 
+                color: '#4A423B', 
+                lineHeight: '1.85',
+                fontWeight: 300
+              }}
+            >
+              Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke <strong style={{ fontWeight: 700, color: '#422207' }}>AROGINI</strong> man jib schooner. Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke sails overhaul man jib schooner.
             </p>
 
           </div>
+
         </div>
+
       </div>
     </section>
   );
 }
+

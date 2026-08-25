@@ -5,7 +5,7 @@ import MyStoryTimeline from '../../components/MyStoryTimeline';
 import MyStoryExpressions from '../../components/MyStoryExpressions';
 import MyStoryPurpose from '../../components/MyStoryPurpose';
 import MyStoryMilestones from '../../components/MyStoryMilestones';
-import MyStoryNote from '../../components/MyStoryNote';
+import MyStorySection7 from '../../components/MyStorySection7';
 import Footer from '../../components/Footer';
 
 export const metadata = {
@@ -23,8 +23,9 @@ export default function MyStoryPage() {
       <MyStoryExpressions />
       <MyStoryPurpose />
       <MyStoryMilestones />
-      <MyStoryNote />
+      <MyStorySection7 />
       <Footer />
     </main>
   );
 }
+

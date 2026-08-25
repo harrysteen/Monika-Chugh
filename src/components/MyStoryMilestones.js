@@ -1,77 +1,94 @@
 'use client';
 
 export default function MyStoryMilestones() {
-  const milestones = [
-    {
-      year: '2023',
-      title: 'Published "Quote Café"',
-      description: 'A celebrated collection of reflective thoughts, inspiring poetry, and soul-enriching quotes.',
-      icon: 'bi-journal-richtext'
-    },
-    {
-      year: '2024',
-      title: 'Arogini Wellness Foundation',
-      description: 'Launched holistic mindfulness & creative workshops empowering hundreds of individuals globally.',
-      icon: 'bi-flower1'
-    },
-    {
-      year: '2025',
-      title: 'Exhibitions & Keynote Features',
-      description: 'Featured in prominent literary festivals, art exhibitions, and inspirational podcast dialogues.',
-      icon: 'bi-award'
-    }
-  ];
+  const cards = [1, 2, 3];
 
   return (
     <section className="py-5 bg-cream position-relative" id="story-milestones">
-      <div className="container px-3 px-md-4 px-lg-5 text-center">
+      <div className="container-fluid px-3 px-md-4 px-xl-5 text-center" style={{ maxWidth: '1380px' }}>
         
         {/* Section Header */}
-        <div className="mb-5">
-          <span className="font-handwriting fs-2 text-bronze d-block mb-1" style={{ color: '#A44E0E' }}>
+        <div className="mb-4 pb-2">
+          <span 
+            className="d-block mb-1" 
+            style={{ 
+              fontFamily: "'Italianno', cursive", 
+              fontSize: '34px', 
+              color: '#A44E0E',
+              lineHeight: 1.2
+            }}
+          >
             milestones along the way
           </span>
-          <h2 className="font-big-header display-5 fw-normal text-dark mb-3">
-            Honors, Recognition & Impact
+          <h2 
+            className="fw-normal" 
+            style={{ 
+              fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
+              fontSize: '40px',
+              color: '#422207',
+              letterSpacing: '0.01em',
+              lineHeight: 1.25
+            }}
+          >
+            Pirate ipsum me main blimey fluke
           </h2>
-          <p className="font-paragraph text-body fs-6 mx-auto mb-0" style={{ maxWidth: '680px', color: '#4A423B' }}>
-            A glimpse into the key milestones, published works, and meaningful collaborations that have defined this journey.
+          
+          <p 
+            className="mx-auto mt-3 mb-0" 
+            style={{ 
+              fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
+              fontSize: '15.5px', 
+              color: '#4A423B', 
+              lineHeight: '1.85',
+              fontWeight: 300,
+              maxWidth: '980px'
+            }}
+          >
+            Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones&apos; fluke sails overhaul man Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones&apos; fluke sails overhaul man
           </p>
         </div>
 
-        {/* 3 Milestone Cards */}
-        <div className="row g-4 justify-content-center mb-5">
-          {milestones.map((item, idx) => (
+        {/* 3 Milestone Gray Placeholders / Cards */}
+        <div className="row g-4 justify-content-center my-4 py-2">
+          {cards.map((item, idx) => (
             <div key={idx} className="col-12 col-md-4">
-              <div className="figma-card p-4 h-100 d-flex flex-column align-items-center text-center">
-                
-                <div 
-                  className="rounded-circle d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '64px', height: '64px', backgroundColor: '#F8EEDF', color: '#A44E0E' }}
-                >
-                  <i className={`bi ${item.icon} fs-3`}></i>
-                </div>
-
-                <span className="badge rounded-pill px-3 py-1 mb-2 fw-normal" style={{ backgroundColor: '#F8EBCC', color: '#62350A', fontSize: '0.85rem' }}>
-                  {item.year}
-                </span>
-
-                <h3 className="font-big-header fs-4 text-dark mb-2">
-                  {item.title}
-                </h3>
-
-                <p className="font-paragraph text-body fs-6 mb-0" style={{ color: '#4A423B' }}>
-                  {item.description}
-                </p>
-
+              <div 
+                className="w-100"
+                style={{
+                  height: '320px',
+                  backgroundColor: '#D9D9D9',
+                  borderRadius: '0px'
+                }}
+              >
               </div>
             </div>
           ))}
         </div>
 
         {/* CTA Button */}
-        <div>
-          <a href="/#press" className="btn btn-figma-outline px-5 py-3 fs-6">
+        <div className="pt-3">
+          <a 
+            href="/#press" 
+            className="btn"
+            style={{
+              fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+              fontSize: '15px',
+              color: '#62350A',
+              border: '1px solid #A44E0E',
+              backgroundColor: 'transparent',
+              borderRadius: '0px',
+              padding: '10px 36px',
+              transition: 'all 0.25s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#A44E0E';
+              e.currentTarget.style.color = '#FFFFFF';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = '#62350A';
+            }}
+          >
             View My Honors
           </a>
         </div>
@@ -80,3 +97,4 @@ export default function MyStoryMilestones() {
     </section>
   );
 }
+

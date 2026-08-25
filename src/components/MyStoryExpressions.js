@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export default function MyStoryExpressions() {
+  const sliderRef = useRef(null);
+
   const roles = [
     {
-      title: 'Author',
+      title: 'Founder',
       image: '/images/mystory/author.png',
       buttonText: 'Read My Books',
       link: '/#books'
@@ -26,82 +28,208 @@ export default function MyStoryExpressions() {
       title: 'Podcast',
       image: '/images/mystory/podcast.png',
       buttonText: 'Listen to My Podcast',
-      link: '/#podcast'
+      link: '/#podcast',
+      isGrayscale: true
     }
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? roles.length - 1 : prev - 1));
+    if (sliderRef.current) {
+      const cardWidth = sliderRef.current.querySelector('.role-card-item')?.offsetWidth || 300;
+      sliderRef.current.scrollBy({ left: -(cardWidth + 24), behavior: 'smooth' });
+    }
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev === roles.length - 1 ? 0 : prev + 1));
+    if (sliderRef.current) {
+      const cardWidth = sliderRef.current.querySelector('.role-card-item')?.offsetWidth || 300;
+      sliderRef.current.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+    }
   };
 
   return (
     <section className="py-5 bg-cream position-relative" id="story-expressions">
-      <div className="container px-3 px-md-4 px-lg-5 text-center">
+      <div className="container-fluid px-3 px-md-4 px-xl-5 text-center" style={{ maxWidth: '1380px' }}>
         
         {/* Section Header */}
-        <div className="mb-5 position-relative">
-          <span className="font-handwriting fs-2 text-bronze d-block mb-1" style={{ color: '#A44E0E' }}>
+        <div className="mb-5 pb-2">
+          <span 
+            className="d-block mb-1" 
+            style={{ 
+              fontFamily: "'Italianno', cursive", 
+              fontSize: '34px', 
+              color: '#A44E0E',
+              lineHeight: 1.2
+            }}
+          >
             many expressions, one purpose
           </span>
-          <h2 className="font-big-header display-5 fw-normal text-dark mb-4">
-            Multifaceted Paths of Creative Expression
+          <h2 
+            className="fw-normal" 
+            style={{ 
+              fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
+              fontSize: '40px',
+              color: '#422207',
+              letterSpacing: '0.01em',
+              lineHeight: 1.25
+            }}
+          >
+            Pirate ipsum me main blimey fluke
           </h2>
         </div>
 
-        {/* Roles Carousel / Grid */}
-        <div className="position-relative px-2 px-md-4">
+        {/* Roles Cards Container */}
+        <div className="position-relative px-2 px-md-4 px-lg-5">
           
-          {/* Left / Right Carousel Arrow Buttons */}
+          {/* Left Arrow Button */}
           <button 
-            className="carousel-arrow-btn position-absolute top-50 start-0 translate-middle-y d-none d-md-flex z-3"
+            className="position-absolute top-50 translate-middle-y d-flex align-items-center justify-content-center"
             onClick={handlePrev}
             aria-label="Previous role"
-            style={{ left: '-15px' }}
+            style={{ 
+              left: '0px',
+              width: '42px',
+              height: '42px',
+              borderRadius: '50%',
+              border: '1px solid #C4A57B',
+              backgroundColor: '#FFFDF9',
+              color: '#62350A',
+              zIndex: 10,
+              cursor: 'pointer',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+              transition: 'all 0.2s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#A44E0E';
+              e.currentTarget.style.borderColor = '#A44E0E';
+              e.currentTarget.style.color = '#FFFFFF';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#FFFDF9';
+              e.currentTarget.style.borderColor = '#C4A57B';
+              e.currentTarget.style.color = '#62350A';
+            }}
           >
-            <i className="bi bi-chevron-left fs-5"></i>
+            <i className="bi bi-chevron-left" style={{ fontSize: '15px' }}></i>
           </button>
 
+          {/* Right Arrow Button */}
           <button 
-            className="carousel-arrow-btn position-absolute top-50 end-0 translate-middle-y d-none d-md-flex z-3"
+            className="position-absolute top-50 translate-middle-y d-flex align-items-center justify-content-center"
             onClick={handleNext}
             aria-label="Next role"
-            style={{ right: '-15px' }}
+            style={{ 
+              right: '0px',
+              width: '42px',
+              height: '42px',
+              borderRadius: '50%',
+              border: '1px solid #C4A57B',
+              backgroundColor: '#FFFDF9',
+              color: '#62350A',
+              zIndex: 10,
+              cursor: 'pointer',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+              transition: 'all 0.2s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#A44E0E';
+              e.currentTarget.style.borderColor = '#A44E0E';
+              e.currentTarget.style.color = '#FFFFFF';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#FFFDF9';
+              e.currentTarget.style.borderColor = '#C4A57B';
+              e.currentTarget.style.color = '#62350A';
+            }}
           >
-            <i className="bi bi-chevron-right fs-5"></i>
+            <i className="bi bi-chevron-right" style={{ fontSize: '15px' }}></i>
           </button>
 
-          {/* Cards Row */}
-          <div className="row g-4 justify-content-center">
+          {/* Scrollable Track */}
+          <div 
+            ref={sliderRef}
+            className="d-flex overflow-x-auto gap-4 py-2 text-start no-scrollbar"
+            style={{
+              scrollBehavior: 'smooth',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch',
+              scrollSnapType: 'x mandatory'
+            }}
+          >
             {roles.map((role, idx) => (
-              <div key={idx} className="col-12 col-sm-6 col-lg-3">
-                <div className="role-card-figma h-100 d-flex flex-column text-center">
+              <div 
+                key={idx} 
+                className="role-card-item flex-shrink-0"
+                style={{
+                  width: 'calc(25% - 18px)',
+                  minWidth: '260px',
+                  scrollSnapAlign: 'start'
+                }}
+              >
+                <div 
+                  className="h-100 d-flex flex-column text-center"
+                  style={{
+                    backgroundColor: '#FFFDF9',
+                    border: '1px solid #EADBCC',
+                    padding: '24px 18px',
+                    borderRadius: '2px',
+                    boxShadow: '0 2px 10px rgba(66,34,7,0.03)'
+                  }}
+                >
                   
-                  {/* Script Title Above Image */}
-                  <h3 className="font-handwriting display-6 mb-3" style={{ color: '#422207' }}>
+                  {/* Title in Italianno cursive */}
+                  <h3 
+                    className="mb-3" 
+                    style={{ 
+                      fontFamily: "'Italianno', cursive", 
+                      fontSize: '34px', 
+                      color: '#422207',
+                      lineHeight: 1.1
+                    }}
+                  >
                     {role.title}
                   </h3>
 
                   {/* Role Image */}
-                  <div className="position-relative overflow-hidden rounded mb-4 flex-grow-1" style={{ height: '310px' }}>
+                  <div 
+                    className="position-relative overflow-hidden mb-4 flex-grow-1" 
+                    style={{ height: '340px' }}
+                  >
                     <img 
                       src={role.image} 
                       alt={role.title} 
-                      className="w-100 h-100 object-fit-cover transition-transform"
-                      style={{ objectFit: 'cover' }}
+                      className="w-100 h-100"
+                      style={{ 
+                        objectFit: 'cover',
+                        filter: role.isGrayscale ? 'grayscale(100%)' : 'none'
+                      }}
                     />
                   </div>
 
                   {/* Outline CTA Button */}
-                  <div className="mt-auto pt-2">
+                  <div className="mt-auto pt-1">
                     <a 
                       href={role.link} 
-                      className="btn btn-figma-outline w-100 py-2 fs-6 fw-normal"
+                      className="btn w-100"
+                      style={{
+                        fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                        fontSize: '14px',
+                        color: '#62350A',
+                        border: '1px solid #A44E0E',
+                        backgroundColor: 'transparent',
+                        borderRadius: '0px',
+                        padding: '9px 12px',
+                        transition: 'all 0.25s ease'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = '#A44E0E';
+                        e.currentTarget.style.color = '#FFFFFF';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                        e.currentTarget.style.color = '#62350A';
+                      }}
                     >
                       {role.buttonText}
                     </a>
@@ -118,3 +246,4 @@ export default function MyStoryExpressions() {
     </section>
   );
 }
+

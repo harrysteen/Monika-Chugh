@@ -1,4 +1,5 @@
 import './globals.css';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Monika Chugh — Official Website',
@@ -13,7 +14,16 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          async
+          data-uid="998bd02e5b"
+          src="https://fantastic-motivator-3431.kit.com/998bd02e5b/index.js"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
+
