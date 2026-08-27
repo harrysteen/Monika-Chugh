@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
           async
           data-uid="998bd02e5b"
           src="https://fantastic-motivator-3431.kit.com/998bd02e5b/index.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </body>
     </html>

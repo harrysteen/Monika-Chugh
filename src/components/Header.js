@@ -17,8 +17,8 @@ export default function Header({ activePage = 'home' }) {
             <nav className="d-flex align-items-center justify-content-between pb-2">
               <a href="/" className={`figma-nav-item ${activePage === 'home' ? 'active' : ''}`}>Home</a>
               <a href="/my-story" className={`figma-nav-item ${activePage === 'my-story' ? 'active' : ''}`}>My Story</a>
-              <a href="/#books" className="figma-nav-item">Books</a>
-              <a href="/#blogs" className="figma-nav-item">Blogs</a>
+              <a href="/books" className={`figma-nav-item ${activePage === 'books' ? 'active' : ''}`}>Books</a>
+              <a href="/blogs" className={`figma-nav-item ${activePage === 'blogs' ? 'active' : ''}`}>Blogs</a>
               <a href="/#canvas" className="figma-nav-item">Canvas & Quotations</a>
             </nav>
             {/* Horizontal Divider Line extending under Left Menu */}
@@ -78,8 +78,8 @@ export default function Header({ activePage = 'home' }) {
             <div className="d-flex flex-column gap-3">
               <a href="/" className={`figma-nav-item py-1 ${activePage === 'home' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Home</a>
               <a href="/my-story" className={`figma-nav-item py-1 ${activePage === 'my-story' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>My Story</a>
-              <a href="/#books" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Books</a>
-              <a href="/#blogs" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Blogs</a>
+              <a href="/books" className={`figma-nav-item py-1 ${activePage === 'books' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Books</a>
+              <a href="/blogs" className={`figma-nav-item py-1 ${activePage === 'blogs' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Blogs</a>
               <a href="/#canvas" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Canvas & Quotations</a>
               <a href="/#poems" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Poems & Articles</a>
               <a href="/#press" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Press Room</a>

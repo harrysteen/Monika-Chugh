@@ -20,7 +20,18 @@
        url('/fonts/Larken-Light.otf') format('opentype'),
        url('/fonts/Larken-Thin.woff2') format('woff2'),
        url('/fonts/Larken-Thin.ttf') format('truetype');
-  font-weight: 100 400;
+  font-weight: 300 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Larken-Thin';
+  src: url('/fonts/Larken-Thin.woff2') format('woff2'),
+       url('/fonts/Larken-Thin.ttf') format('truetype'),
+       url('/fonts/Larken-Thin.otf') format('opentype'),
+       url('/fonts/Larken-Light.woff2') format('woff2');
+  font-weight: 100 300;
   font-style: normal;
   font-display: swap;
 }
@@ -336,5 +347,276 @@ body {
   padding: 40px 20px;
   position: relative;
 }
+
+/* ------------------------------------------------------------- */
+/* BOOKS PAGE STYLING (MATCHING EXACT USER SCREENSHOT)          */
+/* ------------------------------------------------------------- */
+
+.books-outer-frame {
+  border: 1px solid #C4A57B;
+  background-color: transparent;
+  padding: 30px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .books-outer-frame {
+    padding: 16px;
+  }
+}
+
+.books-tab-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.books-tab-btn {
+  background: none;
+  border: none;
+  font-family: 'Larken-Light', 'Larken', 'Lora', serif;
+  font-size: 18px;
+  color: #8C827A;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.books-tab-btn:hover {
+  color: #422207;
+}
+
+.books-tab-btn.active {
+  color: #422207;
+  font-weight: 700;
+}
+
+.books-category-select-wrap {
+  position: relative;
+}
+
+.books-category-btn {
+  background: transparent;
+  border: none;
+  font-family: 'Larken-Light', 'Larken', 'Lora', serif;
+  font-size: 16px;
+  color: #422207;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: opacity 0.2s ease;
+}
+
+.books-category-btn:hover {
+  opacity: 0.8;
+}
+
+.books-category-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: #FFFDF9;
+  border: 1px solid #E2D5C3;
+  box-shadow: 0 10px 25px rgba(66, 34, 7, 0.08);
+  border-radius: 4px;
+  min-width: 180px;
+  z-index: 1050;
+  padding: 8px 0;
+}
+
+.books-category-dropdown-item {
+  padding: 8px 16px;
+  font-family: 'Larken', 'Lora', serif;
+  font-size: 14px;
+  color: #4A423B;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  display: block;
+}
+
+.books-category-dropdown-item:hover,
+.books-category-dropdown-item.active {
+  background: #F8EEDF;
+  color: #62350A;
+  font-weight: 600;
+}
+
+.book-tag-pill {
+  display: inline-block;
+  background-color: #FDF4DF;
+  color: #62350A;
+  font-family: 'Larken', 'Lora', serif;
+  font-size: 13px;
+  padding: 5px 16px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  border: 1px solid rgba(196, 165, 123, 0.2);
+}
+
+.book-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border: 1px solid #A44E0E;
+  color: #422207;
+  background-color: transparent;
+  font-family: 'Larken', 'Lora', serif;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  min-width: 140px;
+  cursor: pointer;
+}
+
+.book-action-btn:hover {
+  background-color: #62350A;
+  border-color: #62350A;
+  color: #FFFDF9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(98, 53, 10, 0.15);
+}
+
+.book-image-flatlay {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.book-image-flatlay:hover {
+  transform: scale(1.02);
+}
+
+/* ------------------------------------------------------------- */
+/* BLOGS PAGE STYLING (MATCHING EXACT FIGMA SCREENSHOT)         */
+/* ------------------------------------------------------------- */
+
+.blog-search-box {
+  border: 1px solid #C4A57B;
+  background-color: #FFFDF9;
+  color: #422207;
+  font-family: 'Larken-Light', 'Larken', 'Lora', serif;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  width: 100%;
+  max-width: 680px;
+}
+
+.blog-search-box::placeholder {
+  color: #9C8F84;
+  font-style: normal;
+}
+
+.blog-search-box:focus {
+  outline: none;
+  border-color: #62350A;
+  box-shadow: 0 0 0 3px rgba(164, 78, 14, 0.12);
+}
+
+.blog-featured-card-wrap {
+  background-color: #FBF4E4;
+  background-image: radial-gradient(#E8D9C0 1px, transparent 1px);
+  background-size: 24px 24px;
+  border: 1px solid #E5D6C5;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-filter-tab-btn {
+  background: transparent;
+  border: none;
+  font-family: 'Larken-Light', 'Larken', 'Lora', serif;
+  font-size: 15px;
+  color: #7A6F66;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.blog-filter-tab-btn:hover {
+  color: #422207;
+}
+
+.blog-filter-tab-btn.active {
+  color: #422207;
+  font-weight: 700;
+  border-bottom: 2px solid #62350A;
+}
+
+.blog-card-figma {
+  background-color: #FCF8F2;
+  border: 1px solid #E8DCCF;
+  border-radius: 2px;
+  padding: 24px 20px 20px 20px;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+
+.blog-card-figma:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(66, 34, 7, 0.08);
+  border-color: #C4A57B;
+}
+
+.blog-card-image-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.blog-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.blog-card-figma:hover .blog-card-image-wrap img {
+  transform: scale(1.04);
+}
+
+.blog-read-btn {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid #A44E0E;
+  color: #422207;
+  background-color: transparent;
+  font-family: 'Larken', 'Lora', serif;
+  font-size: 14.5px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.blog-read-btn:hover {
+  background-color: #62350A;
+  border-color: #62350A;
+  color: #FFFDF9;
+}
+
+
 
 
