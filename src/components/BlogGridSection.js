@@ -144,10 +144,10 @@ Be patient with your healing timeline. The soil must rest in the dark before the
         {/* Section Heading matching Figma */}
         <div className="text-center mb-5">
           <span 
-            className="d-block mb-1 font-handwriting"
+            className="d-block mb-1"
             style={{
               fontFamily: "'Italianno', cursive",
-              fontSize: '34px',
+              fontSize: '38px',
               color: '#A44E0E',
               fontWeight: 400,
               lineHeight: '100%'
@@ -263,33 +263,38 @@ Be patient with your healing timeline. The soil must rest in the dark before the
                       </span>
 
                       {/* Blog Thumbnail Image */}
-                      <div 
-                        className="blog-card-image-wrap cursor-pointer"
-                        onClick={() => setActiveArticle(blog)}
+                      <a 
+                        href="/blogs/write-write-write"
+                        className="blog-card-image-wrap d-block text-decoration-none"
                       >
                         <img 
                           src={blog.image} 
                           alt={blog.title} 
                         />
-                      </div>
+                      </a>
 
                       {/* Blog Title */}
-                      <h3 
-                        className="mb-2"
-                        style={{
-                          fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                          fontSize: '20px',
-                          color: '#422207',
-                          fontWeight: 400,
-                          lineHeight: '1.25',
-                          minHeight: '48px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center'
-                        }}
+                      <a 
+                        href="/blogs/write-write-write"
+                        className="text-decoration-none"
                       >
-                        {blog.title}
-                      </h3>
+                        <h3 
+                          className="mb-2"
+                          style={{
+                            fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
+                            fontSize: '20px',
+                            color: '#422207',
+                            fontWeight: 400,
+                            lineHeight: '1.25',
+                            minHeight: '48px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}
+                        >
+                          {blog.title}
+                        </h3>
+                      </a>
 
                       {/* Excerpt Paragraph */}
                       <p 
@@ -306,10 +311,9 @@ Be patient with your healing timeline. The soil must rest in the dark before the
                       </p>
 
                       {/* Read Blog Action Button */}
-                      <button
-                        type="button"
-                        onClick={() => setActiveArticle(blog)}
-                        className="blog-read-btn"
+                      <a
+                        href="/blogs/write-write-write"
+                        className="blog-read-btn text-decoration-none"
                         style={{
                           fontFamily: "'Larken-Thin', 'Larken-Light', 'Lora', serif",
                           fontWeight: 300,
@@ -317,7 +321,7 @@ Be patient with your healing timeline. The soil must rest in the dark before the
                         }}
                       >
                         Read Blog
-                      </button>
+                      </a>
 
                     </div>
                   </div>
@@ -363,10 +367,10 @@ Be patient with your healing timeline. The soil must rest in the dark before the
 
             {/* Modal Content */}
             <span 
-              className="d-block mb-1 font-handwriting"
+              className="d-block mb-1"
               style={{
                 fontFamily: "'Italianno', cursive",
-                fontSize: '32px',
+                fontSize: '34px',
                 color: '#A44E0E',
                 lineHeight: '100%'
               }}

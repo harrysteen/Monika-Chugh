@@ -617,6 +617,44 @@ body {
   color: #FFFDF9;
 }
 
+/* ------------------------------------------------------------- */
+/* BLOG SINGLE POST STYLING (MATCHING FIGMA NODE 802-5488)      */
+/* ------------------------------------------------------------- */
+
+.blog-post-frame {
+  border: 1px solid #C4A57B;
+  padding: 10px;
+  background-color: transparent;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-dropcap {
+  float: left;
+  font-family: 'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif;
+  font-size: 56px;
+  line-height: 0.8;
+  padding-top: 4px;
+  padding-right: 12px;
+  padding-bottom: 2px;
+  color: #422207;
+  font-weight: 400;
+}
+
+.blog-sidebar-box {
+  background-color: #F8EEDF;
+  border: 1px solid #E5D6C5;
+  border-radius: 2px;
+  padding: 20px 16px;
+}
+
+.blog-sidebar-divider {
+  width: 1px;
+  background-color: #E2D5C3;
+  height: 100%;
+}
+
+
 
 
 

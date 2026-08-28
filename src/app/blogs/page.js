@@ -52,10 +52,10 @@ export default function BlogsPage() {
             </button>
 
             <span 
-              className="d-block mb-1 font-handwriting"
+              className="d-block mb-1"
               style={{
                 fontFamily: "'Italianno', cursive",
-                fontSize: '34px',
+                fontSize: '36px',
                 color: '#A44E0E'
               }}
             >

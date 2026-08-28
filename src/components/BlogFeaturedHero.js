@@ -55,10 +55,9 @@ export default function BlogFeaturedHero({ onSearch, searchQuery, onOpenFeatured
               </p>
 
               <div>
-                <button
-                  type="button"
-                  onClick={onOpenFeatured}
-                  className="book-action-btn px-5 py-2"
+                <a
+                  href="/blogs/write-write-write"
+                  className="book-action-btn px-5 py-2 text-decoration-none"
                   style={{
                     border: '1px solid #A44E0E',
                     backgroundColor: 'transparent',
@@ -71,20 +70,19 @@ export default function BlogFeaturedHero({ onSearch, searchQuery, onOpenFeatured
                   }}
                 >
                   Read Blog
-                </button>
+                </a>
               </div>
             </div>
 
             {/* Right Column: Featured Image */}
             <div className="col-12 col-lg-6 text-center">
-              <div 
-                className="overflow-hidden rounded-1 mx-auto shadow-sm"
+              <a 
+                href="/blogs/write-write-write"
+                className="overflow-hidden rounded-1 mx-auto shadow-sm d-block text-decoration-none"
                 style={{
                   maxWidth: '540px',
-                  aspectRatio: '16 / 10',
-                  cursor: 'pointer'
+                  aspectRatio: '16 / 10'
                 }}
-                onClick={onOpenFeatured}
               >
                 <img 
                   src="/images/blogs/featured_guru.jpg" 
@@ -95,7 +93,7 @@ export default function BlogFeaturedHero({ onSearch, searchQuery, onOpenFeatured
                     transition: 'transform 0.4s ease'
                   }}
                 />
-              </div>
+              </a>
             </div>
 
           </div>

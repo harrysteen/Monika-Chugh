@@ -285,10 +285,9 @@ export default function BooksCatalog() {
 
                         {/* Action Buttons: Learn More & Buy Now */}
                         <div className="d-flex flex-wrap align-items-center gap-3 w-100" style={{ maxWidth: '440px' }}>
-                          <button
-                            type="button"
-                            onClick={() => setActiveModalBook(book)}
-                            className="book-action-btn flex-grow-1 text-center"
+                          <a
+                            href="/books/quote-cafe"
+                            className="book-action-btn flex-grow-1 text-center text-decoration-none"
                             style={{
                               padding: '9px 22px',
                               border: '1px solid #A44E0E',
@@ -298,11 +297,11 @@ export default function BooksCatalog() {
                               fontSize: '14.5px',
                               borderRadius: '2px',
                               transition: 'all 0.25s ease',
-                              cursor: 'pointer'
+                              display: 'inline-block'
                             }}
                           >
                             Learn More
-                          </button>
+                          </a>
 
                           <button
                             type="button"

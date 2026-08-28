@@ -45,7 +45,7 @@ export default function Header({ activePage = 'home' }) {
           {/* Right Navigation Menu Block */}
           <div className="d-flex flex-column align-items-stretch flex-grow-1 ps-3 ps-xl-4">
             <nav className="d-flex align-items-center justify-content-between pb-2">
-              <a href="/#poems" className="figma-nav-item">Poems & Articles</a>
+              <a href="/poems-articles" className={`figma-nav-item ${activePage === 'poems-articles' ? 'active' : ''}`}>Poems & Articles</a>
               <a href="/#press" className="figma-nav-item">Press Room</a>
               <a href="/#events" className="figma-nav-item">Events</a>
               <a href="/#arogini" className="figma-nav-item">Arogini</a>
@@ -81,7 +81,7 @@ export default function Header({ activePage = 'home' }) {
               <a href="/books" className={`figma-nav-item py-1 ${activePage === 'books' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Books</a>
               <a href="/blogs" className={`figma-nav-item py-1 ${activePage === 'blogs' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Blogs</a>
               <a href="/#canvas" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Canvas & Quotations</a>
-              <a href="/#poems" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Poems & Articles</a>
+              <a href="/poems-articles" className={`figma-nav-item py-1 ${activePage === 'poems-articles' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Poems & Articles</a>
               <a href="/#press" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Press Room</a>
               <a href="/#events" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Events</a>
               <a href="/#arogini" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Arogini</a>
