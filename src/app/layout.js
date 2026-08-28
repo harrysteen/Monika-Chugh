@@ -1,5 +1,5 @@
 import './globals.css';
-import Script from 'next/script';
+import KitFormPopup from '../components/KitFormPopup';
 
 export const metadata = {
   title: 'Monika Chugh — Official Website',
@@ -16,12 +16,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
-        <Script
-          async
-          data-uid="998bd02e5b"
-          src="https://fantastic-motivator-3431.kit.com/998bd02e5b/index.js"
-          strategy="lazyOnload"
-        />
+        <KitFormPopup />
       </body>
     </html>
   );

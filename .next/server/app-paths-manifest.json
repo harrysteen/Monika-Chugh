@@ -1,9 +1,5 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/blogs/page": "app/blogs/page.js",
-  "/page": "app/page.js",
-  "/poems-articles/page": "app/poems-articles/page.js",
-  "/blogs/write-write-write/page": "app/blogs/write-write-write/page.js",
-  "/books/page": "app/books/page.js",
-  "/books/quote-cafe/page": "app/books/quote-cafe/page.js"
+  "/books/quote-cafe/page": "app/books/quote-cafe/page.js",
+  "/page": "app/page.js"
 }
