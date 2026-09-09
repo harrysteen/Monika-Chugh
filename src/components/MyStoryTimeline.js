@@ -1,7 +1,22 @@
 'use client';
 
 export default function MyStoryTimeline() {
-  const paragraphText = "Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke sails overhaul man jib schooner.";
+  const paragraph1 = [
+    "Even as a young girl, I noticed things deeply, felt them fully, and put them into words.",
+    "I dreamed of becoming a doctor, but I also loved to write. The world got my medicine but my words stayed private, held back by fear.",
+    "Then, in 2017, life shook me in a way I never expected."
+  ];
+
+  const paragraph2 = [
+    "In the aftermath, I kept asking the universe: why me?",
+    "That question cracked something open. It led me toward karma, spirituality, and a deeper understanding of how our experiences shape us.",
+    "Slowly, I began to see that perhaps not everything comes with an immediate answer. Sometimes, meaning reveals itself only with time."
+  ];
+
+  const paragraph3 = [
+    "And somewhere in all that questioning, I began writing again not tucked away this time, but shared, one word and one verse at a time.",
+    "One poem became a book. A journal became something more. What had once been private slowly became part of my path and, perhaps, a way for my words to mean something to someone else."
+  ];
 
   return (
     <section className="py-5 bg-cream position-relative" id="story-timeline">
@@ -13,7 +28,7 @@ export default function MyStoryTimeline() {
             className="d-block mb-1" 
             style={{ 
               fontFamily: "'Italianno', cursive", 
-              fontSize: '34px', 
+              fontSize: '24px', 
               color: '#A44E0E',
               lineHeight: 1.2
             }}
@@ -24,13 +39,13 @@ export default function MyStoryTimeline() {
             className="fw-normal" 
             style={{ 
               fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
-              fontSize: '40px',
+              fontSize: '24px',
               color: '#422207',
               letterSpacing: '0.01em',
               lineHeight: 1.25
             }}
           >
-            Pirate ipsum me main blimey fluke
+            A Journey of Words and Resilience
           </h2>
         </div>
 
@@ -49,18 +64,30 @@ export default function MyStoryTimeline() {
               </div>
             </div>
             <div className="col-lg-5">
-              <p 
-                className="mb-0" 
-                style={{ 
-                  fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
-                  fontSize: '15.5px', 
-                  color: '#4A423B', 
-                  lineHeight: '1.85',
-                  fontWeight: 300
+              <div 
+                className="p-4 p-md-4 rounded-3 h-100 d-flex flex-column justify-content-center"
+                style={{
+                  backgroundColor: '#FAF2DC',
+                  border: '1px solid #F0E3C8',
+                  boxShadow: '0 4px 16px rgba(66, 34, 7, 0.04)'
                 }}
               >
-                {paragraphText}
-              </p>
+                {paragraph1.map((text, idx) => (
+                  <p 
+                    key={idx}
+                    className={idx === paragraph1.length - 1 ? 'mb-0' : 'mb-3'}
+                    style={{ 
+                      fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
+                      fontSize: '15.5px', 
+                      color: '#4A423B', 
+                      lineHeight: '1.8',
+                      fontWeight: 300
+                    }}
+                  >
+                    {text}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -82,18 +109,30 @@ export default function MyStoryTimeline() {
               </div>
             </div>
             <div className="col-lg-5">
-              <p 
-                className="mb-0" 
-                style={{ 
-                  fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
-                  fontSize: '15.5px', 
-                  color: '#4A423B', 
-                  lineHeight: '1.85',
-                  fontWeight: 300
+              <div 
+                className="p-4 p-md-4 rounded-3 h-100 d-flex flex-column justify-content-center"
+                style={{
+                  backgroundColor: '#FAF2DC',
+                  border: '1px solid #F0E3C8',
+                  boxShadow: '0 4px 16px rgba(66, 34, 7, 0.04)'
                 }}
               >
-                {paragraphText}
-              </p>
+                {paragraph2.map((text, idx) => (
+                  <p 
+                    key={idx}
+                    className={idx === paragraph2.length - 1 ? 'mb-0' : 'mb-3'}
+                    style={{ 
+                      fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
+                      fontSize: '15.5px', 
+                      color: '#4A423B', 
+                      lineHeight: '1.8',
+                      fontWeight: 300
+                    }}
+                  >
+                    {text}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -115,18 +154,30 @@ export default function MyStoryTimeline() {
               </div>
             </div>
             <div className="col-lg-5">
-              <p 
-                className="mb-0" 
-                style={{ 
-                  fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
-                  fontSize: '15.5px', 
-                  color: '#4A423B', 
-                  lineHeight: '1.85',
-                  fontWeight: 300
+              <div 
+                className="p-4 p-md-4 rounded-3 h-100 d-flex flex-column justify-content-center"
+                style={{
+                  backgroundColor: '#FAF2DC',
+                  border: '1px solid #F0E3C8',
+                  boxShadow: '0 4px 16px rgba(66, 34, 7, 0.04)'
                 }}
               >
-                {paragraphText}
-              </p>
+                {paragraph3.map((text, idx) => (
+                  <p 
+                    key={idx}
+                    className={idx === paragraph3.length - 1 ? 'mb-0' : 'mb-3'}
+                    style={{ 
+                      fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
+                      fontSize: '15.5px', 
+                      color: '#4A423B', 
+                      lineHeight: '1.8',
+                      fontWeight: 300
+                    }}
+                  >
+                    {text}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -135,4 +186,3 @@ export default function MyStoryTimeline() {
     </section>
   );
 }
-

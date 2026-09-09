@@ -4,8 +4,8 @@ export default function ThirteenthSection() {
   return (
     <section 
       id="section-13" 
-      className="position-relative overflow-hidden w-100 d-flex align-items-center justify-content-center" 
-      style={{ backgroundColor: '#FFFDF9', minHeight: '1207px', height: '1207px' }}
+      className="position-relative overflow-hidden w-100 section-13-wrapper" 
+      style={{ backgroundColor: '#FFFDF9' }}
     >
       {/* Background Watermark Image Pattern */}
       <div 
@@ -21,12 +21,12 @@ export default function ThirteenthSection() {
       />
 
       {/* ========================================================================= */}
-      {/* DESKTOP LAYOUT (Exact Matching image_0.png Reference)                       */}
+      {/* DESKTOP LAYOUT (Exact Matching 5-Item Design Reference)                   */}
       {/* ========================================================================= */}
       <div className="container-fluid position-relative z-1 d-none d-lg-block">
         <div 
           className="position-relative mx-auto" 
-          style={{ width: '1200px', height: '1100px' }}
+          style={{ width: '1200px', height: '860px' }}
         >
           
           {/* Main Section Header (Centered Top - Prominent Size) */}
@@ -61,7 +61,7 @@ export default function ThirteenthSection() {
             </h2>
           </div>
 
-          {/* 1. Workshops & Events (Top Left - Shifted Right with clear smaller label) */}
+          {/* 1. Workshops & Events (Top Left) */}
           <div 
             className="position-absolute"
             style={{ top: '70px', left: '110px', width: '225px' }}
@@ -137,7 +137,7 @@ export default function ThirteenthSection() {
             </div>
           </div>
 
-          {/* 3. Webinars (Top Right - Moved Up & Right to fill empty gap) */}
+          {/* 3. Webinars (Top Right) */}
           <div 
             className="position-absolute"
             style={{ top: '130px', left: '840px', width: '265px' }}
@@ -175,7 +175,7 @@ export default function ThirteenthSection() {
             </div>
           </div>
 
-          {/* 4. Shop (Middle Left - Shifted Right) */}
+          {/* 4. Shop (Middle Left) */}
           <div 
             className="position-absolute"
             style={{ top: '440px', left: '80px', width: '260px' }}
@@ -213,7 +213,7 @@ export default function ThirteenthSection() {
             </div>
           </div>
 
-          {/* 5. Youtube (Middle Right Wide Banner - Shifted Right) */}
+          {/* 5. Youtube (Middle Right Wide Banner) */}
           <div 
             className="position-absolute"
             style={{ top: '560px', left: '680px', width: '380px' }}
@@ -251,98 +251,22 @@ export default function ThirteenthSection() {
             </div>
           </div>
 
-          {/* 6. Founder (Bottom Center-Left - Shifted Right) */}
-          <div 
-            className="position-absolute"
-            style={{ top: '730px', left: '300px', width: '195px' }}
-          >
-            <div className="w-100 mb-2">
-              <div className="text-end mb-1">
-                <span
-                  style={{
-                    fontFamily: "'Italianno', cursive",
-                    fontSize: '22px',
-                    color: '#A44E0E',
-                    lineHeight: '1.1',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  founder
-                </span>
-              </div>
-              <div 
-                style={{ 
-                  width: '100%', 
-                  height: '1px', 
-                  backgroundColor: '#C5A070', 
-                  opacity: 0.6 
-                }} 
-              />
-            </div>
-            <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
-              <img
-                src="/images/section_13_shop.svg"
-                alt="founder"
-                className="w-100 object-fit-cover d-block"
-                style={{ height: '160px' }}
-              />
-            </div>
-          </div>
-
-          {/* 7. Substack (Bottom Right - Shifted Right) */}
-          <div 
-            className="position-absolute"
-            style={{ top: '870px', left: '560px', width: '270px' }}
-          >
-            <div className="w-100 mb-2">
-              <div className="text-end mb-1">
-                <span
-                  style={{
-                    fontFamily: "'Italianno', cursive",
-                    fontSize: '22px',
-                    color: '#A44E0E',
-                    lineHeight: '1.1',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  substack
-                </span>
-              </div>
-              <div 
-                style={{ 
-                  width: '100%', 
-                  height: '1px', 
-                  backgroundColor: '#C5A070', 
-                  opacity: 0.6 
-                }} 
-              />
-            </div>
-            <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
-              <img
-                src="/images/section_13_shop.svg"
-                alt="substack"
-                className="w-100 object-fit-cover d-block"
-                style={{ height: '145px' }}
-              />
-            </div>
-          </div>
-
         </div>
       </div>
 
       {/* ========================================================================= */}
       {/* MOBILE / TABLET RESPONSIVE LAYOUT (< 992px)                               */}
       {/* ========================================================================= */}
-      <div className="container-fluid px-3 px-md-4 position-relative z-1 py-4 d-block d-lg-none w-100">
+      <div className="container-fluid px-3 px-sm-4 px-md-4 position-relative z-1 py-5 d-block d-lg-none w-100">
         <div className="max-w-800 mx-auto">
           
           {/* Section Header */}
-          <div className="text-center mb-5">
+          <div className="text-center mb-4 mb-sm-5">
             <span
               className="d-block mb-1"
               style={{
                 fontFamily: "'Italianno', cursive",
-                fontSize: '36px',
+                fontSize: 'clamp(30px, 6vw, 36px)',
                 color: '#A44E0E',
                 fontWeight: 400
               }}
@@ -353,10 +277,10 @@ export default function ThirteenthSection() {
               className="mb-0"
               style={{
                 fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                fontSize: '38px',
+                fontSize: 'clamp(28px, 5.5vw, 38px)',
                 color: '#422207',
                 fontWeight: 400,
-                lineHeight: '1.1'
+                lineHeight: '1.15'
               }}
             >
               Pirate ipsum me
@@ -364,116 +288,117 @@ export default function ThirteenthSection() {
           </div>
 
           {/* Cards Mobile Grid */}
-          <div className="row g-5 justify-content-center">
+          <div className="row g-4 g-sm-5 justify-content-center">
             
-            {/* Workshops */}
-            <div className="col-12 col-md-6">
-              <div className="w-100 mb-2">
-                <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
-                    workshops &amp; events
-                  </span>
+            {/* 1. Workshops & Events */}
+            <div className="col-12 col-sm-10 col-md-6">
+              <div className="section-13-card-box">
+                <div className="w-100 mb-2">
+                  <div className="text-end mb-1">
+                    <span style={{ fontFamily: "'Italianno', cursive", fontSize: '22px', color: '#A44E0E' }}>
+                      workshops &amp; events
+                    </span>
+                  </div>
+                  <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
                 </div>
-                <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
-              </div>
-              <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
-                <img src="/images/section_13_workshops.svg" alt="workshops & events" className="w-100 object-fit-cover" style={{ height: '220px' }} />
+                <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
+                  <img src="/images/section_13_workshops.svg" alt="workshops & events" className="w-100 object-fit-cover d-block" style={{ height: '220px' }} />
+                </div>
               </div>
             </div>
 
-            {/* Podcasts */}
-            <div className="col-12 col-md-6">
-              <div className="w-100 mb-2">
-                <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
-                    podcasts
-                  </span>
+            {/* 2. Podcasts */}
+            <div className="col-12 col-sm-10 col-md-6">
+              <div className="section-13-card-box">
+                <div className="w-100 mb-2">
+                  <div className="text-end mb-1">
+                    <span style={{ fontFamily: "'Italianno', cursive", fontSize: '22px', color: '#A44E0E' }}>
+                      podcasts
+                    </span>
+                  </div>
+                  <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
                 </div>
-                <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
-              </div>
-              <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
-                <img src="/images/section_13_podcasts.svg" alt="podcasts" className="w-100 object-fit-cover" style={{ height: '280px' }} />
+                <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
+                  <img src="/images/section_13_podcasts.svg" alt="podcasts" className="w-100 object-fit-cover d-block" style={{ height: '260px' }} />
+                </div>
               </div>
             </div>
 
-            {/* Webinars */}
-            <div className="col-12 col-md-6">
-              <div className="w-100 mb-2">
-                <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
-                    webinars
-                  </span>
+            {/* 3. Webinars */}
+            <div className="col-12 col-sm-10 col-md-6">
+              <div className="section-13-card-box">
+                <div className="w-100 mb-2">
+                  <div className="text-end mb-1">
+                    <span style={{ fontFamily: "'Italianno', cursive", fontSize: '22px', color: '#A44E0E' }}>
+                      webinars
+                    </span>
+                  </div>
+                  <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
                 </div>
-                <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
-              </div>
-              <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
-                <img src="/images/section_13_webinars.svg" alt="webinars" className="w-100 object-fit-cover" style={{ height: '200px' }} />
+                <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
+                  <img src="/images/section_13_webinars.svg" alt="webinars" className="w-100 object-fit-cover d-block" style={{ height: '200px' }} />
+                </div>
               </div>
             </div>
 
-            {/* Shop */}
-            <div className="col-12 col-md-6">
-              <div className="w-100 mb-2">
-                <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
-                    shop
-                  </span>
+            {/* 4. Shop */}
+            <div className="col-12 col-sm-10 col-md-6">
+              <div className="section-13-card-box">
+                <div className="w-100 mb-2">
+                  <div className="text-end mb-1">
+                    <span style={{ fontFamily: "'Italianno', cursive", fontSize: '22px', color: '#A44E0E' }}>
+                      shop
+                    </span>
+                  </div>
+                  <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
                 </div>
-                <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
-              </div>
-              <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
-                <img src="/images/section_13_shop.svg" alt="shop" className="w-100 object-fit-cover" style={{ height: '200px' }} />
+                <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
+                  <img src="/images/section_13_shop.svg" alt="shop" className="w-100 object-fit-cover d-block" style={{ height: '200px' }} />
+                </div>
               </div>
             </div>
 
-            {/* Youtube */}
-            <div className="col-12">
-              <div className="w-100 mb-2">
-                <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
-                    youtube
-                  </span>
+            {/* 5. Youtube */}
+            <div className="col-12 col-sm-10 col-md-6">
+              <div className="section-13-card-box">
+                <div className="w-100 mb-2">
+                  <div className="text-end mb-1">
+                    <span style={{ fontFamily: "'Italianno', cursive", fontSize: '22px', color: '#A44E0E' }}>
+                      youtube
+                    </span>
+                  </div>
+                  <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
                 </div>
-                <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
-              </div>
-              <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
-                <img src="/images/section_13_youtube.svg" alt="youtube" className="w-100 object-fit-cover" style={{ height: '220px' }} />
-              </div>
-            </div>
-
-            {/* Founder */}
-            <div className="col-12 col-md-6">
-              <div className="w-100 mb-2">
-                <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
-                    founder
-                  </span>
+                <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
+                  <img src="/images/section_13_youtube.svg" alt="youtube" className="w-100 object-fit-cover d-block" style={{ height: '220px' }} />
                 </div>
-                <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
-              </div>
-              <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
-                <img src="/images/section_13_shop.svg" alt="founder" className="w-100 object-fit-cover" style={{ height: '180px' }} />
-              </div>
-            </div>
-
-            {/* Substack */}
-            <div className="col-12 col-md-6">
-              <div className="w-100 mb-2">
-                <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
-                    substack
-                  </span>
-                </div>
-                <div style={{ width: '100%', height: '1px', backgroundColor: '#C5A070', opacity: 0.6 }} />
-              </div>
-              <div className="overflow-hidden shadow-sm rounded-1 border border-cream">
-                <img src="/images/section_13_shop.svg" alt="substack" className="w-100 object-fit-cover" style={{ height: '180px' }} />
               </div>
             </div>
 
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .section-13-wrapper {
+          min-height: auto;
+          height: auto;
+        }
+        @media (min-width: 992px) {
+          .section-13-wrapper {
+            min-height: 920px;
+            height: 920px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .section-13-card-box {
+          max-width: 380px;
+          width: 100%;
+          margin: 0 auto;
+        }
+      `}</style>
 
     </section>
   );

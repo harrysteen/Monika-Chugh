@@ -5,16 +5,16 @@ export default function EighthSection() {
     <section id="section-8" className="py-5 overflow-hidden" style={{ backgroundColor: '#FAF5E8', marginTop: '32px' }}>
       <div className="container-fluid px-3 px-md-4 px-lg-5">
         
-        {/* Section Header + View All Button (Strictly centered title with right-aligned CTA) */}
-        <div className="position-relative mb-4 mb-md-5 max-w-1400 mx-auto d-flex align-items-center justify-content-center">
+        {/* Section Header + View All Button (Strictly centered title with right-aligned CTA on desktop, stacked on mobile) */}
+        <div className="position-relative mb-4 mb-md-5 max-w-1400 mx-auto d-flex flex-column flex-md-row align-items-center justify-content-center">
           <h2 
             className="mb-0 text-center"
             style={{
               fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-              fontSize: '38px',
+              fontSize: 'clamp(26px, 6vw, 38px)',
               color: '#422207',
               fontWeight: 400,
-              lineHeight: '1.1',
+              lineHeight: '1.15',
               letterSpacing: '0.03em'
             }}
           >
@@ -23,7 +23,7 @@ export default function EighthSection() {
 
           <a 
             href="/books" 
-            className="text-decoration-none px-4 py-2 position-absolute end-0 d-inline-flex align-items-center justify-content-center transition-all"
+            className="text-decoration-none px-4 py-2 mt-3 mt-md-0 position-md-absolute end-0 d-inline-flex align-items-center justify-content-center transition-all"
             style={{
               fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
               fontSize: '14.5px',

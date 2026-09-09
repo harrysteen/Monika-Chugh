@@ -75,6 +75,26 @@ export default function FourteenthSection() {
 
   const current = testimonials[currentIndex];
 
+  // Mobile flattened testimonials (all 6 stories accessible 1-by-1)
+  const mobileTestimonials = [
+    { id: '1-left', text: testimonials[0].left.text, author: testimonials[0].left.author },
+    { id: '1-right', text: testimonials[0].right.text, author: testimonials[0].right.author },
+    { id: '2-left', text: testimonials[1].left.text, author: testimonials[1].left.author },
+    { id: '2-right', text: testimonials[1].right.text, author: testimonials[1].right.author },
+    { id: '3-left', text: testimonials[2].left.text, author: testimonials[2].left.author },
+    { id: '3-right', text: testimonials[2].right.text, author: testimonials[2].right.author },
+  ];
+
+  const [mobileIndex, setMobileIndex] = useState(0);
+
+  const handleMobileNext = () => {
+    setMobileIndex((prev) => (prev + 1) % mobileTestimonials.length);
+  };
+
+  const handleMobilePrev = () => {
+    setMobileIndex((prev) => (prev - 1 + mobileTestimonials.length) % mobileTestimonials.length);
+  };
+
   // Base background page content during flip
   const displayLeft = flipState === 'prev' ? testimonials[prevIndex].left : current.left;
   const displayRight = flipState === 'next' ? testimonials[nextIndex].right : current.right;
@@ -82,8 +102,8 @@ export default function FourteenthSection() {
   return (
     <section
       id="section-14"
-      className="position-relative py-5 overflow-hidden w-100 d-flex align-items-center justify-content-center"
-      style={{ backgroundColor: '#FDF4EB', minHeight: '650px' }}
+      className="position-relative py-4 py-md-5 overflow-hidden w-100 d-flex align-items-center justify-content-center"
+      style={{ backgroundColor: '#FDF4EB', minHeight: '560px' }}
     >
       {/* Dynamic CSS Keyframes & 3D Styles */}
       <style jsx>{`
@@ -146,7 +166,7 @@ export default function FourteenthSection() {
       `}</style>
 
       {/* Main Container */}
-      <div className="container-fluid px-3 px-md-4 position-relative z-1 py-4">
+      <div className="container-fluid px-3 px-md-4 position-relative z-1 py-3 py-md-4">
 
         {/* Section Header */}
         <div className="text-center max-w-800 mx-auto mb-4 mb-md-5">
@@ -154,7 +174,7 @@ export default function FourteenthSection() {
             className="d-block mb-1"
             style={{
               fontFamily: "'Italianno', cursive",
-              fontSize: '32px',
+              fontSize: 'clamp(28px, 5.5vw, 34px)',
               color: '#A44E0E',
               fontWeight: 400
             }}
@@ -166,10 +186,10 @@ export default function FourteenthSection() {
             className="mb-0"
             style={{
               fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-              fontSize: '38px',
+              fontSize: 'clamp(28px, 6vw, 38px)',
               color: '#422207',
               fontWeight: 400,
-              lineHeight: '1.1',
+              lineHeight: '1.15',
               letterSpacing: '0.03em'
             }}
           >
@@ -177,8 +197,10 @@ export default function FourteenthSection() {
           </h2>
         </div>
 
-        {/* Book Container Wrapper with Navigation Buttons */}
-        <div className="d-flex align-items-center justify-content-center gap-3 gap-md-4 max-w-1100 mx-auto book-wrapper">
+        {/* ========================================================================= */}
+        {/* DESKTOP LAYOUT (Dual-Page Open Spiral Notebook with 3D Flip, >= 768px)     */}
+        {/* ========================================================================= */}
+        <div className="d-none d-md-flex align-items-center justify-content-center gap-3 gap-md-4 max-w-1100 mx-auto book-wrapper">
 
           {/* Left Arrow Button */}
           <button
@@ -392,6 +414,149 @@ export default function FourteenthSection() {
             </svg>
           </button>
 
+        </div>
+
+        {/* ========================================================================= */}
+        {/* MOBILE LAYOUT (Single Pocket Journal Card with Top Wire Rings, < 768px)  */}
+        {/* ========================================================================= */}
+        <div className="d-block d-md-none w-100 mx-auto px-2" style={{ maxWidth: '420px' }}>
+          {/* Notebook Card */}
+          <div
+            className="position-relative rounded-3 overflow-hidden shadow-sm pt-4 pb-4 px-4 text-center"
+            style={{
+              backgroundColor: '#FFFDF9',
+              border: '1px solid #EAE0D5',
+              boxShadow: '0 8px 24px rgba(66, 34, 7, 0.07)'
+            }}
+          >
+            {/* Top Spiral Wire Binding Holes & Rings */}
+            <div
+              className="position-absolute top-0 start-0 w-100 d-flex justify-content-around px-3"
+              style={{ transform: 'translateY(-6px)' }}
+            >
+              {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+                <svg key={i} width="16" height="20" viewBox="0 0 16 20" fill="none">
+                  <ellipse cx="8" cy="14" rx="3.5" ry="2.5" fill="#4A3425" opacity="0.35" />
+                  <path
+                    d="M 8 2 C 14 2, 14 14, 8 14 C 2 14, 2 2, 8 2"
+                    stroke="#8D6E63"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M 7 4 C 11 4, 11 12, 7 12"
+                    stroke="#D7CCC8"
+                    strokeWidth="1.2"
+                    strokeLinecap="round"
+                    opacity="0.9"
+                  />
+                </svg>
+              ))}
+            </div>
+
+            {/* Decorative Quote Mark */}
+            <div
+              className="mt-2 mb-2"
+              style={{
+                fontFamily: "'Beautique Display', serif",
+                fontSize: '36px',
+                lineHeight: '1',
+                color: '#C5A070',
+                opacity: 0.6
+              }}
+            >
+              “
+            </div>
+
+            {/* Testimonial Quote */}
+            <p
+              className="mb-4"
+              style={{
+                fontFamily: "'Larken', 'Lora', serif",
+                fontSize: '15px',
+                color: '#422207',
+                lineHeight: '1.7',
+                minHeight: '110px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              {mobileTestimonials[mobileIndex].text}
+            </p>
+
+            {/* Author signature */}
+            <div
+              style={{
+                fontFamily: "'Italianno', cursive",
+                fontSize: '30px',
+                color: '#A44E0E'
+              }}
+            >
+              {mobileTestimonials[mobileIndex].author}
+            </div>
+          </div>
+
+          {/* Navigation Controls (Below the card so card width is maximized) */}
+          <div className="d-flex align-items-center justify-content-between mt-3 px-2">
+            {/* Prev Button */}
+            <button
+              onClick={handleMobilePrev}
+              className="btn rounded-circle d-flex align-items-center justify-content-center"
+              style={{
+                width: '42px',
+                height: '42px',
+                border: '1px solid #C5A070',
+                color: '#422207',
+                backgroundColor: '#FFFDF9',
+                boxShadow: '0 2px 8px rgba(66, 34, 7, 0.08)'
+              }}
+              aria-label="Previous testimonial"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="d-flex align-items-center gap-2">
+              {mobileTestimonials.map((item, idx) => (
+                <button
+                  key={item.id}
+                  onClick={() => setMobileIndex(idx)}
+                  className="p-0 border-0 rounded-circle"
+                  style={{
+                    width: mobileIndex === idx ? '22px' : '7px',
+                    height: '7px',
+                    borderRadius: mobileIndex === idx ? '4px' : '50%',
+                    backgroundColor: mobileIndex === idx ? '#A44E0E' : '#D5C4B5',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Next Button */}
+            <button
+              onClick={handleMobileNext}
+              className="btn rounded-circle d-flex align-items-center justify-content-center"
+              style={{
+                width: '42px',
+                height: '42px',
+                border: '1px solid #C5A070',
+                color: '#422207',
+                backgroundColor: '#FFFDF9',
+                boxShadow: '0 2px 8px rgba(66, 34, 7, 0.08)'
+              }}
+              aria-label="Next testimonial"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
         </div>
 
       </div>

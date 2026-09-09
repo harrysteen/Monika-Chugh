@@ -1,22 +1,28 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 
 export default function MyStoryExpressions() {
   const sliderRef = useRef(null);
 
   const roles = [
     {
-      title: 'Founder',
+      title: 'Doctor',
+      image: '/images/mystory/graduation.png',
+      buttonText: 'Learn More',
+      link: '/#doctor'
+    },
+    {
+      title: 'Author',
       image: '/images/mystory/author.png',
       buttonText: 'Read My Books',
       link: '/#books'
     },
     {
-      title: 'Artist',
-      image: '/images/mystory/artist.png',
-      buttonText: 'View My Canvas',
-      link: '/#canvas'
+      title: 'Writer',
+      image: '/images/mystory/writing_desk.png',
+      buttonText: 'Read My Articles',
+      link: '/#articles'
     },
     {
       title: 'Poet',
@@ -25,11 +31,34 @@ export default function MyStoryExpressions() {
       link: '/#poems'
     },
     {
-      title: 'Podcast',
-      image: '/images/mystory/podcast.png',
-      buttonText: 'Listen to My Podcast',
-      link: '/#podcast',
-      isGrayscale: true
+      title: 'Rotarian',
+      image: '/images/mystory/note_portrait.png',
+      buttonText: 'Community Work',
+      link: '/#rotary'
+    },
+    {
+      title: 'Domestic Violence Counselor',
+      image: '/images/mystory/hero_monika.png',
+      buttonText: 'Advocacy & Support',
+      link: '/#advocacy'
+    },
+    {
+      title: 'Mindfulness Wellness Advocate',
+      image: '/images/mystory/artist.png',
+      buttonText: 'Wellness Practice',
+      link: '/#wellness'
+    },
+    {
+      title: 'Ayurvedic Counselor',
+      image: '/images/mystory/childhood.png',
+      buttonText: 'Holistic Health',
+      link: '/#ayurveda'
+    },
+    {
+      title: 'Art Board Commissioner',
+      image: '/images/mystory/artist.png',
+      buttonText: 'View Works',
+      link: '/#art-board'
     }
   ];
 
@@ -57,7 +86,7 @@ export default function MyStoryExpressions() {
             className="d-block mb-1" 
             style={{ 
               fontFamily: "'Italianno', cursive", 
-              fontSize: '34px', 
+              fontSize: '24px', 
               color: '#A44E0E',
               lineHeight: 1.2
             }}
@@ -68,13 +97,13 @@ export default function MyStoryExpressions() {
             className="fw-normal" 
             style={{ 
               fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
-              fontSize: '40px',
+              fontSize: '24px',
               color: '#422207',
               letterSpacing: '0.01em',
               lineHeight: 1.25
             }}
           >
-            Pirate ipsum me main blimey fluke
+            Living Through Many Roles
           </h2>
         </div>
 
@@ -163,14 +192,14 @@ export default function MyStoryExpressions() {
                 className="role-card-item flex-shrink-0"
                 style={{
                   width: 'calc(25% - 18px)',
-                  minWidth: '260px',
+                  minWidth: '280px',
                   scrollSnapAlign: 'start'
                 }}
               >
                 <div 
                   className="h-100 d-flex flex-column text-center"
                   style={{
-                    backgroundColor: '#FFFDF9',
+                    backgroundColor: '#FFFAF2',
                     border: '1px solid #EADBCC',
                     padding: '24px 18px',
                     borderRadius: '2px',
@@ -180,12 +209,13 @@ export default function MyStoryExpressions() {
                   
                   {/* Title in Italianno cursive */}
                   <h3 
-                    className="mb-3" 
+                    className="mb-3 d-flex align-items-center justify-content-center text-center" 
                     style={{ 
                       fontFamily: "'Italianno', cursive", 
-                      fontSize: '34px', 
+                      fontSize: '24px', 
                       color: '#422207',
-                      lineHeight: 1.1
+                      lineHeight: '1.2',
+                      minHeight: '40px'
                     }}
                   >
                     {role.title}
@@ -214,7 +244,8 @@ export default function MyStoryExpressions() {
                       className="btn w-100"
                       style={{
                         fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
-                        fontSize: '14px',
+                        fontSize: '16px',
+                        fontWeight: 400,
                         color: '#62350A',
                         border: '1px solid #A44E0E',
                         backgroundColor: 'transparent',
@@ -246,4 +277,3 @@ export default function MyStoryExpressions() {
     </section>
   );
 }
-

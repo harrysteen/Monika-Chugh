@@ -11,7 +11,7 @@ export default function MyStoryAbout() {
             className="d-block mb-1" 
             style={{ 
               fontFamily: "'Italianno', cursive", 
-              fontSize: '34px', 
+              fontSize: '24px', 
               color: '#A44E0E',
               lineHeight: 1.2
             }}
@@ -22,13 +22,13 @@ export default function MyStoryAbout() {
             className="fw-normal" 
             style={{ 
               fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
-              fontSize: '40px',
+              fontSize: '24px',
               color: '#422207',
               letterSpacing: '0.01em',
               lineHeight: 1.25
             }}
           >
-            Pirate ipsum me main blimey fluke
+            Monika here.
           </h2>
         </div>
 
@@ -38,16 +38,28 @@ export default function MyStoryAbout() {
           {/* Column 1 */}
           <div className="col-lg-5">
             <p 
-              className="mb-0" 
+              className="mb-3" 
               style={{ 
                 fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif", 
-                fontSize: '15.5px', 
+                fontSize: '16px', 
                 color: '#4A423B', 
                 lineHeight: '1.85',
                 fontWeight: 300
               }}
             >
-              Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke sails overhaul man jib schooner.
+              A medical professional. A writer at heart. Endlessly curious about life.
+            </p>
+            <p 
+              className="mb-0" 
+              style={{ 
+                fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif", 
+                fontSize: '16px', 
+                color: '#4A423B', 
+                lineHeight: '1.85',
+                fontWeight: 300
+              }}
+            >
+              Some know me as a doctor who writes, others as a writer who happens to be a doctor.
             </p>
           </div>
 
@@ -70,13 +82,13 @@ export default function MyStoryAbout() {
               className="mb-0" 
               style={{ 
                 fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif", 
-                fontSize: '15.5px', 
+                fontSize: '16px', 
                 color: '#4A423B', 
                 lineHeight: '1.85',
                 fontWeight: 300
               }}
             >
-              Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke sails overhaul man jib schooner.
+              And somewhere between the two, I&apos;m simply living, learning, and creating.
             </p>
           </div>
 
