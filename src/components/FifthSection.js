@@ -7,19 +7,19 @@ export default function FifthSection() {
         
         {/* Quote Card with Background Image home_section5_bg.svg and Live HTML Overlay Text */}
         <div 
-          className="mx-auto position-relative d-flex align-items-center justify-content-center p-4 p-md-5 my-2"
+          className="mx-auto position-relative d-flex align-items-center justify-content-center p-3 p-md-4 my-2"
           style={{
             backgroundImage: "url('/images/home_section5_bg.svg')",
             backgroundSize: '100% 100%',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            maxWidth: '1136px',
-            minHeight: '440px',
+            maxWidth: '1050px',
+            minHeight: '430px',
             borderRadius: '4px'
           }}
         >
-          {/* Centered Overlay Content Block */}
-          <div className="text-center py-4 px-3" style={{ maxWidth: '580px', zIndex: 2 }}>
+          {/* Centered Overlay Content Block with constrained width to prevent overlapping photos */}
+          <div className="text-center py-3 px-2" style={{ maxWidth: '400px', width: '100%', zIndex: 2, transform: 'translateY(-10px)' }}>
             
             {/* Header: quote of the month */}
             <span 
@@ -36,13 +36,14 @@ export default function FifthSection() {
             </span>
 
             {/* Quote Icon */}
-            <div className="mb-3">
+            <div className="mb-3 d-flex justify-content-center align-items-center">
               <span 
                 style={{ 
-                  fontSize: '38px', 
-                  fontFamily: "'Larken', serif", 
+                  fontSize: '36px', 
+                  fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif", 
                   color: '#62350A', 
-                  lineHeight: '1',
+                  lineHeight: '0.8',
+                  fontWeight: 700,
                   display: 'inline-block'
                 }}
               >
@@ -50,34 +51,41 @@ export default function FifthSection() {
               </span>
             </div>
 
-            {/* Quotation Body Text */}
-            <p 
-              className="mb-4 mx-auto"
+            {/* Quotation Poem Body Text (Center aligned poem) */}
+            <div 
+              className="mb-3 mx-auto text-center"
               style={{
-                fontFamily: "'Larken', 'Lora', serif",
-                fontSize: '16px',
-                color: '#4A423B',
-                lineHeight: '1.7',
-                fontWeight: 400,
-                maxWidth: '520px'
-              }}
-            >
-              Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the.
-            </p>
-
-            {/* Author Signature */}
-            <span 
-              className="d-block"
-              style={{
-                fontFamily: "'Italianno', cursive",
-                fontSize: '30px',
+                fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
+                fontSize: '15px',
                 color: '#422207',
-                fontWeight: 400,
-                lineHeight: '100%'
+                lineHeight: '1.65',
+                fontWeight: 300
               }}
             >
-              ~ monikachugh
-            </span>
+              <p className="mb-0">
+                the universe has accepted me<br />
+                i am a whole being<br />
+                my heart is open<br />
+                i am ready<br />
+                this is just the beginning<br />
+                a peaceful revolution within me
+              </p>
+            </div>
+
+            {/* Author Signature aligned to the right of poem */}
+            <div className="text-end pe-2">
+              <span 
+                style={{
+                  fontFamily: "'Italianno', cursive",
+                  fontSize: '28px',
+                  color: '#422207',
+                  fontWeight: 400,
+                  lineHeight: '100%'
+                }}
+              >
+                ~ monikachugh
+              </span>
+            </div>
 
           </div>
         </div>

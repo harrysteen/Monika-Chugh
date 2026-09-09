@@ -7,13 +7,15 @@ export default function ThirdSection() {
     {
       id: 1,
       title: "quote cafe",
+      semiHeader: "A corner for words that linger.",
       cover: "/images/home_section3_small_book.svg",
       bigBook: "/images/home_section3_big_book.svg",
-      description: "Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke."
+      description: "Quote Café grew from moments lived, lessons learned, and words that found me. Some may make you ponder. Some may make you smile. Some may simply stay with you.\nA little thought. A little wonder. Perhaps even a little marvel.\nPour a little thought into your day.\nWelcome to Quote Café."
     },
     {
       id: 2,
       title: "Lotus Whispers",
+      semiHeader: "A sanctuary for thoughts and emotions.",
       cover: "/images/book_cover.png",
       bigBook: "/images/book_cover.png",
       description: "Rooted in the symbolism of the lotus, a flower that rises through still water and unfolds in its own time, this is not a journal to perform or perfect. It's a sanctuary for thoughts and emotions."
@@ -137,10 +139,10 @@ export default function ThirdSection() {
 
               {/* Book Title */}
               <h3 
-                className="mb-3"
+                className="mb-2"
                 style={{
                   fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                  fontSize: '30px',
+                  fontSize: '32px',
                   color: '#422207',
                   fontWeight: 400,
                   lineHeight: '1.2'
@@ -149,32 +151,59 @@ export default function ThirdSection() {
                 {currentBook.title}
               </h3>
 
-              {/* Description Paragraph */}
+              {/* Semi Header below quote cafe */}
+              {currentBook.semiHeader && (
+                <h4 
+                  className="mb-3"
+                  style={{
+                    fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
+                    fontSize: '22px',
+                    color: '#A44E0E',
+                    fontWeight: 400,
+                    lineHeight: '1.25'
+                  }}
+                >
+                  {currentBook.semiHeader}
+                </h4>
+              )}
+
+              {/* Description Paragraph with reduced font weight */}
               <p 
                 className="mb-4"
                 style={{
-                  fontFamily: "'Larken', 'Lora', serif",
+                  fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
                   fontSize: '15px',
                   color: '#4A423B',
-                  lineHeight: '1.6',
-                  fontWeight: 400,
-                  maxWidth: '480px'
+                  lineHeight: '1.65',
+                  fontWeight: 300,
+                  maxWidth: '520px'
                 }}
               >
-                {currentBook.description}
+                {currentBook.id === 1 ? (
+                  <>
+                    Quote Café grew from moments lived, lessons learned, and words that found me. Some may make you ponder. Some may make you smile. Some may simply stay with you.<br />
+                    A little thought. A little wonder. Perhaps even a little marvel.<br />
+                    Pour a little thought into your day.<br />
+                    Welcome to Quote Café.
+                  </>
+                ) : (
+                  currentBook.description
+                )}
               </p>
 
-              {/* View All Button */}
+              {/* View All Button with reduced weight and updated color */}
               <a 
-                href="#books" 
-                className="btn-figma-outline text-decoration-none d-inline-block px-5 py-2"
+                href="/books" 
+                className="text-decoration-none d-inline-flex align-items-center justify-content-center px-5 py-2 transition-all"
                 style={{
-                  fontFamily: "'Larken', 'Lora', serif",
+                  fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
                   fontSize: '15px',
-                  color: '#422207',
+                  fontWeight: 400,
+                  color: '#A44E0E',
                   border: '1px solid #A44E0E',
                   borderRadius: '2px',
                   backgroundColor: 'transparent',
+                  minWidth: '170px',
                   transition: 'all 0.3s ease'
                 }}
               >

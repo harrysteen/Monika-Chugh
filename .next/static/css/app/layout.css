@@ -92,8 +92,8 @@ body {
 }
 
 .figma-nav-item {
-  font-family: 'Larken-Thin', 'Larken', 'Lora', serif !important;
-  font-weight: 400 !important;
+  font-family: 'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif !important;
+  font-weight: 300 !important;
   font-style: normal !important;
   font-size: 14px !important;
   line-height: 100% !important;
@@ -113,7 +113,7 @@ body {
 
 .figma-nav-item.active {
   color: #62350A !important;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   border-bottom: 2px solid #62350A;
 }
 
@@ -124,7 +124,7 @@ body {
 }
 
 /* ------------------------------------------------------------- */
-/* HERO SECTION STYLING (STRICT 32PX & COLOR OVERRIDES)          */
+/* HERO SECTION STYLING (EXACT 26PX & FIGMA SPECS)               */
 /* ------------------------------------------------------------- */
 
 #hero {
@@ -135,20 +135,22 @@ body {
   font-family: 'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif !important;
   font-weight: 400 !important;
   font-style: normal !important;
-  font-size: 32px !important;
-  line-height: 100% !important;
-  letter-spacing: 0.04em !important; /* 4% */
+  font-size: 26px !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0 !important;
   text-align: center !important;
   color: #422207 !important;
+  max-width: 480px;
 }
 
-.hero-figma-headline .script-inline {
-  font-family: 'Italianno', cursive !important;
+.hero-figma-headline .script-inline,
+.hero-figma-headline .hero-italic-accent {
+  font-family: 'Cormorant Garamond', 'Playfair Display', 'Lora', serif !important;
+  font-style: italic !important;
   color: #A44E0E !important;
-  font-size: 32px !important;
+  font-size: 26px !important;
   font-weight: 400 !important;
-  vertical-align: baseline;
-  padding: 0 0.12em;
+  padding: 0 0.05em;
 }
 
 /* ------------------------------------------------------------- */

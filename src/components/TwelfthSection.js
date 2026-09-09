@@ -2,7 +2,7 @@
 
 export default function TwelfthSection() {
   return (
-    <section id="section-12" className="position-relative overflow-hidden w-100" style={{ minHeight: '650px' }}>
+    <section id="podcast" className="position-relative overflow-hidden w-100 vh-100 d-flex align-items-center" style={{ minHeight: '100vh', height: '100vh' }}>
       
       {/* Full-Bleed Studio Microphone / Podcast Video Background */}
       <div className="position-absolute top-0 start-0 w-100 h-100">
@@ -22,38 +22,29 @@ export default function TwelfthSection() {
       </div>
 
       {/* Content Container */}
-      <div className="container-fluid px-3 px-md-4 px-lg-5 position-relative z-1 py-5 d-flex align-items-center" style={{ minHeight: '650px' }}>
+      <div className="container-fluid px-3 px-md-4 px-lg-5 position-relative z-1 py-4 d-flex align-items-center h-100">
         <div className="max-w-1400 mx-auto w-100">
           
-          {/* Floating Podcast Card Box (Left Aligned with Semi-Transparent Glassmorphism Background) */}
+          {/* Floating Podcast Card Box (Left Aligned with Warm Golden Glassmorphism Background) */}
           <div
             className="p-4 p-md-5 text-center shadow-lg position-relative ms-0 ms-lg-4"
             style={{
-              backgroundColor: 'rgba(248, 232, 182, 0.85)',
-              backdropFilter: 'blur(6px)',
-              WebkitBackdropFilter: 'blur(6px)',
-              maxWidth: '440px',
+              backgroundColor: 'rgba(244, 222, 171, 0.88)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              maxWidth: '460px',
               border: '1px solid rgba(164, 78, 14, 0.2)',
               borderRadius: '2px'
             }}
           >
-            {/* Background Texture/Pattern */}
-            <div
-              className="position-absolute top-0 start-0 w-100 h-100 pointer-events-none opacity-20"
-              style={{
-                backgroundImage: 'radial-gradient(#A44E0E 0.5px, transparent 0.5px)',
-                backgroundSize: '12px 12px'
-              }}
-            />
-
             {/* Audio Platform Icons (Spotify, Apple Music, YouTube) */}
             <div className="d-flex align-items-center justify-content-center gap-3 mb-4 position-relative z-1">
 
               {/* Spotify Icon */}
               <a
                 href="#spotify"
-                className="d-flex align-items-center justify-content-center text-dark text-decoration-none rounded-circle transition-all"
-                style={{ width: '40px', height: '40px', backgroundColor: '#000' }}
+                className="d-flex align-items-center justify-content-center text-dark text-decoration-none rounded-circle transition-all hover-scale"
+                style={{ width: '40px', height: '40px', backgroundColor: '#000', transition: 'transform 0.2s ease' }}
                 aria-label="Listen on Spotify"
               >
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFF">
@@ -64,22 +55,22 @@ export default function TwelfthSection() {
               {/* Apple Music / Podcast Icon */}
               <a
                 href="#apple-podcasts"
-                className="d-flex align-items-center justify-content-center text-dark text-decoration-none rounded-circle transition-all"
-                style={{ width: '40px', height: '40px', border: '1px solid #422207', backgroundColor: 'transparent' }}
+                className="d-flex align-items-center justify-content-center text-dark text-decoration-none rounded-circle transition-all hover-scale"
+                style={{ width: '40px', height: '40px', border: '1.5px solid #000', backgroundColor: 'transparent', transition: 'transform 0.2s ease' }}
                 aria-label="Listen on Apple Podcasts"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#422207" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9 18V5l12-2v13"></path>
-                  <circle cx="6" cy="18" r="3"></circle>
-                  <circle cx="18" cy="16" r="3"></circle>
+                  <circle cx="6" cy="18" r="3" fill="#000"></circle>
+                  <circle cx="18" cy="16" r="3" fill="#000"></circle>
                 </svg>
               </a>
 
               {/* YouTube Icon */}
               <a
                 href="#youtube"
-                className="d-flex align-items-center justify-content-center text-dark text-decoration-none rounded-circle transition-all"
-                style={{ width: '40px', height: '40px', backgroundColor: '#000' }}
+                className="d-flex align-items-center justify-content-center text-dark text-decoration-none rounded-circle transition-all hover-scale"
+                style={{ width: '40px', height: '40px', backgroundColor: '#000', transition: 'transform 0.2s ease' }}
                 aria-label="Watch on YouTube"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFF">
@@ -90,31 +81,44 @@ export default function TwelfthSection() {
             </div>
 
             {/* Description Paragraph */}
-            <p
+            <div
               className="mb-4 position-relative z-1"
               style={{
-                fontFamily: "'Larken', 'Lora', serif",
-                fontSize: '15px',
+                fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                fontSize: '14.5px',
                 color: '#422207',
-                lineHeight: '1.65',
-                fontWeight: 400
+                lineHeight: '1.7',
+                fontWeight: 300
               }}
             >
-              Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the.
-            </p>
+              <p className="mb-2">
+                Real experiences, honest questions, and reflections without masks.
+              </p>
+              <p className="mb-2">
+                I share what life has taught me and what I’m still learning.
+              </p>
+              <p className="mb-2">
+                A space to think, feel, and simply be.
+              </p>
+              <p className="mb-0">
+                One word at a time, with Monika.
+              </p>
+            </div>
 
             {/* Listen Now Button */}
             <div className="position-relative z-1">
               <a
                 href="#listen-now"
-                className="btn-figma-outline text-decoration-none px-4 py-2 d-inline-block"
+                className="btn-figma-outline text-decoration-none px-4 py-2 d-inline-flex align-items-center justify-content-center"
                 style={{
-                  fontFamily: "'Larken', 'Lora', serif",
-                  fontSize: '15px',
-                  color: '#422207',
+                  fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                  fontSize: '14.5px',
+                  fontWeight: 400,
+                  color: '#A44E0E',
                   border: '1px solid #A44E0E',
                   borderRadius: '2px',
                   backgroundColor: 'transparent',
+                  minWidth: '160px',
                   transition: 'all 0.3s ease'
                 }}
               >
@@ -130,3 +134,4 @@ export default function TwelfthSection() {
     </section>
   );
 }
+

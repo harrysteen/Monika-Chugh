@@ -26,21 +26,22 @@ export default function ThirteenthSection() {
       <div className="container-fluid position-relative z-1 d-none d-lg-block">
         <div 
           className="position-relative mx-auto" 
-          style={{ width: '1140px', height: '1080px' }}
+          style={{ width: '1200px', height: '1100px' }}
         >
           
-          {/* Main Section Header (Centered Top) */}
+          {/* Main Section Header (Centered Top - Prominent Size) */}
           <div 
             className="position-absolute text-center"
-            style={{ top: '10px', left: '430px', width: '280px', zIndex: 2 }}
+            style={{ top: '10px', left: '440px', width: '320px', zIndex: 2 }}
           >
             <span
               className="d-block mb-1"
               style={{
                 fontFamily: "'Italianno', cursive",
-                fontSize: '32px',
+                fontSize: '40px',
                 color: '#A44E0E',
-                fontWeight: 400
+                fontWeight: 400,
+                lineHeight: '1.1'
               }}
             >
               more from monika
@@ -49,28 +50,28 @@ export default function ThirteenthSection() {
               className="mb-0"
               style={{
                 fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                fontSize: '38px',
+                fontSize: '44px',
                 color: '#422207',
                 fontWeight: 400,
                 lineHeight: '1.1',
-                letterSpacing: '0.03em'
+                letterSpacing: '0.02em'
               }}
             >
               Pirate ipsum me
             </h2>
           </div>
 
-          {/* 1. Workshops & Events (Top Left) */}
+          {/* 1. Workshops & Events (Top Left - Shifted Right with clear smaller label) */}
           <div 
             className="position-absolute"
-            style={{ top: '60px', left: '40px', width: '215px' }}
+            style={{ top: '70px', left: '110px', width: '225px' }}
           >
             <div className="w-100 mb-2">
               <div className="text-end mb-1">
                 <span
                   style={{
                     fontFamily: "'Italianno', cursive",
-                    fontSize: '28px',
+                    fontSize: '22px',
                     color: '#A44E0E',
                     lineHeight: '1.1',
                     whiteSpace: 'nowrap'
@@ -93,7 +94,7 @@ export default function ThirteenthSection() {
                 src="/images/section_13_workshops.svg"
                 alt="workshops & events"
                 className="w-100 object-fit-cover d-block"
-                style={{ height: '215px' }}
+                style={{ height: '225px' }}
               />
             </div>
           </div>
@@ -101,14 +102,14 @@ export default function ThirteenthSection() {
           {/* 2. Podcasts (Center Top, Vertical Tall Card) */}
           <div 
             className="position-absolute"
-            style={{ top: '170px', left: '440px', width: '205px' }}
+            style={{ top: '185px', left: '485px', width: '225px' }}
           >
             <div className="w-100 mb-2">
               <div className="text-end mb-1">
                 <span
                   style={{
                     fontFamily: "'Italianno', cursive",
-                    fontSize: '28px',
+                    fontSize: '22px',
                     color: '#A44E0E',
                     lineHeight: '1.1',
                     whiteSpace: 'nowrap'
@@ -131,22 +132,22 @@ export default function ThirteenthSection() {
                 src="/images/section_13_podcasts.svg"
                 alt="podcasts"
                 className="w-100 object-fit-cover d-block"
-                style={{ height: '340px' }}
+                style={{ height: '345px' }}
               />
             </div>
           </div>
 
-          {/* 3. Webinars (Top Right) */}
+          {/* 3. Webinars (Top Right - Moved Up & Right to fill empty gap) */}
           <div 
             className="position-absolute"
-            style={{ top: '220px', left: '770px', width: '255px' }}
+            style={{ top: '130px', left: '840px', width: '265px' }}
           >
             <div className="w-100 mb-2">
               <div className="text-end mb-1">
                 <span
                   style={{
                     fontFamily: "'Italianno', cursive",
-                    fontSize: '28px',
+                    fontSize: '22px',
                     color: '#A44E0E',
                     lineHeight: '1.1',
                     whiteSpace: 'nowrap'
@@ -169,22 +170,22 @@ export default function ThirteenthSection() {
                 src="/images/section_13_webinars.svg"
                 alt="webinars"
                 className="w-100 object-fit-cover d-block"
-                style={{ height: '190px' }}
+                style={{ height: '195px' }}
               />
             </div>
           </div>
 
-          {/* 4. Shop (Middle Left) */}
+          {/* 4. Shop (Middle Left - Shifted Right) */}
           <div 
             className="position-absolute"
-            style={{ top: '450px', left: '0px', width: '255px' }}
+            style={{ top: '440px', left: '80px', width: '260px' }}
           >
             <div className="w-100 mb-2">
               <div className="text-end mb-1">
                 <span
                   style={{
                     fontFamily: "'Italianno', cursive",
-                    fontSize: '28px',
+                    fontSize: '22px',
                     color: '#A44E0E',
                     lineHeight: '1.1',
                     whiteSpace: 'nowrap'
@@ -207,22 +208,22 @@ export default function ThirteenthSection() {
                 src="/images/section_13_shop.svg"
                 alt="shop"
                 className="w-100 object-fit-cover d-block"
-                style={{ height: '190px' }}
+                style={{ height: '195px' }}
               />
             </div>
           </div>
 
-          {/* 5. Youtube (Middle Right Wide Banner) */}
+          {/* 5. Youtube (Middle Right Wide Banner - Shifted Right) */}
           <div 
             className="position-absolute"
-            style={{ top: '590px', left: '590px', width: '380px' }}
+            style={{ top: '560px', left: '680px', width: '380px' }}
           >
             <div className="w-100 mb-2">
               <div className="text-end mb-1">
                 <span
                   style={{
                     fontFamily: "'Italianno', cursive",
-                    fontSize: '28px',
+                    fontSize: '22px',
                     color: '#A44E0E',
                     lineHeight: '1.1',
                     whiteSpace: 'nowrap'
@@ -250,17 +251,17 @@ export default function ThirteenthSection() {
             </div>
           </div>
 
-          {/* 6. Founder (Bottom Center-Left) */}
+          {/* 6. Founder (Bottom Center-Left - Shifted Right) */}
           <div 
             className="position-absolute"
-            style={{ top: '740px', left: '230px', width: '185px' }}
+            style={{ top: '730px', left: '300px', width: '195px' }}
           >
             <div className="w-100 mb-2">
               <div className="text-end mb-1">
                 <span
                   style={{
                     fontFamily: "'Italianno', cursive",
-                    fontSize: '28px',
+                    fontSize: '22px',
                     color: '#A44E0E',
                     lineHeight: '1.1',
                     whiteSpace: 'nowrap'
@@ -283,22 +284,22 @@ export default function ThirteenthSection() {
                 src="/images/section_13_shop.svg"
                 alt="founder"
                 className="w-100 object-fit-cover d-block"
-                style={{ height: '155px' }}
+                style={{ height: '160px' }}
               />
             </div>
           </div>
 
-          {/* 7. Substack (Bottom Right) */}
+          {/* 7. Substack (Bottom Right - Shifted Right) */}
           <div 
             className="position-absolute"
-            style={{ top: '890px', left: '470px', width: '255px' }}
+            style={{ top: '870px', left: '560px', width: '270px' }}
           >
             <div className="w-100 mb-2">
               <div className="text-end mb-1">
                 <span
                   style={{
                     fontFamily: "'Italianno', cursive",
-                    fontSize: '28px',
+                    fontSize: '22px',
                     color: '#A44E0E',
                     lineHeight: '1.1',
                     whiteSpace: 'nowrap'
@@ -321,7 +322,7 @@ export default function ThirteenthSection() {
                 src="/images/section_13_shop.svg"
                 alt="substack"
                 className="w-100 object-fit-cover d-block"
-                style={{ height: '140px' }}
+                style={{ height: '145px' }}
               />
             </div>
           </div>
@@ -341,7 +342,7 @@ export default function ThirteenthSection() {
               className="d-block mb-1"
               style={{
                 fontFamily: "'Italianno', cursive",
-                fontSize: '32px',
+                fontSize: '36px',
                 color: '#A44E0E',
                 fontWeight: 400
               }}
@@ -352,7 +353,7 @@ export default function ThirteenthSection() {
               className="mb-0"
               style={{
                 fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                fontSize: '34px',
+                fontSize: '38px',
                 color: '#422207',
                 fontWeight: 400,
                 lineHeight: '1.1'
@@ -369,7 +370,7 @@ export default function ThirteenthSection() {
             <div className="col-12 col-md-6">
               <div className="w-100 mb-2">
                 <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '26px', color: '#A44E0E' }}>
+                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
                     workshops &amp; events
                   </span>
                 </div>
@@ -384,7 +385,7 @@ export default function ThirteenthSection() {
             <div className="col-12 col-md-6">
               <div className="w-100 mb-2">
                 <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '26px', color: '#A44E0E' }}>
+                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
                     podcasts
                   </span>
                 </div>
@@ -399,7 +400,7 @@ export default function ThirteenthSection() {
             <div className="col-12 col-md-6">
               <div className="w-100 mb-2">
                 <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '26px', color: '#A44E0E' }}>
+                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
                     webinars
                   </span>
                 </div>
@@ -414,7 +415,7 @@ export default function ThirteenthSection() {
             <div className="col-12 col-md-6">
               <div className="w-100 mb-2">
                 <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '26px', color: '#A44E0E' }}>
+                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
                     shop
                   </span>
                 </div>
@@ -429,7 +430,7 @@ export default function ThirteenthSection() {
             <div className="col-12">
               <div className="w-100 mb-2">
                 <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '26px', color: '#A44E0E' }}>
+                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
                     youtube
                   </span>
                 </div>
@@ -444,7 +445,7 @@ export default function ThirteenthSection() {
             <div className="col-12 col-md-6">
               <div className="w-100 mb-2">
                 <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '26px', color: '#A44E0E' }}>
+                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
                     founder
                   </span>
                 </div>
@@ -459,7 +460,7 @@ export default function ThirteenthSection() {
             <div className="col-12 col-md-6">
               <div className="w-100 mb-2">
                 <div className="text-end mb-1">
-                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '26px', color: '#A44E0E' }}>
+                  <span style={{ fontFamily: "'Italianno', cursive", fontSize: '21px', color: '#A44E0E' }}>
                     substack
                   </span>
                 </div>

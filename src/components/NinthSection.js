@@ -40,12 +40,12 @@ export default function NinthSection() {
           <p 
             className="mx-auto mb-4"
             style={{
-              fontFamily: "'Larken', 'Lora', serif",
-              fontSize: '14px',
+              fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
+              fontSize: '14.5px',
               color: '#4A423B',
               lineHeight: '1.7',
-              maxWidth: '640px',
-              fontWeight: 400
+              maxWidth: '680px',
+              fontWeight: 300
             }}
           >
             Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones&apos; fluke.
@@ -150,14 +150,16 @@ export default function NinthSection() {
                 {/* Learn More Button */}
                 <a 
                   href="#learn-more" 
-                  className="btn-figma-outline text-decoration-none px-4 py-2 d-inline-block"
+                  className="text-decoration-none px-4 py-2 d-inline-flex align-items-center justify-content-center transition-all"
                   style={{
-                    fontFamily: "'Larken', 'Lora', serif",
-                    fontSize: '15px',
-                    color: '#422207',
+                    fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                    fontSize: '14.5px',
+                    fontWeight: 400,
+                    color: '#A44E0E',
                     border: '1px solid #A44E0E',
                     borderRadius: '2px',
                     backgroundColor: 'transparent',
+                    minWidth: '130px',
                     transition: 'all 0.3s ease'
                   }}
                 >

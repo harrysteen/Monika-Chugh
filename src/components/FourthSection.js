@@ -6,13 +6,13 @@ export default function FourthSection() {
       id: 1,
       title: "quote cafe",
       cover: "/images/home_section4_book1.svg",
-      description: "Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the."
+      description: "Some stories wait until we find the courage to share them. Quote Café began when I found mine. A sanctuary of reflections, affirmations, and short poems on self-love, forgiveness, and letting go. This is my story. Perhaps you’ll find a little of yours here."
     },
     {
       id: 2,
       title: "a quote zone with affirmations",
       cover: "/images/home_section4_book2.svg",
-      description: "Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the."
+      description: "“Take care of yourself; the world can wait.” A reminder I often gave my patients, and slowly learned to offer myself. A Quiet Zone With Affirmations began in my journals, with words I needed to hear. In my own company, writing became a daily ritual. Make a little room for yourself here."
     }
   ];
 
@@ -79,31 +79,36 @@ export default function FourthSection() {
                 {/* Description + Divider + Shop Now Button */}
                 <div className="d-flex flex-column justify-content-between flex-grow-1 h-100 pt-2 text-center text-md-start">
                   <p 
-                    className="mb-4"
+                    className="mb-4 pb-2"
                     style={{
-                      fontFamily: "'Larken', 'Lora', serif",
+                      fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
                       fontSize: '15px',
                       color: '#4A423B',
-                      lineHeight: '1.65',
-                      fontWeight: 400
+                      lineHeight: '1.75',
+                      fontWeight: 300,
+                      maxWidth: '480px'
                     }}
                   >
                     {book.description}
                   </p>
 
-                  <div>
-                    <div className="mb-4 mx-auto mx-md-0" style={{ height: '1px', backgroundColor: '#E2D5C3', width: '80%' }}></div>
+                  <div className="pt-2">
+                    {/* Horizontal Divider Line */}
+                    <div className="mb-4 mx-auto mx-md-0" style={{ height: '1px', backgroundColor: '#E2D5C3', width: '85%' }}></div>
                     
+                    {/* Shop Now CTA */}
                     <a 
                       href="#shop" 
-                      className="btn-figma-outline text-decoration-none d-inline-block px-4 py-2"
+                      className="text-decoration-none d-inline-flex align-items-center justify-content-center px-4 py-2 transition-all"
                       style={{
-                        fontFamily: "'Larken', 'Lora', serif",
-                        fontSize: '15px',
-                        color: '#422207',
+                        fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                        fontSize: '14.5px',
+                        fontWeight: 400,
+                        color: '#A44E0E',
                         border: '1px solid #A44E0E',
                         borderRadius: '2px',
                         backgroundColor: 'transparent',
+                        minWidth: '130px',
                         transition: 'all 0.3s ease'
                       }}
                     >

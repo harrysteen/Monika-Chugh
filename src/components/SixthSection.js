@@ -57,15 +57,17 @@ export default function SixthSection() {
           </div>
 
           <a 
-            href="#blogs" 
-            className="btn-figma-outline text-decoration-none px-4 py-2 mt-3 mt-md-0 position-md-absolute end-0"
+            href="/blogs" 
+            className="text-decoration-none px-4 py-2 mt-3 mt-md-0 position-md-absolute end-0 d-inline-flex align-items-center justify-content-center transition-all"
             style={{
-              fontFamily: "'Larken', 'Lora', serif",
-              fontSize: '15px',
-              color: '#422207',
+              fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+              fontSize: '14.5px',
+              fontWeight: 400,
+              color: '#A44E0E',
               border: '1px solid #A44E0E',
               borderRadius: '2px',
               backgroundColor: 'transparent',
+              minWidth: '130px',
               transition: 'all 0.3s ease'
             }}
           >
@@ -109,15 +111,15 @@ export default function SixthSection() {
                     />
                   </div>
 
-                  {/* Excerpt Paragraph */}
+                  {/* Excerpt Paragraph with reduced weight */}
                   <p 
                     className="mb-4 mx-auto"
                     style={{
-                      fontFamily: "'Larken', 'Lora', serif",
+                      fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
                       fontSize: '14px',
                       color: '#4A423B',
-                      lineHeight: '1.6',
-                      fontWeight: 400,
+                      lineHeight: '1.65',
+                      fontWeight: 300,
                       maxWidth: '300px'
                     }}
                   >
@@ -125,17 +127,19 @@ export default function SixthSection() {
                   </p>
                 </div>
 
-                {/* Read Me Button */}
+                {/* Read Me Button with reduced weight and updated color */}
                 <a 
-                  href={`#blog-${blog.id}`} 
-                  className="btn-figma-outline text-decoration-none px-4 py-2 mt-2"
+                  href={`/blogs/${blog.id}`} 
+                  className="text-decoration-none px-4 py-2 mt-2 d-inline-flex align-items-center justify-content-center transition-all"
                   style={{
-                    fontFamily: "'Larken', 'Lora', serif",
+                    fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
                     fontSize: '14px',
-                    color: '#422207',
+                    fontWeight: 400,
+                    color: '#A44E0E',
                     border: '1px solid #A44E0E',
                     borderRadius: '2px',
                     backgroundColor: 'transparent',
+                    minWidth: '120px',
                     transition: 'all 0.3s ease'
                   }}
                 >

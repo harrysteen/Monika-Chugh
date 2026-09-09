@@ -25,12 +25,11 @@ export default function Header({ activePage = 'home' }) {
             <div className="nav-horizontal-divider"></div>
           </div>
 
-          {/* Center Brand Logo (Lowered to bottom as requested) */}
+          {/* Center Brand Logo */}
           <a 
             href="/" 
             className="navbar-logo-wrap px-3 px-xl-4 d-flex justify-content-center align-items-center text-decoration-none"
             style={{ 
-              transform: 'translateY(32px)', 
               zIndex: 10,
               position: 'relative'
             }}
@@ -38,7 +37,7 @@ export default function Header({ activePage = 'home' }) {
             <img 
               src="/images/Logo.svg" 
               alt="Monika Chugh" 
-              style={{ height: '78px', width: 'auto' }}
+              style={{ height: '70px', width: 'auto' }}
             />
           </a>
 

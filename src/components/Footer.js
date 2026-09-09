@@ -3,7 +3,7 @@
 export default function Footer() {
   return (
     <footer 
-      className="position-relative py-5 overflow-hidden w-100" 
+      className="position-relative py-4 py-md-5 overflow-hidden w-100" 
       style={{ backgroundColor: '#F9E7BE', color: '#62350A' }}
     >
       {/* Background Watermark Leaf Pattern */}
@@ -18,164 +18,170 @@ export default function Footer() {
         }}
       />
 
-      <div className="container-fluid px-3 px-md-4 px-lg-5 position-relative z-1 py-3">
-        
-        {/* Top Header Row: Newsletter Form (Left) & Social Icons (Right) */}
-        <div className="row align-items-start justify-content-between mb-4 mb-md-5 g-4">
+      <div className="container-fluid px-3 px-md-4 px-lg-5 position-relative z-1 py-2">
+        <div className="max-w-1400 mx-auto">
           
-          {/* Top Left: Newsletter Subscribe Box */}
-          <div className="col-12 col-md-5 col-lg-4">
-            <span
-              className="d-block mb-2"
-              style={{
-                fontFamily: "'Larken', 'Lora', serif",
-                fontSize: '18px',
-                color: '#62350A',
-                fontWeight: 400
-              }}
-            >
-              for new releases
-            </span>
-
-            {/* Inline Email Submit Box */}
-            <form onSubmit={(e) => e.preventDefault()} className="w-100" style={{ maxWidth: '340px' }}>
-              <div 
-                className="d-flex align-items-center justify-content-between px-3 py-2"
+          {/* 3-Column Harmonious Layout (Eliminating Middle Gap) */}
+          <div className="row g-4 align-items-start">
+            
+            {/* Left Column: Newsletter Subscribe + Small Card Below */}
+            <div className="col-12 col-lg-3 col-xl-3">
+              <span
+                className="d-block mb-2"
                 style={{
-                  border: '1px solid #B88B58',
-                  backgroundColor: 'rgba(255, 253, 249, 0.4)',
-                  borderRadius: '2px'
+                  fontFamily: "'Larken', 'Lora', serif",
+                  fontSize: '17px',
+                  color: '#62350A',
+                  fontWeight: 400
                 }}
               >
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="bg-transparent border-0 flex-grow-1 pe-2 shadow-none"
+                for new releases
+              </span>
+
+              {/* Inline Email Submit Box */}
+              <form onSubmit={(e) => e.preventDefault()} className="w-100 mb-3" style={{ maxWidth: '280px' }}>
+                <div 
+                  className="d-flex align-items-center justify-content-between px-3 py-2"
                   style={{
-                    fontFamily: "'Larken', 'Lora', serif",
-                    fontSize: '14px',
-                    color: '#422207',
-                    outline: 'none'
-                  }}
-                  required
-                />
-                <button
-                  type="submit"
-                  className="bg-transparent border-0 p-0"
-                  style={{
-                    fontFamily: "'Larken', 'Lora', serif",
-                    fontSize: '14px',
-                    color: '#62350A',
-                    fontWeight: 500,
-                    cursor: 'pointer'
+                    border: '1px solid #B88B58',
+                    backgroundColor: 'rgba(255, 253, 249, 0.4)',
+                    borderRadius: '2px'
                   }}
                 >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="bg-transparent border-0 flex-grow-1 pe-2 shadow-none"
+                    style={{
+                      fontFamily: "'Larken', 'Lora', serif",
+                      fontSize: '13.5px',
+                      color: '#422207',
+                      outline: 'none'
+                    }}
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="bg-transparent border-0 p-0"
+                    style={{
+                      fontFamily: "'Larken', 'Lora', serif",
+                      fontSize: '13.5px',
+                      color: '#62350A',
+                      fontWeight: 500,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
 
-          {/* Top Right: Social Media Icons + Underline */}
-          <div className="col-12 col-md-5 col-lg-4 text-start text-md-end">
-            <div className="d-inline-block text-start text-md-end">
+              {/* Small Card below Email Form */}
+              <div style={{ maxWidth: '210px' }}>
+                <img 
+                  src="/images/footer card.png" 
+                  alt="Free 5-Day Mindfulness Challenge" 
+                  className="w-100 rounded-1 shadow-sm d-block"
+                />
+              </div>
+            </div>
+
+            {/* Center Column: Emblem + Nav Menu + Paragraph Text */}
+            <div className="col-12 col-lg-6 col-xl-6 text-center px-lg-2">
               
-              {/* Icons */}
-              <div className="d-flex align-items-center justify-content-start justify-content-md-end gap-3 mb-2">
-                
-                {/* Substack / Bookmark Icon */}
-                <a href="#substack" aria-label="Substack" className="text-decoration-none" style={{ color: '#62350A' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 3H5c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
-                  </svg>
-                </a>
-
-                {/* Instagram Icon 1 */}
-                <a href="#instagram" aria-label="Instagram" className="text-decoration-none" style={{ color: '#62350A' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                  </svg>
-                </a>
-
-                {/* Instagram / Social Icon 2 */}
-                <a href="#social" aria-label="Social Channel" className="text-decoration-none" style={{ color: '#62350A' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <circle cx="12" cy="12" r="4"></circle>
-                  </svg>
-                </a>
-
+              {/* Central Lotus Emblem Logo Icon */}
+              <div className="d-flex justify-content-center mb-3 mb-md-4 pt-1">
+                <img 
+                  src="/images/lotus_emblem.svg" 
+                  alt="Monika Chugh Lotus Emblem" 
+                  style={{ width: '56px', height: '52px' }} 
+                />
               </div>
 
-              {/* Horizontal Line under Social Icons */}
-              <div 
-                className="mt-1"
+              {/* Navigation Links Grid (Row 1 & Row 2) */}
+              <div className="d-flex flex-column gap-2 align-items-center mb-3 mb-md-4">
+                {/* Row 1 Links */}
+                <div className="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
+                  <a href="#home" className="footer-nav-link">Home</a>
+                  <a href="#story" className="footer-nav-link">My Story</a>
+                  <a href="#books" className="footer-nav-link">Books</a>
+                  <a href="#blogs" className="footer-nav-link">Blogs</a>
+                  <a href="#canvas" className="footer-nav-link">Canvas &amp; Quotations</a>
+                </div>
+
+                {/* Row 2 Links */}
+                <div className="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
+                  <a href="#poems" className="footer-nav-link">Poems &amp; Articles</a>
+                  <a href="#press" className="footer-nav-link">Press Room</a>
+                  <a href="#events" className="footer-nav-link">Events</a>
+                  <a href="#arogini" className="footer-nav-link">Arogini</a>
+                  <a href="#contact" className="footer-nav-link">Contact</a>
+                </div>
+              </div>
+
+              {/* Paragraph Text directly below Navigation Links */}
+              <p
+                className="mb-0 mx-auto"
                 style={{
-                  width: '140px',
-                  height: '1px',
-                  backgroundColor: '#B88B58',
-                  opacity: 0.6,
-                  marginLeft: 'auto'
+                  fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                  fontSize: '13.5px',
+                  color: '#5C3818',
+                  lineHeight: '1.65',
+                  maxWidth: '560px',
+                  fontWeight: 300
                 }}
-              />
-            </div>
-          </div>
-
-        </div>
-
-        {/* Center Section: Lotus Logo + Nav Menu */}
-        <div className="text-center my-4 my-md-5">
-          
-          {/* Central Lotus Logo Icon */}
-          <div className="d-flex justify-content-center mb-4">
-            <img 
-              src="/images/Logo.svg" 
-              alt="Monika Chugh Lotus Logo" 
-              style={{ width: '48px', height: '48px', opacity: 0.9 }} 
-            />
-          </div>
-
-          {/* Navigation Links Grid (Row 1 & Row 2) */}
-          <div className="d-flex flex-column gap-2 gap-md-3 align-items-center max-w-900 mx-auto mb-4">
-            
-            {/* Row 1 Links */}
-            <div className="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
-              <a href="#home" className="footer-nav-link">Home</a>
-              <a href="#story" className="footer-nav-link">My Story</a>
-              <a href="#books" className="footer-nav-link">Books</a>
-              <a href="#blogs" className="footer-nav-link">Blogs</a>
-              <a href="#canvas" className="footer-nav-link">Canvas &amp; Quotations</a>
+              >
+                Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain.
+              </p>
             </div>
 
-            {/* Row 2 Links */}
-            <div className="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
-              <a href="#poems" className="footer-nav-link">Poems &amp; Articles</a>
-              <a href="#press" className="footer-nav-link">Press Room</a>
-              <a href="#events" className="footer-nav-link">Events</a>
-              <a href="#arogini" className="footer-nav-link">Arogini</a>
-              <a href="#contact" className="footer-nav-link">Contact</a>
+            {/* Right Column: Social Media Icons (Substack, Instagram, LinkedIn) + Underline */}
+            <div className="col-12 col-lg-3 col-xl-3 text-start text-lg-end pt-1">
+              <div className="d-inline-block text-start text-lg-end">
+                
+                {/* Icons */}
+                <div className="d-flex align-items-center justify-content-start justify-content-lg-end gap-3 mb-2">
+                  
+                  {/* Substack Icon */}
+                  <a href="#substack" aria-label="Substack" className="text-decoration-none footer-icon" style={{ color: '#62350A' }}>
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+                    </svg>
+                  </a>
+
+                  {/* Instagram Icon */}
+                  <a href="#instagram" aria-label="Instagram" className="text-decoration-none footer-icon" style={{ color: '#62350A' }}>
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                  </a>
+
+                  {/* LinkedIn Icon */}
+                  <a href="#linkedin" aria-label="LinkedIn" className="text-decoration-none footer-icon" style={{ color: '#62350A' }}>
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63z"/>
+                    </svg>
+                  </a>
+
+                </div>
+
+                {/* Horizontal Line under Social Icons */}
+                <div 
+                  className="mt-1"
+                  style={{
+                    width: '130px',
+                    height: '1px',
+                    backgroundColor: '#B88B58',
+                    opacity: 0.6,
+                    marginLeft: 'auto'
+                  }}
+                />
+              </div>
             </div>
 
           </div>
-        </div>
-
-        {/* Bottom Section: Centered Paragraph Quote Text */}
-        <div className="text-center max-w-800 mx-auto mt-4 pt-2">
-          <p
-            className="mb-0 mx-auto"
-            style={{
-              fontFamily: "'Larken', 'Lora', serif",
-              fontSize: '14px',
-              color: '#62350A',
-              lineHeight: '1.7',
-              maxWidth: '760px',
-              fontWeight: 400
-            }}
-          >
-            Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the.
-          </p>
         </div>
 
       </div>
@@ -194,7 +200,17 @@ export default function Footer() {
           opacity: 0.7;
           color: #422207;
         }
+
+        .footer-icon {
+          transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .footer-icon:hover {
+          transform: translateY(-2px);
+          opacity: 0.8;
+        }
       `}</style>
     </footer>
   );
 }
+
