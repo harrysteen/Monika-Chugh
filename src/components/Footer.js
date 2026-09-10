@@ -182,6 +182,68 @@ export default function Footer() {
             </div>
 
           </div>
+
+          {/* Bottom Bar: Copyright & Made by Studio Dezu */}
+          <div 
+            className="mt-4 pt-3 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3"
+            style={{
+              borderTop: '1px solid rgba(184, 139, 88, 0.3)'
+            }}
+          >
+            <div 
+              style={{
+                fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                fontSize: '13px',
+                color: '#62350A',
+                opacity: 0.85
+              }}
+            >
+              © {new Date().getFullYear()} Monika Chugh. All rights reserved.
+            </div>
+
+            <a
+              href="https://studiodezu.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="dezu-credit-link d-inline-flex align-items-center gap-2 text-decoration-none"
+              style={{
+                fontFamily: "'Larken', 'Lora', serif",
+                fontSize: '13px',
+                color: '#62350A',
+                transition: 'opacity 0.25s ease, transform 0.25s ease'
+              }}
+            >
+              <span style={{ opacity: 0.85 }}>Made by</span>
+              <span 
+                className="d-inline-flex align-items-center gap-1.5 px-2 py-1 rounded"
+                style={{
+                  backgroundColor: 'rgba(98, 53, 10, 0.06)',
+                  border: '1px solid rgba(184, 139, 88, 0.35)',
+                  color: '#422207',
+                  fontWeight: 500,
+                  letterSpacing: '0.02em'
+                }}
+              >
+                {/* Studio Dezu Icon */}
+                <svg 
+                  width="15" 
+                  height="15" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  style={{ color: '#62350A' }}
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                  <polyline points="2 17 12 22 22 17" />
+                  <polyline points="2 12 12 17 22 12" />
+                </svg>
+                <span>Studio Dezu</span>
+              </span>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -208,6 +270,11 @@ export default function Footer() {
         .footer-icon:hover {
           transform: translateY(-2px);
           opacity: 0.8;
+        }
+
+        .dezu-credit-link:hover {
+          opacity: 0.85;
+          transform: translateY(-1px);
         }
       `}</style>
     </footer>

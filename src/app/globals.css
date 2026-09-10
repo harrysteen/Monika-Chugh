@@ -527,9 +527,11 @@ body {
 }
 
 .blog-featured-card-wrap {
-  background-color: #FBF4E4;
-  background-image: radial-gradient(#E8D9C0 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-color: #FDF9F0;
+  background-image: linear-gradient(rgba(253, 249, 240, 0.45), rgba(253, 249, 240, 0.45)), url('/images/home_section5_bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 1px solid #E5D6C5;
   border-radius: 2px;
   position: relative;
@@ -539,23 +541,26 @@ body {
 .blog-filter-tab-btn {
   background: transparent;
   border: none;
-  font-family: 'Larken-Light', 'Larken', 'Lora', serif;
-  font-size: 15px;
+  font-family: 'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif;
+  font-weight: 300;
+  font-size: 14px;
   color: #7A6F66;
-  padding: 6px 12px;
+  padding: 6px 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   border-radius: 2px;
   white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
 .blog-filter-tab-btn:hover {
   color: #422207;
+  opacity: 0.85;
 }
 
 .blog-filter-tab-btn.active {
   color: #422207;
-  font-weight: 700;
+  font-weight: 500;
   border-bottom: 2px solid #62350A;
 }
 

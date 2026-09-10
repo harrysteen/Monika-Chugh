@@ -196,7 +196,7 @@ Be patient with your healing timeline. The soil must rest in the dark before the
             </div>
 
             {/* Pagination Controls matching Figma `< 1 2 3 ... 8 >` */}
-            <div className="d-flex align-items-center gap-2" style={{ fontFamily: "'Larken', 'Lora', serif", fontSize: '14px', color: '#7A6F66' }}>
+            <div className="d-flex align-items-center gap-2" style={{ fontFamily: "'Larken-Light', 'Larken-Thin', 'Lora', serif", fontSize: '14px', fontWeight: 300, color: '#7A6F66' }}>
               <button
                 type="button"
                 className="btn btn-sm p-1 border-0 text-muted"

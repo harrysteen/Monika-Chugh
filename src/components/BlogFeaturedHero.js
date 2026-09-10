@@ -2,11 +2,11 @@
 
 export default function BlogFeaturedHero({ onSearch, searchQuery, onOpenFeatured }) {
   return (
-    <section className="pt-4 pb-4 bg-cream" style={{ backgroundColor: '#FFFDF9' }}>
+    <section className="pt-5 pb-4 bg-cream" style={{ backgroundColor: '#FFFDF9' }}>
       <div className="container-fluid px-3 px-md-4 px-lg-5 max-w-1400 mx-auto">
         
         {/* Search Bar matching Figma */}
-        <div className="text-center mb-5">
+        <div className="text-center mt-3 mt-md-4 mb-5">
           <input
             type="text"
             placeholder="Search for any blog..."
@@ -26,9 +26,9 @@ export default function BlogFeaturedHero({ onSearch, searchQuery, onOpenFeatured
           <div className="row align-items-center g-4 g-lg-5">
             
             {/* Left Column: Text & Read Blog CTA */}
-            <div className="col-12 col-lg-6 text-center text-lg-start pe-lg-4">
+            <div className="col-12 col-lg-6 text-center px-3 px-lg-4 d-flex flex-column align-items-center justify-content-center">
               <span 
-                className="d-block mb-3"
+                className="d-block mb-3 text-center"
                 style={{
                   fontFamily: "'Italianno', cursive",
                   fontSize: '38px',
@@ -41,23 +41,24 @@ export default function BlogFeaturedHero({ onSearch, searchQuery, onOpenFeatured
               </span>
 
               <p 
-                className="mb-4"
+                className="mb-4 text-center mx-auto"
                 style={{
                   fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
                   fontSize: '15px',
                   color: '#4A423B',
                   lineHeight: '1.7',
                   fontWeight: 300,
-                  maxWidth: '520px'
+                  maxWidth: '520px',
+                  textAlign: 'center'
                 }}
               >
                 Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke sails overhaul man jib schooner.
               </p>
 
-              <div>
+              <div className="text-center w-100">
                 <a
                   href="/blogs/write-write-write"
-                  className="book-action-btn px-5 py-2 text-decoration-none"
+                  className="book-action-btn px-5 py-2 text-decoration-none d-inline-block"
                   style={{
                     border: '1px solid #A44E0E',
                     backgroundColor: 'transparent',
