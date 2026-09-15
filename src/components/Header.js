@@ -45,8 +45,8 @@ export default function Header({ activePage = 'home' }) {
           <div className="d-flex flex-column align-items-stretch flex-grow-1 ps-3 ps-xl-4">
             <nav className="d-flex align-items-center justify-content-between pb-2">
               <a href="/poems-articles" className={`figma-nav-item ${activePage === 'poems-articles' ? 'active' : ''}`}>Poems & Articles</a>
-              <a href="/#press" className="figma-nav-item">Press Room</a>
-              <a href="/#events" className="figma-nav-item">Events</a>
+              <a href="/press-room" className={`figma-nav-item ${activePage === 'press-room' ? 'active' : ''}`}>Press Room</a>
+              <a href="/events" className={`figma-nav-item ${activePage === 'events' ? 'active' : ''}`}>Events</a>
               <a href="/#arogini" className="figma-nav-item">Arogini</a>
               <a href="/#contact" className="figma-nav-item">Contact</a>
             </nav>
@@ -81,8 +81,8 @@ export default function Header({ activePage = 'home' }) {
               <a href="/blogs" className={`figma-nav-item py-1 ${activePage === 'blogs' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Blogs</a>
               <a href="/#canvas" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Canvas & Quotations</a>
               <a href="/poems-articles" className={`figma-nav-item py-1 ${activePage === 'poems-articles' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Poems & Articles</a>
-              <a href="/#press" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Press Room</a>
-              <a href="/#events" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Events</a>
+              <a href="/press-room" className={`figma-nav-item py-1 ${activePage === 'press-room' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Press Room</a>
+              <a href="/events" className={`figma-nav-item py-1 ${activePage === 'events' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Events</a>
               <a href="/#arogini" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Arogini</a>
               <a href="/#contact" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Contact</a>
             </div>

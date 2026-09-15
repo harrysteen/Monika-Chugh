@@ -616,50 +616,628 @@ body {
   transition: all 0.25s ease;
   cursor: pointer;
   margin-top: auto;
-}
-
-.blog-read-btn:hover {
-  background-color: #62350A;
-  border-color: #62350A;
-  color: #FFFDF9;
-}
-
-/* ------------------------------------------------------------- */
-/* BLOG SINGLE POST STYLING (MATCHING FIGMA NODE 802-5488)      */
+}/* ------------------------------------------------------------- */
+/* PRESS ROOM PAGE STYLING (MATCHING FIGMA SPECIFICATIONS)       */
 /* ------------------------------------------------------------- */
 
-.blog-post-frame {
-  border: 1px solid #C4A57B;
-  padding: 10px;
-  background-color: transparent;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Colors & Foundations */
+.bg-cream-accent {
+  background-color: #F4EEE5 !important;
+}
+.bg-dark-bronze {
+  background-color: #422207 !important;
+  color: #FFFDF9 !important;
+}
+.text-bronze {
+  color: #62350A !important;
+}
+.text-gold {
+  color: #D4A359 !important;
+}
+.border-amber {
+  border-color: #E6D7C3 !important;
 }
 
-.blog-dropcap {
-  float: left;
+/* Script Cursive Tags */
+.press-script-tag {
+  font-family: 'Italianno', 'Caveat', cursive !important;
+  font-size: 32px !important;
+  color: #A44E0E;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+/* Headings & Section Dividers */
+.press-hero-heading {
+  font-family: 'Larken-Light', 'Larken', 'Lora', serif;
+  font-weight: 300;
+  font-size: 42px;
+  color: #422207;
+  letter-spacing: 0.05em;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: #A44E0E;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.press-title-rule {
+  width: 140px;
+  height: 1px;
+  background-color: #C4A57B;
+}
+
+.press-section-heading {
   font-family: 'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif;
-  font-size: 56px;
-  line-height: 0.8;
-  padding-top: 4px;
-  padding-right: 12px;
-  padding-bottom: 2px;
+  font-size: 34px;
   color: #422207;
   font-weight: 400;
 }
 
-.blog-sidebar-box {
-  background-color: #F8EEDF;
-  border: 1px solid #E5D6C5;
+.press-heading-underline {
+  width: 60px;
+  height: 2px;
+  background-color: #A44E0E;
   border-radius: 2px;
-  padding: 20px 16px;
 }
 
-.blog-sidebar-divider {
-  width: 1px;
-  background-color: #E2D5C3;
-  height: 100%;
+/* Hero Section & Floating Paper Badges */
+.press-hero-banner-container {
+  border: 1px solid #E2D5C3;
+  background-color: #F8EEDF;
 }
+
+.press-hero-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(66,34,7,0.1) 0%, rgba(66,34,7,0.35) 100%);
+  pointer-events: none;
+}
+
+.press-badge-content {
+  background-color: #FFFDF9;
+  color: #422207;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 1px solid #E5D6C5;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.press-note-card {
+  background: #FAF6EE;
+  border: 1px solid #E3D3C1;
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(66,34,7,0.12);
+  position: relative;
+  max-width: 320px;
+}
+
+.press-note-pin {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #A44E0E;
+  font-size: 18px;
+}
+
+.press-note-title {
+  font-family: 'Italianno', cursive;
+  font-size: 24px;
+  color: #62350A;
+  line-height: 1;
+}
+
+.press-note-body {
+  font-size: 13px;
+  color: #4A423B;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Absolute Desktop Positioning for Floating Badges */
+@media (min-width: 992px) {
+  .press-badge-tl {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 10;
+    transform: rotate(-3deg);
+  }
+
+  .press-note-bl {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 10;
+    transform: rotate(2deg);
+  }
+
+  .press-badge-tr {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 10;
+    transform: rotate(2deg);
+  }
+
+  .press-badge-fr {
+    position: absolute;
+    top: 140px;
+    right: 24px;
+    z-index: 10;
+    transform: rotate(-1deg);
+  }
+
+  .press-note-br {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    z-index: 10;
+    transform: rotate(-2deg);
+  }
+}
+
+/* Mobile Stacking for Floating Cards */
+@media (max-width: 991px) {
+  .press-badge, .press-note-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 12px auto !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+  .press-hero-banner-container {
+    padding: 16px;
+  }
+}
+
+/* Press Intro */
+.press-intro-heading {
+  font-family: 'Beautique Display', 'Cormorant Garamond', serif;
+  font-size: 36px;
+  color: #422207;
+}
+
+.press-intro-line {
+  width: 50px;
+  height: 1px;
+  background-color: #C4A57B;
+}
+
+.press-flower-icon {
+  color: #A44E0E;
+  font-size: 18px;
+}
+
+/* Launch Cards */
+.press-launch-card {
+  border: 1px solid #E5D6C5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.press-launch-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(66,34,7,0.1) !important;
+}
+
+.press-card-tag-badge {
+  background-color: #F4EEE5;
+  color: #62350A;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.press-book-cover-wrap {
+  width: 220px;
+  height: 310px;
+}
+
+.press-book-status-ribbon {
+  position: absolute;
+  top: 16px;
+  right: -30px;
+  background-color: #A44E0E;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 32px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.press-book-title {
+  font-family: 'Beautique Display', 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: #422207;
+}
+
+.press-btn-gold {
+  background-color: #62350A;
+  color: #FFFDF9 !important;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.press-btn-gold:hover {
+  background-color: #422207;
+  box-shadow: 0 6px 16px rgba(66,34,7,0.2);
+}
+
+.press-btn-outline {
+  background-color: transparent;
+  color: #62350A;
+  border: 1px solid #62350A;
+  transition: all 0.25s ease;
+}
+
+.press-btn-outline:hover {
+  background-color: #62350A;
+  color: #FFFDF9;
+}
+
+.press-btn-outline-dark {
+  background-color: transparent;
+  color: #422207;
+  border: 1px solid #A44E0E;
+  transition: all 0.25s ease;
+}
+
+.press-btn-outline-dark:hover {
+  background-color: #A44E0E;
+  color: #FFFFFF;
+}
+
+/* Parchment Achievement Card */
+.press-parchment-card {
+  background: #FFFDF9;
+  border: 1px solid #E2D5C3;
+  box-shadow: 0 10px 30px rgba(66,34,7,0.06);
+}
+
+.press-parchment-title {
+  font-family: 'Beautique Display', serif;
+  font-size: 26px;
+  color: #422207;
+}
+
+.press-badge-amber {
+  background-color: #F8E7AD;
+  color: #422207;
+  font-weight: 500;
+}
+
+.press-cert-seal {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  font-size: 32px;
+  background: #FFFDF9;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.press-story-heading {
+  font-family: 'Beautique Display', serif;
+}
+
+.press-slide-arrow {
+  width: 44px;
+  height: 44px;
+  background-color: #FFFDF9;
+  border: 1px solid #E2D5C3;
+  color: #422207;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.press-slide-arrow:hover {
+  background-color: #62350A;
+  color: #FFFDF9;
+  border-color: #62350A;
+}
+
+/* Gallery Section */
+.press-gallery-card {
+  border: 1px solid #E5D6C5;
+}
+
+.press-gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(66,34,7,0.85) 100%);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.press-gallery-card:hover .press-gallery-overlay {
+  opacity: 1;
+}
+
+.press-gallery-card:hover .press-gallery-img {
+  transform: scale(1.05);
+}
+
+.press-badge-gold {
+  background-color: #D4A359;
+  color: #422207;
+}
+
+.press-gallery-title {
+  font-family: 'Beautique Display', serif;
+  font-size: 22px;
+}
+
+/* Quote Banner */
+.press-quote-banner {
+  background-color: #F8E7AD;
+}
+
+.press-quote-box {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px dashed #A44E0E;
+}
+
+.press-quote-text {
+  font-family: 'Larken-Light', 'Courier New', monospace, serif;
+  font-size: 24px;
+  color: #422207;
+  font-weight: 500;
+}
+
+.press-quote-author {
+  font-family: 'Italianno', cursive;
+  font-size: 32px;
+  color: #A44E0E;
+}
+
+/* Spotlight & Contact */
+.press-spotlight-card {
+  transition: transform 0.25s ease;
+}
+
+.press-spotlight-card:hover {
+  transform: translateY(-5px);
+}
+
+.press-badge-dark {
+  background-color: rgba(66, 34, 7, 0.85);
+  color: #FFFDF9;
+  font-size: 11px;
+}
+
+.press-input {
+  background-color: #FFFDF9;
+  border: 1px solid #E2D5C3;
+  color: #422207;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.press-input:focus {
+  background-color: #FFFFFF;
+  border-color: #A44E0E;
+  box-shadow: 0 0 0 3px rgba(164, 78, 14, 0.15);
+}
+
+/* ============================================================= */
+/* EVENTS PAGE STYLING (FIGMA DESIGN ACCURATE)                   */
+/* ============================================================= */
+
+/* Script Badges & Handwriting Typography */
+.font-handwriting {
+  font-family: 'Italianno', 'Caveat', cursive !important;
+  font-size: 38px;
+  line-height: 1;
+  color: #A44E0E;
+}
+
+.font-beautique {
+  font-family: 'Beautique Display', 'Cormorant Garamond', serif;
+}
+
+.font-larken {
+  font-family: 'Larken-Light', 'Larken', 'Lora', serif;
+}
+
+/* Filmstrip Reel & Sprocket Hole Effects */
+.filmstrip-reel {
+  background-color: #1A1715;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.sprocket-hole-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px;
+}
+
+.sprocket-hole {
+  width: 14px;
+  height: 9px;
+  background-color: #F4D068;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+.filmstrip-photo {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #2D2723;
+}
+
+.filmstrip-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.camera-meta-header {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #F4D068;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.camera-timestamp-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #FFC837;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: 2px 6px;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+/* Tab Filtering Bar */
+.events-filter-pill {
+  background-color: #FFFDF9;
+  border: 1px solid #E2D5C3;
+  color: #62350A;
+  border-radius: 50px;
+  padding: 10px 24px;
+  font-family: 'Larken-Light', 'Larken', serif;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.events-filter-pill:hover {
+  background-color: #F4EEE5;
+  color: #422207;
+  border-color: #A44E0E;
+}
+
+.events-filter-pill.active {
+  background-color: #62350A;
+  color: #FFFDF9;
+  border-color: #62350A;
+  box-shadow: 0 4px 12px rgba(98, 53, 10, 0.2);
+}
+
+.events-carousel-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #E2D5C3;
+  background-color: #FFFDF9;
+  color: #62350A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.events-carousel-arrow:hover {
+  background-color: #62350A;
+  color: #FFFDF9;
+  border-color: #62350A;
+}
+
+/* Vintage Polaroid Photo Frame */
+.polaroid-frame {
+  background-color: #FFFFFF;
+  padding: 14px 14px 28px 14px;
+  box-shadow: 0 12px 30px rgba(66, 34, 7, 0.08);
+  border: 1px solid #EFE6DA;
+  border-radius: 4px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid-frame:hover {
+  transform: translateY(-4px) rotate(0.5deg);
+  box-shadow: 0 20px 40px rgba(66, 34, 7, 0.14);
+}
+
+/* Vintage Postage Stamp Postcard Newsletter Card */
+.stamp-postcard-card {
+  background-color: #FFFDF9;
+  border: 2px dashed #D6C4B0;
+  border-radius: 20px;
+  padding: 48px 36px;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(98, 53, 10, 0.06);
+}
+
+.stamp-emblem {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #F4EEE5 0%, #FFFDF9 100%);
+  border: 1.5px solid #A44E0E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Handwritten Cursive Annotation Overlay */
+.handwritten-annotation {
+  font-family: 'Italianno', 'Caveat', cursive;
+  font-size: 34px;
+  color: #A44E0E;
+  line-height: 1;
+}
+
+.paperclip-icon {
+  position: absolute;
+  top: -14px;
+  right: 24px;
+  width: 24px;
+  height: auto;
+  z-index: 5;
+}
+
+
 
 
 
