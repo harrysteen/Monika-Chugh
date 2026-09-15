@@ -3,81 +3,324 @@
 import { useState } from 'react';
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: ''
+  });
   const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({ name: '', email: '', subject: '' });
+    }, 5000);
   };
 
   return (
-    <section id="contact" className="py-5 bg-cream">
-      <div className="container py-4">
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-8">
-            <div className="figma-card p-4 p-md-5 text-center">
-              
-              <div className="lotus-divider mb-3">
-                <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
-                  <path d="M16 4C14 8 10 12 6 14C10 16 14 20 16 28C18 20 22 16 26 14C22 12 18 8 16 4Z" stroke="#BA8E55" strokeWidth="1.5"/>
-                </svg>
+    <section id="contact" className="py-5 py-md-6 bg-cream position-relative overflow-hidden">
+      <div className="container py-3 py-md-4 max-w-1100 mx-auto">
+        <div className="row align-items-center g-4 g-lg-5">
+
+          {/* Left Column: Portrait Image with Social Media Badges Overlay */}
+          <div className="col-12 col-md-5 col-lg-5">
+            <div 
+              className="position-relative overflow-hidden mx-auto shadow-sm" 
+              style={{ 
+                maxWidth: '400px', 
+                borderRadius: '4px',
+                border: '1px solid #EBE1D5'
+              }}
+            >
+              {/* Monika Chugh Portrait Image */}
+              <img 
+                src="/images/contact/contact img 1.svg" 
+                alt="Monika Chugh" 
+                className="w-100 d-block object-fit-cover"
+                style={{ 
+                  aspectRatio: '371 / 510',
+                  maxHeight: '520px'
+                }} 
+              />
+
+              {/* Social Media Badges Overlay (Bottom Right) */}
+              <div 
+                className="position-absolute d-flex align-items-center gap-2"
+                style={{ 
+                  bottom: '16px', 
+                  right: '16px',
+                  zIndex: 10
+                }}
+              >
+                {/* Instagram Link */}
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-overlay-btn"
+                  aria-label="Instagram"
+                >
+                  <i className="bi bi-instagram fs-6"></i>
+                </a>
+
+                {/* Pinterest Link */}
+                <a 
+                  href="https://pinterest.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-overlay-btn"
+                  aria-label="Pinterest"
+                >
+                  <i className="bi bi-pinterest fs-6"></i>
+                </a>
+
+                {/* Facebook Link */}
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-overlay-btn"
+                  aria-label="Facebook"
+                >
+                  <i className="bi bi-facebook fs-6"></i>
+                </a>
               </div>
+            </div>
+          </div>
 
-              <span className="font-small-header fs-2 text-bronze">Get in Touch</span>
-              <h2 className="font-big-header display-4 text-dark mt-1 mb-3">Connect with Monika Chugh</h2>
-              <p className="font-paragraph text-muted mx-auto mb-4" style={{ maxWidth: '540px' }}>
-                For speaking engagements, literary inquiries, press requests, or book signing events, please send a message below.
-              </p>
+          {/* Right Column: "Let's Connect!" & Contact Form */}
+          <div className="col-12 col-md-7 col-lg-7 ps-md-4 ps-lg-5">
+            <div className="pe-lg-3">
 
+              {/* Heading: Let's Connect! */}
+              <h2 
+                className="mb-4 mb-md-5"
+                style={{ 
+                  fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
+                  fontSize: 'clamp(36px, 5.5vw, 52px)',
+                  fontWeight: 400,
+                  color: '#422207',
+                  lineHeight: '1.15',
+                  letterSpacing: '0.02em'
+                }}
+              >
+                Let’s <span style={{ color: '#A44E0E' }}>Connect!</span>
+              </h2>
+
+              {/* Success Notification Alert */}
               {submitted ? (
-                <div className="alert alert-success bg-white border border-success text-dark p-4 rounded-3 my-4 font-paragraph">
-                  <i className="bi bi-check-circle-fill text-success me-2 fs-5"></i>
-                  Thank you! Your message has been received by Monika Chugh’s office.
+                <div 
+                  className="alert p-4 rounded-3 text-center my-4"
+                  style={{
+                    backgroundColor: '#F7F1EA',
+                    border: '1px solid #C5A070',
+                    color: '#422207',
+                    fontFamily: "'Larken-Light', 'Larken', 'Lora', serif"
+                  }}
+                >
+                  <i className="bi bi-check-circle-fill me-2 fs-5" style={{ color: '#A44E0E' }}></i>
+                  Thank you for reaching out! Monika’s team will get back to you shortly.
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="text-start">
-                  <div className="row g-3">
-                    <div className="col-12 col-md-6">
-                      <label className="form-label font-paragraph text-dark small">Your Name</label>
-                      <input 
-                        type="text" 
-                        required 
-                        className="form-control bg-white border-cream text-dark p-3 font-paragraph" 
-                        placeholder="e.g. Eleanor Vance"
-                      />
-                    </div>
-                    <div className="col-12 col-md-6">
-                      <label className="form-label font-paragraph text-dark small">Email Address</label>
-                      <input 
-                        type="email" 
-                        required 
-                        className="form-control bg-white border-cream text-dark p-3 font-paragraph" 
-                        placeholder="eleanor@example.com"
-                      />
-                    </div>
-                    <div className="col-12">
-                      <label className="form-label font-paragraph text-dark small">Message</label>
-                      <textarea 
-                        rows="4" 
-                        required 
-                        className="form-control bg-white border-cream text-dark p-3 font-paragraph" 
-                        placeholder="Write your note or inquiry..."
-                      ></textarea>
-                    </div>
-                    <div className="col-12 text-center mt-4">
-                      <button type="submit" className="btn btn-figma-bronze px-5 py-3 fs-6">
-                        Send Message <i className="bi bi-send ms-2"></i>
-                      </button>
-                    </div>
+                /* Contact Form */
+                <form onSubmit={handleSubmit} className="d-flex flex-column gap-4">
+
+                  {/* Name Input */}
+                  <div className="form-group-minimal">
+                    <label 
+                      htmlFor="contact-name" 
+                      className="d-block mb-1"
+                      style={{ 
+                        fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                        fontSize: '15px',
+                        color: '#7C6E63',
+                        fontWeight: 300
+                      }}
+                    >
+                      Name
+                    </label>
+                    <input 
+                      id="contact-name"
+                      type="text" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required 
+                      className="minimal-line-input"
+                      placeholder=""
+                    />
                   </div>
+
+                  {/* Email Input */}
+                  <div className="form-group-minimal">
+                    <label 
+                      htmlFor="contact-email" 
+                      className="d-block mb-1"
+                      style={{ 
+                        fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                        fontSize: '15px',
+                        color: '#7C6E63',
+                        fontWeight: 300
+                      }}
+                    >
+                      Email
+                    </label>
+                    <input 
+                      id="contact-email"
+                      type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required 
+                      className="minimal-line-input"
+                      placeholder=""
+                    />
+                  </div>
+
+                  {/* Subject of Inquiry Input */}
+                  <div className="form-group-minimal">
+                    <label 
+                      htmlFor="contact-subject" 
+                      className="d-block mb-1"
+                      style={{ 
+                        fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                        fontSize: '15px',
+                        color: '#7C6E63',
+                        fontWeight: 300
+                      }}
+                    >
+                      Subject of inquiry
+                    </label>
+                    <input 
+                      id="contact-subject"
+                      type="text" 
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required 
+                      className="minimal-line-input"
+                      placeholder=""
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="d-flex justify-content-center justify-content-md-end mt-4 pt-2">
+                    <button 
+                      type="submit" 
+                      className="btn-minimal-submit"
+                    >
+                      Submit
+                    </button>
+                  </div>
+
                 </form>
               )}
 
             </div>
           </div>
+
         </div>
+
+        {/* Botanical Line Divider (Bottom of Contact Section) */}
+        <div className="position-relative w-100 my-5 pt-4 text-center">
+          {/* Horizontal Line */}
+          <div 
+            style={{ 
+              height: '1px', 
+              backgroundColor: '#E5D9CC', 
+              width: '100%' 
+            }}
+          />
+          {/* Center Botanical Flower Motif */}
+          <div 
+            className="position-absolute top-50 start-50 translate-middle bg-cream px-3"
+            style={{ zIndex: 2 }}
+          >
+            <img 
+              src="/images/contact/conract page icon.png" 
+              alt="Botanical icon" 
+              style={{ 
+                height: '42px', 
+                width: 'auto',
+                display: 'block'
+              }} 
+            />
+          </div>
+        </div>
+
       </div>
+
+      {/* Component Specific CSS Styles */}
+      <style jsx>{`
+        .social-overlay-btn {
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(4px);
+          color: #422207;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+          transition: all 0.25s ease;
+        }
+
+        .social-overlay-btn:hover {
+          background-color: #A44E0E;
+          color: #FFFFFF;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 10px rgba(164, 78, 14, 0.25);
+        }
+
+        .minimal-line-input {
+          width: 100%;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid #D5C4B5;
+          padding: 6px 0;
+          font-family: 'Larken-Light', 'Larken', 'Lora', serif;
+          font-size: 16px;
+          color: #422207;
+          outline: none;
+          transition: border-color 0.3s ease;
+        }
+
+        .minimal-line-input:focus {
+          border-bottom-color: #A44E0E;
+        }
+
+        .btn-minimal-submit {
+          background-color: transparent;
+          border: 1px solid #B8864E;
+          color: #62350A;
+          font-family: 'Larken', 'Lora', serif;
+          font-size: 15px;
+          letter-spacing: 0.04em;
+          padding: 10px 54px;
+          border-radius: 2px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .btn-minimal-submit:hover {
+          background-color: #A44E0E;
+          color: #FFFFFF;
+          border-color: #A44E0E;
+          box-shadow: 0 4px 14px rgba(164, 78, 14, 0.2);
+        }
+      `}</style>
     </section>
   );
 }
+

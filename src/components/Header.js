@@ -48,7 +48,7 @@ export default function Header({ activePage = 'home' }) {
               <a href="/press-room" className={`figma-nav-item ${activePage === 'press-room' ? 'active' : ''}`}>Press Room</a>
               <a href="/events" className={`figma-nav-item ${activePage === 'events' ? 'active' : ''}`}>Events</a>
               <a href="/#arogini" className="figma-nav-item">Arogini</a>
-              <a href="/#contact" className="figma-nav-item">Contact</a>
+              <a href="/contact" className={`figma-nav-item ${activePage === 'contact' ? 'active' : ''}`}>Contact</a>
             </nav>
             {/* Horizontal Divider Line extending under Right Menu */}
             <div className="nav-horizontal-divider"></div>
@@ -84,7 +84,7 @@ export default function Header({ activePage = 'home' }) {
               <a href="/press-room" className={`figma-nav-item py-1 ${activePage === 'press-room' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Press Room</a>
               <a href="/events" className={`figma-nav-item py-1 ${activePage === 'events' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Events</a>
               <a href="/#arogini" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Arogini</a>
-              <a href="/#contact" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+              <a href="/contact" className={`figma-nav-item py-1 ${activePage === 'contact' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Contact</a>
             </div>
           </div>
         )}

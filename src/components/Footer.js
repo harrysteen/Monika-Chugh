@@ -111,11 +111,11 @@ export default function Footer() {
 
                 {/* Row 2 Links */}
                 <div className="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
-                  <a href="#poems" className="footer-nav-link">Poems &amp; Articles</a>
-                  <a href="#press" className="footer-nav-link">Press Room</a>
-                  <a href="#events" className="footer-nav-link">Events</a>
-                  <a href="#arogini" className="footer-nav-link">Arogini</a>
-                  <a href="#contact" className="footer-nav-link">Contact</a>
+                  <a href="/poems-articles" className="footer-nav-link">Poems &amp; Articles</a>
+                  <a href="/press-room" className="footer-nav-link">Press Room</a>
+                  <a href="/events" className="footer-nav-link">Events</a>
+                  <a href="/#arogini" className="footer-nav-link">Arogini</a>
+                  <a href="/contact" className="footer-nav-link">Contact</a>
                 </div>
               </div>
 
