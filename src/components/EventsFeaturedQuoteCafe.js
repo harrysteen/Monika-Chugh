@@ -1,155 +1,270 @@
 'use client';
 
-export default function EventsFeaturedQuoteCafe({ activeTab = 'quote-cafe' }) {
-  // Data for different category views
-  const categoryData = {
-    'quote-cafe': {
-      title: 'QUOTE CAFÉ',
-      subtitle: 'THOUGHTS IN A CUP',
-      meta: 'Book Launch · Hyderabad · 2025',
-      description: `A soulful gathering of literary enthusiasts, artists, and readers coming together to celebrate the launch of Monika Chugh's latest book. Held in Hyderabad, Quote Café transformed into an intimate sanctuary of words, shared tea, heartfelt discussions, and artistic reflections.`,
-      photos: [
-        { src: '/images/home section 10 row2 img1.png', time: '03.23.2025 11:04:20', frame: '01 BOOKLAUNCH', annotation: 'a moment of gratitude ♡' },
-        { src: '/images/home section 10 row2 img2.png', time: '03.23.2025 11:42:15', frame: '02 READINGS', annotation: 'words in harmony' },
-        { src: '/images/home section 10 row2 img3.png', time: '03.23.2025 12:15:08', frame: '03 DISCUSSIONS', annotation: 'a memory to keep' },
-        { src: '/images/home section 10 row3 img1.png', time: '03.23.2025 13:02:44', frame: '04 MEMORIES', annotation: 'One to remember ♡' },
-      ],
-      quote: "Words are cups that carry the spirit of our shared experiences, inviting every heart to take a sip.",
-    },
-    'arogini': {
-      title: 'AROGINI',
-      subtitle: 'WELLNESS & ART INITIATIVE',
-      meta: 'Social Impact · Community Outreach · 2025',
-      description: `Arogini is a heartfelt movement bringing art therapy, mindfulness, and literary healing to women and children in underserved communities. Discover the moments where creative expression nurtures hope and resilience.`,
-      photos: [
-        { src: '/images/section_9_img1.svg', time: '02.14.2025 10:15:00', frame: '01 AROGINI', annotation: 'healing through art ♡' },
-        { src: '/images/section_9_img2.svg', time: '02.14.2025 11:30:10', frame: '02 WORKSHOP', annotation: 'smiles & stories' },
-        { src: '/images/section_9_img3.svg', time: '02.14.2025 13:10:05', frame: '03 COMMUNITY', annotation: 'together we bloom' },
-      ],
-      quote: "True wellness begins when we give voice to the quiet places within our souls.",
-    },
-    'travel': {
-      title: 'LITERARY JOURNEYS',
-      subtitle: 'TRAVEL & RETREATS',
-      meta: 'Cultural Exploration · Global Dialogues',
-      description: `Wandering across continents, capturing stories of landscapes, heritage, and human connection. Each journey inspires poetry, artistic creations, and cross-cultural exchanges.`,
-      photos: [
-        { src: '/images/home section 11 img.png', time: '01.10.2025 09:20:11', frame: '01 JOURNEY', annotation: 'chasing horizons' },
-        { src: '/images/home_second_section_bg.svg', time: '01.12.2025 16:45:00', frame: '02 RETREAT', annotation: 'inspiration everywhere ♡' },
-      ],
-      quote: "Every destination is a poem waiting to be read through new eyes.",
-    },
-    'reflections': {
-      title: 'REFLECTIONS',
-      subtitle: 'POETRY & DIALOGUES',
-      meta: 'Panel Discussion · Literary Meetup',
-      description: `An evening of profound reflections where readers and fellow authors discussed the intersections of love, loss, art, and healing over poetry recitations.`,
-      photos: [
-        { src: '/images/home section 10 row1 img1.png', time: '04.05.2025 18:30:00', frame: '01 POETRY', annotation: 'verses in evening light' },
-        { src: '/images/home section 10 row1 img2.png', time: '04.05.2025 20:00:15', frame: '02 REFLECTION', annotation: 'heartfelt connections ♡' },
-      ],
-      quote: "In the quiet spaces between lines, we find the reflection of our own truth.",
-    },
-    'wellness': {
-      title: 'SOULFUL WELLNESS',
-      subtitle: 'ART & MINDFULNESS',
-      meta: 'Mindfulness Workshop · Hyderabad',
-      description: `Interactive sessions blending mindful journaling, artistic meditation, and expressive poetry to encourage inner clarity and peace.`,
-      photos: [
-        { src: '/images/home section 10 row2 img3.png', time: '05.18.2025 10:00:00', frame: '01 MINDFULNESS', annotation: 'breathe & create' },
-        { src: '/images/home section 10 row3 img1.png', time: '05.18.2025 11:45:22', frame: '02 HARMONY', annotation: 'inner peace ♡' },
-      ],
-      quote: "Art is the breath of the soul, restoring balance in a busy world.",
-    },
-  };
+// Helper component for black camera film frames matching screenshot
+function CameraFrame({ 
+  src, 
+  frameNum = '22', 
+  tag = 'BOOKLAUNCH', 
+  timestamp = '03.23.2025 11:04:20', 
+  height = '210px', 
+  className = '' 
+}) {
+  return (
+    <div 
+      className={`bg-black text-white p-2 rounded-1 position-relative ${className}`}
+      style={{ 
+        boxShadow: '0 10px 25px rgba(0,0,0,0.35)',
+        border: '1px solid #1a1a1a'
+      }}
+    >
+      {/* Top Header */}
+      <div className="d-flex justify-content-between align-items-center mb-1 px-1" style={{ fontFamily: "'Courier New', monospace", fontSize: '9px', color: '#E0E0E0', letterSpacing: '0.5px' }}>
+        <span>MONIKACHUGH</span>
+        <span style={{ color: '#F4D068' }}>► {frameNum} {tag}</span>
+      </div>
 
-  const current = categoryData[activeTab] || categoryData['quote-cafe'];
+      {/* Photo */}
+      <div className="position-relative overflow-hidden" style={{ borderRadius: '2px', backgroundColor: '#181818' }}>
+        <img 
+          src={src} 
+          alt="Event photo frame" 
+          style={{ width: '100%', height: height, objectFit: 'cover', display: 'block', objectPosition: 'center top' }}
+        />
+      </div>
+
+      {/* Bottom Footer */}
+      <div className="d-flex justify-content-between align-items-center mt-1 px-1" style={{ fontFamily: "'Courier New', monospace", fontSize: '9px', color: '#CCCCCC', letterSpacing: '0.5px' }}>
+        <span style={{ color: '#F4D068' }}>► {frameNum}</span>
+        <span style={{ color: '#E0E0E0' }}>{timestamp}</span>
+      </div>
+    </div>
+  );
+}
+
+export default function EventsFeaturedQuoteCafe({ activeTab = 'quote-cafe' }) {
+  // 4 user-provided SVG assets
+  const img1 = '/images/events/events page image fremeimg1.svg';
+  const img2 = '/images/events/events page image fremeimg2.svg';
+  const img3 = '/images/events/event page image fremeingimg3.svg';
+  const img4 = '/images/events/event page image fremeingimg4.svg';
 
   return (
-    <section className="py-5 bg-cream position-relative">
-      <div className="container-fluid px-3 px-xl-5">
+    <section className="py-4 py-lg-5 bg-cream position-relative overflow-hidden">
+      <div className="container-fluid px-3 px-xl-5" style={{ maxWidth: '1320px' }}>
         
-        {/* Main Event Header Card */}
-        <div className="bg-white rounded-4 p-4 p-md-5 border border-cream shadow-sm mb-5 position-relative overflow-hidden">
-          
-          <div className="row align-items-center g-4">
-            <div className="col-12 col-lg-8">
-              <span className="badge bg-cream-accent text-brand font-larken px-3 py-2 rounded-pill mb-3" style={{ color: '#A44E0E', backgroundColor: '#F4EEE5' }}>
-                {current.meta}
-              </span>
-              <h2 className="font-beautique display-4 text-dark mb-2" style={{ color: '#422207' }}>
-                {current.title}
-              </h2>
-              <h3 className="font-handwriting text-brand mb-3" style={{ fontSize: '38px', color: '#A44E0E' }}>
-                {current.subtitle}
-              </h3>
-              <p className="font-larken text-muted fs-5 mb-0" style={{ color: '#62350A', lineHeight: '1.8' }}>
-                {current.description}
-              </p>
-            </div>
+        {/* Main Event Header */}
+        <div className="text-center max-w-4xl mx-auto mb-5">
+          <div className="d-flex align-items-center justify-content-center gap-3 flex-wrap mb-2">
+            <h2 
+              className="font-beautique fw-bold text-dark mb-0" 
+              style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', color: '#422207', letterSpacing: '0.04em' }}
+            >
+              QUOTE CAFÉ
+            </h2>
+            <span 
+              className="font-larken fw-normal" 
+              style={{ fontSize: 'clamp(1.1rem, 2vw, 1.6rem)', color: '#62350A', letterSpacing: '0.05em' }}
+            >
+              THOUGHTS IN A CUP
+            </span>
+          </div>
 
-            <div className="col-12 col-lg-4 text-lg-end">
-              <div className="p-4 rounded-3 text-center" style={{ backgroundColor: '#FFFDF9', border: '1px dashed #E2D5C3' }}>
-                <i className="bi bi-quote fs-1 text-brand d-block mb-2" style={{ color: '#A44E0E' }}></i>
-                <p className="font-larken fst-italic mb-2 fs-6 text-dark" style={{ color: '#422207' }}>
-                  "{current.quote}"
-                </p>
-                <span className="font-handwriting fs-4 text-brand">— Monika Chugh</span>
+          <h4 
+            className="font-larken mb-3" 
+            style={{ fontSize: '1.05rem', color: '#62350A', fontWeight: 500 }}
+          >
+            Book Launch · Hyderabad · 2025
+          </h4>
+
+          <p 
+            className="font-larken mx-auto mb-0" 
+            style={{ color: '#4A423B', fontSize: '0.98rem', lineHeight: '1.7', maxWidth: '780px' }}
+          >
+            A warm gathering created around books, conversations and the simple joy of sharing thoughts. Quote Café brings readers and curious minds together in an intimate space where every thought has a place. The gathering offered an opportunity to meet, converse and experience the world of the book beyond its pages.
+          </p>
+        </div>
+
+        {/* Photo Grid Collage Matching Screenshot */}
+        <div className="row g-4 justify-content-center align-items-start mb-5 pt-3">
+          
+          {/* COLUMN 1 */}
+          <div className="col-12 col-sm-6 col-lg-3">
+            <div className="d-flex flex-column gap-4 position-relative">
+              
+              {/* Handwritten Annotation 1: a moment of gratitude */}
+              <div 
+                className="position-absolute d-none d-lg-flex align-items-center gap-1"
+                style={{ top: '-42px', left: '-60px', zIndex: 10 }}
+              >
+                <span style={{ fontFamily: "'Italianno', 'Caveat', cursive", fontSize: '28px', color: '#62350A', whiteSpace: 'nowrap' }}>
+                  a moment of gratitude
+                </span>
+                <svg width="45" height="30" viewBox="0 0 50 30" fill="none">
+                  <path d="M 5 20 Q 25 5 45 22" stroke="#62350A" strokeWidth="1.5" fill="none" />
+                  <path d="M 38 16 L 45 22 L 40 28" stroke="#62350A" strokeWidth="1.5" fill="none" />
+                </svg>
               </div>
+
+              {/* Top Frame 1 */}
+              <CameraFrame 
+                src={img1} 
+                frameNum="22" 
+                tag="BOOKLAUNCH" 
+                height="210px" 
+              />
+
+              {/* Bottom Frame 1 */}
+              <div className="position-relative mt-2">
+                <CameraFrame 
+                  src={img3} 
+                  frameNum="22" 
+                  tag="BOOKLAUNCH" 
+                  height="170px" 
+                />
+
+                {/* Handwritten Annotation 2: a memory to keep */}
+                <div 
+                  className="position-absolute d-none d-lg-flex align-items-center gap-1"
+                  style={{ bottom: '-38px', left: '-50px', zIndex: 10 }}
+                >
+                  <span style={{ fontFamily: "'Italianno', 'Caveat', cursive", fontSize: '28px', color: '#62350A', whiteSpace: 'nowrap' }}>
+                    a memory to keep
+                  </span>
+                  <svg width="45" height="30" viewBox="0 0 50 30" fill="none">
+                    <path d="M 5 8 Q 25 28 45 15" stroke="#62350A" strokeWidth="1.5" fill="none" />
+                    <path d="M 38 12 L 45 15 L 42 22" stroke="#62350A" strokeWidth="1.5" fill="none" />
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* COLUMN 2 */}
+          <div className="col-12 col-sm-6 col-lg-3">
+            <div className="d-flex flex-column gap-4">
+              {/* Tall Vertical Frame */}
+              <CameraFrame 
+                src={img2} 
+                frameNum="35" 
+                tag="BOOKLAUNCH" 
+                height="270px" 
+              />
+
+              {/* Bottom Frame 2 */}
+              <CameraFrame 
+                src={img4} 
+                frameNum="22" 
+                tag="BOOKLAUNCH" 
+                height="150px" 
+              />
+            </div>
+          </div>
+
+          {/* COLUMN 3 */}
+          <div className="col-12 col-sm-6 col-lg-3">
+            <div className="d-flex flex-column gap-3">
+              {/* Top Text Quote */}
+              <p className="font-larken mb-1" style={{ fontSize: '0.88rem', color: '#62350A', lineHeight: '1.5' }}>
+                A warm evening, shared stories, familiar faces, and the joy of finally seeing my words find their way into the .
+              </p>
+
+              {/* Middle Wide Frame */}
+              <CameraFrame 
+                src={img4} 
+                frameNum="22" 
+                tag="BOOKLAUNCH" 
+                height="160px" 
+              />
+
+              {/* Bottom 2 Side-by-Side Small Frames */}
+              <div className="row g-2 pt-1">
+                <div className="col-6">
+                  <CameraFrame 
+                    src={img3} 
+                    frameNum="22" 
+                    tag="BOOKLAUNCH" 
+                    height="120px" 
+                  />
+                  <p className="font-larken text-muted mt-1 mb-0" style={{ fontSize: '0.82rem', color: '#62350A' }}>
+                    A warm evening,
+                  </p>
+                </div>
+                <div className="col-6">
+                  <CameraFrame 
+                    src={img3} 
+                    frameNum="53" 
+                    tag="BOOKLAUNCH" 
+                    height="120px" 
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* COLUMN 4 */}
+          <div className="col-12 col-sm-6 col-lg-3">
+            <div className="d-flex flex-column gap-4 position-relative">
+              
+              {/* Handwritten Annotation 3: One to remember ♡ */}
+              <div 
+                className="position-absolute d-none d-lg-flex align-items-center gap-1"
+                style={{ top: '-10px', right: '-80px', zIndex: 10 }}
+              >
+                <svg width="45" height="30" viewBox="0 0 50 30" fill="none">
+                  <path d="M 5 22 Q 25 5 45 18" stroke="#62350A" strokeWidth="1.5" fill="none" />
+                  <path d="M 12 16 L 5 22 L 10 28" stroke="#62350A" strokeWidth="1.5" fill="none" />
+                </svg>
+                <span style={{ fontFamily: "'Italianno', 'Caveat', cursive", fontSize: '28px', color: '#62350A', whiteSpace: 'nowrap' }}>
+                  One to remember ♡
+                </span>
+              </div>
+
+              {/* Top Frame 4 */}
+              <CameraFrame 
+                src={img1} 
+                frameNum="22" 
+                tag="BOOKLAUNCH" 
+                height="210px" 
+              />
+
+              {/* Bottom Section 4 */}
+              <div>
+                <p className="font-larken mb-2" style={{ fontSize: '0.88rem', color: '#62350A' }}>
+                  A gathering filled with stories
+                </p>
+                <CameraFrame 
+                  src={img4} 
+                  frameNum="22" 
+                  tag="BOOKLAUNCH" 
+                  height="150px" 
+                />
+              </div>
+
             </div>
           </div>
 
         </div>
 
-        {/* Filmstrip Camera Collage Grid */}
-        <div className="row g-4 justify-content-center">
-          {current.photos.map((item, idx) => (
-            <div key={`event-photo-${idx}`} className="col-12 col-md-6 col-lg-3">
-              <div className="filmstrip-reel h-100 d-flex flex-column justify-content-between">
-                
-                {/* Top Sprocket Holes */}
-                <div className="sprocket-hole-row mb-2">
-                  {[...Array(6)].map((_, i) => (
-                    <div key={`top-${idx}-${i}`} className="sprocket-hole"></div>
-                  ))}
-                </div>
-
-                {/* Photo Frame with Timestamps */}
-                <div className="filmstrip-photo position-relative my-auto">
-                  <div className="camera-meta-header">
-                    <span>MONIKACHUGH</span>
-                    <span>► {item.frame}</span>
-                  </div>
-                  <img 
-                    src={item.src} 
-                    alt={item.frame} 
-                    style={{ height: '280px', width: '100%', objectFit: 'cover' }}
-                  />
-                  <div className="camera-timestamp-badge">
-                    {item.time}
-                  </div>
-                </div>
-
-                {/* Handwritten Annotation Below */}
-                <div className="text-center pt-2 pb-1">
-                  <span className="font-handwriting" style={{ fontSize: '28px', color: '#F4D068' }}>
-                    {item.annotation}
-                  </span>
-                </div>
-
-                {/* Bottom Sprocket Holes */}
-                <div className="sprocket-hole-row mt-2">
-                  {[...Array(6)].map((_, i) => (
-                    <div key={`bot-${idx}-${i}`} className="sprocket-hole"></div>
-                  ))}
-                </div>
-
-              </div>
-            </div>
-          ))}
+        {/* Footer Paragraph */}
+        <div className="text-center w-100 d-flex justify-content-center pt-2">
+          <p 
+            className="font-larken text-center mx-auto mb-0" 
+            style={{ 
+              color: '#4A423B', 
+              fontSize: '0.96rem', 
+              lineHeight: '1.75', 
+              maxWidth: '840px',
+              textAlign: 'center' 
+            }}
+          >
+            A warm gathering created around books, conversations and the simple joy of sharing thoughts. Quote Café brings readers and curious minds together in an intimate space where every thought has a place. The gathering offered an opportunity to meet, converse and experience the world of the book beyond its pages. A warm gathering created around books, conversations and the simple joy of sharing thoughts.
+          </p>
         </div>
+
 
       </div>
     </section>
   );
 }
+
