@@ -5,25 +5,27 @@ export default function EighthSection() {
     <section id="section-8" className="py-5 overflow-hidden" style={{ backgroundColor: '#FAF5E8', marginTop: '32px' }}>
       <div className="container-fluid px-3 px-md-4 px-lg-5">
         
-        {/* Section Header + View All Button (Strictly centered title with right-aligned CTA on desktop, stacked on mobile) */}
-        <div className="position-relative mb-4 mb-md-5 max-w-1400 mx-auto d-flex flex-column flex-md-row align-items-center justify-content-center">
-          <h2 
-            className="mb-0 text-center"
-            style={{
-              fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-              fontSize: 'clamp(26px, 6vw, 38px)',
-              color: '#422207',
-              fontWeight: 400,
-              lineHeight: '1.15',
-              letterSpacing: '0.03em'
-            }}
-          >
-            Pirate ipsum ipsumme
-          </h2>
+        {/* Section Header: Centered title with right-corner View All CTA */}
+        <div className="position-relative mb-4 mb-md-5 max-w-1400 mx-auto text-center">
+          <div className="mx-auto text-center px-4">
+            <h2 
+              className="mb-0"
+              style={{
+                fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
+                fontSize: 'clamp(24px, 4.5vw, 32px)',
+                color: '#422207',
+                fontWeight: 400,
+                lineHeight: '1.15',
+                letterSpacing: '0.03em'
+              }}
+            >
+              The Story Within the Poem.
+            </h2>
+          </div>
 
           <a 
             href="/books" 
-            className="text-decoration-none px-4 py-2 mt-3 mt-md-0 position-md-absolute end-0 d-inline-flex align-items-center justify-content-center transition-all"
+            className="text-decoration-none px-4 py-2 mt-3 mt-md-0 d-inline-flex align-items-center justify-content-center transition-all section8-header-btn"
             style={{
               fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
               fontSize: '14.5px',
@@ -84,7 +86,7 @@ export default function EighthSection() {
               }}
             >
               <img 
-                src="/images/section_8_book_bg.svg" 
+                src="/images/section_8_book_image.svg" 
                 alt="Balance Poem Book" 
                 className="w-100 h-100 object-fit-contain d-block" 
               />
@@ -124,6 +126,26 @@ export default function EighthSection() {
         </div>
 
       </div>
+
+      <style jsx>{`
+        @media (min-width: 768px) {
+          .section8-header-btn {
+            position: absolute !important;
+            right: 0 !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            margin-top: 0 !important;
+          }
+          .section8-header-btn:hover {
+            transform: translateY(-50%) scale(1.03) !important;
+          }
+        }
+        .section8-header-btn:hover {
+          background-color: #A44E0E !important;
+          color: #FFFFFF !important;
+          box-shadow: 0 4px 10px rgba(164, 78, 14, 0.2);
+        }
+      `}</style>
     </section>
   );
 }

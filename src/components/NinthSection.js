@@ -9,13 +9,13 @@ export default function NinthSection() {
     <section id="section-9" className="py-5 overflow-hidden" style={{ backgroundColor: '#FFFDF9' }}>
       <div className="container-fluid px-3 px-md-4 px-lg-5">
         
-        {/* Top Header Area: Subtitle + Main Title + Description */}
+        {/* Top Header Area: Cursive Tag + Main Header + Semi Header */}
         <div className="text-center max-w-800 mx-auto mb-4">
           <span 
             className="d-block mb-1"
             style={{
               fontFamily: "'Italianno', cursive",
-              fontSize: '32px',
+              fontSize: '28px',
               color: '#A44E0E',
               fontWeight: 400
             }}
@@ -24,31 +24,31 @@ export default function NinthSection() {
           </span>
 
           <h2 
-            className="mb-3"
+            className="mb-2"
             style={{
               fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-              fontSize: '38px',
+              fontSize: '32px',
               color: '#422207',
               fontWeight: 400,
-              lineHeight: '1.1',
+              lineHeight: '1.15',
               letterSpacing: '0.03em'
             }}
           >
-            Pirate ipsum me
+            Where Words Come to Life
           </h2>
 
           <p 
-            className="mx-auto mb-4"
+            className="mx-auto mb-4 px-2"
             style={{
               fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
-              fontSize: '14.5px',
+              fontSize: '15px',
               color: '#4A423B',
-              lineHeight: '1.7',
-              maxWidth: '680px',
+              lineHeight: '1.6',
+              maxWidth: '650px',
               fontWeight: 300
             }}
           >
-            Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones&apos; fluke.
+            Gatherings, conversations, and experiences created to connect, reflect, and inspire.
           </p>
 
           {/* Navigation Arrows */}

@@ -7,34 +7,23 @@ export default function FourteenthSection() {
     {
       id: 1,
       left: {
-        text: "Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the.",
-        author: "~ himajaindukuri"
+        text: "Absolutely relatable. It delves into self-discovery, acceptance, empowerment, resilience, healing, gratitude, and numerous positive affirmations. To lead a happy and fulfilling life, one should embrace all these aspects.",
+        author: "~ Gurpreet"
       },
       right: {
-        text: "Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the.",
-        author: "~ himajaindukuri"
+        text: "Very easy to read. Almost therapeutic and a good reminder to take care of oneself. Feels like a meditation session where one is learning to take care and focus on oneself.",
+        author: "~ Geetika"
       }
     },
     {
       id: 2,
       left: {
-        text: "Monika's profound wisdom and poetic eloquence create an extraordinary experience. Her words resonate deeply, guiding us toward mindfulness and creative peace.",
-        author: "~ ananya sharma"
+        text: "I love the way the cover feels and the beautiful art on it. Grab a warm cup of coffee or tea and a blanket and enjoy a fun and inspiring read.",
+        author: "~ Hannah"
       },
       right: {
-        text: "Every chapter feels like a quiet sanctuary for the mind. Monika has an unmatched ability to touch souls with simple yet transformative reflections.",
-        author: "~ rohan mehta"
-      }
-    },
-    {
-      id: 3,
-      left: {
-        text: "A masterful tapestry of emotion and philosophy. Monika Chugh's publications are a staple on our bookshelf and a source of daily inspiration.",
-        author: "~ kavita krishnamurthy"
-      },
-      right: {
-        text: "Through her talks and books, Monika inspires authentic growth. Her guidance helped our community find clarity and creative confidence.",
-        author: "~ samir kapoor"
+        text: "“No judgement. No fixing, only endless love and respect amidst my emotional mayhem.” These words deeply resonated with me. Dr. Monika’s perspective reminds us that even through painful experiences, we can choose strength, resilience, and self-acceptance. A beautifully written book with profound insight and heartfelt meaning.",
+        author: "~ Ritu"
       }
     }
   ];
@@ -75,15 +64,11 @@ export default function FourteenthSection() {
 
   const current = testimonials[currentIndex];
 
-  // Mobile flattened testimonials (all 6 stories accessible 1-by-1)
-  const mobileTestimonials = [
-    { id: '1-left', text: testimonials[0].left.text, author: testimonials[0].left.author },
-    { id: '1-right', text: testimonials[0].right.text, author: testimonials[0].right.author },
-    { id: '2-left', text: testimonials[1].left.text, author: testimonials[1].left.author },
-    { id: '2-right', text: testimonials[1].right.text, author: testimonials[1].right.author },
-    { id: '3-left', text: testimonials[2].left.text, author: testimonials[2].left.author },
-    { id: '3-right', text: testimonials[2].right.text, author: testimonials[2].right.author },
-  ];
+  // Mobile flattened testimonials (all 4 reviews accessible 1-by-1)
+  const mobileTestimonials = testimonials.flatMap((t, idx) => [
+    { id: `${idx}-left`, text: t.left.text, author: t.left.author },
+    { id: `${idx}-right`, text: t.right.text, author: t.right.author }
+  ]);
 
   const [mobileIndex, setMobileIndex] = useState(0);
 
@@ -168,13 +153,13 @@ export default function FourteenthSection() {
       {/* Main Container */}
       <div className="container-fluid px-3 px-md-4 position-relative z-1 py-3 py-md-4">
 
-        {/* Section Header */}
+        {/* Section Header: Cursive Tag + Main Header + Semi Header */}
         <div className="text-center max-w-800 mx-auto mb-4 mb-md-5">
           <span
             className="d-block mb-1"
             style={{
               fontFamily: "'Italianno', cursive",
-              fontSize: 'clamp(28px, 5.5vw, 34px)',
+              fontSize: 'clamp(24px, 4vw, 28px)',
               color: '#A44E0E',
               fontWeight: 400
             }}
@@ -183,18 +168,32 @@ export default function FourteenthSection() {
           </span>
 
           <h2
-            className="mb-0"
+            className="mb-2"
             style={{
               fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-              fontSize: 'clamp(28px, 6vw, 38px)',
+              fontSize: 'clamp(24px, 4.5vw, 32px)',
               color: '#422207',
               fontWeight: 400,
               lineHeight: '1.15',
               letterSpacing: '0.03em'
             }}
           >
-            Pirate ipsum me
+            In Their Words
           </h2>
+
+          <p
+            className="mx-auto mb-0 px-2"
+            style={{
+              fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
+              fontSize: '15px',
+              color: '#4A423B',
+              lineHeight: '1.6',
+              maxWidth: '620px',
+              fontWeight: 300
+            }}
+          >
+            What they felt. What they found. What they carry forward.
+          </p>
         </div>
 
         {/* ========================================================================= */}

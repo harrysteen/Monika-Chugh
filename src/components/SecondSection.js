@@ -31,16 +31,16 @@ export default function SecondSection() {
 
             {/* Right Side: Text & Details */}
             <div className="col-12 col-md-7 col-lg-7 d-flex flex-column justify-content-center">
-              <div className="second-section-text-box mx-auto mx-md-0 w-100" style={{ maxWidth: '560px' }}>
+              <div className="second-section-text-box mx-auto mx-md-0 w-100" style={{ maxWidth: '620px' }}>
 
-                {/* Centered Heading Block matching design */}
-                <div className="text-center mb-3 mb-md-3">
+                {/* Centered Heading Block matching design with increased space below */}
+                <div className="text-center mb-4 mb-md-5">
                   {/* Script Header: Our Etsy Collection */}
                   <span
                     className="d-block mb-1"
                     style={{
                       fontFamily: "'Italianno', cursive",
-                      fontSize: 'clamp(28px, 3.5vw, 32px)',
+                      fontSize: 'clamp(24px, 3vw, 28px)',
                       color: '#A44E0E',
                       fontWeight: 400,
                       lineHeight: '1.1'
@@ -54,7 +54,7 @@ export default function SecondSection() {
                     className="mb-0"
                     style={{
                       fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                      fontSize: 'clamp(24px, 3.2vw, 32px)',
+                      fontSize: 'clamp(22px, 2.6vw, 27px)',
                       color: '#422207',
                       fontWeight: 400,
                       lineHeight: '1.2',
@@ -65,43 +65,47 @@ export default function SecondSection() {
                   </h2>
                 </div>
 
-                {/* Subtitle Details */}
+                {/* Subtitle Details - same color (#4A423B), same size (14.5px), regular weight (400) */}
                 <p
-                  className="mb-2 mb-md-3 text-start"
+                  className="mb-3 text-start"
                   style={{
-                    fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
-                    fontSize: 'clamp(14px, 1.8vw, 16px)',
+                    fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
+                    fontSize: '14.5px',
                     fontWeight: 400,
                     fontStyle: 'normal',
-                    lineHeight: '1.42',
+                    lineHeight: '1.6',
                     letterSpacing: '0%',
-                    color: '#5C5248'
+                    color: '#4A423B',
+                    WebkitFontSmoothing: 'antialiased',
+                    MozOsxFontSmoothing: 'grayscale'
                   }}
                 >
                   LOTUS WHISPERS — Within &amp; Between A Guided Mindfulness &amp; Reflection Journal Words by Monika Chugh · Art by Alka Chopra · Mindful Seeker Series.
                 </p>
 
-                {/* Paragraph & Arrow (Full width text on mobile with arrow placed neatly below at right, side-by-side on desktop) */}
-                <div className="d-flex flex-column flex-md-row align-items-end align-items-md-center justify-content-between gap-2 gap-md-4 text-start">
+                {/* Paragraph & Arrow - same color (#4A423B), same size (14.5px), regular weight (400) */}
+                <div className="d-flex flex-column flex-md-row align-items-end align-items-md-center justify-content-between gap-3 text-start">
                   <p
-                    className="mb-0 flex-grow-1 text-start w-100"
+                    className="mb-0 flex-grow-1 text-start"
                     style={{
-                      fontFamily: "'Larken', 'Lora', serif",
-                      fontSize: 'clamp(13.5px, 1.6vw, 14.5px)',
+                      fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
+                      fontSize: '14.5px',
                       color: '#4A423B',
                       lineHeight: '1.65',
-                      fontWeight: 400
+                      fontWeight: 400,
+                      WebkitFontSmoothing: 'antialiased',
+                      MozOsxFontSmoothing: 'grayscale'
                     }}
                   >
                     Rooted in the symbolism of the lotus, a flower that rises through still water and unfolds in its own time, this is not a journal to perform or perfect. It&apos;s a sanctuary for the thoughts, emotions, and truths that have simply been waiting to be seen.
                   </p>
 
-                  {/* Elegant Editorial Arrow Link */}
+                  {/* Elegant Editorial Arrow Link - brown color, moved towards the right */}
                   <a
                     href="#books"
-                    className="second-section-arrow-btn text-decoration-none flex-shrink-0 d-inline-flex align-items-center justify-content-center mt-2 mt-md-0"
+                    className="second-section-arrow-btn text-decoration-none flex-shrink-0 d-inline-flex align-items-center justify-content-center mt-2 mt-md-0 ms-auto ms-md-4"
                     style={{
-                      color: '#422207',
+                      color: '#A44E0E',
                       minWidth: '44px',
                       minHeight: '36px',
                       padding: '4px 6px',
@@ -120,7 +124,7 @@ export default function SecondSection() {
                       <path
                         d="M0 7H32M32 7L25 1M32 7L25 13"
                         stroke="currentColor"
-                        strokeWidth="1.6"
+                        strokeWidth="1.8"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />

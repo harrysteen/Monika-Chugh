@@ -55,6 +55,7 @@
   --font-paragraph: 'Larken-Light', 'Larken', 'Lora', serif;
 }
 
+html,
 body {
   background-color: var(--bg-cream);
   color: var(--text-dark);
@@ -63,6 +64,9 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Helper background class */
@@ -133,7 +137,8 @@ body {
 }
 
 .hero-figma-headline .script-inline,
-.hero-figma-headline .hero-italic-accent {
+.hero-figma-headline .hero-italic-accent,
+.hero-italic-accent {
   font-family: 'Cormorant Garamond', 'Playfair Display', 'Lora', serif !important;
   font-style: italic !important;
   color: #A44E0E !important;

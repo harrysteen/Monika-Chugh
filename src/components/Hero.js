@@ -34,13 +34,13 @@ export default function Hero() {
               }}
             >
               Hi, I’m Monika. A fellow<br />
-              traveler. <span className="hero-italic-accent">Learning to slow</span><br />
-              <span className="hero-italic-accent">down and live</span> with intention.<br />
+              traveler. <span className="hero-italic-accent" style={{ fontSize: '26px', fontStyle: 'italic', color: '#A44E0E' }}>Learning to slow</span><br />
+              <span className="hero-italic-accent" style={{ fontSize: '26px', fontStyle: 'italic', color: '#A44E0E' }}>down and live</span> with intention.<br />
               Sharing a little of what I know.<br />
               What I’ve lived. What I’ve<br />
               questioned. What I’m still<br />
-              figuring out. Just an <span className="hero-italic-accent">honest</span><br />
-              <span className="hero-italic-accent">walk</span> and I wouldn&apos;t have it<br />
+              figuring out. Just an <span className="hero-italic-accent" style={{ fontSize: '26px', fontStyle: 'italic', color: '#A44E0E' }}>honest</span><br />
+              <span className="hero-italic-accent" style={{ fontSize: '26px', fontStyle: 'italic', color: '#A44E0E' }}>walk</span> and I wouldn&apos;t have it<br />
               any other way.
             </h1>
 
@@ -50,7 +50,7 @@ export default function Hero() {
           <div className="col-12 col-lg-6 ps-lg-4 pe-lg-3 pt-2 pt-lg-3 pb-4 pb-lg-5">
             <div className="w-100 overflow-hidden text-start">
               <img 
-                src="/images/home_hero_image.svg" 
+                src="/images/home_hero_image_version_0.1.svg" 
                 alt="Monika Chugh sitting in armchair writing in journal" 
                 className="w-100 d-block"
                 style={{ 

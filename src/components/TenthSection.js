@@ -78,7 +78,7 @@ export default function TenthSection() {
               className="d-block mb-1"
               style={{
                 fontFamily: "'Italianno', cursive",
-                fontSize: '36px',
+                fontSize: '30px',
                 color: '#A44E0E',
                 fontWeight: 400,
                 lineHeight: '1.2'
