@@ -31,14 +31,14 @@ export default function TwelfthSection() {
           {/* Floating Podcast Card Box (Centered on Mobile, Left-Aligned on Desktop with Warm Golden Glassmorphism) */}
           <div className="podcast-card p-4 px-3 px-sm-4 p-md-5 text-center shadow-lg position-relative mx-auto mx-lg-0 ms-lg-4 ms-xl-5">
             
-            {/* Audio Platform Icons (Spotify, Apple Music, YouTube) */}
+            {/* Audio Platform Icons (Spotify, YouTube) */}
             <div className="d-flex align-items-center justify-content-center gap-3 mb-3 mb-sm-4 position-relative z-1">
 
               {/* Spotify Icon */}
               <a
                 href="#spotify"
                 className="d-flex align-items-center justify-content-center text-dark text-decoration-none rounded-circle transition-all hover-scale podcast-icon"
-                style={{ backgroundColor: '#000', transition: 'transform 0.2s ease' }}
+                style={{ backgroundColor: '#422207', transition: 'transform 0.2s ease' }}
                 aria-label="Listen on Spotify"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFF">
@@ -46,25 +46,11 @@ export default function TwelfthSection() {
                 </svg>
               </a>
 
-              {/* Apple Music / Podcast Icon */}
-              <a
-                href="#apple-podcasts"
-                className="d-flex align-items-center justify-content-center text-dark text-decoration-none rounded-circle transition-all hover-scale podcast-icon"
-                style={{ border: '1.5px solid #000', backgroundColor: 'transparent', transition: 'transform 0.2s ease' }}
-                aria-label="Listen on Apple Podcasts"
-              >
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M9 18V5l12-2v13"></path>
-                  <circle cx="6" cy="18" r="3" fill="#000"></circle>
-                  <circle cx="18" cy="16" r="3" fill="#000"></circle>
-                </svg>
-              </a>
-
               {/* YouTube Icon */}
               <a
                 href="#youtube"
                 className="d-flex align-items-center justify-content-center text-dark text-decoration-none rounded-circle transition-all hover-scale podcast-icon"
-                style={{ backgroundColor: '#000', transition: 'transform 0.2s ease' }}
+                style={{ backgroundColor: '#422207', transition: 'transform 0.2s ease' }}
                 aria-label="Watch on YouTube"
               >
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="#FFF">

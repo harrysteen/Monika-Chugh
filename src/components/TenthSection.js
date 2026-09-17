@@ -7,7 +7,7 @@ export default function TenthSection() {
       id: 1,
       type: 'image',
       src: '/images/home section 10 row1 img1.png',
-      alt: 'Hang out with yourself tote bag'
+      alt: 'Hand-painted floral scarf on mannequin'
     },
     {
       id: 2,
@@ -28,13 +28,13 @@ export default function TenthSection() {
       id: 4,
       type: 'image',
       src: '/images/home section 10 row2 img1.png',
-      alt: 'Lotus Whispers framed art'
+      alt: 'Travel light let your soul float framed artwork'
     },
     {
       id: 5,
       type: 'image',
       src: '/images/home section 10 row2 img2.png',
-      alt: 'Tote bag on chair'
+      alt: 'Hang out with yourself lotus calendar artwork'
     },
     {
       id: 6,

@@ -56,41 +56,22 @@ export default function EleventhSection() {
                 className="w-100 h-100 d-flex flex-column justify-content-between p-4 px-md-4 py-md-4 px-xl-5 position-relative section-11-box"
                 style={{ backgroundColor: '#F3EDE4' }}
               >
-                {/* Background Leaf Watermark with Veins */}
+                {/* Background Aroginī Leaves Watermark */}
                 <div
-                  className="position-absolute top-50 start-50 translate-middle pointer-events-none"
-                  style={{ width: '80%', height: '80%', zIndex: 0, opacity: 0.35 }}
+                  className="position-absolute top-50 start-50 translate-middle pointer-events-none d-flex align-items-center justify-content-center"
+                  style={{ 
+                    width: '78%', 
+                    height: '78%', 
+                    zIndex: 0, 
+                    opacity: 0.18,
+                    mixBlendMode: 'multiply'
+                  }}
                 >
-                  <svg 
-                    viewBox="0 0 320 400" 
-                    fill="none" 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="w-100 h-100" 
-                    preserveAspectRatio="xMidYMid meet"
-                  >
-                    {/* Leaf silhouette */}
-                    <path 
-                      d="M160 30 C245 105 285 220 160 370 C35 220 75 105 160 30 Z" 
-                      fill="#D8C7B0" 
-                      fillOpacity="0.5" 
-                    />
-                    {/* Central stem */}
-                    <path 
-                      d="M160 45 Q160 200 160 355" 
-                      stroke="#BEAC95" 
-                      strokeWidth="2.5" 
-                      strokeLinecap="round" 
-                    />
-                    {/* Lateral veins */}
-                    <path d="M160 100 Q195 85 225 95" stroke="#BEAC95" strokeWidth="1.8" strokeLinecap="round" />
-                    <path d="M160 100 Q125 85 95 95" stroke="#BEAC95" strokeWidth="1.8" strokeLinecap="round" />
-                    <path d="M160 160 Q205 140 245 155" stroke="#BEAC95" strokeWidth="1.8" strokeLinecap="round" />
-                    <path d="M160 160 Q115 140 75 155" stroke="#BEAC95" strokeWidth="1.8" strokeLinecap="round" />
-                    <path d="M160 220 Q205 200 240 220" stroke="#BEAC95" strokeWidth="1.8" strokeLinecap="round" />
-                    <path d="M160 220 Q115 200 80 220" stroke="#BEAC95" strokeWidth="1.8" strokeLinecap="round" />
-                    <path d="M160 280 Q195 265 220 285" stroke="#BEAC95" strokeWidth="1.8" strokeLinecap="round" />
-                    <path d="M160 280 Q125 265 100 285" stroke="#BEAC95" strokeWidth="1.8" strokeLinecap="round" />
-                  </svg>
+                  <img 
+                    src="/images/home_arogini_content_bg_image.png" 
+                    alt="Ārogini Emblem Watermark" 
+                    className="w-100 h-100 object-fit-contain"
+                  />
                 </div>
 
                 {/* 3 Headers - Same font weight and color */}

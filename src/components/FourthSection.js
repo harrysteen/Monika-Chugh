@@ -67,7 +67,7 @@ export default function FourthSection() {
                     src={book.cover} 
                     alt={book.title} 
                     className="img-fluid rounded shadow-sm mb-3 d-block"
-                    style={{ maxHeight: '215px', width: 'auto', objectFit: 'contain' }}
+                    style={{ height: '215px', width: '100%', objectFit: 'contain', objectPosition: 'top' }}
                   />
                   <h3 
                     className="text-start mb-0"
