@@ -34,13 +34,13 @@ export default function Hero() {
               }}
             >
               Hi, I’m Monika. A fellow<br />
-              traveler. <span className="hero-italic-accent" style={{ fontSize: '26px', fontStyle: 'italic', color: '#A44E0E' }}>Learning to slow</span><br />
-              <span className="hero-italic-accent" style={{ fontSize: '26px', fontStyle: 'italic', color: '#A44E0E' }}>down and live</span> with intention.<br />
+              traveler. <span className="hero-italic-accent" style={{ fontSize: '27px', fontStyle: 'italic', color: '#A44E0E' }}>Learning to slow</span><br />
+              <span className="hero-italic-accent" style={{ fontSize: '27px', fontStyle: 'italic', color: '#A44E0E' }}>down and live</span> with intention.<br />
               Sharing a little of what I know.<br />
               What I’ve lived. What I’ve<br />
               questioned. What I’m still<br />
-              figuring out. Just an <span className="hero-italic-accent" style={{ fontSize: '26px', fontStyle: 'italic', color: '#A44E0E' }}>honest</span><br />
-              <span className="hero-italic-accent" style={{ fontSize: '26px', fontStyle: 'italic', color: '#A44E0E' }}>walk</span> and I wouldn&apos;t have it<br />
+              figuring out. Just an <span className="hero-italic-accent" style={{ fontSize: '27px', fontStyle: 'italic', color: '#A44E0E' }}>honest</span><br />
+              <span className="hero-italic-accent" style={{ fontSize: '27px', fontStyle: 'italic', color: '#A44E0E' }}>walk</span> and I wouldn&apos;t have it<br />
               any other way.
             </h1>
 

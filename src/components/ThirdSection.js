@@ -60,10 +60,10 @@ export default function ThirdSection() {
   return (
     <section id="new-releases" className="py-5 bg-cream overflow-hidden" style={{ backgroundColor: '#FFFDF9' }}>
       <div className="container-fluid px-3 px-md-4 px-lg-5">
-        
+
         {/* Section Header */}
         <div className="text-center mb-4 mb-md-5">
-          <span 
+          <span
             className="d-block mb-1"
             style={{
               fontFamily: "'Italianno', cursive",
@@ -75,28 +75,15 @@ export default function ThirdSection() {
           >
             upcoming &amp; new releases
           </span>
-          <h2 
-            className="mb-0 text-capitalize"
-            style={{
-              fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-              fontSize: 'clamp(24px, 2.8vw, 32px)',
-              color: '#422207',
-              fontWeight: 400,
-              lineHeight: '1.15',
-              letterSpacing: '0.02em'
-            }}
-          >
-            Upcoming &amp; New Releases
-          </h2>
         </div>
 
         {/* Content Row */}
         <div className="row align-items-center g-4 g-lg-5 max-w-1400 mx-auto">
-          
+
           {/* Left Column: Big Book Image with "launching soon..." label */}
           <div className="col-12 col-lg-6">
             <div className="w-100 mx-auto" style={{ maxWidth: '590px' }}>
-              <div 
+              <div
                 className="mb-2 ps-1 text-start"
                 style={{
                   fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
@@ -109,10 +96,10 @@ export default function ThirdSection() {
                 launching soon...
               </div>
               <div className="w-100 overflow-hidden text-center">
-                <img 
+                <img
                   key={currentBook.id + '-big'}
-                  src={currentBook.bigBook} 
-                  alt={currentBook.title} 
+                  src={currentBook.bigBook}
+                  alt={currentBook.title}
                   className="w-100 h-auto d-block mx-auto rounded-1"
                   style={{ maxHeight: '520px', objectFit: 'contain', transition: 'all 0.4s ease-in-out' }}
                 />
@@ -123,12 +110,12 @@ export default function ThirdSection() {
           {/* Right Column: Book Carousel / Showcase */}
           <div className="col-12 col-lg-6">
             <div className="d-flex flex-column align-items-center text-center px-2 px-md-4">
-              
+
               {/* Carousel Row: Left Arrow, Book Cover, Right Arrow */}
               <div className="d-flex align-items-center justify-content-center gap-4 gap-md-5 mb-4 w-100">
-                
+
                 {/* Previous Arrow Button */}
-                <button 
+                <button
                   onClick={prevBook}
                   aria-label="Previous Book"
                   className="btn rounded-circle d-flex align-items-center justify-content-center transition-all p-0"
@@ -146,17 +133,17 @@ export default function ThirdSection() {
 
                 {/* Center Book Cover Image */}
                 <div className="book-cover-wrapper position-relative d-flex align-items-center justify-content-center" style={{ minHeight: '230px' }}>
-                  <img 
+                  <img
                     key={currentBook.id + '-small'}
-                    src={currentBook.cover} 
-                    alt={currentBook.title} 
+                    src={currentBook.cover}
+                    alt={currentBook.title}
                     className="img-fluid rounded shadow-sm"
                     style={{ maxHeight: '230px', maxWidth: '175px', width: 'auto', objectFit: 'contain', transition: 'all 0.4s ease-in-out' }}
                   />
                 </div>
 
                 {/* Next Arrow Button */}
-                <button 
+                <button
                   onClick={nextBook}
                   aria-label="Next Book"
                   className="btn rounded-circle d-flex align-items-center justify-content-center transition-all p-0"
@@ -175,7 +162,7 @@ export default function ThirdSection() {
               </div>
 
               {/* Book Title */}
-              <h3 
+              <h3
                 className="mb-3"
                 style={{
                   fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
@@ -189,7 +176,7 @@ export default function ThirdSection() {
               </h3>
 
               {/* Description Paragraph */}
-              <p 
+              <p
                 className="mb-4"
                 style={{
                   fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
@@ -207,7 +194,7 @@ export default function ThirdSection() {
               </p>
 
               {/* Notify Me CTA Button */}
-              <button 
+              <button
                 type="button"
                 onClick={() => setNotifyModalOpen(true)}
                 className="btn text-decoration-none d-inline-flex align-items-center justify-content-center px-5 py-2 transition-all section3-cta-btn"
@@ -236,36 +223,36 @@ export default function ThirdSection() {
 
       {/* Notify Me Modal */}
       {notifyModalOpen && (
-        <div 
+        <div
           className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center px-3"
           style={{ backgroundColor: 'rgba(66, 34, 7, 0.45)', backdropFilter: 'blur(3px)', zIndex: 1050 }}
           onClick={() => setNotifyModalOpen(false)}
         >
-          <div 
+          <div
             className="p-4 p-md-5 rounded shadow-lg text-center position-relative"
             style={{ backgroundColor: '#FFFDF9', maxWidth: '460px', width: '100%', border: '1px solid #E2D5C3' }}
             onClick={(e) => e.stopPropagation()}
           >
-            <button 
-              type="button" 
+            <button
+              type="button"
               className="btn-close position-absolute top-0 end-0 m-3"
               onClick={() => setNotifyModalOpen(false)}
               aria-label="Close"
             ></button>
 
-            <span 
+            <span
               className="d-block mb-1"
               style={{ fontFamily: "'Italianno', cursive", fontSize: '28px', color: '#A44E0E' }}
             >
               early access &amp; release updates
             </span>
-            <h4 
+            <h4
               className="mb-2"
               style={{ fontFamily: "'Beautique Display', 'Cormorant Garamond', serif", color: '#422207' }}
             >
               {currentBook.title}
             </h4>
-            <p 
+            <p
               className="small mb-4"
               style={{ color: '#5C5248', fontFamily: "'Larken-Light', 'Lora', serif" }}
             >
@@ -279,7 +266,7 @@ export default function ThirdSection() {
             ) : (
               <form onSubmit={handleNotifySubmit}>
                 <div className="input-group mb-3">
-                  <input 
+                  <input
                     type="email"
                     required
                     placeholder="Enter your email"
@@ -288,7 +275,7 @@ export default function ThirdSection() {
                     className="form-control"
                     style={{ backgroundColor: '#FFFFFF', borderColor: '#C4A57B', color: '#422207' }}
                   />
-                  <button 
+                  <button
                     type="submit"
                     className="btn px-4"
                     style={{ backgroundColor: '#A44E0E', color: '#FFFFFF', borderColor: '#A44E0E' }}
