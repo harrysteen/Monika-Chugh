@@ -1,183 +1,157 @@
 'use client';
 
 export default function MyStoryTimeline() {
-  const paragraph1 = [
-    "Even as a young girl, I noticed things deeply, felt them fully, and put them into words.",
-    "I dreamed of becoming a doctor, but I also loved to write. The world got my medicine but my words stayed private, held back by fear.",
-    "Then, in 2017, life shook me in a way I never expected."
-  ];
+  const paragraph1 = "Even as a young girl, I noticed things deeply, felt them fully, and put them into words. I dreamed of becoming a doctor, but I also loved to write. The world got my medicine but my words stayed private, held back by fear. Then, in 2017, life shook me in a way I never expected.";
 
-  const paragraph2 = [
-    "In the aftermath, I kept asking the universe: why me?",
-    "That question cracked something open. It led me toward karma, spirituality, and a deeper understanding of how our experiences shape us.",
-    "Slowly, I began to see that perhaps not everything comes with an immediate answer. Sometimes, meaning reveals itself only with time."
-  ];
+  const paragraph2 = "In the aftermath, I kept asking the universe: why me? That question cracked something open. It led me toward karma, spirituality, and a deeper understanding of how our experiences shape us. Slowly, I began to see that perhaps not everything comes with an immediate answer. Sometimes, meaning reveals itself only with time.";
 
-  const paragraph3 = [
-    "And somewhere in all that questioning, I began writing again not tucked away this time, but shared, one word and one verse at a time.",
-    "One poem became a book. A journal became something more. What had once been private slowly became part of my path and, perhaps, a way for my words to mean something to someone else."
-  ];
+  const paragraph3 = "And somewhere in all that questioning, I began writing again not tucked away this time, but shared, one word and one verse at a time. One poem became a book. A journal became something more. What had once been private slowly became part of my path and, perhaps, a way for my words to mean something to someone else.";
 
   return (
     <section className="py-5 bg-cream position-relative" id="story-timeline">
-      <div className="container-fluid px-3 px-md-4 px-xl-5 text-center" style={{ maxWidth: '1380px' }}>
-        
+      <div className="container-fluid px-3 px-md-4 px-lg-5 text-center" style={{ maxWidth: '1240px' }}>
+
         {/* Section Header */}
         <div className="mb-5 pb-2">
-          <span 
-            className="d-block mb-1" 
-            style={{ 
-              fontFamily: "'Italianno', cursive", 
-              fontSize: '24px', 
+          <span
+            className="d-block mb-1"
+            style={{
+              fontFamily: "'Italianno', cursive",
+              fontSize: '28px',
               color: '#A44E0E',
               lineHeight: 1.2
             }}
           >
             where it all began
           </span>
-          <h2 
-            className="fw-normal" 
-            style={{ 
-              fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
-              fontSize: '24px',
+          <h2
+            className="fw-normal"
+            style={{
+              fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif",
+              fontSize: '36px',
               color: '#422207',
               letterSpacing: '0.01em',
               lineHeight: 1.25
             }}
           >
-            A Journey of Words and Resilience
+            Pirate ipsum me main blimey fluke
           </h2>
         </div>
 
-        {/* Timeline Items */}
-        <div className="mx-auto">
-          
-          {/* ITEM 1: Image Left, Text Right */}
-          <div className="row align-items-center g-4 g-lg-5 text-start">
-            <div className="col-lg-7">
-              <div className="position-relative">
-                <img 
-                  src="/images/mystory/my_story_section3_img1.svg" 
-                  alt="Where it all began - Story Part 1" 
-                  className="w-100 h-auto d-block"
+        {/* Timeline Flow Container */}
+        <div className="mx-auto" style={{ maxWidth: '1060px' }}>
+
+          {/* ROW 1: Image Left, Text Right (Shifted slightly Left) */}
+          <div className="row align-items-center justify-content-between g-4 g-lg-5 text-start me-lg-4">
+            {/* Image Column */}
+            <div className="col-lg-7 pe-lg-2">
+              <div className="position-relative w-100">
+                <img
+                  src="/images/mystory/section_3_img1.png"
+                  alt="Where it all began - Young girl in flower field"
+                  className="img-fluid w-100 h-auto d-block"
+                  style={{
+                    filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.03))'
+                  }}
                 />
               </div>
             </div>
-            <div className="col-lg-5">
-              <div 
-                className="p-4 p-md-4 rounded-3 h-100 d-flex flex-column justify-content-center"
+
+            {/* Text Column */}
+            <div className="col-lg-5 ps-lg-3">
+              <p
+                className="mb-0"
                 style={{
-                  backgroundColor: '#FAF2DC',
-                  border: '1px solid #F0E3C8',
-                  boxShadow: '0 4px 16px rgba(66, 34, 7, 0.04)'
+                  fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
+                  fontSize: '15px',
+                  color: '#4A423B',
+                  lineHeight: '1.85',
+                  fontWeight: 300,
+                  letterSpacing: '0.01em'
                 }}
               >
-                {paragraph1.map((text, idx) => (
-                  <p 
-                    key={idx}
-                    className={idx === paragraph1.length - 1 ? 'mb-0' : 'mb-3'}
-                    style={{ 
-                      fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
-                      fontSize: '15.5px', 
-                      color: '#4A423B', 
-                      lineHeight: '1.8',
-                      fontWeight: 300
-                    }}
-                  >
-                    {text}
-                  </p>
-                ))}
-              </div>
+                {paragraph1}
+              </p>
             </div>
           </div>
 
-          {/* Timeline Vertical Connector 1 */}
-          <div className="d-flex flex-column align-items-center my-3 my-md-4">
-            <div style={{ width: '1px', height: '48px', backgroundColor: '#A44E0E' }}></div>
+          {/* Timeline Connector 1 */}
+          <div className="d-flex flex-column align-items-center my-3 my-lg-4">
+            <div style={{ width: '1px', height: '48px', backgroundColor: '#A44E0E', opacity: 0.85 }}></div>
             <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#A44E0E', marginTop: '-1px' }}></div>
           </div>
 
-          {/* ITEM 2: Text Left, Image Right */}
-          <div className="row align-items-center g-4 g-lg-5 text-start flex-lg-row-reverse">
-            <div className="col-lg-7">
-              <div className="position-relative">
-                <img 
-                  src="/images/mystory/my_story_section3_img2.svg" 
-                  alt="Where it all began - Story Part 2" 
-                  className="w-100 h-auto d-block"
-                />
-              </div>
-            </div>
-            <div className="col-lg-5">
-              <div 
-                className="p-4 p-md-4 rounded-3 h-100 d-flex flex-column justify-content-center"
+          {/* ROW 2: Text Left, Image Right (Shifted slightly Right) */}
+          <div className="row align-items-center justify-content-between g-4 g-lg-5 text-start ms-lg-4 flex-column-reverse flex-lg-row">
+            {/* Text Column */}
+            <div className="col-lg-5 pe-lg-3">
+              <p
+                className="mb-0"
                 style={{
-                  backgroundColor: '#FAF2DC',
-                  border: '1px solid #F0E3C8',
-                  boxShadow: '0 4px 16px rgba(66, 34, 7, 0.04)'
+                  fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
+                  fontSize: '15px',
+                  color: '#4A423B',
+                  lineHeight: '1.85',
+                  fontWeight: 300,
+                  letterSpacing: '0.01em'
                 }}
               >
-                {paragraph2.map((text, idx) => (
-                  <p 
-                    key={idx}
-                    className={idx === paragraph2.length - 1 ? 'mb-0' : 'mb-3'}
-                    style={{ 
-                      fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
-                      fontSize: '15.5px', 
-                      color: '#4A423B', 
-                      lineHeight: '1.8',
-                      fontWeight: 300
-                    }}
-                  >
-                    {text}
-                  </p>
-                ))}
+                {paragraph2}
+              </p>
+            </div>
+
+            {/* Image Column */}
+            <div className="col-lg-7 ps-lg-2">
+              <div className="position-relative w-100">
+                <img
+                  src="/images/mystory/section_3_img3.png"
+                  alt="Where it all began - Graduation ceremony"
+                  className="img-fluid w-100 h-auto d-block"
+                  style={{
+                    filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.03))'
+                  }}
+                />
               </div>
             </div>
           </div>
 
-          {/* Timeline Vertical Connector 2 */}
-          <div className="d-flex flex-column align-items-center my-3 my-md-4">
-            <div style={{ width: '1px', height: '48px', backgroundColor: '#A44E0E' }}></div>
+          {/* Timeline Connector 2 */}
+          <div className="d-flex flex-column align-items-center my-3 my-lg-4">
+            <div style={{ width: '1px', height: '48px', backgroundColor: '#A44E0E', opacity: 0.85 }}></div>
             <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#A44E0E', marginTop: '-1px' }}></div>
           </div>
 
-          {/* ITEM 3: Image Left, Text Right */}
-          <div className="row align-items-center g-4 g-lg-5 text-start">
-            <div className="col-lg-7">
-              <div className="position-relative">
-                <img 
-                  src="/images/mystory/my_story_section3_img3.svg" 
-                  alt="Where it all began - Story Part 3" 
-                  className="w-100 h-auto d-block"
+          {/* ROW 3: Image Left, Text Right (Shifted slightly Left) */}
+          <div className="row align-items-center justify-content-between g-4 g-lg-5 text-start me-lg-4">
+            {/* Image Column */}
+            <div className="col-lg-7 pe-lg-2">
+              <div className="position-relative w-100">
+                <img
+                  src="/images/mystory/section_3_img2.png"
+                  alt="Where it all began - Writing at desk"
+                  className="img-fluid w-100 h-auto d-block"
+                  style={{
+                    filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.03))'
+                  }}
                 />
               </div>
             </div>
-            <div className="col-lg-5">
-              <div 
-                className="p-4 p-md-4 rounded-3 h-100 d-flex flex-column justify-content-center"
+
+            {/* Text Column */}
+            <div className="col-lg-5 ps-lg-3">
+              <p
+                className="mb-0"
                 style={{
-                  backgroundColor: '#FAF2DC',
-                  border: '1px solid #F0E3C8',
-                  boxShadow: '0 4px 16px rgba(66, 34, 7, 0.04)'
+                  fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
+                  fontSize: '15px',
+                  color: '#4A423B',
+                  lineHeight: '1.85',
+                  fontWeight: 300,
+                  letterSpacing: '0.01em'
                 }}
               >
-                {paragraph3.map((text, idx) => (
-                  <p 
-                    key={idx}
-                    className={idx === paragraph3.length - 1 ? 'mb-0' : 'mb-3'}
-                    style={{ 
-                      fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
-                      fontSize: '15.5px', 
-                      color: '#4A423B', 
-                      lineHeight: '1.8',
-                      fontWeight: 300
-                    }}
-                  >
-                    {text}
-                  </p>
-                ))}
-              </div>
+                {paragraph3}
+              </p>
             </div>
           </div>
 
@@ -186,3 +160,4 @@ export default function MyStoryTimeline() {
     </section>
   );
 }
+

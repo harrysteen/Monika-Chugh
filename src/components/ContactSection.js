@@ -230,32 +230,133 @@ export default function ContactSection() {
 
         </div>
 
-        {/* Botanical Line Divider (Bottom of Contact Section) */}
-        <div className="position-relative w-100 my-5 pt-4 text-center">
-          {/* Horizontal Line */}
+        {/* "Be the first to Know!" Newsletter Banner Card */}
+
+        <div className="position-relative w-100 my-5 pt-2">
           <div 
-            style={{ 
-              height: '1px', 
-              backgroundColor: '#E5D9CC', 
-              width: '100%' 
+            className="position-relative mx-auto text-start"
+            style={{
+              maxWidth: '1080px',
+              backgroundImage: "url('/images/contact/be_the_first_to_know_bg.png')",
+              backgroundColor: '#FFF8EC',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              border: '1px solid #EEDBCC',
+              borderRadius: '2px',
+              padding: '48px 40px 54px',
+              boxShadow: '0 4px 20px rgba(66,34,7,0.03)'
             }}
-          />
-          {/* Center Botanical Flower Motif */}
-          <div 
-            className="position-absolute top-50 start-50 translate-middle bg-cream px-3"
-            style={{ zIndex: 2 }}
           >
-            <img 
-              src="/images/contact/conract page icon.png" 
-              alt="Botanical icon" 
-              style={{ 
-                height: '42px', 
-                width: 'auto',
-                display: 'block'
-              }} 
-            />
+            <div className="row align-items-center justify-content-between g-4">
+              
+              {/* Left Column: Heading and Subtext */}
+              <div className="col-12 col-lg-7">
+                <h3 
+                  className="mb-3"
+                  style={{ 
+                    fontFamily: "'Beautique Display', 'BeautiqueDisplay-Bold', 'Cormorant Garamond', 'Playfair Display', serif",
+                    fontSize: '28px',
+                    fontWeight: 700,
+                    color: '#422207',
+                    lineHeight: '140%',
+                    letterSpacing: '0.04em'
+                  }}
+                >
+                  Be the <span style={{ fontStyle: 'italic', color: '#A44E0E', fontWeight: 700 }}>first</span> to Know!
+                </h3>
+                <p 
+                  className="mb-0"
+                  style={{ 
+                    fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
+                    fontSize: '15px',
+                    color: '#5C4F44',
+                    lineHeight: '1.75',
+                    fontWeight: 300,
+                    maxWidth: '520px'
+                  }}
+                >
+                  Stay updated with Monika&apos;s latest books, poems, articles, and new releases. Subscribe for occasional news and updates, delivered straight to your inbox.
+                </p>
+              </div>
+
+              {/* Right Column: Email Subscription Input */}
+              <div className="col-12 col-lg-5 text-lg-end">
+                <form 
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    alert('Thank you for subscribing!');
+                  }}
+                  className="d-flex align-items-center ms-lg-auto"
+                  style={{
+                    backgroundColor: '#F8E7C5',
+                    border: '1px solid #DEC9A8',
+                    borderRadius: '1px',
+                    maxWidth: '400px',
+                    width: '100%',
+                    padding: '8px 16px',
+                    height: '52px'
+                  }}
+                >
+                  <input 
+                    type="email" 
+                    required
+                    placeholder="Type Your Email"
+                    className="flex-grow-1 border-0 bg-transparent"
+                    style={{
+                      fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                      fontSize: '14px',
+                      color: '#422207',
+                      outline: 'none',
+                      boxShadow: 'none'
+                    }}
+                  />
+                  <button 
+                    type="submit"
+                    className="border-0 bg-transparent ps-3"
+                    style={{
+                      fontFamily: "'Larken', 'Lora', serif",
+                      fontSize: '14px',
+                      color: '#62350A',
+                      fontWeight: 500,
+                      cursor: 'pointer',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#A44E0E'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#62350A'}
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+
+            </div>
+
+            {/* Bottom Centered Golden Wax Seal Stamp */}
+            <div 
+              className="position-absolute"
+              style={{
+                bottom: '-28px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                zIndex: 10
+              }}
+            >
+              <img 
+                src="/images/contact/contact_wax_seal.png" 
+                alt="Embossed Wax Seal" 
+                style={{
+                  width: '56px',
+                  height: 'auto',
+                  display: 'block',
+                  filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.15))'
+                }}
+              />
+            </div>
+
           </div>
         </div>
+
+
 
       </div>
 

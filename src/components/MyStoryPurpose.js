@@ -3,21 +3,21 @@
 export default function MyStoryPurpose() {
   return (
     <section className="py-5 bg-cream position-relative" id="story-purpose">
-      <div className="container-fluid px-3 px-md-4 px-xl-5" style={{ maxWidth: '1380px' }}>
+      <div className="container-fluid px-0 px-md-3 px-lg-4 text-center" style={{ maxWidth: '1440px' }}>
         
-        {/* Background Card with subtle floral watermark */}
+        {/* Full-width parchment background container */}
         <div 
-          className="position-relative overflow-hidden text-center rounded-3 p-4 p-md-5"
+          className="position-relative overflow-hidden py-5 px-3 px-md-5 w-100"
           style={{
-            backgroundColor: '#FAF5ED',
-            backgroundImage: "linear-gradient(rgba(250, 245, 237, 0.85), rgba(250, 245, 237, 0.85)), url('/images/home_section5_bg.svg')",
-            backgroundSize: 'cover',
+            backgroundImage: "url('/images/mystory/my_story_purpose_bg.png')",
+            backgroundSize: '100% 100%',
             backgroundPosition: 'center',
-            border: '1px solid #EBDBCB'
+            backgroundRepeat: 'no-repeat',
+            minHeight: '520px'
           }}
         >
           
-          <div className="mx-auto py-2 py-md-4" style={{ maxWidth: '1100px' }}>
+          <div className="mx-auto py-3 py-md-4" style={{ maxWidth: '960px' }}>
             
             {/* Header */}
             <div className="mb-4 pb-2">
@@ -25,7 +25,7 @@ export default function MyStoryPurpose() {
                 className="d-block mb-1" 
                 style={{ 
                   fontFamily: "'Italianno', cursive", 
-                  fontSize: '34px', 
+                  fontSize: '32px', 
                   color: '#A44E0E',
                   lineHeight: 1.2
                 }}
@@ -36,13 +36,13 @@ export default function MyStoryPurpose() {
                 className="fw-normal" 
                 style={{ 
                   fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
-                  fontSize: '40px',
+                  fontSize: '38px',
                   color: '#422207',
                   letterSpacing: '0.01em',
                   lineHeight: 1.25
                 }}
               >
-                Pirate ipsum me main blimey fluke
+                Why I do what I do.
               </h2>
             </div>
 
@@ -51,28 +51,68 @@ export default function MyStoryPurpose() {
               className="mb-4" 
               style={{ 
                 fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
-                fontSize: '15.5px', 
+                fontSize: '15px', 
                 color: '#4A423B', 
                 lineHeight: '1.85',
                 fontWeight: 300
               }}
             >
-              Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke sails overhaul man jib schooner. Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke sails overhaul man jib schooner.
+              My work has always circled one question: how do we help people see clearly, not just with their eyes, but with their whole being? As a doctor, that means restoring sight to children who might otherwise never read a book or recognize their mother&apos;s face. As an Ayurvedic counselor, it means helping people notice what their bodies and minds have been telling them all along. As a writer, it means putting words to the parts of being human we feel but rarely say aloud. And through Ārogini, it means carrying all of this into communities where clear sight, in every sense, is still a privilege rather than a given.
             </p>
 
-            {/* Paragraph 2 with bold AROGINI */}
+            {/* Paragraph 2 */}
             <p 
-              className="mb-0" 
+              className="mb-5" 
               style={{ 
                 fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
-                fontSize: '15.5px', 
+                fontSize: '15px', 
                 color: '#4A423B', 
                 lineHeight: '1.85',
                 fontWeight: 300
               }}
             >
-              Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke <strong style={{ fontWeight: 700, color: '#422207' }}>AROGINI</strong> man jib schooner. Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones' fluke sails overhaul man jib schooner.
+              Medicine taught me how the eye works. Ayurveda taught me how the whole person works. Writing taught me how to make sense of both. Together, they have given me a way of seeing that is uniquely my own, one that brings science, awareness, and the human experience into the same conversation. None of these are separate callings to me. They&apos;re different lenses on the same purpose: helping people see, feel, and live a little more clearly than before.
             </p>
+
+            {/* Quote / Accent Block */}
+            <div className="pt-2">
+              <p 
+                className="mb-3" 
+                style={{ 
+                  fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
+                  fontSize: '15px', 
+                  color: '#5C4F44',
+                  fontWeight: 300
+                }}
+              >
+                The words that mean the most to me are simpler than any of that:
+              </p>
+
+              <h4 
+                className="my-3" 
+                style={{ 
+                  fontFamily: "'Courier Prime', 'Courier New', monospace", 
+                  fontSize: '21px', 
+                  fontWeight: 700, 
+                  color: '#62350A',
+                  letterSpacing: '0.02em'
+                }}
+              >
+                &ldquo;Thank you, I needed this today&rdquo;
+              </h4>
+
+              <p 
+                className="mt-3 mb-0" 
+                style={{ 
+                  fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
+                  fontSize: '15px', 
+                  color: '#4A423B',
+                  fontWeight: 300
+                }}
+              >
+                That&apos;s why I keep writing.
+              </p>
+            </div>
 
           </div>
 
@@ -82,4 +122,7 @@ export default function MyStoryPurpose() {
     </section>
   );
 }
+
+
+
 

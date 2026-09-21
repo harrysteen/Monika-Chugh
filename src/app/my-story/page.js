@@ -3,9 +3,11 @@ import MyStoryHero from '../../components/MyStoryHero';
 import MyStoryAbout from '../../components/MyStoryAbout';
 import MyStoryTimeline from '../../components/MyStoryTimeline';
 import MyStoryExpressions from '../../components/MyStoryExpressions';
+import MyStoryMoreRoles from '../../components/MyStoryMoreRoles';
 import MyStoryPurpose from '../../components/MyStoryPurpose';
+import MyStoryMantras from '../../components/MyStoryMantras';
 import MyStoryMilestones from '../../components/MyStoryMilestones';
-import MyStorySection7 from '../../components/MyStorySection7';
+import MyStoryNote from '../../components/MyStoryNote';
 import Footer from '../../components/Footer';
 
 export const metadata = {
@@ -21,9 +23,11 @@ export default function MyStoryPage() {
       <MyStoryAbout />
       <MyStoryTimeline />
       <MyStoryExpressions />
+      <MyStoryMoreRoles />
       <MyStoryPurpose />
+      <MyStoryMantras />
       <MyStoryMilestones />
-      <MyStorySection7 />
+      <MyStoryNote />
       <Footer />
     </main>
   );
