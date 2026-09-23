@@ -89,7 +89,7 @@ export default function SixthSection() {
                   borderRight: idx < blogs.length - 1 ? '1px solid #E2D5C3' : 'none'
                 }}
               >
-                <div className="w-100 d-flex flex-column align-items-center">
+                <div className="w-100 d-flex flex-column align-items-center flex-grow-1 justify-content-start">
                   {/* Blog Title */}
                   <h3 
                     className="mb-4 d-flex align-items-center justify-content-center text-center"
@@ -129,15 +129,16 @@ export default function SixthSection() {
                     />
                   </div>
 
-                  {/* Excerpt Paragraph */}
+                  {/* Excerpt Paragraph with Light Weight (300) & Fixed Min-Height (185px) for Perfect Horizontal CTA Alignment */}
                   <p 
-                    className="mb-4 mx-auto text-center"
+                    className="mb-4 mx-auto text-center blog-excerpt-p"
                     style={{
-                      fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
-                      fontSize: '14px',
+                      fontFamily: "'Larken-Light', 'Larken-Thin', 'Lora', serif",
+                      fontSize: '13.5px',
                       color: '#4A423B',
                       lineHeight: '1.65',
-                      fontWeight: 400,
+                      fontWeight: 300,
+                      minHeight: '185px',
                       maxWidth: '320px',
                       WebkitFontSmoothing: 'antialiased',
                       MozOsxFontSmoothing: 'grayscale'
@@ -147,7 +148,7 @@ export default function SixthSection() {
                   </p>
                 </div>
 
-                {/* Read Me Button with alignment at bottom */}
+                {/* Read Me Button with exact alignment at bottom across all cards */}
                 <div className="mt-auto pt-2 w-100 text-center">
                   <a 
                     href={blog.link} 
@@ -157,7 +158,7 @@ export default function SixthSection() {
                     style={{
                       fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
                       fontSize: '14px',
-                      fontWeight: 400,
+                      fontWeight: 300,
                       color: '#A44E0E',
                       border: '1px solid #A44E0E',
                       borderRadius: '2px',
@@ -178,6 +179,11 @@ export default function SixthSection() {
       </div>
 
       <style jsx>{`
+        @media (max-width: 767.98px) {
+          .blog-excerpt-p {
+            min-height: auto !important;
+          }
+        }
         @media (min-width: 768px) {
           .section6-header-btn {
             position: absolute !important;

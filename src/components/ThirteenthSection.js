@@ -85,10 +85,10 @@ export default function ThirteenthSection() {
       src: '/images/section_13_writer.png',
       alt: 'Writer',
       link: '/blogs',
-      photoLeft: '25.944%',
+      photoLeft: '26%',
       photoTop: '79.791%',
-      photoWidth: '21.018%',
-      photoHeight: '15.854%'
+      photoWidth: '32%',
+      photoHeight: '18.5%'
     },
     {
       id: 'substack',
@@ -96,21 +96,10 @@ export default function ThirteenthSection() {
       src: '/images/section_13_substack.png',
       alt: 'Substack',
       link: 'https://substack.com',
-      photoLeft: '51.232%',
+      photoLeft: '61%',
       photoTop: '79.791%',
-      photoWidth: '30.542%',
-      photoHeight: '20.209%'
-    },
-    {
-      id: 'doctor',
-      label: 'doctor',
-      src: '/images/section_13_doctor.png',
-      alt: 'Doctor',
-      link: '/about',
-      photoLeft: '84.729%',
-      photoTop: '79.791%',
-      photoWidth: '14.778%',
-      photoHeight: '15.854%'
+      photoWidth: '37%',
+      photoHeight: '18.5%'
     }
   ];
 

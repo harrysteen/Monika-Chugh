@@ -1,3 +1,14 @@
 {
-  "/contact/page": "app/contact/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/blogs/page": "app/blogs/page.js",
+  "/books/quote-cafe/page": "app/books/quote-cafe/page.js",
+  "/events/page": "app/events/page.js",
+  "/page": "app/page.js",
+  "/blogs/write-write-write/page": "app/blogs/write-write-write/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/canxiol/page": "app/canxiol/page.js",
+  "/books/page": "app/books/page.js",
+  "/my-story/page": "app/my-story/page.js",
+  "/poems-articles/page": "app/poems-articles/page.js",
+  "/press-room/page": "app/press-room/page.js"
 }

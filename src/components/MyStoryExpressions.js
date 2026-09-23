@@ -23,6 +23,7 @@ export default function MyStoryExpressions() {
     {
       title: 'Poet',
       image: '/images/mystory/about_section4_poet.png',
+      imagePosition: '82% center',
       buttonText: 'Read My Poems',
       link: '/poems-articles'
     }
@@ -73,15 +74,18 @@ export default function MyStoryExpressions() {
                   boxShadow: '0 2px 10px rgba(66,34,7,0.02)'
                 }}
               >
-                {/* Title in Italianno cursive */}
+                {/* Title in Larken-Light */}
                 <h3 
                   className="mb-3 d-flex align-items-center justify-content-center text-center" 
                   style={{ 
-                    fontFamily: "'Italianno', cursive", 
-                    fontSize: '34px', 
-                    color: '#422207',
-                    lineHeight: '1.2',
-                    minHeight: '42px'
+                    fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
+                    fontSize: '18px', 
+                    fontWeight: 400,
+                    fontStyle: 'normal',
+                    color: '#422407',
+                    lineHeight: '100%',
+                    letterSpacing: '0.01em',
+                    minHeight: '28px'
                   }}
                 >
                   {role.title}
@@ -101,6 +105,7 @@ export default function MyStoryExpressions() {
                     className="w-100 h-100"
                     style={{ 
                       objectFit: 'cover',
+                      objectPosition: role.imagePosition || 'center center',
                       display: 'block'
                     }}
                   />

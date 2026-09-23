@@ -137,7 +137,7 @@ export default function ThirdSection() {
                     key={currentBook.id + '-small'}
                     src={currentBook.cover}
                     alt={currentBook.title}
-                    className="img-fluid rounded shadow-sm"
+                    className="img-fluid"
                     style={{ maxHeight: '230px', maxWidth: '175px', width: 'auto', objectFit: 'contain', transition: 'all 0.4s ease-in-out' }}
                   />
                 </div>
@@ -199,16 +199,19 @@ export default function ThirdSection() {
                 onClick={() => setNotifyModalOpen(true)}
                 className="btn text-decoration-none d-inline-flex align-items-center justify-content-center px-5 py-2 transition-all section3-cta-btn"
                 style={{
-                  fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                  fontFamily: "'Larken-Light', 'Larken-Thin', 'Lora', serif",
                   fontSize: '15px',
-                  fontWeight: 400,
-                  color: '#422207',
-                  border: '1px solid #C4A57B',
+                  fontWeight: 300,
+                  color: '#7B380E',
+                  border: '1px solid #7B380E',
                   borderRadius: '2px',
                   backgroundColor: '#FFFDF9',
                   minWidth: '180px',
                   boxShadow: '0 1px 3px rgba(66, 34, 7, 0.05)',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.3s ease',
+                  letterSpacing: '0.02em',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale'
                 }}
               >
                 {currentBook.cta}
@@ -278,7 +281,7 @@ export default function ThirdSection() {
                   <button
                     type="submit"
                     className="btn px-4"
-                    style={{ backgroundColor: '#A44E0E', color: '#FFFFFF', borderColor: '#A44E0E' }}
+                    style={{ backgroundColor: '#7B380E', color: '#FFFFFF', borderColor: '#7B380E' }}
                   >
                     Notify Me
                   </button>
@@ -291,10 +294,11 @@ export default function ThirdSection() {
 
       <style jsx>{`
         .section3-cta-btn:hover {
-          background-color: #F4EEE5 !important;
-          border-color: #A44E0E !important;
-          color: #A44E0E !important;
+          background-color: #7B380E !important;
+          border-color: #7B380E !important;
+          color: #FFFDF9 !important;
           transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(123, 56, 14, 0.25) !important;
         }
       `}</style>
     </section>

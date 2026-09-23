@@ -13,7 +13,7 @@ export default function SeventhSection() {
       id: 'wordpress',
       src: '/images/home_section7_logo2_cropped.png',
       alt: 'WordPress',
-      height: '28px'
+      height: '36px'
     },
     {
       id: 'ws',

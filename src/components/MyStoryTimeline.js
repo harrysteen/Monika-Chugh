@@ -9,7 +9,7 @@ export default function MyStoryTimeline() {
 
   return (
     <section className="py-5 bg-cream position-relative" id="story-timeline">
-      <div className="container-fluid px-3 px-md-4 px-lg-5 text-center" style={{ maxWidth: '1240px' }}>
+      <div className="container-fluid px-3 px-md-4 px-xl-5 text-center" style={{ maxWidth: '1380px' }}>
 
         {/* Section Header */}
         <div className="mb-5 pb-2">
@@ -39,12 +39,12 @@ export default function MyStoryTimeline() {
         </div>
 
         {/* Timeline Flow Container */}
-        <div className="mx-auto" style={{ maxWidth: '1060px' }}>
+        <div className="mx-auto" style={{ maxWidth: '1300px' }}>
 
-          {/* ROW 1: Image Left, Text Right (Shifted slightly Left) */}
-          <div className="row align-items-center justify-content-between g-4 g-lg-5 text-start me-lg-4">
+          {/* ROW 1: Image Left, Text Right */}
+          <div className="row align-items-center justify-content-between g-4 g-lg-5 text-start">
             {/* Image Column */}
-            <div className="col-lg-7 pe-lg-2">
+            <div className="col-12 col-lg-7">
               <div className="position-relative w-100">
                 <img
                   src="/images/mystory/section_3_img1.png"
@@ -58,14 +58,14 @@ export default function MyStoryTimeline() {
             </div>
 
             {/* Text Column */}
-            <div className="col-lg-5 ps-lg-3">
+            <div className="col-12 col-lg-5 ps-lg-4">
               <p
                 className="mb-0"
                 style={{
                   fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
-                  fontSize: '15px',
+                  fontSize: '16px',
                   color: '#4A423B',
-                  lineHeight: '1.85',
+                  lineHeight: '1.9',
                   fontWeight: 300,
                   letterSpacing: '0.01em'
                 }}
@@ -76,22 +76,22 @@ export default function MyStoryTimeline() {
           </div>
 
           {/* Timeline Connector 1 */}
-          <div className="d-flex flex-column align-items-center my-3 my-lg-4">
-            <div style={{ width: '1px', height: '48px', backgroundColor: '#A44E0E', opacity: 0.85 }}></div>
+          <div className="d-flex flex-column align-items-center my-4 my-lg-5">
+            <div style={{ width: '1px', height: '54px', backgroundColor: '#A44E0E', opacity: 0.85 }}></div>
             <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#A44E0E', marginTop: '-1px' }}></div>
           </div>
 
-          {/* ROW 2: Text Left, Image Right (Shifted slightly Right) */}
-          <div className="row align-items-center justify-content-between g-4 g-lg-5 text-start ms-lg-4 flex-column-reverse flex-lg-row">
+          {/* ROW 2: Text Left, Image Right */}
+          <div className="row align-items-center justify-content-between g-4 g-lg-5 text-start flex-column-reverse flex-lg-row">
             {/* Text Column */}
-            <div className="col-lg-5 pe-lg-3">
+            <div className="col-12 col-lg-5 pe-lg-4">
               <p
                 className="mb-0"
                 style={{
                   fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
-                  fontSize: '15px',
+                  fontSize: '16px',
                   color: '#4A423B',
-                  lineHeight: '1.85',
+                  lineHeight: '1.9',
                   fontWeight: 300,
                   letterSpacing: '0.01em'
                 }}
@@ -101,10 +101,10 @@ export default function MyStoryTimeline() {
             </div>
 
             {/* Image Column */}
-            <div className="col-lg-7 ps-lg-2">
+            <div className="col-12 col-lg-7">
               <div className="position-relative w-100">
                 <img
-                  src="/images/mystory/section_3_img3.png"
+                  src="/images/mystory/section_3_img2.png"
                   alt="Where it all began - Graduation ceremony"
                   className="img-fluid w-100 h-auto d-block"
                   style={{
@@ -116,19 +116,19 @@ export default function MyStoryTimeline() {
           </div>
 
           {/* Timeline Connector 2 */}
-          <div className="d-flex flex-column align-items-center my-3 my-lg-4">
-            <div style={{ width: '1px', height: '48px', backgroundColor: '#A44E0E', opacity: 0.85 }}></div>
+          <div className="d-flex flex-column align-items-center my-4 my-lg-5">
+            <div style={{ width: '1px', height: '54px', backgroundColor: '#A44E0E', opacity: 0.85 }}></div>
             <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#A44E0E', marginTop: '-1px' }}></div>
           </div>
 
-          {/* ROW 3: Image Left, Text Right (Shifted slightly Left) */}
-          <div className="row align-items-center justify-content-between g-4 g-lg-5 text-start me-lg-4">
+          {/* ROW 3: Image Left, Text Right */}
+          <div className="row align-items-center justify-content-between g-4 g-lg-5 text-start">
             {/* Image Column */}
-            <div className="col-lg-7 pe-lg-2">
+            <div className="col-12 col-lg-7">
               <div className="position-relative w-100">
                 <img
-                  src="/images/mystory/section_3_img2.png"
-                  alt="Where it all began - Writing at desk"
+                  src="/images/mystory/section_3_img3.png"
+                  alt="Where it all began - Published author with books and art"
                   className="img-fluid w-100 h-auto d-block"
                   style={{
                     filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.03))'
@@ -138,14 +138,14 @@ export default function MyStoryTimeline() {
             </div>
 
             {/* Text Column */}
-            <div className="col-lg-5 ps-lg-3">
+            <div className="col-12 col-lg-5 ps-lg-4">
               <p
                 className="mb-0"
                 style={{
                   fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif",
-                  fontSize: '15px',
+                  fontSize: '16px',
                   color: '#4A423B',
-                  lineHeight: '1.85',
+                  lineHeight: '1.9',
                   fontWeight: 300,
                   letterSpacing: '0.01em'
                 }}

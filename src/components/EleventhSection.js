@@ -56,14 +56,14 @@ export default function EleventhSection() {
                 className="w-100 h-100 d-flex flex-column justify-content-between p-4 px-md-4 py-md-4 px-xl-5 position-relative section-11-box"
                 style={{ backgroundColor: '#F3EDE4' }}
               >
-                {/* Background Aroginī Leaves Watermark */}
+                {/* Background Aroginī Leaves Watermark with Increased Opacity */}
                 <div
                   className="position-absolute top-50 start-50 translate-middle pointer-events-none d-flex align-items-center justify-content-center"
                   style={{ 
                     width: '78%', 
                     height: '78%', 
                     zIndex: 0, 
-                    opacity: 0.18,
+                    opacity: 0.45,
                     mixBlendMode: 'multiply'
                   }}
                 >

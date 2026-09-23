@@ -76,12 +76,16 @@ export default function Footer() {
                 </div>
               </form>
 
-              {/* Small Card below Email Form */}
+              {/* Small Card below Email Form - High Resolution 4x Crisp rendering */}
               <div style={{ maxWidth: '210px' }}>
                 <img 
                   src="/images/footer card.png" 
                   alt="Free 5-Day Mindfulness Challenge" 
                   className="w-100 rounded-1 shadow-sm d-block"
+                  style={{ 
+                    imageRendering: '-webkit-optimize-contrast',
+                    WebkitBackfaceVisibility: 'hidden'
+                  }}
                 />
               </div>
             </div>
@@ -99,7 +103,7 @@ export default function Footer() {
               </div>
 
               {/* Navigation Links Grid (Row 1 & Row 2) */}
-              <div className="d-flex flex-column gap-2 align-items-center mb-3 mb-md-4">
+              <div className="d-flex flex-column gap-2 align-items-center mb-2">
                 {/* Row 1 Links */}
                 <div className="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
                   <a href="#home" className="footer-nav-link">Home</a>
@@ -119,16 +123,17 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Paragraph Text directly below Navigation Links */}
+              {/* 2-Liner Description Text - Moved down with spacing */}
               <p
-                className="mb-0 mx-auto"
+                className="mt-4 pt-2 mb-0 mx-auto"
                 style={{
-                  fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                  fontFamily: "'Larken-Light', 'Larken-Thin', 'Lora', serif",
                   fontSize: '13.5px',
                   color: '#5C3818',
                   lineHeight: '1.65',
                   maxWidth: '560px',
-                  fontWeight: 300
+                  fontWeight: 300,
+                  WebkitFontSmoothing: 'antialiased'
                 }}
               >
                 Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain.
@@ -139,19 +144,29 @@ export default function Footer() {
             <div className="col-12 col-lg-3 col-xl-3 text-start text-lg-end pt-1">
               <div className="d-inline-block text-start text-lg-end">
                 
-                {/* Icons */}
-                <div className="d-flex align-items-center justify-content-start justify-content-lg-end gap-3 mb-2">
+                {/* Icons (Standardized 32x32px containers and 20x20px SVGs) */}
+                <div className="d-flex align-items-center justify-content-start justify-content-lg-end gap-2 mb-2">
                   
                   {/* Substack Icon */}
-                  <a href="#substack" aria-label="Substack" className="text-decoration-none footer-icon" style={{ color: '#62350A' }}>
-                    <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor">
+                  <a 
+                    href="#substack" 
+                    aria-label="Substack" 
+                    className="text-decoration-none footer-icon d-inline-flex align-items-center justify-content-center" 
+                    style={{ width: '32px', height: '32px', color: '#62350A' }}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
                     </svg>
                   </a>
 
                   {/* Instagram Icon */}
-                  <a href="#instagram" aria-label="Instagram" className="text-decoration-none footer-icon" style={{ color: '#62350A' }}>
-                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <a 
+                    href="#instagram" 
+                    aria-label="Instagram" 
+                    className="text-decoration-none footer-icon d-inline-flex align-items-center justify-content-center" 
+                    style={{ width: '32px', height: '32px', color: '#62350A' }}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -159,8 +174,13 @@ export default function Footer() {
                   </a>
 
                   {/* LinkedIn Icon */}
-                  <a href="#linkedin" aria-label="LinkedIn" className="text-decoration-none footer-icon" style={{ color: '#62350A' }}>
-                    <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor">
+                  <a 
+                    href="#linkedin" 
+                    aria-label="LinkedIn" 
+                    className="text-decoration-none footer-icon d-inline-flex align-items-center justify-content-center" 
+                    style={{ width: '32px', height: '32px', color: '#62350A' }}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63z"/>
                     </svg>
                   </a>
@@ -215,7 +235,7 @@ export default function Footer() {
             >
               <span style={{ opacity: 0.85 }}>Made by</span>
               <span 
-                className="d-inline-flex align-items-center gap-1.5 px-2 py-1 rounded"
+                className="d-inline-flex align-items-center px-2 py-1 rounded"
                 style={{
                   backgroundColor: 'rgba(98, 53, 10, 0.06)',
                   border: '1px solid rgba(184, 139, 88, 0.35)',
@@ -224,22 +244,6 @@ export default function Footer() {
                   letterSpacing: '0.02em'
                 }}
               >
-                {/* Studio Dezu Icon */}
-                <svg 
-                  width="15" 
-                  height="15" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                  style={{ color: '#62350A' }}
-                >
-                  <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                  <polyline points="2 17 12 22 22 17" />
-                  <polyline points="2 12 12 17 22 12" />
-                </svg>
                 <span>Studio Dezu</span>
               </span>
             </a>

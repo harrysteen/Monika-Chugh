@@ -90,12 +90,14 @@ export default function TenthSection() {
             <p 
               className="mx-auto mb-0"
               style={{
-                fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                fontFamily: "'Larken-Light', 'Larken-Thin', 'Lora', serif",
                 fontSize: '15px',
                 color: '#4A423B',
                 lineHeight: '1.65',
                 maxWidth: '680px',
-                fontWeight: 400
+                fontWeight: 300,
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale'
               }}
             >
               At Canvas &amp; Quotations, we believe in the power of art and words to transform the everyday. Our creations bring together thoughtful quotes, uplifting affirmations, and expressive design crafted to inspire reflection, spark joy, and add meaning to the spaces and moments around us.
@@ -110,9 +112,9 @@ export default function TenthSection() {
               rel="noopener noreferrer"
               className="text-decoration-none px-4 py-2 d-inline-flex align-items-center justify-content-center transition-all"
               style={{
-                fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                fontFamily: "'Larken-Light', 'Larken-Thin', 'Lora', serif",
                 fontSize: '14.5px',
-                fontWeight: 400,
+                fontWeight: 300,
                 color: '#A44E0E',
                 border: '1px solid #A44E0E',
                 borderRadius: '2px',
@@ -174,7 +176,7 @@ export default function TenthSection() {
                         style={{
                           fontFamily: "'Larken', 'Lora', serif",
                           fontSize: '20px',
-                          fontWeight: 600,
+                          fontWeight: 500,
                           color: '#422207',
                           letterSpacing: '0.01em'
                         }}
@@ -187,13 +189,15 @@ export default function TenthSection() {
                     <div 
                       className="mb-0"
                       style={{
-                        fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
+                        fontFamily: "'Larken-Light', 'Larken-Thin', 'Lora', serif",
                         fontSize: '13.5px',
                         color: '#4A3B2C',
                         lineHeight: '1.65',
-                        fontWeight: 400,
+                        fontWeight: 300,
                         maxWidth: '350px',
-                        whiteSpace: 'pre-line'
+                        whiteSpace: 'pre-line',
+                        WebkitFontSmoothing: 'antialiased',
+                        MozOsxFontSmoothing: 'grayscale'
                       }}
                     >
                       {card.text}
