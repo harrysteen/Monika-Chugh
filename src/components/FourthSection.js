@@ -12,21 +12,28 @@ export default function FourthSection() {
       id: 1,
       title: "quote cafe",
       cover: "/images/home_section4_book1.svg",
+      frame: { svgW: 246, svgH: 355, x: 0, y: 0, w: 245.8, h: 354.3 },
       description: "Some stories wait until we find the courage to share them. Quote Café began when I found mine. A sanctuary of reflections, affirmations, and short poems on self-love, forgiveness, and letting go. This is my story. Perhaps you’ll find a little of yours here."
     },
     {
       id: 2,
       title: "a quote zone with affirmations",
       cover: "/images/home_section4_book2.svg",
+      frame: { svgW: 277, svgH: 385, x: 24.2, y: 12.2, w: 245.8, h: 354.3 },
       description: "“Take care of yourself; the world can wait.” A reminder I often gave my patients, and slowly learned to offer myself. A Quiet Zone With Affirmations began in my journals, with words I needed to hear. In my own company, writing became a daily ritual. Make a little room for yourself here."
     },
     {
       id: 3,
       title: "Rebirth",
       cover: "/images/home_section4_book3.svg",
-      description: "The phoenix is the symbol of renewal and rebirth. As one life ends, a nest is built, the old phoenix sets fire to itself, and a new one emerges from the ashes. Rebirth and renewal are never easy, as the stories of these brave women will testify. Each shares a story of a fragmented and fractured life. To feel safe and secure often means stepping through layers of darkness and fragments of yourself to find the light and a way back to who you truly are."
+      frame: { svgW: 254, svgH: 355, x: 0, y: 0, w: 253.3, h: 354.3 },
+      description: "The phoenix is the symbol of renewal and rebirth. As one life ends, a nest is built, the old phoenix sets fire to itself, and a new one emerges from the ashes. Rebirth and renewal are never easy, as the stories of these brave women will testify. Each shares a story of a fragmented and fractured life."
     }
   ];
+
+  // Every cover is scaled so the book itself (not its SVG canvas) is exactly this tall
+  const COVER_HEIGHT = 325;
+  const COLUMN_WIDTH = 233;
 
   const updateScrollState = () => {
     if (scrollContainerRef.current) {
@@ -79,7 +86,7 @@ export default function FourthSection() {
               className="mb-0"
               style={{
                 fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                fontSize: 'clamp(26px, 3vw, 34px)',
+                fontSize: 'clamp(21px, 2.2vw, 26px)',
                 color: '#422207',
                 fontWeight: 400,
                 lineHeight: '1.2',
@@ -95,14 +102,13 @@ export default function FourthSection() {
             <button
               type="button"
               onClick={() => handleScroll('left')}
-              className="btn p-0 border-0 d-flex align-items-center justify-content-center top-scroll-btn"
+              className="btn rounded-circle p-0 d-flex align-items-center justify-content-center top-scroll-btn"
               style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                border: '1px solid #C4A57B',
-                color: '#7B380E',
-                backgroundColor: '#FFFDF9',
+                width: '42px',
+                height: '42px',
+                border: '1px solid #A44E0E',
+                color: '#422207',
+                backgroundColor: 'transparent',
                 opacity: canScrollLeft ? 1 : 0.4,
                 cursor: canScrollLeft ? 'pointer' : 'default',
                 transition: 'all 0.3s ease'
@@ -110,22 +116,19 @@ export default function FourthSection() {
               aria-label="Previous books"
               disabled={!canScrollLeft}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
+              <i className="bi bi-chevron-left" style={{ fontSize: '14px' }}></i>
             </button>
 
             <button
               type="button"
               onClick={() => handleScroll('right')}
-              className="btn p-0 border-0 d-flex align-items-center justify-content-center top-scroll-btn"
+              className="btn rounded-circle p-0 d-flex align-items-center justify-content-center top-scroll-btn"
               style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                border: '1px solid #C4A57B',
-                color: '#7B380E',
-                backgroundColor: '#FFFDF9',
+                width: '42px',
+                height: '42px',
+                border: '1px solid #A44E0E',
+                color: '#422207',
+                backgroundColor: 'transparent',
                 opacity: canScrollRight ? 1 : 0.4,
                 cursor: canScrollRight ? 'pointer' : 'default',
                 transition: 'all 0.3s ease'
@@ -133,9 +136,7 @@ export default function FourthSection() {
               aria-label="Next books"
               disabled={!canScrollRight}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 18l6-6-6-6" />
-              </svg>
+              <i className="bi bi-chevron-right" style={{ fontSize: '14px' }}></i>
             </button>
           </div>
         </div>
@@ -149,13 +150,21 @@ export default function FourthSection() {
             <div key={book.id} className="fourth-section-unit flex-shrink-0 d-flex align-items-start gap-3 gap-xl-4">
               
               {/* Left Column: 3D Book Cover + Title Below (single line) */}
-              <div className="text-start flex-shrink-0" style={{ width: '225px', maxWidth: '225px' }}>
-                <img 
-                  src={book.cover} 
-                  alt={book.title} 
-                  className="img-fluid d-block"
-                  style={{ height: '325px', width: 'auto', maxWidth: '100%', objectFit: 'contain', objectPosition: 'top left' }}
-                />
+              <div className="text-start flex-shrink-0" style={{ width: `${COLUMN_WIDTH}px` }}>
+                {(() => {
+                  const { svgW, svgH, x, y, w, h } = book.frame;
+                  const scale = COVER_HEIGHT / h;
+                  return (
+                    <div className="position-relative" style={{ width: `${w * scale}px`, height: `${COVER_HEIGHT}px` }}>
+                      <img 
+                        src={book.cover} 
+                        alt={book.title} 
+                        className="d-block position-absolute"
+                        style={{ left: `${-x * scale}px`, top: `${-y * scale}px`, width: `${svgW * scale}px`, height: `${svgH * scale}px`, maxWidth: 'none' }}
+                      />
+                    </div>
+                  );
+                })()}
                 <h3 
                   className="text-start mt-3 mb-0"
                   style={{
@@ -173,9 +182,9 @@ export default function FourthSection() {
               </div>
 
               {/* Right Column: Description + Short Divider Line + Shop Now Button */}
-              <div className="d-flex flex-column justify-content-between text-start" style={{ width: '225px', minHeight: '325px' }}>
+              <div className="d-flex flex-column justify-content-between text-start" style={{ width: `${COLUMN_WIDTH}px`, height: `${COVER_HEIGHT}px` }}>
                 <p 
-                  className="mb-0"
+                  className="mb-0 section4-book-desc"
                   style={{
                     fontFamily: "'Larken-Light', 'Larken-Thin', 'Lora', serif",
                     fontSize: '12.8px',
@@ -237,7 +246,7 @@ export default function FourthSection() {
 
         .fourth-section-unit {
           scroll-snap-align: start;
-          width: 480px;
+          width: auto;
           flex-shrink: 0;
         }
 
@@ -245,6 +254,15 @@ export default function FourthSection() {
           .fourth-section-unit {
             width: 88vw;
           }
+        }
+
+        /* Keep the description short enough that Shop Now stays level with the book bottom */
+        .section4-book-desc {
+          display: -webkit-box;
+          -webkit-line-clamp: 12;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          margin-top: -0.3em;
         }
 
         .top-scroll-btn:hover:not(:disabled) {

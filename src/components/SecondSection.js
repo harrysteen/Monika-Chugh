@@ -81,7 +81,7 @@ export default function SecondSection() {
               </p>
 
               {/* Paragraph & Arrow */}
-              <div className="d-flex flex-column flex-md-row align-items-end align-items-md-center justify-content-between gap-3 text-start">
+              <div className="d-flex flex-column flex-md-row align-items-end justify-content-between gap-3 text-start">
                 <p
                   className="mb-0 flex-grow-1 text-start"
                   style={{
@@ -104,8 +104,8 @@ export default function SecondSection() {
                   style={{
                     color: '#A44E0E',
                     minWidth: '40px',
-                    minHeight: '32px',
-                    padding: '3px 5px',
+                    minHeight: '21px',
+                    padding: '0 5px',
                     transition: 'transform 0.25s ease, color 0.25s ease'
                   }}
                   aria-label="Explore Lotus Whispers Journal"

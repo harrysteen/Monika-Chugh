@@ -7,7 +7,7 @@ export default function Hero() {
         <div className="row align-items-center gy-4 gy-lg-0">
           
           {/* Left Column: Hero Portrait Image */}
-          <div className="col-12 col-lg-6 ps-lg-4 pe-lg-3 pt-2 pt-lg-3 pb-3 pb-lg-4">
+          <div className="col-12 col-lg-7 ps-lg-4 pe-lg-3 pt-2 pt-lg-3 pb-3 pb-lg-4">
             <div className="w-100 overflow-hidden text-start">
               <img 
                 src="/images/home_hero_image_version_0.1.svg" 
@@ -23,7 +23,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Lotus Icon & Mixed Typography Headline */}
-          <div className="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center py-4 py-lg-5 px-3 px-md-4 text-center">
+          <div className="col-12 col-lg-5 d-flex flex-column align-items-center justify-content-center py-4 py-lg-5 px-3 px-md-4 text-center">
             
             {/* Lotus Emblem with Side Divider Lines (home_hero_icon.svg) */}
             <div className="mb-4 d-flex justify-content-center align-items-center">
@@ -39,7 +39,7 @@ export default function Hero() {
               className="hero-figma-headline mx-auto mb-0" 
               style={{ 
                 fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                fontSize: '26px', 
+                fontSize: '22px', 
                 color: '#422207',
                 fontWeight: 400,
                 fontStyle: 'normal',

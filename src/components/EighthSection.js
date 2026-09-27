@@ -12,7 +12,7 @@ export default function EighthSection() {
               className="mb-0"
               style={{
                 fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                fontSize: 'clamp(24px, 4.5vw, 32px)',
+                fontSize: 'clamp(21px, 2.2vw, 26px)',
                 color: '#422207',
                 fontWeight: 400,
                 lineHeight: '1.15',
@@ -141,9 +141,10 @@ export default function EighthSection() {
           }
         }
         .section8-header-btn:hover {
-          background-color: #A44E0E !important;
-          color: #FFFFFF !important;
-          box-shadow: 0 4px 10px rgba(164, 78, 14, 0.2);
+          background-color: #7B380E !important;
+          border-color: #7B380E !important;
+          color: #FFFDF9 !important;
+          box-shadow: 0 4px 12px rgba(123, 56, 14, 0.25);
         }
       `}</style>
     </section>

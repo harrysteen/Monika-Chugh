@@ -83,6 +83,7 @@ export default function ThirteenthSection() {
       id: 'writer',
       label: 'writer',
       src: '/images/section_13_writer.png',
+      objectPosition: 'center top',
       alt: 'Writer',
       link: '/blogs',
       photoLeft: '26%',
@@ -94,6 +95,7 @@ export default function ThirteenthSection() {
       id: 'substack',
       label: 'substack',
       src: '/images/section_13_substack.png',
+      objectPosition: 'center top',
       alt: 'Substack',
       link: 'https://substack.com',
       photoLeft: '61%',
@@ -140,7 +142,7 @@ export default function ThirteenthSection() {
           className="mb-0"
           style={{
             fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-            fontSize: 'clamp(22px, 3vw, 34px)',
+            fontSize: 'clamp(21px, 2.2vw, 26px)',
             color: '#422207',
             fontWeight: 400,
             lineHeight: '1.2',
@@ -218,7 +220,7 @@ export default function ThirteenthSection() {
                     src={item.src}
                     alt={item.alt}
                     className="w-100 h-100 object-fit-cover d-block"
-                    style={{ transition: 'transform 0.4s ease' }}
+                    style={{ transition: 'transform 0.4s ease', objectPosition: item.objectPosition || 'center' }}
                   />
                 </div>
               </a>
@@ -272,6 +274,7 @@ export default function ThirteenthSection() {
                     src={item.src}
                     alt={item.alt}
                     className="w-100 h-100 object-fit-cover d-block"
+                    style={{ objectPosition: item.objectPosition || 'center' }}
                   />
                 </div>
               </a>
@@ -281,6 +284,14 @@ export default function ThirteenthSection() {
       </div>
 
       <style jsx>{`
+        .section-13-wrapper {
+          padding-top: 4rem !important;
+        }
+        @media (min-width: 768px) {
+          .section-13-wrapper {
+            padding-top: 6rem !important;
+          }
+        }
         .card-item-container:hover img {
           transform: scale(1.03);
         }

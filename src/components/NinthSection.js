@@ -24,7 +24,7 @@ export default function NinthSection() {
             className="mb-0 text-center"
             style={{
               fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-              fontSize: 'clamp(22px, 3.1vw, 34px)',
+              fontSize: 'clamp(21px, 2.2vw, 26px)',
               color: '#422207',
               fontWeight: 400,
               lineHeight: '1.25',
@@ -311,10 +311,11 @@ export default function NinthSection() {
         }
 
         .events-learn-more-btn:hover {
-          background-color: #A44E0E !important;
-          color: #FFFFFF !important;
+          background-color: #7B380E !important;
+          border-color: #7B380E !important;
+          color: #FFFDF9 !important;
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(164, 78, 14, 0.2);
+          box-shadow: 0 4px 12px rgba(123, 56, 14, 0.25);
         }
       `}</style>
     </section>

@@ -133,19 +133,25 @@ export default function TwelfthSection() {
         }
 
         .podcast-btn {
-          font-family: 'Larken-Light', 'Larken', 'Lora', serif;
-          font-size: 14px;
+          font-family: 'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif;
+          font-size: 17px;
           font-weight: 400;
-          color: #A44E0E;
-          border: 1px solid #A44E0E;
-          border-radius: 2px;
+          letter-spacing: 0.01em;
+          line-height: 1;
+          color: #62350A;
+          border: 1px solid #7B380E;
+          border-radius: 0;
           background-color: transparent;
-          min-width: 150px;
+          min-width: 190px;
+          height: 44px;
           transition: all 0.3s ease;
         }
         .podcast-btn:hover {
-          background-color: #A44E0E;
+          background-color: #7B380E;
+          border-color: #7B380E;
           color: #FFFDF9 !important;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(123, 56, 14, 0.25);
         }
       `}</style>
 

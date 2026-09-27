@@ -166,7 +166,7 @@ export default function ThirdSection() {
                 className="mb-3"
                 style={{
                   fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                  fontSize: 'clamp(26px, 3.2vw, 32px)',
+                  fontSize: 'clamp(21px, 2.2vw, 26px)',
                   color: '#422207',
                   fontWeight: 400,
                   lineHeight: '1.2'

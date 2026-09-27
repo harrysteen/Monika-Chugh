@@ -87,7 +87,7 @@ export default function FourteenthSection() {
   return (
     <section
       id="section-14"
-      className="position-relative py-4 py-md-5 overflow-hidden w-100 d-flex align-items-center justify-content-center"
+      className="position-relative pt-2 pt-md-3 pb-4 pb-md-5 overflow-hidden w-100 d-flex align-items-start justify-content-center"
       style={{ backgroundColor: '#FDF4EB', minHeight: '560px' }}
     >
       {/* Dynamic CSS Keyframes & 3D Styles */}
@@ -151,7 +151,7 @@ export default function FourteenthSection() {
       `}</style>
 
       {/* Main Container */}
-      <div className="container-fluid px-3 px-md-4 position-relative z-1 py-3 py-md-4">
+      <div className="container-fluid px-3 px-md-4 position-relative z-1 pt-2 pb-3 pb-md-4">
 
         {/* Section Header: Cursive Tag + Main Header + Semi Header */}
         <div className="text-center max-w-800 mx-auto mb-4 mb-md-5">
@@ -171,7 +171,7 @@ export default function FourteenthSection() {
             className="mb-2"
             style={{
               fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-              fontSize: 'clamp(24px, 4.5vw, 32px)',
+              fontSize: 'clamp(21px, 2.2vw, 26px)',
               color: '#422207',
               fontWeight: 400,
               lineHeight: '1.15',
@@ -280,9 +280,9 @@ export default function FourteenthSection() {
                 <p
                   className="mb-4"
                   style={{
-                    fontFamily: "'Larken', 'Lora', serif",
+                    fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
                     fontSize: '15px',
-                    color: '#422207',
+                    color: '#4A423B',
                     lineHeight: '1.7',
                     fontWeight: 400,
                     maxWidth: '340px'
@@ -310,9 +310,9 @@ export default function FourteenthSection() {
                 <p
                   className="mb-4"
                   style={{
-                    fontFamily: "'Larken', 'Lora', serif",
+                    fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
                     fontSize: '15px',
-                    color: '#422207',
+                    color: '#4A423B',
                     lineHeight: '1.7',
                     fontWeight: 400,
                     maxWidth: '340px'
@@ -342,7 +342,7 @@ export default function FourteenthSection() {
               >
                 {/* Front Face: Current Right Page */}
                 <div className="leaf-face p-4 p-md-5 d-flex flex-column justify-content-center align-items-center text-center border-start border-cream">
-                  <p className="mb-4" style={{ fontFamily: "'Larken', 'Lora', serif", fontSize: '15px', color: '#422207', lineHeight: '1.7', maxWidth: '340px' }}>
+                  <p className="mb-4" style={{ fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", fontSize: '15px', color: '#4A423B', fontWeight: 400, lineHeight: '1.7', maxWidth: '340px' }}>
                     {current.right.text}
                   </p>
                   <span style={{ fontFamily: "'Italianno', cursive", fontSize: '28px', color: '#A44E0E' }}>
@@ -352,7 +352,7 @@ export default function FourteenthSection() {
 
                 {/* Back Face: Next Left Page */}
                 <div className="leaf-face leaf-face-back-next p-4 p-md-5 d-flex flex-column justify-content-center align-items-center text-center border-end border-cream">
-                  <p className="mb-4" style={{ fontFamily: "'Larken', 'Lora', serif", fontSize: '15px', color: '#422207', lineHeight: '1.7', maxWidth: '340px' }}>
+                  <p className="mb-4" style={{ fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", fontSize: '15px', color: '#4A423B', fontWeight: 400, lineHeight: '1.7', maxWidth: '340px' }}>
                     {testimonials[nextIndex].left.text}
                   </p>
                   <span style={{ fontFamily: "'Italianno', cursive", fontSize: '28px', color: '#A44E0E' }}>
@@ -370,7 +370,7 @@ export default function FourteenthSection() {
               >
                 {/* Front Face: Current Left Page */}
                 <div className="leaf-face p-4 p-md-5 d-flex flex-column justify-content-center align-items-center text-center border-end border-cream">
-                  <p className="mb-4" style={{ fontFamily: "'Larken', 'Lora', serif", fontSize: '15px', color: '#422207', lineHeight: '1.7', maxWidth: '340px' }}>
+                  <p className="mb-4" style={{ fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", fontSize: '15px', color: '#4A423B', fontWeight: 400, lineHeight: '1.7', maxWidth: '340px' }}>
                     {current.left.text}
                   </p>
                   <span style={{ fontFamily: "'Italianno', cursive", fontSize: '28px', color: '#A44E0E' }}>
@@ -380,7 +380,7 @@ export default function FourteenthSection() {
 
                 {/* Back Face: Previous Right Page */}
                 <div className="leaf-face leaf-face-back-prev p-4 p-md-5 d-flex flex-column justify-content-center align-items-center text-center border-start border-cream">
-                  <p className="mb-4" style={{ fontFamily: "'Larken', 'Lora', serif", fontSize: '15px', color: '#422207', lineHeight: '1.7', maxWidth: '340px' }}>
+                  <p className="mb-4" style={{ fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", fontSize: '15px', color: '#4A423B', fontWeight: 400, lineHeight: '1.7', maxWidth: '340px' }}>
                     {testimonials[prevIndex].right.text}
                   </p>
                   <span style={{ fontFamily: "'Italianno', cursive", fontSize: '28px', color: '#A44E0E' }}>
@@ -471,9 +471,10 @@ export default function FourteenthSection() {
             <p
               className="mb-4"
               style={{
-                fontFamily: "'Larken', 'Lora', serif",
+                fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
                 fontSize: '15px',
-                color: '#422207',
+                color: '#4A423B',
+                fontWeight: 400,
                 lineHeight: '1.7',
                 minHeight: '110px',
                 display: 'flex',

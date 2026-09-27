@@ -104,13 +104,13 @@ export default function TenthSection() {
             </p>
           </div>
 
-          {/* Shop Now CTA - Absolute positioned on desktop for perfect center alignment */}
-          <div className="text-center text-md-end mt-3 mt-md-0 position-md-absolute end-0 top-50 translate-middle-y-md">
+          {/* Shop Now CTA - on desktop, vertically centred on the description's last line */}
+          <div className="section10-shop-wrap text-center text-md-end mt-3 mt-md-0">
             <a 
-              href="https://www.etsy.com" 
+              href="https://www.etsy.com/in-en/shop/CanvasandQuotations?etsrc=sdt" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-decoration-none px-4 py-2 d-inline-flex align-items-center justify-content-center transition-all"
+              className="section10-shop-btn text-decoration-none px-4 py-2 d-inline-flex align-items-center justify-content-center transition-all"
               style={{
                 fontFamily: "'Larken-Light', 'Larken-Thin', 'Lora', serif",
                 fontSize: '14.5px',
@@ -210,6 +210,28 @@ export default function TenthSection() {
         </div>
 
       </div>
+
+      <style jsx>{`
+        @media (min-width: 768px) {
+          /* One description line tall (15px x 1.65) and pinned to the paragraph's bottom,
+             so the button centres on the last line of text */
+          .section10-shop-wrap {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 24.75px;
+            display: flex;
+            align-items: center;
+          }
+        }
+        .section10-shop-btn:hover {
+          background-color: #7B380E !important;
+          border-color: #7B380E !important;
+          color: #FFFDF9 !important;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(123, 56, 14, 0.25);
+        }
+      `}</style>
     </section>
   );
 }

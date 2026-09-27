@@ -128,7 +128,7 @@ body {
   font-family: 'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif !important;
   font-weight: 400 !important;
   font-style: normal !important;
-  font-size: 26px !important;
+  font-size: 22px !important;
   line-height: 1.15 !important;
   letter-spacing: 0 !important;
   text-align: center !important;
@@ -212,8 +212,10 @@ body {
 }
 
 .btn-figma-outline:hover {
-  background-color: #422207;
-  color: var(--bg-cream);
+  background-color: #7B380E !important;
+  border-color: #7B380E !important;
+  color: #FFFDF9 !important;
+  box-shadow: 0 4px 12px rgba(123, 56, 14, 0.25);
 }
 
 /* ------------------------------------------------------------- */

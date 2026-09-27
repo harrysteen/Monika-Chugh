@@ -33,7 +33,7 @@ export default function MyStoryAbout() {
         </div>
 
         {/* 2-Column Content with Botanical Illustration in Center */}
-        <div className="row align-items-center justify-content-between g-4 text-start">
+        <div className="row align-items-center justify-content-center g-4 text-start">
           
           {/* Column 1 */}
           <div className="col-lg-5">
@@ -53,7 +53,7 @@ export default function MyStoryAbout() {
           </div>
 
           {/* Center Line Illustration (Botanical Flower Icon) */}
-          <div className="col-lg-2 text-center py-3 py-lg-0 d-flex justify-content-center align-items-center">
+          <div className="col-lg-1 text-center py-3 py-lg-0 d-flex justify-content-center align-items-center">
             <img 
               src="/images/mystory/my_story_section2_icon.png" 
               alt="Botanical ornament"
