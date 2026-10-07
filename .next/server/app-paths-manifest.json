@@ -1,3 +1,10 @@
 {
-  "/page": "app/page.js"
+  "/blogs/page": "app/blogs/page.js",
+  "/page": "app/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/press-room/page": "app/press-room/page.js",
+  "/poems-articles/page": "app/poems-articles/page.js",
+  "/blogs/write-write-write/page": "app/blogs/write-write-write/page.js",
+  "/events/page": "app/events/page.js",
+  "/my-story/page": "app/my-story/page.js"
 }

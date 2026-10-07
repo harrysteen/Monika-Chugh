@@ -23,7 +23,7 @@ export default function PressRoomAchievements() {
             className="mb-0" 
             style={{ 
               fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Lora', serif", 
-              fontSize: 'clamp(2rem, 3.5vw, 42px)', 
+              fontSize: 'clamp(21px, 2.2vw, 26px)', 
               fontWeight: 400, 
               color: '#422207' 
             }}

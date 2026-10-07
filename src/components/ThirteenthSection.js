@@ -28,6 +28,7 @@ export default function ThirteenthSection() {
       id: 'poet',
       label: 'poet',
       src: '/images/section_13_poet.png',
+      flip: true, // mirrored horizontally
       alt: 'Poet',
       link: '#poet',
       photoLeft: '69.294%',
@@ -83,24 +84,26 @@ export default function ThirteenthSection() {
       id: 'writer',
       label: 'writer',
       src: '/images/section_13_writer.png',
-      objectPosition: 'center top',
+      // frame sized to the photo's own 908x644 shape so the whole photo shows uncropped
+      aspect: '908 / 644',
       alt: 'Writer',
       link: '/blogs',
-      photoLeft: '26%',
+      photoLeft: '29.7%',
       photoTop: '79.791%',
-      photoWidth: '32%',
+      photoWidth: '24.6%',
       photoHeight: '18.5%'
     },
     {
       id: 'substack',
       label: 'substack',
       src: '/images/section_13_substack.png',
-      objectPosition: 'center top',
+      // frame sized to the photo's own 1328x824 shape so the whole photo shows uncropped
+      aspect: '1328 / 824',
       alt: 'Substack',
       link: 'https://substack.com',
-      photoLeft: '61%',
+      photoLeft: '65.45%',
       photoTop: '79.791%',
-      photoWidth: '37%',
+      photoWidth: '28.1%',
       photoHeight: '18.5%'
     }
   ];
@@ -215,6 +218,7 @@ export default function ThirteenthSection() {
                 {/* Photo Frame */}
                 <div 
                   className="w-100 h-100 overflow-hidden shadow-sm rounded-1 border border-cream"
+                  style={item.flip ? { transform: 'scaleX(-1)' } : undefined}
                 >
                   <img
                     src={item.src}
@@ -268,7 +272,7 @@ export default function ThirteenthSection() {
                 {/* Photo Frame */}
                 <div 
                   className="overflow-hidden shadow-sm rounded-1 border border-cream"
-                  style={{ width: '100%', aspectRatio: '1 / 1' }}
+                  style={{ width: '100%', aspectRatio: item.aspect || '1 / 1', transform: item.flip ? 'scaleX(-1)' : undefined }}
                 >
                   <img
                     src={item.src}

@@ -12,7 +12,7 @@ export default function BooksCatalog() {
   const publishedBooks = [
     {
       id: 1,
-      tag: 'Newly Launched',
+      tag: null,
       title: 'Quote Café - Thoughts In a Cup',
       flatlay: '/images/books/book_quote_cafe_flatlay.png',
       cover: '/images/home_section4_book1.svg',
@@ -159,8 +159,7 @@ export default function BooksCatalog() {
                       <div 
                         className="overflow-hidden w-100 rounded-1"
                         style={{
-                          aspectRatio: '16 / 9',
-                          maxHeight: '320px',
+                          aspectRatio: '1920 / 1144', // same shape as the flatlay photos, so nothing is cropped
                           cursor: 'pointer'
                         }}
                         onClick={() => {
@@ -704,11 +703,11 @@ export default function BooksCatalog() {
 
       <style jsx>{`
         .books-btn-outline:hover {
-          background-color: #7B380E !important;
+          background-color: #804112 !important;
           color: #FFFDF9 !important;
-          border-color: #7B380E !important;
+          border-color: #804112 !important;
           transform: translateY(-2px);
-          box-shadow: 0 4px 10px rgba(123, 56, 14, 0.2);
+          box-shadow: 0 4px 10px rgba(128, 65, 18, 0.2);
         }
       `}</style>
     </section>

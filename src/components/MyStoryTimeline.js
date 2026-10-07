@@ -28,13 +28,14 @@ export default function MyStoryTimeline() {
             className="fw-normal"
             style={{
               fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif",
-              fontSize: '36px',
+              fontSize: 'clamp(21px, 2.2vw, 26px)',
               color: '#422207',
               letterSpacing: '0.01em',
               lineHeight: 1.25
             }}
           >
-            Pirate ipsum me main blimey fluke
+            Before it all, there was a girl who felt<br />
+            everything but said nothing.
           </h2>
         </div>
 
@@ -76,7 +77,7 @@ export default function MyStoryTimeline() {
           </div>
 
           {/* Timeline Connector 1 */}
-          <div className="d-flex flex-column align-items-center my-4 my-lg-5">
+          <div className="d-flex flex-column align-items-center my-2 my-lg-3">
             <div style={{ width: '1px', height: '54px', backgroundColor: '#A44E0E', opacity: 0.85 }}></div>
             <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#A44E0E', marginTop: '-1px' }}></div>
           </div>
@@ -116,7 +117,7 @@ export default function MyStoryTimeline() {
           </div>
 
           {/* Timeline Connector 2 */}
-          <div className="d-flex flex-column align-items-center my-4 my-lg-5">
+          <div className="d-flex flex-column align-items-center my-2 my-lg-3">
             <div style={{ width: '1px', height: '54px', backgroundColor: '#A44E0E', opacity: 0.85 }}></div>
             <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#A44E0E', marginTop: '-1px' }}></div>
           </div>

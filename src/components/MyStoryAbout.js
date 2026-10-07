@@ -22,7 +22,7 @@ export default function MyStoryAbout() {
             className="fw-normal" 
             style={{ 
               fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
-              fontSize: '36px',
+              fontSize: 'clamp(21px, 2.2vw, 26px)',
               color: '#422207',
               letterSpacing: '0.01em',
               lineHeight: 1.25
@@ -33,27 +33,27 @@ export default function MyStoryAbout() {
         </div>
 
         {/* 2-Column Content with Botanical Illustration in Center */}
-        <div className="row align-items-center justify-content-center g-4 text-start">
+        <div className="row g-4 text-start story-about-grid">
           
           {/* Column 1 */}
-          <div className="col-lg-5">
+          <div className="col-12">
             <p 
               className="mb-0" 
               style={{ 
                 fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif", 
                 fontSize: '16px', 
                 color: '#4A423B', 
-                lineHeight: '1.85',
+                lineHeight: '1.6',
                 fontWeight: 300,
                 textAlign: 'justify'
               }}
             >
-              Hello there, if we were sitting together over coffee, we'd probably be talking about how beautifully messy life can be. Born in New Delhi, raised across the Middle East, I now call California home. Living across cultures taught me that every story deserves kindness. For years, I've helped people see more clearly as an ophthalmic doctor but the deepest kind of seeing was never about eyesight. It's about perspective and awareness. Today, I still see patients, but I also write, create, speak, and share what life has taught me.
+              Hello there, if we were sitting together over coffee, we'd probably be talking about how beautifully messy life can be. Born in New Delhi, raised across the Middle East, I now call California home. Living across cultures taught me that every story deserves kindness. For years, I've helped people see more clearly as an ophthalmic doctor but the deepest kind of seeing was never about eyesight. It's about perspective and awareness. Today, I still care for patients, but I also write, create, speak, and share what life has taught me and what I'm still figuring out.
             </p>
           </div>
 
           {/* Center Line Illustration (Botanical Flower Icon) */}
-          <div className="col-lg-1 text-center py-3 py-lg-0 d-flex justify-content-center align-items-center">
+          <div className="col-12 text-center py-3 py-lg-0 d-flex justify-content-center align-items-center">
             <img 
               src="/images/mystory/my_story_section2_icon.png" 
               alt="Botanical ornament"
@@ -66,24 +66,47 @@ export default function MyStoryAbout() {
           </div>
 
           {/* Column 2 */}
-          <div className="col-lg-5">
+          <div className="col-12">
             <p 
               className="mb-0" 
               style={{ 
                 fontFamily: "'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif", 
                 fontSize: '16px', 
                 color: '#4A423B', 
-                lineHeight: '1.85',
+                lineHeight: '1.6',
                 fontWeight: 300,
                 textAlign: 'justify'
               }}
             >
-              My work has grown into books and journals, Ārogini, Canvas & Quotations, and my YouTube channel, work that's brought a Pushcart Prize nomination, Rotary International's 2025 Poet of the Year recognition, and a seat as Commissioner on Fremont's Art Review Board. Away from the clinic, you'll find me on a nature trail, doing yoga, reading, or sitting with a notebook and coffee, learning to slow down and live with intention. I don't have all the answers, but I believe in a thoughtful word, an honest chat, and a little more awareness.
+              My work spans books and journals, Ārogini, Canvas &amp; Quotations, and YouTube - alongside recognition as a Pushcart Prize nominee, Rotary International's 2025 Poet of the Year, and service on Fremont's Art Review Board. Away from the clinic, you'll find me on a nature trail, doing yoga, reading, or sitting with a notebook and coffee, learning to slow down and live with intention.<br />
+              I don't have all the answers, but I believe in a thoughtful word, an honest chat, and a little more awareness.
             </p>
           </div>
 
         </div>
       </div>
+
+      <style jsx>{`
+        @media (min-width: 992px) {
+          /* Two equal text columns with the flower between, tops aligned */
+          .story-about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 90px minmax(0, 1fr);
+            align-items: start;
+            column-gap: 2rem;
+            width: 92%;
+            margin: 0 auto;
+          }
+          .story-about-grid > :global(div) {
+            width: auto;
+            padding: 0;
+            margin: 0;
+          }
+          .story-about-grid > :global(div:nth-child(2)) {
+            align-self: center;
+          }
+        }
+      `}</style>
     </section>
   );
 }

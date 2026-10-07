@@ -3,35 +3,95 @@
   \*****************************************************************************************************************************************************************************************************************************************************************/
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Italianno&family=Lora:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
-/* Font Definitions for Custom Figma Fonts (falling back to Google Fonts: Cormorant Garamond & Lora) */
+/* Beautique Display - self-hosted from public/fonts/ (only the Medium cut is available,
+   so it serves every weight; italic is left to the browser) */
 @font-face {
   font-family: 'Beautique Display';
-  src: local('Cormorant Garamond');
-  font-weight: normal;
+  src: url('/fonts/BeautiqueDisplay-Medium.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Larken - self-hosted from public/fonts/larken/ */
+/* 'Larken-Thin' and 'Larken-Light' are the single-style family names Figma uses */
+@font-face {
+  font-family: 'Larken-Thin';
+  src: url('/fonts/larken/Larken-Thin.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Larken-Light';
-  src: local('Lora');
-  font-weight: 300 400;
+  src: url('/fonts/larken/Larken-Light.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Larken-Thin';
-  src: local('Lora');
-  font-weight: 100 300;
+  font-family: 'Larken-Light';
+  src: url('/fonts/larken/Larken-LightItalic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Larken-Medium';
+  src: url('/fonts/larken/Larken-Medium.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 'Larken' is the full family, so font-weight picks the right file */
+@font-face {
+  font-family: 'Larken';
+  src: url('/fonts/larken/Larken-Thin.ttf') format('truetype');
+  font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Larken';
-  src: local('Lora');
-  font-weight: normal;
+  src: url('/fonts/larken/Larken-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Larken';
+  src: url('/fonts/larken/Larken-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Larken';
+  src: url('/fonts/larken/Larken-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Larken';
+  src: url('/fonts/larken/Larken-Medium.ttf') format('truetype');
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Larken';
+  src: url('/fonts/larken/Larken-Bold.ttf') format('truetype');
+  font-weight: 700 900;
   font-style: normal;
   font-display: swap;
 }
@@ -86,8 +146,8 @@ body {
 }
 
 .figma-nav-item {
-  font-family: 'Larken-Light', 'Larken-Thin', 'Larken', 'Lora', serif !important;
-  font-weight: 300 !important;
+  font-family: 'Larken-Thin', serif !important;
+  font-weight: 400 !important;
   font-style: normal !important;
   font-size: 14px !important;
   line-height: 100% !important;
@@ -96,19 +156,26 @@ body {
   text-decoration: none;
   padding-bottom: 6px;
   position: relative;
-  transition: all 0.25s ease;
+  transition: none; /* Figma interaction: navigate instantly, 0ms animation */
   white-space: nowrap;
 }
 
 .figma-nav-item:hover {
   color: #62350A !important;
-  opacity: 0.8;
 }
 
 .figma-nav-item.active {
+  font-family: 'Larken-Medium', serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
   color: #62350A !important;
-  font-weight: 500 !important;
-  border-bottom: 2px solid #62350A;
+  text-decoration: underline;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+  text-decoration-thickness: from-font;
+  text-underline-offset: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 .nav-horizontal-divider {
@@ -196,8 +263,8 @@ body {
 }
 
 .btn-figma-bronze:hover {
-  background-color: #482207;
-  border-color: #482207;
+  background-color: #804112;
+  border-color: #804112;
   color: #ffffff;
 }
 
@@ -213,10 +280,10 @@ body {
 }
 
 .btn-figma-outline:hover {
-  background-color: #7B380E !important;
-  border-color: #7B380E !important;
+  background-color: #804112 !important;
+  border-color: #804112 !important;
   color: #FFFDF9 !important;
-  box-shadow: 0 4px 12px rgba(123, 56, 14, 0.25);
+  box-shadow: 0 4px 12px rgba(128, 65, 18, 0.25);
 }
 
 /* ------------------------------------------------------------- */
@@ -495,8 +562,8 @@ body {
 }
 
 .book-action-btn:hover {
-  background-color: #62350A;
-  border-color: #62350A;
+  background-color: #804112;
+  border-color: #804112;
   color: #FFFDF9;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(98, 53, 10, 0.15);
@@ -888,7 +955,7 @@ body {
 }
 
 .press-btn-gold:hover {
-  background-color: #422207;
+  background-color: #804112;
   box-shadow: 0 6px 16px rgba(66,34,7,0.2);
 }
 
@@ -900,7 +967,7 @@ body {
 }
 
 .press-btn-outline:hover {
-  background-color: #62350A;
+  background-color: #804112;
   color: #FFFDF9;
 }
 
@@ -912,7 +979,7 @@ body {
 }
 
 .press-btn-outline-dark:hover {
-  background-color: #A44E0E;
+  background-color: #804112;
   color: #FFFFFF;
 }
 

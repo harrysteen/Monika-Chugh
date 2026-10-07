@@ -27,7 +27,7 @@ export default function EventsMoreMoments() {
           </span>
           <h2 
             className="font-beautique fw-normal mb-0" 
-            style={{ color: '#422207', fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', letterSpacing: '0.01em' }}
+            style={{ color: '#422207', fontSize: 'clamp(21px, 2.2vw, 26px)', letterSpacing: '0.01em' }}
           >
             More moments are waiting to unfold.
           </h2>

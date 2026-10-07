@@ -296,7 +296,7 @@ export default function BlogPostDetail() {
             className="mb-5"
             style={{
               fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-              fontSize: '36px',
+              fontSize: 'clamp(21px, 2.2vw, 26px)',
               color: '#422207',
               fontWeight: 400
             }}

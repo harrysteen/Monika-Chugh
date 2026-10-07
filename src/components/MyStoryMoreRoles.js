@@ -50,7 +50,7 @@ export default function MyStoryMoreRoles() {
             className="fw-normal" 
             style={{ 
               fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
-              fontSize: '36px',
+              fontSize: 'clamp(21px, 2.2vw, 26px)',
               color: '#422207',
               letterSpacing: '0.01em',
               lineHeight: 1.25
@@ -221,7 +221,7 @@ export default function MyStoryMoreRoles() {
                   src="/images/mystory/ayurveda_whole_person.png" 
                   alt="Ayurvedic Counselor" 
                   className="w-100 h-100"
-                  style={{ objectFit: 'cover', display: 'block' }}
+                  style={{ objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
                 />
               </div>
             </div>

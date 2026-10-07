@@ -36,7 +36,7 @@ export default function MyStoryPurpose() {
                 className="fw-normal" 
                 style={{ 
                   fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
-                  fontSize: '38px',
+                  fontSize: 'clamp(21px, 2.2vw, 26px)',
                   color: '#422207',
                   letterSpacing: '0.01em',
                   lineHeight: 1.25

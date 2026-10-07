@@ -8,7 +8,7 @@ export default function MyStoryNote() {
         {/* High-Resolution "A Note From Me" Banner */}
         <div className="w-100 mx-auto d-flex justify-content-center align-items-center py-2 mb-4">
           <img 
-            src="/images/mystory/a_note_from_me.png" 
+            src="/images/mystory/a_note_from_me.webp" 
             alt="A note from me - I am Monika." 
             className="w-100 h-auto d-block"
             style={{ 

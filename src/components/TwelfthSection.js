@@ -147,11 +147,11 @@ export default function TwelfthSection() {
           transition: all 0.3s ease;
         }
         .podcast-btn:hover {
-          background-color: #7B380E;
-          border-color: #7B380E;
+          background-color: #804112;
+          border-color: #804112;
           color: #FFFDF9 !important;
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(123, 56, 14, 0.25);
+          box-shadow: 0 4px 12px rgba(128, 65, 18, 0.25);
         }
       `}</style>
 

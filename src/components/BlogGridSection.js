@@ -159,7 +159,7 @@ Be patient with your healing timeline. The soil must rest in the dark before the
             className="mb-0"
             style={{
               fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-              fontSize: '38px',
+              fontSize: 'clamp(21px, 2.2vw, 26px)',
               color: '#422207',
               fontWeight: 400,
               lineHeight: '1.1',

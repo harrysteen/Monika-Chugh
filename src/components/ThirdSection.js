@@ -294,11 +294,11 @@ export default function ThirdSection() {
 
       <style jsx>{`
         .section3-cta-btn:hover {
-          background-color: #7B380E !important;
-          border-color: #7B380E !important;
+          background-color: #804112 !important;
+          border-color: #804112 !important;
           color: #FFFDF9 !important;
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(123, 56, 14, 0.25) !important;
+          box-shadow: 0 4px 12px rgba(128, 65, 18, 0.25) !important;
         }
       `}</style>
     </section>

@@ -34,7 +34,7 @@ export default function EventsMomentsFilter({ activeTab = 'quote-cafe', onTabCha
           </span>
           <h2 
             className="font-beautique fw-normal mb-0" 
-            style={{ color: '#422207', fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', letterSpacing: '0.01em' }}
+            style={{ color: '#422207', fontSize: 'clamp(21px, 2.2vw, 26px)', letterSpacing: '0.01em' }}
           >
             Where stories become shared experiences.
           </h2>

@@ -38,7 +38,7 @@ export default function FifthSection() {
             {/* Author Signature aligned to the right of poem */}
             <div className="text-end quote-author-container">
               <span className="quote-author">
-                ~ monikachugh
+                ~ monika
               </span>
             </div>
 

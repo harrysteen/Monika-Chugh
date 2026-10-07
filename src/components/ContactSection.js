@@ -72,15 +72,26 @@ export default function ContactSection() {
                   <i className="bi bi-instagram fs-6"></i>
                 </a>
 
-                {/* Pinterest Link */}
+                {/* LinkedIn Link */}
                 <a 
-                  href="https://pinterest.com" 
+                  href="https://linkedin.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="social-overlay-btn"
-                  aria-label="Pinterest"
+                  aria-label="LinkedIn"
                 >
-                  <i className="bi bi-pinterest fs-6"></i>
+                  <i className="bi bi-linkedin fs-6"></i>
+                </a>
+
+                {/* YouTube Link */}
+                <a 
+                  href="https://youtube.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-overlay-btn"
+                  aria-label="YouTube"
+                >
+                  <i className="bi bi-youtube fs-6"></i>
                 </a>
 
                 {/* Facebook Link */}
@@ -275,7 +286,7 @@ export default function ContactSection() {
                     maxWidth: '520px'
                   }}
                 >
-                  Stay updated with Monika&apos;s latest books, poems, articles, and new releases. Subscribe for occasional news and updates, delivered straight to your inbox.
+                  Stay updated with Monika&apos;s latest books, poems, articles, and new releases. Subscribe for news and updates, delivered straight to your inbox.
                 </p>
               </div>
 
@@ -321,7 +332,7 @@ export default function ContactSection() {
                       cursor: 'pointer',
                       transition: 'color 0.2s ease'
                     }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = '#A44E0E'}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#804112'}
                     onMouseLeave={(e) => e.currentTarget.style.color = '#62350A'}
                   >
                     Subscribe
@@ -378,10 +389,10 @@ export default function ContactSection() {
         }
 
         .social-overlay-btn:hover {
-          background-color: #A44E0E;
+          background-color: #804112;
           color: #FFFFFF;
           transform: translateY(-2px);
-          box-shadow: 0 4px 10px rgba(164, 78, 14, 0.25);
+          box-shadow: 0 4px 10px rgba(128, 65, 18, 0.25);
         }
 
         .minimal-line-input {
@@ -415,10 +426,10 @@ export default function ContactSection() {
         }
 
         .btn-minimal-submit:hover {
-          background-color: #A44E0E;
+          background-color: #804112;
           color: #FFFFFF;
-          border-color: #A44E0E;
-          box-shadow: 0 4px 14px rgba(164, 78, 14, 0.2);
+          border-color: #804112;
+          box-shadow: 0 4px 14px rgba(128, 65, 18, 0.2);
         }
       `}</style>
     </section>

@@ -47,6 +47,7 @@ export default function MyStoryMilestones() {
         {
           id: 'author-2023',
           image: '/images/mystory/milestones/milestone_2023_author.png',
+          imagePosition: 'center top', // keep the head inside the frame
           title: '2023 — Becoming an Author',
           text: 'One poem became a book, and writing became a way of making sense of life.'
         }
@@ -60,6 +61,7 @@ export default function MyStoryMilestones() {
         {
           id: 'words-2025',
           image: '/images/mystory/milestones/milestone_2025_words.png',
+          imagePosition: 'center top', // keep the head inside the frame
           title: '2025 — Words Recognized',
           text: "Named Rotary International's Poet of the Year and nominated for a Pushcart Prize."
         }
@@ -73,12 +75,14 @@ export default function MyStoryMilestones() {
         {
           id: 'ayurveda-2025',
           image: '/images/mystory/milestones/milestone_2025_ayurveda.png',
+          imagePosition: 'center top', // keep the head inside the frame
           title: '2025 — Ayurveda — Seeing the Whole Person',
           text: 'My curiosity about healing grew beyond medicine into mindfulness and Ayurveda.'
         },
         {
           id: 'arogini-2026',
           image: '/images/mystory/milestones/milestone_2026_arogini.png',
+          imagePosition: 'center top', // keep the head inside the frame
           title: '2026 — Ārogini — Purpose in Action',
           text: 'I founded Ārogini to bring vision care, holistic wellness, and empowerment to children and women in rural India.'
         }
@@ -108,14 +112,15 @@ export default function MyStoryMilestones() {
             className="fw-normal mx-auto" 
             style={{ 
               fontFamily: "'Beautique Display', 'BeautiqueDisplay-Regular', 'Cormorant Garamond', 'Playfair Display', serif", 
-              fontSize: '36px',
+              fontSize: 'clamp(21px, 2.2vw, 26px)',
               color: '#422207',
               letterSpacing: '0.01em',
               lineHeight: 1.3,
               maxWidth: '850px'
             }}
           >
-            The moments, choices, and humble beginnings that shaped who I am today.
+            The moments, choices, and humble beginnings<br />
+            that shaped who I am today.
           </h2>
         </div>
 
@@ -173,7 +178,7 @@ export default function MyStoryMilestones() {
                           src={item.image} 
                           alt={item.title} 
                           className="w-100 h-100"
-                          style={{ objectFit: 'cover' }}
+                          style={{ objectFit: 'cover', objectPosition: item.imagePosition || 'center' }}
                         />
                       </div>
 
