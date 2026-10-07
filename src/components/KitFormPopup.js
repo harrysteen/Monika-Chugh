@@ -8,6 +8,9 @@ export default function KitFormPopup() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
+    // Never show the newsletter popup inside the blog editor
+    if (window.location.pathname.startsWith('/studio')) return;
+
     // 1. Check if user already dismissed/closed or submitted the popup
     if (localStorage.getItem(STORAGE_KEY) === 'true') {
       return;

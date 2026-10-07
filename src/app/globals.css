@@ -1435,3 +1435,13 @@ body {
 
 
 
+
+/* Blog post body (Sanity): first letter of the first paragraph as a drop cap */
+.blog-portable-body > p:first-of-type::first-letter {
+  float: left;
+  font-family: 'Beautique Display', 'Cormorant Garamond', serif;
+  font-size: 64px;
+  line-height: 0.85;
+  padding: 6px 10px 0 0;
+  color: #A44E0E;
+}
