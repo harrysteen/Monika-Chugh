@@ -8,7 +8,7 @@ export default function PressRoomHero() {
       <div className="container px-3 px-md-4 px-xl-5" style={{ maxWidth: '1240px' }}>
         
         {/* Top Header Title */}
-        <div className="text-center mb-4 mb-md-5">
+        <div className="text-center mb-0">
           <h1 
             className="mb-0 text-center" 
             style={{ 
@@ -19,15 +19,15 @@ export default function PressRoomHero() {
               lineHeight: '140%',
               letterSpacing: '-0.07em',
               textAlign: 'center',
-              color: '#422207'
+              color: '#552C09'
             }}
           >
-            The Press Room<span style={{ color: '#62350A', fontWeight: 300, letterSpacing: 'normal' }}>|</span>
+            The Press Room<span className="press-title-cursor" style={{ color: '#552C09', fontWeight: 300, letterSpacing: 'normal' }}>|</span>
           </h1>
           
           {/* Horizontal Divider Line */}
           <div 
-            className="w-100 my-4" 
+            className="w-100 mt-4 mb-3" 
             style={{ 
               height: '1px', 
               backgroundColor: '#C5B5A5', 
@@ -39,10 +39,10 @@ export default function PressRoomHero() {
         {/* Hero SVG Banner Image */}
         <div className="w-100 mb-5 overflow-hidden shadow-sm" style={{ borderRadius: '2px' }}>
           <img 
-            src="/images/pressroom_hero_image.svg" 
+            src="/images/press%20room/press_room_hero.webp" 
             alt="The Press Room - Monika Chugh" 
             className="w-100 h-auto d-block" 
-            style={{ width: '100%', height: 'auto', minHeight: '220px' }}
+            style={{ width: '100%', height: 'auto' }}
           />
         </div>
 
@@ -96,6 +96,23 @@ export default function PressRoomHero() {
         ></div>
 
       </div>
+
+      <style jsx>{`
+        /* Typewriter-style blinking cursor after the title */
+        .press-title-cursor {
+          animation: press-cursor-blink 1s step-end infinite;
+        }
+        @keyframes press-cursor-blink {
+          50% {
+            opacity: 0;
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .press-title-cursor {
+            animation: none;
+          }
+        }
+      `}</style>
     </section>
   );
 }

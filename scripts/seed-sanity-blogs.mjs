@@ -54,7 +54,7 @@ const blogs = [
   {
     slug: 'write-write-write',
     title: 'Write. Write. Write...',
-    category: 'Growth',
+    category: 'Self Growth',
     image: 'writing.jpg',
     readingMinutes: 4,
     publishedAt: '2026-08-14T09:00:00Z',
@@ -103,7 +103,7 @@ const blogs = [
   {
     slug: 'brimless-soul',
     title: 'Brimless Soul',
-    category: 'Wellness',
+    category: 'Health',
     image: 'birds.jpg',
     readingMinutes: 4,
     publishedAt: '2026-08-02T09:00:00Z',

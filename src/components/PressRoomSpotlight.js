@@ -3,27 +3,14 @@
 import React from 'react';
 
 export default function PressRoomSpotlight() {
+  // Photos already include their soft shadow; width/height is each image's own shape
   const spotlightItems = [
-    {
-      id: 1,
-      title: 'Book Publication',
-      imgUrl: '/images/spotlight_book_publication.png'
-    },
-    {
-      id: 2,
-      title: 'Pirate ipsum sloop chandler',
-      imgUrl: '/images/spotlight_pirate_ipsum.png'
-    },
-    {
-      id: 3,
-      title: 'Podcast',
-      imgUrl: '/images/spotlight_podcast.png'
-    },
-    {
-      id: 4,
-      title: 'Intreview',
-      imgUrl: '/images/spotlight_interview.png'
-    }
+    { id: 1, title: 'Book Launches & Publications', imgUrl: '/images/press%20room/spotlight_1.webp', ratio: 619 / 800 },
+    { id: 2, title: 'Author Talks & Readings', imgUrl: '/images/press%20room/spotlight_2.webp', ratio: 1129 / 800 },
+    { id: 3, title: 'Workshops & Gatherings', imgUrl: '/images/press%20room/spotlight_3.webp', ratio: 578 / 800 },
+    { id: 4, title: 'Art & Creative Showcases', imgUrl: '/images/press%20room/spotlight_4.webp', ratio: 681 / 800 },
+    { id: 5, title: 'Collaborations & Community', imgUrl: '/images/press%20room/spotlight_5.webp', ratio: 669 / 800 },
+    { id: 6, title: 'YouTube & Media Engagements', imgUrl: '/images/press%20room/spotlight_6.webp', ratio: 1119 / 800 }
   ];
 
   return (
@@ -55,38 +42,27 @@ export default function PressRoomSpotlight() {
           </h2>
         </div>
 
-        {/* 4 Card Columns Side-by-Side */}
-        <div className="row g-4 justify-content-center">
+        {/* One row of photos, all the same height; each keeps its own width */}
+        <div className="spotlight-row">
           {spotlightItems.map((item) => (
-            <div key={item.id} className="col-12 col-sm-6 col-lg-3">
-              <div className="d-flex flex-column h-100">
-                {/* Photo Card Frame */}
-                <div 
-                  className="mb-3 overflow-hidden rounded-2 shadow-sm bg-white p-1" 
-                  style={{ width: '100%', height: '380px' }}
-                >
-                  <img 
-                    src={item.imgUrl} 
-                    alt={item.title} 
-                    className="w-100 h-100 d-block" 
-                    style={{ objectFit: 'cover', borderRadius: '2px' }}
-                  />
-                </div>
-
-                {/* Title Below Image */}
-                <h3 
-                  className="text-center mb-0" 
-                  style={{ 
-                    fontFamily: "'Larken-Bold', 'Beautique Display', 'Lora', serif", 
-                    fontSize: '18px', 
-                    fontWeight: 700, 
-                    color: '#422207' 
-                  }}
-                >
-                  {item.title}
-                </h3>
-              </div>
-            </div>
+            <figure key={item.id} className="spotlight-item mb-0" style={{ '--ratio': item.ratio }}>
+              <img
+                src={item.imgUrl}
+                alt={item.title}
+                className="d-block w-100 h-auto"
+              />
+              <figcaption
+                className="text-center mt-2"
+                style={{
+                  fontFamily: "'Larken', 'Lora', serif",
+                  fontSize: '13px',
+                  color: '#422207',
+                  lineHeight: 1.3
+                }}
+              >
+                {item.title}
+              </figcaption>
+            </figure>
           ))}
         </div>
 
@@ -100,6 +76,40 @@ export default function PressRoomSpotlight() {
         ></div>
 
       </div>
+
+      <style jsx>{`
+        /* Phones and tablets: swipe through the photos at a fixed height */
+        .spotlight-row {
+          display: flex;
+          gap: 16px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scrollbar-width: none;
+          padding-bottom: 4px;
+        }
+        .spotlight-row::-webkit-scrollbar {
+          display: none;
+        }
+        .spotlight-item {
+          flex: 0 0 auto;
+          width: calc(240px * var(--ratio));
+          scroll-snap-align: start;
+        }
+        /* Desktop: all six fit in one row; widths share the space by each photo's shape,
+           which gives every photo the same height */
+        @media (min-width: 992px) {
+          .spotlight-row {
+            overflow: visible;
+            gap: 18px;
+            align-items: flex-start;
+          }
+          .spotlight-item {
+            flex: var(--ratio) 1 0;
+            width: auto;
+            min-width: 0;
+          }
+        }
+      `}</style>
     </section>
   );
 }

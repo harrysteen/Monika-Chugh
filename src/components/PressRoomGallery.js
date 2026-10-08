@@ -2,6 +2,22 @@
 
 import React from 'react';
 
+// Card shapes (aspect ratios) and column widths follow the Figma design
+const galleryColumns = [
+  [
+    { title: 'Who Am I?', label: 'Featured Poetry', image: '/images/gallery_who_am_i_1.webp', aspect: '248 / 328' },
+    { title: 'The Silent Soul', label: 'Featured Poetry', image: '/images/gallery_the_silent_soul.webp', aspect: '248 / 213', position: 'center 70%' }
+  ],
+  [
+    { title: 'ME', label: 'Featured Poetry', image: '/images/gallery_me.webp', aspect: '310 / 240' },
+    { title: 'Balance', label: 'Featured Poetry', image: '/images/gallery_balance_1.webp', aspect: '310 / 233', position: 'center 62%' }
+  ],
+  [
+    { title: 'Unchained', label: 'Featured Poetry', image: '/images/gallery_unchained.webp', aspect: '229 / 240', position: '62% center' },
+    { title: 'Nurture You', label: 'Featured Magazine', image: '/images/gallery_nurture_you.webp', aspect: '229 / 302' }
+  ]
+];
+
 export default function PressRoomGallery() {
   return (
     <section className="py-5 bg-cream position-relative">
@@ -28,220 +44,70 @@ export default function PressRoomGallery() {
               color: '#422207' 
             }}
           >
-            Pirate ipsum arghhh
+            Where words found their way beyond the page, into the world
           </h2>
         </div>
 
-        {/* 4-Column Grid Layout matching design screenshot */}
-        <div className="row g-4 align-items-start">
-          
-          {/* Column 1 */}
-          <div className="col-12 col-md-6 col-lg-3 d-flex flex-column gap-4">
-            
-            {/* Card 1: Who Am I? (Tall) */}
-            <div>
-              <div className="mb-2 overflow-hidden" style={{ width: '100%', height: '440px' }}>
-                <img 
-                  src="/images/gallery_who_am_i_1.png" 
-                  alt="Who Am I?" 
-                  className="w-100 h-100 d-block" 
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="pt-1">
-                <span className="d-block text-muted mb-1" style={{ fontFamily: "'Larken-Light', serif", fontSize: '13px', color: '#7D736A' }}>
-                  Featured Poetry
-                </span>
-                <div className="d-flex align-items-center justify-content-between">
-                  <h3 className="mb-0" style={{ fontFamily: "'Larken-Bold', 'Beautique Display', serif", fontSize: '18px', fontWeight: 700, color: '#422207' }}>
-                    Who Am I?
-                  </h3>
-                  <span style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }}>→</span>
+        {/* 3 columns of different widths; the middle one starts a little lower (as in the design) */}
+        <div className="press-gallery mx-auto">
+          {galleryColumns.map((column, colIdx) => (
+            <div key={colIdx} className={`press-gallery-col ${colIdx === 1 ? 'is-offset' : ''}`}>
+              {column.map((item) => (
+                <div key={item.title} className="featured-gallery-card">
+                  <div className="overflow-hidden" style={{ aspectRatio: item.aspect }}>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-100 h-100 d-block"
+                      style={{ objectFit: 'cover', objectPosition: item.position || 'center' }}
+                    />
+                  </div>
+                  <span
+                    className="d-block mt-3 mb-1"
+                    style={{ fontFamily: "'Larken-Light', 'Larken', serif", fontSize: '13px', color: '#7D736A' }}
+                  >
+                    {item.label}
+                  </span>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <h3
+                      className="mb-0"
+                      style={{ fontFamily: "'Larken', 'Beautique Display', serif", fontSize: '17px', fontWeight: 500, color: '#422207' }}
+                    >
+                      {item.title}
+                    </h3>
+                    <i className="bi bi-arrow-right" style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }}></i>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-
-            {/* Card 2: Who Am I? (Wide) */}
-            <div>
-              <div className="mb-2 overflow-hidden" style={{ width: '100%', height: '170px' }}>
-                <img 
-                  src="/images/gallery_who_am_i_2.png" 
-                  alt="Who Am I?" 
-                  className="w-100 h-100 d-block" 
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="pt-1">
-                <span className="d-block text-muted mb-1" style={{ fontFamily: "'Larken-Light', serif", fontSize: '13px', color: '#7D736A' }}>
-                  Featured Poetry
-                </span>
-                <div className="d-flex align-items-center justify-content-between">
-                  <h3 className="mb-0" style={{ fontFamily: "'Larken-Bold', 'Beautique Display', serif", fontSize: '18px', fontWeight: 700, color: '#422207' }}>
-                    Who Am I?
-                  </h3>
-                  <span style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }}>→</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Column 2 */}
-          <div className="col-12 col-md-6 col-lg-3 d-flex flex-column gap-4">
-            
-            {/* Card 1: ME (Horizontal) */}
-            <div>
-              <div className="mb-2 overflow-hidden" style={{ width: '100%', height: '220px' }}>
-                <img 
-                  src="/images/gallery_me.png" 
-                  alt="ME" 
-                  className="w-100 h-100 d-block" 
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="pt-1">
-                <span className="d-block text-muted mb-1" style={{ fontFamily: "'Larken-Light', serif", fontSize: '13px', color: '#7D736A' }}>
-                  Featured Poetry
-                </span>
-                <div className="d-flex align-items-center justify-content-between">
-                  <h3 className="mb-0" style={{ fontFamily: "'Larken-Bold', 'Beautique Display', serif", fontSize: '18px', fontWeight: 700, color: '#422207' }}>
-                    ME
-                  </h3>
-                  <span style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }}>→</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2: The Silent Soul (Tall Forest) */}
-            <div>
-              <div className="mb-2 overflow-hidden" style={{ width: '100%', height: '390px' }}>
-                <img 
-                  src="/images/gallery_the_silent_soul.png" 
-                  alt="The Silent Soul" 
-                  className="w-100 h-100 d-block" 
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="pt-1">
-                <span className="d-block text-muted mb-1" style={{ fontFamily: "'Larken-Light', serif", fontSize: '13px', color: '#7D736A' }}>
-                  Featured Poetry
-                </span>
-                <div className="d-flex align-items-center justify-content-between">
-                  <h3 className="mb-0" style={{ fontFamily: "'Larken-Bold', 'Beautique Display', serif", fontSize: '18px', fontWeight: 700, color: '#422207' }}>
-                    The Silent Soul
-                  </h3>
-                  <span style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }}>→</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Column 3 */}
-          <div className="col-12 col-md-6 col-lg-3 d-flex flex-column gap-4">
-            
-            {/* Card 1: Balance (Tall Frozen Bubble) */}
-            <div>
-              <div className="mb-2 overflow-hidden" style={{ width: '100%', height: '420px' }}>
-                <img 
-                  src="/images/gallery_balance_1.png" 
-                  alt="Balance" 
-                  className="w-100 h-100 d-block" 
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="pt-1">
-                <span className="d-block text-muted mb-1" style={{ fontFamily: "'Larken-Light', serif", fontSize: '13px', color: '#7D736A' }}>
-                  Featured Poetry
-                </span>
-                <div className="d-flex align-items-center justify-content-between">
-                  <h3 className="mb-0" style={{ fontFamily: "'Larken-Bold', 'Beautique Display', serif", fontSize: '18px', fontWeight: 700, color: '#422207' }}>
-                    Balance
-                  </h3>
-                  <span style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }}>→</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2: Balance (Horizontal Dandelion Macro) */}
-            <div>
-              <div className="mb-2 overflow-hidden" style={{ width: '100%', height: '190px' }}>
-                <img 
-                  src="/images/gallery_balance_1.png" 
-                  alt="Balance" 
-                  className="w-100 h-100 d-block" 
-                  style={{ objectFit: 'cover', objectPosition: 'center bottom' }}
-                />
-              </div>
-              <div className="pt-1">
-                <span className="d-block text-muted mb-1" style={{ fontFamily: "'Larken-Light', serif", fontSize: '13px', color: '#7D736A' }}>
-                  Featured Poetry
-                </span>
-                <div className="d-flex align-items-center justify-content-between">
-                  <h3 className="mb-0" style={{ fontFamily: "'Larken-Bold', 'Beautique Display', serif", fontSize: '18px', fontWeight: 700, color: '#422207' }}>
-                    Balance
-                  </h3>
-                  <span style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }}>→</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Column 4 */}
-          <div className="col-12 col-md-6 col-lg-3 d-flex flex-column gap-4">
-            
-            {/* Card 1: Unchained (Tall Chain Links) */}
-            <div>
-              <div className="mb-2 overflow-hidden" style={{ width: '100%', height: '330px' }}>
-                <img 
-                  src="/images/gallery_unchained.png" 
-                  alt="Unchained" 
-                  className="w-100 h-100 d-block" 
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="pt-1">
-                <span className="d-block text-muted mb-1" style={{ fontFamily: "'Larken-Light', serif", fontSize: '13px', color: '#7D736A' }}>
-                  Featured Poetry
-                </span>
-                <div className="d-flex align-items-center justify-content-between">
-                  <h3 className="mb-0" style={{ fontFamily: "'Larken-Bold', 'Beautique Display', serif", fontSize: '18px', fontWeight: 700, color: '#422207' }}>
-                    Unchained
-                  </h3>
-                  <span style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }}>→</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2: Nurture You (Magazine Cover) */}
-            <div>
-              <div className="mb-2 overflow-hidden" style={{ width: '100%', height: '280px' }}>
-                <img 
-                  src="/images/gallery_nurture_you.png" 
-                  alt="Nurture You Magazine" 
-                  className="w-100 h-100 d-block" 
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="pt-1">
-                <span className="d-block text-muted mb-1" style={{ fontFamily: "'Larken-Light', serif", fontSize: '13px', color: '#7D736A' }}>
-                  Featured Magazine
-                </span>
-                <div className="d-flex align-items-center justify-content-between">
-                  <h3 className="mb-0" style={{ fontFamily: "'Larken-Bold', 'Beautique Display', serif", fontSize: '18px', fontWeight: 700, color: '#422207' }}>
-                    Nurture You
-                  </h3>
-                  <span style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }}>→</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
+          ))}
         </div>
 
       </div>
+
+      <style jsx>{`
+        .press-gallery {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 28px;
+          max-width: 1000px;
+        }
+        .press-gallery-col {
+          display: flex;
+          flex-direction: column;
+          gap: 28px;
+        }
+        @media (min-width: 768px) {
+          .press-gallery {
+            grid-template-columns: 248fr 310fr 229fr;
+            gap: 34px;
+            align-items: start;
+          }
+          .press-gallery-col.is-offset {
+            margin-top: 40px;
+          }
+        }
+      `}</style>
     </section>
   );
 }

@@ -2,10 +2,10 @@
 // without loading the Sanity Studio package
 export const BLOG_CATEGORIES = [
   'Spirituality',
-  'Growth',
+  'Self Growth',
   'Relationships',
   'Travel',
   'Reflections',
-  'Wellness',
+  'Health',
   'Inspiration'
 ];

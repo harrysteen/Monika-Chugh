@@ -47,7 +47,7 @@ export default function BlogFeaturedHero({ post, onSearch, searchQuery }) {
                 className="mb-3 text-center"
                 style={{
                   fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                  fontSize: 'clamp(21px, 2.2vw, 26px)',
+                  fontSize: '20px',
                   color: '#422207',
                   fontWeight: 400,
                   lineHeight: '1.25'
@@ -65,7 +65,8 @@ export default function BlogFeaturedHero({ post, onSearch, searchQuery }) {
                   lineHeight: '1.7',
                   fontWeight: 300,
                   maxWidth: '520px',
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  whiteSpace: 'pre-line'
                 }}
               >
                 {post.excerpt}
@@ -95,10 +96,10 @@ export default function BlogFeaturedHero({ post, onSearch, searchQuery }) {
             <div className="col-12 col-lg-6 text-center">
               <a
                 href={href}
-                className="overflow-hidden rounded-1 mx-auto shadow-sm d-block text-decoration-none"
+                className="overflow-hidden mx-auto d-block text-decoration-none"
                 style={{
-                  maxWidth: '540px',
-                  aspectRatio: '16 / 10'
+                  maxWidth: '390px',
+                  aspectRatio: '8 / 7'
                 }}
               >
                 <img

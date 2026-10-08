@@ -544,12 +544,14 @@ body {
   cursor: pointer;
 }
 
-.book-action-btn:hover {
-  background-color: #804112;
-  border-color: #804112;
-  color: #FFFDF9;
+/* !important so the hover wins over the buttons' inline colours */
+.book-action-btn:hover,
+.blog-read-btn:hover {
+  background-color: #804112 !important;
+  border-color: #804112 !important;
+  color: #FFFDF9 !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(98, 53, 10, 0.15);
+  box-shadow: 0 4px 12px rgba(128, 65, 18, 0.25);
 }
 
 .book-image-flatlay {
@@ -589,12 +591,11 @@ body {
 }
 
 .blog-featured-card-wrap {
-  background-color: #FDF9F0;
-  background-image: linear-gradient(rgba(253, 249, 240, 0.45), rgba(253, 249, 240, 0.45)), url('/images/home_section5_bg.svg');
+  background-color: #FDF6E3;
+  background-image: url('/images/blogs/main_blog_bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border: 1px solid #E5D6C5;
   border-radius: 2px;
   position: relative;
   overflow: hidden;
