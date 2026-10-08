@@ -1282,7 +1282,7 @@ body {
 
 .reel-photo-item {
   width: 300px;
-  height: 250px;
+  height: 200px;
   flex-shrink: 0;
   border-radius: 2px;
   overflow: hidden;
@@ -1294,7 +1294,7 @@ body {
 @media (max-width: 768px) {
   .reel-photo-item {
     width: 220px;
-    height: 180px;
+    height: 150px;
   }
 }
 
@@ -1304,6 +1304,15 @@ body {
   object-fit: cover;
   object-position: center top;
   display: block;
+}
+
+/* Photos that keep their own shape: same height, width follows the photo (nothing cropped) */
+.reel-photo-item.reel-photo-natural {
+  width: auto;
+}
+
+.reel-photo-item.reel-photo-natural img {
+  width: auto;
 }
 
 
@@ -1445,4 +1454,11 @@ body {
   line-height: 0.85;
   padding: 6px 10px 0 0;
   color: #A44E0E;
+}
+
+/* Events hero: heading and intro text sit a little further in from the left on desktop */
+@media (min-width: 992px) {
+  .events-hero-intro {
+    padding-left: 5rem !important;
+  }
 }

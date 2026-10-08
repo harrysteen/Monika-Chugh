@@ -1,36 +1,5 @@
 {
-  "node": {
-    "7f09d2c06a8079a5ee7f8a78aa46bc2bef1103da": {
-      "workers": {
-        "app/blogs/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5C%40sanity%5C%5Cnext-loader%5C%5Cdist%5C%5Cserver-actions.js%22%2C%5B%22setPerspectiveCookie%22%2C%22revalidateSyncTags%22%5D%5D%2C%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5Cnext-sanity%5C%5Cdist%5C%5Cvisual-editing%5C%5Cserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!",
-        "app/blogs/[slug]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5C%40sanity%5C%5Cnext-loader%5C%5Cdist%5C%5Cserver-actions.js%22%2C%5B%22setPerspectiveCookie%22%2C%22revalidateSyncTags%22%5D%5D%2C%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5Cnext-sanity%5C%5Cdist%5C%5Cvisual-editing%5C%5Cserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!"
-      },
-      "layer": {
-        "app/blogs/page": "action-browser",
-        "app/blogs/[slug]/page": "action-browser"
-      }
-    },
-    "dbfe3ffadd6e1befcb0202aea55681695cd17ebe": {
-      "workers": {
-        "app/blogs/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5C%40sanity%5C%5Cnext-loader%5C%5Cdist%5C%5Cserver-actions.js%22%2C%5B%22setPerspectiveCookie%22%2C%22revalidateSyncTags%22%5D%5D%2C%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5Cnext-sanity%5C%5Cdist%5C%5Cvisual-editing%5C%5Cserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!",
-        "app/blogs/[slug]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5C%40sanity%5C%5Cnext-loader%5C%5Cdist%5C%5Cserver-actions.js%22%2C%5B%22setPerspectiveCookie%22%2C%22revalidateSyncTags%22%5D%5D%2C%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5Cnext-sanity%5C%5Cdist%5C%5Cvisual-editing%5C%5Cserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!"
-      },
-      "layer": {
-        "app/blogs/page": "action-browser",
-        "app/blogs/[slug]/page": "action-browser"
-      }
-    },
-    "1be34d5fa74aecc2dbd19e482d5900110a5637e1": {
-      "workers": {
-        "app/blogs/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5C%40sanity%5C%5Cnext-loader%5C%5Cdist%5C%5Cserver-actions.js%22%2C%5B%22setPerspectiveCookie%22%2C%22revalidateSyncTags%22%5D%5D%2C%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5Cnext-sanity%5C%5Cdist%5C%5Cvisual-editing%5C%5Cserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!",
-        "app/blogs/[slug]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5C%40sanity%5C%5Cnext-loader%5C%5Cdist%5C%5Cserver-actions.js%22%2C%5B%22setPerspectiveCookie%22%2C%22revalidateSyncTags%22%5D%5D%2C%5B%22C%3A%5C%5Cvip%20codes%5C%5CMonika%20Chugh%5C%5Cnode_modules%5C%5Cnext-sanity%5C%5Cdist%5C%5Cvisual-editing%5C%5Cserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!"
-      },
-      "layer": {
-        "app/blogs/page": "action-browser",
-        "app/blogs/[slug]/page": "action-browser"
-      }
-    }
-  },
+  "node": {},
   "edge": {},
-  "encryptionKey": "PiCGNRg3RmLhEfc2gFzYe1escYX8ShGCmcZMumnf8r0="
+  "encryptionKey": "u/PMGqswdlu/dfOqjSp0l+YOYMz5t5R/Y4Ld990u2co="
 }

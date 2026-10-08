@@ -219,7 +219,7 @@ export default function PressRoomNewLaunches() {
                     {book.cta === 'notify' ? (
                       <button
                         onClick={() => setNotified((prev) => ({ ...prev, [book.id]: !prev[book.id] }))}
-                        className="btn launch-cta text-decoration-none px-4 py-2 w-100 w-sm-auto mt-auto"
+                        className="btn launch-cta text-decoration-none px-4 py-2 mt-auto"
                         style={buttonStyle(notified[book.id])}
                       >
                         {notified[book.id] ? 'Subscribed!' : 'Get Notified'}
@@ -227,7 +227,7 @@ export default function PressRoomNewLaunches() {
                     ) : (
                       <a
                         href="/books"
-                        className="btn launch-cta text-decoration-none px-4 py-2 w-100 w-sm-auto mt-auto"
+                        className="btn launch-cta text-decoration-none px-4 py-2 mt-auto"
                         style={buttonStyle(false)}
                       >
                         Explore the book
@@ -276,8 +276,15 @@ export default function PressRoomNewLaunches() {
         .launch-info {
           padding-top: 2px;
         }
+        /* Every button is the same width, whatever the cover width beside it */
         .launch-cta {
-          min-width: 175px;
+          width: 100%;
+        }
+        @media (min-width: 576px) {
+          .launch-cta {
+            width: 220px;
+            max-width: 100%;
+          }
         }
         .launch-cta:hover {
           background-color: #804112 !important;
@@ -289,17 +296,6 @@ export default function PressRoomNewLaunches() {
         @media (min-width: 992px) {
           .launch-item {
             width: calc((100% - 3rem) / 2.15);
-          }
-          /* Thin vertical divider between books */
-          .launch-item + .launch-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -1.5rem;
-            width: 1px;
-            background-color: #A44E0E;
-            opacity: 0.6;
           }
         }
       `}</style>

@@ -1,19 +1,23 @@
 'use client';
 
 export default function EventsHero() {
-  // Exclusively use the 4 user-provided event images
-  const fourImages = [
-    { id: 1, src: '/images/events/events page image fremeimg1.svg', alt: 'Monika Chugh Event 1' },
-    { id: 2, src: '/images/events/events page image fremeimg2.svg', alt: 'Monika Chugh Event 2' },
-    { id: 3, src: '/images/events/event page image fremeingimg3.svg', alt: 'Monika Chugh Event 3' },
-    { id: 4, src: '/images/events/event page image fremeingimg4.svg', alt: 'Monika Chugh Event 4' },
-  ];
+  // Frame one (top reel): event photos, each shown in its own shape at the reel height
+  const frameOneImages = Array.from({ length: 8 }, (_, i) => ({
+    id: i + 1,
+    src: `/images/events/frame1_${i + 1}.webp`,
+    alt: `Monika Chugh event moment ${i + 1}`
+  }));
 
-  const bottomFourImages = [fourImages[2], fourImages[3], fourImages[0], fourImages[1]];
+  // Frame two (bottom reel)
+  const frameTwoImages = Array.from({ length: 7 }, (_, i) => ({
+    id: i + 1,
+    src: `/images/events/frame2_${i + 1}.webp`,
+    alt: `Monika Chugh event gathering ${i + 1}`
+  }));
 
-  // Duplicate arrays for seamless infinite marquee scroll
-  const topImagesLoop = [...fourImages, ...fourImages, ...fourImages, ...fourImages];
-  const bottomImagesLoop = [...bottomFourImages, ...bottomFourImages, ...bottomFourImages, ...bottomFourImages];
+  // Duplicate arrays for seamless infinite marquee scroll (the track moves by half its length)
+  const topImagesLoop = [...frameOneImages, ...frameOneImages];
+  const bottomImagesLoop = [...frameTwoImages, ...frameTwoImages];
 
 
 
@@ -27,21 +31,21 @@ export default function EventsHero() {
         {/* ROW 1: Top Header Text (Left) + Top Moving Reel (Right End of Screen) */}
         <div className="row g-0 align-items-center mb-4 mb-lg-5">
           {/* Left Column: Heading & Description (Padded from left container edge) */}
-          <div className="col-12 col-lg-5 ps-3 ps-md-5 ps-xl-5 pe-3 pe-lg-4 py-2">
+          <div className="col-12 col-lg-5 ps-3 ps-md-5 ps-xl-5 pe-3 pe-lg-4 py-2 events-hero-intro">
             <h1 
               className="font-beautique mb-3" 
-              style={{ color: '#422207', fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)', lineHeight: '1.15', fontWeight: 400 }}
+              style={{ color: '#422207', fontSize: '34px', lineHeight: '1.15', fontWeight: 400, WebkitTextStroke: '0.6px currentColor' }}
             >
               Moments that bring us <br />
-              <span style={{ color: '#A44E0E', fontWeight: 700, letterSpacing: '0.02em' }}>
+              <span className="d-inline-block mt-2" style={{ color: '#8B4715', fontSize: '36px', fontWeight: 700, letterSpacing: '0.02em', WebkitTextStroke: '1px currentColor' }}>
                 TOGETHER
               </span>
             </h1>
             <p 
               className="font-larken mb-0" 
-              style={{ color: '#62350A', fontSize: '1.05rem', lineHeight: '1.7', maxWidth: '480px' }}
+              style={{ color: '#010101A3', fontSize: '1.05rem', lineHeight: '1.7', maxWidth: '480px' }}
             >
-              A collection of book launches, creative gatherings and soulful experiences where words, art and meaningful conversations come
+              From book launches and poetry readings to workshops and intimate gatherings, each milestone has been a chance to bring words off the page and into shared spaces.
             </p>
           </div>
 
@@ -59,7 +63,7 @@ export default function EventsHero() {
               <div className="reel-track-wrapper">
                 <div className="reel-track-inner reel-track-scroll-left">
                   {topImagesLoop.map((img, idx) => (
-                    <div key={`top-reel-${idx}`} className="reel-photo-item">
+                    <div key={`top-reel-${idx}`} className="reel-photo-item reel-photo-natural">
                       <img src={img.src} alt={img.alt} />
                     </div>
                   ))}
@@ -92,7 +96,7 @@ export default function EventsHero() {
               <div className="reel-track-wrapper">
                 <div className="reel-track-inner reel-track-scroll-right">
                   {bottomImagesLoop.map((img, idx) => (
-                    <div key={`bot-reel-${idx}`} className="reel-photo-item">
+                    <div key={`bot-reel-${idx}`} className="reel-photo-item reel-photo-natural">
                       <img src={img.src} alt={img.alt} />
                     </div>
                   ))}
@@ -112,9 +116,11 @@ export default function EventsHero() {
           <div className="col-12 col-lg-5 order-1 order-lg-2 pe-3 pe-md-5 pe-xl-5 ps-3 ps-lg-5 py-2">
             <p 
               className="font-larken mb-0" 
-              style={{ color: '#62350A', fontSize: '1.05rem', lineHeight: '1.7', maxWidth: '520px' }}
+              style={{ color: '#010101A3', fontSize: '1.05rem', lineHeight: '1.7', maxWidth: '520px' }}
             >
-              A collection of book launches, creative gatherings and soulful experiences where words, art and meaningful conversations come A collection of book launches, creative gatherings and soulful experiences where words, art and meaningful conversations come
+              What began with writing has grown into conversations, connections, and meaningful exchanges.
+              <br />
+              Along the way have come creative collaborations, art and product showcases, speaking engagements, and moments of celebration. Each one holds a different story, but together they reflect a journey of creating, sharing, and connecting through words, art, and purpose.
             </p>
           </div>
         </div>

@@ -3,10 +3,9 @@
 import { useRef } from 'react';
 
 const CATEGORIES = [
-  { id: 'quote-cafe', label: 'Quote Cafe – Book launch' },
-  { id: 'arogini', label: 'Arogini' },
-  { id: 'travel', label: 'Travel' },
-  { id: 'reflections', label: 'Reflections' },
+  { id: 'quote-cafe', label: 'Quote Cafe & Affirmations- Book launch' },
+  { id: 'arogini', label: 'Ārogini' },
+  { id: 'canvas-quotations', label: 'Canvas & quotations launch' },
   { id: 'wellness', label: 'Wellness' },
 ];
 
@@ -84,11 +83,11 @@ export default function EventsMomentsFilter({ activeTab = 'quote-cafe', onTabCha
                       fontFamily: "'Larken', 'Lora', serif",
                       fontSize: '16px',
                       fontWeight: isActive ? 600 : 400,
-                      color: isActive ? '#A44E0E' : '#62350A',
+                      color: isActive ? '#A44E0E' : '#502C0A',
                       borderBottom: isActive ? '2px solid #A44E0E' : '2px solid transparent',
                       paddingBottom: '6px',
                       borderRadius: 0,
-                      opacity: isActive ? 1 : 0.85
+                      opacity: 1
                     }}
                   >
                     {cat.label}

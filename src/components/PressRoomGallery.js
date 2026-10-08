@@ -6,7 +6,7 @@ import React from 'react';
 const galleryColumns = [
   [
     { title: 'Who Am I?', label: 'Featured Poetry', image: '/images/gallery_who_am_i_1.webp', aspect: '248 / 328' },
-    { title: 'The Silent Soul', label: 'Featured Poetry', image: '/images/gallery_the_silent_soul.webp', aspect: '248 / 213', position: 'center 70%' }
+    { title: 'The Silent Soul', label: 'Featured Poetry', image: '/images/press%20room/gallery_the_silent_soul.webp', aspect: '248 / 213' }
   ],
   [
     { title: 'ME', label: 'Featured Poetry', image: '/images/gallery_me.webp', aspect: '310 / 240' },
