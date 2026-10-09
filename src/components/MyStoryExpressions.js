@@ -42,8 +42,8 @@ export default function MyStoryExpressions() {
     },
     {
       title: 'Writer',
-      image: '/images/section_13_writer.png',
-      imagePosition: '64% center',
+      image: '/images/section_13_writer_v2.webp',
+      imagePosition: 'center 20%',
       buttonText: 'Read My Articles',
       link: '/poems-articles'
     }

@@ -1,84 +1,79 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+const PREVIEW = [
+  'stripping my soul',
+  'shattering the illusions',
+  'grasping the rainbow hues',
+  'traveling to a utopian land',
+  'shimmering in golden light...'
+];
+
+const poems = [
+  { id: 'silent-soul', title: 'The Silent Soul', image: '/images/poems/poem_silent_soul.webp' },
+  { id: 'who-am-i', title: 'Who Am I?', image: '/images/poems/poem_who_am_i.webp' },
+  { id: 'am-i-boring', title: 'Am I Boring?', image: '/images/poems/poem_am_i_boring.webp' },
+  { id: 'balance', title: 'Balance', image: '/images/poems/poem_balance.webp' },
+  { id: 'unchained', title: 'Unchained', image: '/images/poems/poem_unchained.webp' },
+  { id: 'me', title: 'Me', image: '/images/poems/poem_me.webp' }
+];
 
 export default function PoemsVerseCarousel() {
-  const [activeModalPoem, setActiveModalPoem] = useState(null);
+  const trackRef = useRef(null);
+  // Progress bar: thumb size = visible share of the row, position = how far it is scrolled
+  const [bar, setBar] = useState({ size: 0.45, offset: 0 });
 
-  const poems = [
-    {
-      id: 1,
-      title: 'The Silent Soul',
-      image: '/images/poems/silent_soul.jpg',
-      lines: [
-        'Stripping my soul',
-        'Shattering the illusions',
-        'Grasping the rainbow hues',
-        'Traveling to a utopian land',
-        'Shimmering in golden light...'
-      ],
-      fullPoem: `Stripping my soul,
-Shattering the illusions,
-Grasping the rainbow hues,
-Traveling to a utopian land,
-Shimmering in golden light.
-
-I walked where the shadows dare not follow,
-Finding the sanctuary I always kept within,
-Untethered from the world's noisy sorrow,
-Where the journey of the spirit can begin.`
-    },
-    {
-      id: 2,
-      title: 'Am I Boring?',
-      image: '/images/poems/water_ripples.jpg',
-      lines: [
-        'Stripping my soul',
-        'Shattering the illusions',
-        'Grasping the rainbow hues',
-        'Traveling to a utopian land',
-        'Shimmering in golden light...'
-      ],
-      fullPoem: `Am I boring for loving the silence?
-For watching concentric circles bloom on water,
-Choosing tea over deafening crowded violence,
-Listening to what the quiet hours daughter?
-
-In the stillness, worlds collide and heal,
-Nothing wasted in a peaceful breath,
-Every ripple teaching how to feel,
-Life that blossoms deeper than life and death.`
-    },
-    {
-      id: 3,
-      title: 'Who Am I?',
-      image: '/images/poems/floral_veil.jpg',
-      lines: [
-        'Stripping my soul',
-        'Shattering the illusions',
-        'Grasping the rainbow hues',
-        'Traveling to a utopian land',
-        'Shimmering in golden light...'
-      ],
-      fullPoem: `Who am I behind this veil of roles?
-Behind the quiet jasmine and woven silk,
-Beyond the expectations placed on wandering souls,
-Drinking from rivers of honey and milk?
-
-I am the observer, the singer of verses,
-The heartbeat behind the morning light,
-A traveler healing generational curses,
-Awakening gracefully into the night.`
+  // Mouse users can click and drag the row sideways (touch and trackpads already scroll)
+  const drag = useRef(null);
+  const onPointerDown = (e) => {
+    if (e.pointerType !== 'mouse' || e.button !== 0 || !trackRef.current) return;
+    drag.current = { x: e.clientX, left: trackRef.current.scrollLeft, moved: false };
+    trackRef.current.classList.add('is-dragging');
+  };
+  const onPointerMove = (e) => {
+    if (!drag.current || !trackRef.current) return;
+    const dx = e.clientX - drag.current.x;
+    if (Math.abs(dx) > 3) drag.current.moved = true;
+    trackRef.current.scrollLeft = drag.current.left - dx;
+  };
+  const endDrag = () => {
+    if (!drag.current || !trackRef.current) return;
+    const el = trackRef.current;
+    el.classList.remove('is-dragging');
+    // Settle on the nearest card once released
+    const card = el.querySelector('.poem-card');
+    if (card) {
+      const step = card.offsetWidth + (parseFloat(getComputedStyle(el).columnGap) || 0);
+      el.scrollTo({ left: Math.round(el.scrollLeft / step) * step, behavior: 'smooth' });
     }
-  ];
+    drag.current = null;
+  };
+
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const update = () => {
+      const size = Math.min(1, el.clientWidth / el.scrollWidth);
+      const max = el.scrollWidth - el.clientWidth;
+      setBar({ size, offset: max > 0 ? (el.scrollLeft / max) * (1 - size) : 0 });
+    };
+    update();
+    el.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    return () => {
+      el.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+    };
+  }, []);
 
   return (
     <section className="py-5 bg-cream" style={{ backgroundColor: '#FFFDF9' }}>
       <div className="container-fluid px-3 px-md-4 px-lg-5 max-w-1400 mx-auto">
-        
+
         {/* Section Header */}
         <div className="text-center mb-5">
-          <span 
+          <span
             className="d-block mb-1"
             style={{
               fontFamily: "'Italianno', cursive",
@@ -90,7 +85,7 @@ Awakening gracefully into the night.`
           >
             poems
           </span>
-          <h2 
+          <h2
             className="mb-0"
             style={{
               fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
@@ -105,34 +100,38 @@ Awakening gracefully into the night.`
           </h2>
         </div>
 
-        {/* 2-Column Section Layout: Left Intro + Right 3-Cards */}
-        <div className="row g-4 g-xl-5 align-items-center mb-4">
-          
-          {/* Left Intro Text + View All Button */}
-          <div className="col-12 col-xl-3 text-center text-xl-start">
-            <p 
+        <div className="poems-layout">
+
+          {/* Left: intro + View All */}
+          <div className="poems-intro text-center text-xl-start">
+            <p
               className="mb-4"
               style={{
-                fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
-                fontSize: '15px',
-                color: '#4A423B',
-                lineHeight: '1.7',
-                fontWeight: 300
+                fontFamily: "'Larken-Light', serif",
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '145%',
+                letterSpacing: '-0.01em',
+                color: '#010101A3'
               }}
             >
-              Pirate ipsum arrgh bounty warp jack. Lubber avast heave sloop guns shot lass no men splice. Plate furl starboard belaying crimp chandler six arr boatswain. Belaying boom gabion lanyard pirate cat clipper chantey the. Round dock jones&apos; fluke sails overhaul man jib schooner.
+              My poems come from lived experience. The moments I&apos;ve felt too deeply to stay silent about. Raw emotions. Untold truths. Nothing is polished before it&apos;s honest; I&apos;d rather a line feel true than perfect. Unspoken feelings - the grief, the healing, the tiny wins, so that others might recognize a piece of themselves in it too.
             </p>
 
-            <a 
-              href="#all-poems" 
-              className="btn-figma-outline d-inline-block text-decoration-none px-4 py-2"
+            <a
+              href="#all-poems"
+              className="btn-figma-outline d-inline-flex align-items-center justify-content-center text-decoration-none"
               style={{
                 fontFamily: "'Larken', 'Lora', serif",
                 fontSize: '15px',
-                color: '#422207',
-                border: '1px solid #A44E0E',
-                borderRadius: '2px',
+                color: '#62350A',
+                border: '0.75px solid #A44E0E',
+                borderRadius: 0,
                 backgroundColor: 'transparent',
+                width: '165px',
+                height: '41px',
+                padding: '10px',
+                gap: '10px',
                 transition: 'all 0.3s ease'
               }}
             >
@@ -140,158 +139,137 @@ Awakening gracefully into the night.`
             </a>
           </div>
 
-          {/* Right Cards Row (3 Cards) */}
-          <div className="col-12 col-xl-9">
-            <div className="row g-3 g-md-4 justify-content-center">
+          {/* Right: scrolling row of poem cards + progress bar */}
+          <div className="poems-carousel">
+            <div
+              ref={trackRef}
+              className="poems-track"
+              onPointerDown={onPointerDown}
+              onPointerMove={onPointerMove}
+              onPointerUp={endDrag}
+              onPointerLeave={endDrag}
+            >
               {poems.map((poem) => (
-                <div key={poem.id} className="col-12 col-md-4">
-                  <div 
-                    className="p-3 p-xl-4 h-100 rounded-1 d-flex flex-column justify-content-between cursor-pointer"
+                <article key={poem.id} className="poem-card">
+                  <h3
+                    className="text-center mb-3"
                     style={{
-                      backgroundColor: '#FCF8F2',
-                      border: '1px solid #E8DCCF',
-                      transition: 'all 0.3s ease'
+                      fontFamily: "'Beautique Display', 'Cormorant Garamond', serif",
+                      fontSize: '20px',
+                      color: '#422207',
+                      fontWeight: 400
                     }}
-                    onClick={() => setActiveModalPoem(poem)}
                   >
-                    <div>
-                      {/* Poem Title */}
-                      <h3 
-                        className="text-center mb-3"
-                        style={{
-                          fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                          fontSize: '22px',
-                          color: '#422207',
-                          fontWeight: 400
-                        }}
-                      >
-                        {poem.title}
-                      </h3>
+                    {poem.title}
+                  </h3>
 
-                      {/* Poem Image */}
-                      <div 
-                        className="overflow-hidden rounded-1 mb-3"
-                        style={{ aspectRatio: '16 / 11' }}
-                      >
-                        <img 
-                          src={poem.image} 
-                          alt={poem.title} 
-                          className="w-100 h-100 object-cover d-block"
-                          style={{ objectFit: 'cover' }}
-                        />
-                      </div>
-
-                      {/* Stanza Lines in Italianno */}
-                      <div className="ps-2">
-                        {poem.lines.map((line, idx) => (
-                          <p 
-                            key={idx} 
-                            className="mb-0"
-                            style={{
-                              fontFamily: "'Italianno', cursive",
-                              fontSize: '22px',
-                              color: '#62350A',
-                              lineHeight: '1.25'
-                            }}
-                          >
-                            {line}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Right Arrow Indicator */}
-                    <div className="text-end pt-3 pe-2">
-                      <span style={{ fontSize: '20px', color: '#422207' }}>→</span>
-                    </div>
-
+                  <div className="overflow-hidden mb-3" style={{ aspectRatio: '206 / 146' }}>
+                    <img src={poem.image} alt={poem.title} className="w-100 h-100 d-block" style={{ objectFit: 'cover' }} draggable={false} />
                   </div>
-                </div>
+
+                  <div className="d-flex align-items-end justify-content-between gap-2">
+                    <div
+                      style={{
+                        fontFamily: "'Dancing Script', cursive",
+                        fontWeight: 400,
+                        fontSize: '16px',
+                        lineHeight: '112%',
+                        letterSpacing: '0.01em',
+                        color: '#62350A'
+                      }}
+                    >
+                      {PREVIEW.map((line) => (
+                        <span key={line} className="d-block">{line}</span>
+                      ))}
+                    </div>
+                    <i className="bi bi-arrow-right flex-shrink-0" style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }} aria-hidden="true"></i>
+                  </div>
+                </article>
               ))}
             </div>
 
-            {/* Progress / Scroll Indicator Bar matching Figma */}
-            <div className="mt-4 pt-2 mx-auto" style={{ maxWidth: '100%', height: '3px', backgroundColor: '#E2D5C3', position: 'relative' }}>
-              <div style={{ width: '45%', height: '100%', backgroundColor: '#62350A' }}></div>
+            <div className="poems-progress" aria-hidden="true">
+              <div
+                className="poems-progress-thumb"
+                style={{ width: `${bar.size * 100}%`, left: `${bar.offset * 100}%` }}
+              ></div>
             </div>
-
           </div>
 
         </div>
-
       </div>
 
-      {/* Full Poem Modal */}
-      {activeModalPoem && (
-        <div 
-          className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center px-3"
-          style={{
-            backgroundColor: 'rgba(66, 34, 7, 0.65)',
-            backdropFilter: 'blur(4px)',
-            zIndex: 2000
-          }}
-          onClick={() => setActiveModalPoem(null)}
-        >
-          <div 
-            className="bg-white rounded-2 p-4 p-md-5 position-relative shadow-lg text-center"
-            style={{
-              maxWidth: '620px',
-              backgroundColor: '#FFFDF9',
-              border: '1px solid #C4A57B'
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="position-absolute top-0 end-0 mt-3 me-3 btn btn-sm border-0 text-dark fs-4"
-              onClick={() => setActiveModalPoem(null)}
-              aria-label="Close"
-            >
-              <i className="bi bi-x-lg"></i>
-            </button>
-
-            <span 
-              className="d-block mb-1"
-              style={{
-                fontFamily: "'Italianno', cursive",
-                fontSize: '32px',
-                color: '#A44E0E'
-              }}
-            >
-              poem
-            </span>
-
-            <h2 
-              className="mb-3"
-              style={{
-                fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                fontSize: '30px',
-                color: '#422207'
-              }}
-            >
-              {activeModalPoem.title}
-            </h2>
-
-            <div className="my-4 p-4 rounded" style={{ backgroundColor: '#F8EEDF', border: '1px dashed #C4A57B' }}>
-              <p 
-                className="mb-0"
-                style={{
-                  fontFamily: "'Italianno', cursive",
-                  fontSize: '26px',
-                  color: '#422207',
-                  lineHeight: '1.6',
-                  whiteSpace: 'pre-line'
-                }}
-              >
-                {activeModalPoem.fullPoem}
-              </p>
-            </div>
-
-            <p className="text-muted small mb-0">~ Monika Chugh</p>
-          </div>
-        </div>
-      )}
-
+      <style jsx>{`
+        .poems-layout {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+        }
+        .poems-intro {
+          max-width: 420px;
+          margin: 0 auto;
+        }
+        .poems-carousel {
+          min-width: 0;
+        }
+        .poems-track {
+          display: flex;
+          gap: 30px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scrollbar-width: none;
+          padding: 4px 12px 18px 4px;
+        }
+        .poems-track {
+          cursor: grab;
+          user-select: none;
+        }
+        .poems-track.is-dragging {
+          cursor: grabbing;
+          scroll-snap-type: none;
+        }
+        .poems-track::-webkit-scrollbar {
+          display: none;
+        }
+        .poem-card {
+          flex: 0 0 auto;
+          width: min(280px, 78vw);
+          scroll-snap-align: start;
+          background: #FFFDF9;
+          border: 3px solid #F8EDD8;
+          box-shadow: 0 6px 14px rgba(66, 34, 7, 0.12);
+          padding: 20px 20px 16px;
+        }
+        .poems-progress {
+          position: relative;
+          height: 4px;
+          background: #EADBC6;
+          margin-top: 18px;
+        }
+        .poems-progress-thumb {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          background: #62350A;
+          transition: left 0.1s linear;
+        }
+        /* Desktop: intro on the left, cards running off to the right as in the design */
+        @media (min-width: 1200px) {
+          .poems-layout {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 4%;
+          }
+          .poems-intro {
+            flex: 0 0 20%;
+            margin: 52px 0 0;
+          }
+          .poems-carousel {
+            flex: 1 1 auto;
+            margin-right: -3rem;
+          }
+        }
+      `}</style>
     </section>
   );
 }

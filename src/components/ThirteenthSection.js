@@ -83,14 +83,15 @@ export default function ThirteenthSection() {
     {
       id: 'writer',
       label: 'writer',
-      src: '/images/section_13_writer.png',
-      // frame sized to the photo's own 908x644 shape so the whole photo shows uncropped
-      aspect: '908 / 644',
+      src: '/images/section_13_writer_v2.webp',
+      // portrait frame in the photo's own 744x890 shape so the whole photo shows; same height
+      // as the old landscape frame, centred in the same spot
+      aspect: '744 / 890',
       alt: 'Writer',
       link: '/blogs',
-      photoLeft: '29.7%',
+      photoLeft: '34.7%',
       photoTop: '79.791%',
-      photoWidth: '24.6%',
+      photoWidth: '14.6%',
       photoHeight: '18.5%'
     },
     {

@@ -61,7 +61,7 @@ export default function BlogGridSection({ posts = [], searchQuery = '' }) {
               letterSpacing: '0.03em'
             }}
           >
-            Pirate ipsum me main
+            Finding meaning in the little moments of life.
           </h2>
         </div>
 

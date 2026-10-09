@@ -38,7 +38,7 @@ export default function Hero() {
             <h1 
               className="hero-figma-headline mx-auto mb-0" 
               style={{ 
-                fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
+                fontFamily: "'Beautique Display Regular', 'Beautique Display', serif",
                 fontSize: '22px', 
                 color: '#422207',
                 fontWeight: 400,

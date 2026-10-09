@@ -1,26 +1,27 @@
 'use client';
 
-export default function BookDetailHero({ onBuyNow }) {
+export default function BookDetailHero({ book, onBuyNow }) {
   return (
     <section className="pt-4 pb-5 bg-cream position-relative" style={{ backgroundColor: '#FFFDF9' }}>
       <div className="container-fluid px-3 px-md-4 px-lg-5 max-w-1400 mx-auto">
         <div className="row align-items-center g-4 g-lg-5">
           
-          {/* Left Column: 3D Book Stack Mockup */}
+          {/* Left Column: book image */}
           <div className="col-12 col-lg-6 text-center">
             <div 
-              className="mx-auto overflow-hidden rounded-1"
+              className="mx-auto"
               style={{
-                maxWidth: '520px'
+                maxWidth: book.heroMaxWidth
               }}
             >
               <img 
-                src="/images/books/quote_cafe_3d_stack.jpg" 
-                alt="Quote Cafe – Thoughts in a Cup by Monika Chugh" 
-                className="img-fluid w-100 h-auto d-block mx-auto rounded-1"
+                src={book.heroImage}
+                alt={`${book.title} by Monika Chugh`}
+                className="img-fluid w-100 h-auto d-block mx-auto"
                 style={{
                   maxHeight: '520px',
-                  objectFit: 'contain'
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 14px 18px rgba(0,0,0,0.12))'
                 }}
               />
             </div>
@@ -32,28 +33,30 @@ export default function BookDetailHero({ onBuyNow }) {
               className="mb-3"
               style={{
                 fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                fontSize: '46px',
+                fontSize: 'clamp(26px, 2.5vw, 38px)',
                 color: '#62350A',
                 fontWeight: 400,
                 lineHeight: '1.15',
-                letterSpacing: '0.02em'
+                letterSpacing: '0.02em',
+                WebkitTextStroke: '0.8px currentColor'
               }}
             >
-              Quote Cafe – Thoughts In a Cup
+              {book.title}
             </h1>
 
             <p 
-              className="mb-4"
+              className="mb-5"
               style={{
                 fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
                 fontSize: '15.5px',
                 color: '#4A423B',
                 lineHeight: '1.75',
                 maxWidth: '560px',
-                fontWeight: 300
+                fontWeight: 300,
+                textAlign: 'justify'
               }}
             >
-              The 40 Rules of Love brings together two stories across different times, exploring love, spirituality, and the transformative power of connection. A thought-provoking journey that invites us to look within and see love from a different The 40 Rules of Love brings together two stories across different times, exploring love, spirituality,
+              {book.description}
             </p>
 
             <div>
@@ -62,6 +65,7 @@ export default function BookDetailHero({ onBuyNow }) {
                 onClick={onBuyNow}
                 className="btn-figma-outline px-5 py-2 text-decoration-none"
                 style={{
+                  minWidth: '250px',
                   fontFamily: "'Larken', 'Lora', serif",
                   fontSize: '15px',
                   color: '#422207',

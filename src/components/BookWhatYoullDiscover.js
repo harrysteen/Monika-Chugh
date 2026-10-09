@@ -17,7 +17,7 @@ export default function BookWhatYoullDiscover() {
               lineHeight: '100%'
             }}
           >
-            my books
+            inside these pages
           </span>
           <h2 
             className="mb-0"
@@ -29,12 +29,12 @@ export default function BookWhatYoullDiscover() {
               lineHeight: '1.2'
             }}
           >
-            What You&apos;ll Discover
+            Within Quote Cafè
           </h2>
         </div>
 
         {/* 2-Column: Story on Left + Open Book Page on Right */}
-        <div className="row g-4 g-lg-5 align-items-center">
+        <div className="row g-4 g-lg-5 align-items-start">
           
           {/* Left Column: Story & Journey */}
           <div className="col-12 col-lg-7 pe-lg-4">
@@ -52,7 +52,7 @@ export default function BookWhatYoullDiscover() {
               </p>
 
               <p className="mb-4">
-                <strong className="fw-semibold text-dark">No exception:</strong> my life took a 360-degree turn with two major life-changing incidents. I was an emotionally shaken wreck with physical wounds. It made me question many things about my identity. I was miserable, merged into self-pity and victim moods, and blamed the world for the misgivings.
+                <strong style={{ fontFamily: "'Larken-Medium', 'Larken', serif", color: '#8B4715', fontWeight: 400 }}>No exception:</strong> my life took a 360-degree turn with two major life-changing incidents. I was an emotionally shaken wreck with physical wounds. It made me question many things about my identity. I was miserable, merged into self-pity and victim moods, and blamed the world for the misgivings.
               </p>
 
               <p className="mb-4">
@@ -64,18 +64,19 @@ export default function BookWhatYoullDiscover() {
               </p>
 
               <p className="mb-4">
-                <strong className="fw-semibold text-dark">01/18/2018, 11:16 pm,</strong> I was mentally disturbed with churning thoughts. The moonlight peeping through the window gently caressed my solemn face. I was enveloped with unstoppable tears and a lump in my throat. I picked up my pen and paper; thoughts became words, words became sentences, and sentences became paragraphs. I poured my heart out on the blank canvas flowing with the moment.
+                <strong style={{ fontFamily: "'Larken-Medium', 'Larken', serif", color: '#8B4715', fontWeight: 400 }}>01/18/2018, 11:16 pm</strong>, I was mentally disturbed with churning thoughts. The moonlight peeping through the window gently caressed my solemn face. I was enveloped with unstoppable tears and a lump in my throat. I picked up my pen and paper; thoughts became words, words became sentences, and sentences became paragraphs. I poured my heart out on the blank canvas flowing with the moment.
               </p>
 
               <p className="mb-4">
-                That was when <strong className="fw-semibold" style={{ color: '#62350A' }}>Quote Café was born.</strong> I decided to be bold and share my story with the world, weaved with a blend of affirmations and short poems. Quote café is my sanctuary to express, emote, and write. Writing has taught me the power of silence, self-love, forgiveness, and letting go to heal at a deeper level. Every human has a story to share from their galaxy of vast experiences. Will you be brave enough to share it with the world?
+                That was when <strong style={{ fontFamily: "'Larken-Medium', 'Larken', serif", color: '#8B4715', fontWeight: 400 }}>Quote Café was born.</strong> I decided to be bold and share my story with the world, weaved with a blend of affirmations and short poems. Quote café is my sanctuary to express, emote, and write. Writing has taught me the power of silence, self-love, forgiveness, and letting go to heal at a deeper level. Every human has a story to share from their galaxy of vast experiences. Will you be brave enough to share it with the world?
               </p>
 
               <p 
-                className="mt-4 pt-2 fst-italic"
+                className="mt-4 pt-2 mb-0 fst-italic"
                 style={{
-                  color: '#A44E0E',
-                  fontSize: '17px',
+                  fontFamily: "'Larken-Medium', 'Larken', serif",
+                  color: '#8B4715',
+                  fontSize: '16px',
                   lineHeight: '1.6'
                 }}
               >
@@ -85,74 +86,31 @@ export default function BookWhatYoullDiscover() {
             </div>
           </div>
 
-          {/* Right Column: Open Book Page Styling */}
-          <div className="col-12 col-lg-5">
-            <div 
-              className="p-4 p-md-5 rounded-2 shadow-sm position-relative mx-auto"
-              style={{
-                backgroundColor: '#FAF5ED',
-                border: '1px solid #E2D5C3',
-                maxWidth: '460px',
-                minHeight: '520px',
-                boxShadow: '-8px 12px 24px rgba(66, 34, 7, 0.08)'
-              }}
-            >
-              {/* Spine shadow line */}
-              <div 
-                className="position-absolute top-0 start-0 h-100"
-                style={{
-                  width: '18px',
-                  background: 'linear-gradient(to right, rgba(0,0,0,0.08), transparent)'
-                }}
-              ></div>
-
-              <div className="text-center pt-3 mb-4">
-                <h3 
-                  className="mb-1"
-                  style={{
-                    fontFamily: "'Beautique Display', 'Cormorant Garamond', 'Playfair Display', serif",
-                    fontSize: '20px',
-                    color: '#422207'
-                  }}
-                >
-                  Quote Cafe - Thoughts In a Cup
-                </h3>
-                <div className="d-flex align-items-center justify-content-center gap-2 text-muted small my-2">
-                  <span style={{ width: '24px', height: '1px', backgroundColor: '#A44E0E' }}></span>
-                  <span style={{ color: '#A44E0E' }}>☕</span>
-                  <span style={{ width: '24px', height: '1px', backgroundColor: '#A44E0E' }}></span>
-                </div>
-              </div>
-
-              <div 
-                className="text-center px-2"
-                style={{
-                  fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
-                  fontSize: '13px',
-                  color: '#4A423B',
-                  lineHeight: '1.7',
-                  fontWeight: 300
-                }}
-              >
-                <p className="mb-3">
-                  I was mentally disturbed with churning thoughts. The moonlight peeping through the window gently caressed my solemn face. I was enveloped with unstoppable tears and a lump in my throat. I picked up my pen and paper; thoughts became words, words became sentences, and sentences became paragraphs. I poured my heart out on the blank canvas flowing with the moment.
-                </p>
-
-                <p className="mb-3">
-                  That was when Quote Café was born. I decided to be bold and share my story with the world, weaved with a blend of affirmations and short poems. Quote café is my sanctuary to express, emote, and write. Writing has taught me the power of silence, self-love, forgiveness, and letting go to heal at a deeper level. Every human has a story to share from their galaxy of vast experiences. Will you be brave enough to share it with the world?
-                </p>
-
-                <p className="fst-italic mt-3" style={{ color: '#62350A' }}>
-                  Quote Café~my sanctuary to express, emote, and write a story weaved with affirmations and poems.
-                </p>
-              </div>
-
-            </div>
+          {/* Right Column: open book photo, running off the right edge on desktop */}
+          <div className="col-12 col-lg-5 d-flex justify-content-center justify-content-lg-end">
+            <img
+              src="/images/books/within_quote_cafe.webp"
+              alt="Open copy of Quote Cafe – Thoughts In a Cup"
+              className="within-book-img d-block h-auto"
+            />
           </div>
 
         </div>
 
       </div>
+
+      <style jsx>{`
+        .within-book-img {
+          width: 100%;
+          max-width: 420px;
+        }
+        @media (min-width: 992px) {
+          .within-book-img {
+            max-width: 460px;
+            margin-right: -3rem;
+          }
+        }
+      `}</style>
     </section>
   );
 }

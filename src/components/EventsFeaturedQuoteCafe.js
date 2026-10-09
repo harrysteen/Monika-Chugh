@@ -10,6 +10,7 @@ function CameraFrame({
   timestamp = '23.03.2025 11:04:20',
   height = '210px',
   fill = false,
+  tight = false, // smaller header text for narrow frames with long labels
   position = 'center',
   className = '',
   style = {}
@@ -25,7 +26,7 @@ function CameraFrame({
       }}
     >
       {/* Top Header */}
-      <div className="d-flex justify-content-between align-items-center mb-1 px-1 flex-shrink-0" style={{ fontFamily: "'Larken', serif", fontSize: '7px', color: '#E0E0E0', letterSpacing: '0.3px', gap: '6px', whiteSpace: 'nowrap', overflow: 'hidden' }}>
+      <div className="d-flex justify-content-between align-items-center mb-1 px-1 flex-shrink-0" style={{ fontFamily: "'Larken', serif", fontSize: tight ? '5.5px' : '7px', color: '#E0E0E0', letterSpacing: tight ? '0' : '0.3px', gap: tight ? '3px' : '6px', whiteSpace: 'nowrap', overflow: 'hidden' }}>
         <span>MONIKACHUGH</span>
         <span>► {frameNum}</span>
         <span>{tag}</span>
@@ -75,8 +76,8 @@ const EVENTS = {
       { src: '/images/events/quote_cafe_1.webp', box: [0, 4, 155, 158], num: '22', tag: 'BOOKLAUNCH', mobileHeight: '200px' },
       { src: '/images/events/quote_cafe_2.webp', box: [15, 175, 113, 117], num: '22', tag: 'BOOKLAUNCH', mobileHeight: '200px' },
       { src: '/images/events/quote_cafe_3.webp', box: [165, 33, 128, 216], num: '31', tag: 'BOOKLAUNCH', mobileHeight: '300px', position: 'center top' },
-      { src: '/images/events/quote_cafe_4.webp', box: [330, 47, 263, 138], num: '22', tag: 'BOOKLAUNCH', mobileHeight: '200px' },
-      { src: '/images/events/quote_cafe_5.webp', box: [397, 199, 263, 139], num: '31', tag: 'CANVAS & QUOTATIONS', mobileHeight: '200px' },
+      { src: '/images/events/quote_cafe_4.webp', box: [330, 47, 263, 138], num: '22', tag: 'BOOKLAUNCH', mobileHeight: '200px', position: 'center top' },
+      { src: '/images/events/quote_cafe_5.webp', box: [397, 199, 263, 139], num: '31', tag: 'BOOKLAUNCH', mobileHeight: '200px' },
       { src: '/images/events/quote_cafe_6.webp', box: [605, 0, 153, 185], num: '22', tag: 'BOOKLAUNCH', mobileHeight: '300px', position: 'center top' },
       { src: '/images/events/quote_cafe_7.webp', box: [673, 200, 154, 116], num: '22', tag: 'BOOKLAUNCH', mobileHeight: '200px' }
     ],
@@ -103,12 +104,12 @@ const EVENTS = {
     size: [821, 338],
     frames: [
       { src: '/images/events/canvas_1.webp', box: [0, 4, 167, 171], num: '22', tag: 'CANVAS & QUOTATIONS', mobileHeight: '240px' },
-      { src: '/images/events/canvas_2.webp', box: [45, 186, 123, 127], num: '12', tag: 'BOOKLAUNCH', mobileHeight: '220px' },
+      { src: '/images/events/canvas_2.webp', box: [45, 186, 123, 127], num: '12', tag: 'CANVAS & QUOTATIONS', mobileHeight: '220px', tight: true },
       { src: '/images/events/canvas_3.webp', box: [181, 4, 167, 234], num: '35', tag: 'CANVAS & QUOTATIONS', mobileHeight: '300px' },
       { src: '/images/events/canvas_4.webp', box: [359, 4, 286, 150], num: '22', tag: 'CANVAS & QUOTATIONS', mobileHeight: '200px' },
       { src: '/images/events/canvas_5.webp', box: [375, 166, 245, 127], num: '22', tag: 'CANVAS & QUOTATIONS', mobileHeight: '200px' },
       { src: '/images/events/canvas_6.webp', box: [654, 0, 167, 201], num: '22', tag: 'CANVAS & QUOTATIONS', mobileHeight: '280px' },
-      { src: '/images/events/canvas_7.webp', box: [634, 212, 167, 126], num: '22', tag: 'BOOKLAUNCH', mobileHeight: '220px' }
+      { src: '/images/events/canvas_7.webp', box: [634, 212, 167, 126], num: '22', tag: 'CANVAS & QUOTATIONS', mobileHeight: '220px' }
     ],
     notes: [
       { text: 'Connection', at: [-96, 42], rotate: -55 },
@@ -133,9 +134,9 @@ const EVENTS = {
     size: [697, 202],
     caption: { text: 'A warm evening,', at: [623, 192] },
     frames: [
-      { src: '/images/events/wellness_1.webp', box: [0, 3, 142, 146], num: '22', tag: 'BOOKLAUNCH', mobileHeight: '260px' },
+      { src: '/images/events/wellness_1.webp', box: [0, 3, 142, 146], num: '22', tag: 'WELLNESS', mobileHeight: '260px' },
       { src: '/images/events/wellness_2.webp', box: [153, 3, 143, 199], num: '35', tag: 'WELLNESS', mobileHeight: '320px' },
-      { src: '/images/events/wellness_3.webp', box: [305, 2, 242, 127], num: '22', tag: 'WELLNESS', mobileHeight: '200px' },
+      { src: '/images/events/wellness_3.webp', box: [305, 2, 242, 127], num: '22', tag: 'WELLNESS', mobileHeight: '200px', position: 'center top' },
       { src: '/images/events/wellness_4.webp', box: [555, 0, 142, 171], num: '22', tag: 'WELLNESS', mobileHeight: '300px' }
     ],
     notes: [
@@ -250,7 +251,7 @@ export default function EventsFeaturedQuoteCafe({ activeTab = 'quote-cafe' }) {
                 className="position-absolute"
                 style={{ left: pctX(f.box[0]), top: pctY(f.box[1]), width: pctX(f.box[2]), height: pctY(f.box[3]), zIndex: 1 }}
               >
-                <CameraFrame src={f.src} alt={event.alt} frameNum={f.num} tag={f.tag} timestamp={event.timestamp} position={f.position} fill />
+                <CameraFrame src={f.src} alt={event.alt} frameNum={f.num} tag={f.tag} timestamp={event.timestamp} position={f.position} tight={f.tight} fill />
               </div>
             ))}
 
