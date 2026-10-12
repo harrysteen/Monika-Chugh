@@ -107,18 +107,16 @@ export default function BlogPostView({ post, latestPosts = [], relatedPosts = []
             className="mx-auto mb-5 p-2"
             style={{
               border: '1px solid #C4A57B',
-              maxWidth: '1200px'
+              maxWidth: '860px'
             }}
           >
-            <div className="overflow-hidden" style={{ maxHeight: '640px' }}>
+            {/* Medium-size frame; every photo fills it the same way (cropped from the centre) */}
+            <div className="overflow-hidden" style={{ aspectRatio: '16 / 9', maxHeight: '440px', width: '100%' }}>
               <img
                 src={post.heroImage}
                 alt={post.imageAlt}
-                className="w-100 h-auto d-block"
-                style={{
-                  objectFit: 'cover',
-                  maxHeight: '620px'
-                }}
+                className="w-100 h-100 d-block"
+                style={{ objectFit: 'cover', objectPosition: 'center 35%' }}
               />
             </div>
           </div>

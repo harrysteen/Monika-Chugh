@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import BellIcon from './BellIcon';
 
 export default function ThirdSection() {
   const books = [
@@ -197,7 +198,7 @@ export default function ThirdSection() {
               <button
                 type="button"
                 onClick={() => setNotifyModalOpen(true)}
-                className="btn text-decoration-none d-inline-flex align-items-center justify-content-center px-5 py-2 transition-all section3-cta-btn"
+                className="btn text-decoration-none d-inline-flex align-items-center justify-content-center gap-2 px-5 py-2 transition-all section3-cta-btn"
                 style={{
                   fontFamily: "'Larken-Light', 'Larken-Thin', 'Lora', serif",
                   fontSize: '15px',
@@ -214,7 +215,8 @@ export default function ThirdSection() {
                   MozOsxFontSmoothing: 'grayscale'
                 }}
               >
-                {currentBook.cta}
+                <span>{currentBook.cta}</span>
+                <BellIcon />
               </button>
 
             </div>
@@ -280,10 +282,11 @@ export default function ThirdSection() {
                   />
                   <button
                     type="submit"
-                    className="btn px-4"
+                    className="btn px-4 d-inline-flex align-items-center gap-2"
                     style={{ backgroundColor: '#7B380E', color: '#FFFFFF', borderColor: '#7B380E' }}
                   >
-                    Notify Me
+                    <span>Notify Me</span>
+                    <BellIcon />
                   </button>
                 </div>
               </form>

@@ -138,6 +138,21 @@ const FEATURED = [
 
 export default function PoemsPushcartSection() {
   const [activeId, setActiveId] = useState(FEATURED[0].id);
+  const sectionRef = useRef(null);
+
+  // Links like /poems-articles#poem-total-me open that poem here and scroll to this section
+  useEffect(() => {
+    const openFromHash = () => {
+      const match = window.location.hash.match(/^#poem-(.+)$/);
+      const poem = match && FEATURED.find((p) => p.id === match[1]);
+      if (!poem) return;
+      setActiveId(poem.id);
+      requestAnimationFrame(() => sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    };
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+    return () => window.removeEventListener('hashchange', openFromHash);
+  }, []);
   const active = FEATURED.find((p) => p.id === activeId);
   const others = FEATURED.filter((p) => p.id !== activeId);
 
@@ -180,7 +195,7 @@ export default function PoemsPushcartSection() {
   const onThumbUp = () => { thumbDrag.current = null; };
 
   return (
-    <section className="featured-poems py-5">
+    <section ref={sectionRef} id="featured-poems" className="featured-poems py-5">
       <div className="container-fluid px-3 px-md-4 px-lg-5 mx-auto" style={{ maxWidth: '1240px' }}>
 
         <span
@@ -265,6 +280,7 @@ export default function PoemsPushcartSection() {
 
       <style jsx>{`
         .featured-poems {
+          scroll-margin-top: 90px;
           background: #F8F0DD url('/images/books/why_quote_cafe_paper.webp') center / cover;
         }
         .featured-card {

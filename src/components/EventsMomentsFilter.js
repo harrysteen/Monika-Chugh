@@ -41,7 +41,7 @@ export default function EventsMomentsFilter({ activeTab = 'quote-cafe', onTabCha
 
         {/* Category Carousel & Tab Bar */}
         <div className="position-relative pt-2">
-          <div className="d-flex align-items-center justify-content-between gap-2 border-bottom pb-2" style={{ borderColor: '#E2D5C3' }}>
+          <div className="d-flex align-items-center justify-content-center gap-3 border-bottom pb-2" style={{ borderColor: '#E2D5C3' }}>
             
             {/* Left Arrow Button */}
             <button 
@@ -65,8 +65,9 @@ export default function EventsMomentsFilter({ activeTab = 'quote-cafe', onTabCha
             {/* Scrollable Tabs */}
             <div 
               ref={scrollContainerRef}
-              className="d-flex align-items-center justify-content-center gap-4 overflow-x-auto py-1 no-scrollbar w-100 px-2"
+              className="d-flex align-items-center gap-4 overflow-x-auto py-1 no-scrollbar px-2"
               style={{ 
+                maxWidth: 'calc(100% - 110px)',
                 scrollBehavior: 'smooth', 
                 scrollbarWidth: 'none', 
                 msOverflowStyle: 'none' 

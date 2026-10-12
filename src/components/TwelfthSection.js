@@ -10,7 +10,8 @@ export default function TwelfthSection() {
       {/* Full-Bleed Studio Microphone / Podcast Video Background */}
       <div className="position-absolute top-0 start-0 w-100 h-100">
         <video 
-          src="/videos/section_11_video.mp4" 
+          src="/videos/home_video.mp4"
+          poster="/videos/home_video_poster.jpg"
           autoPlay 
           loop 
           muted 

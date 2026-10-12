@@ -24,28 +24,28 @@ export default function MyStoryExpressions() {
       title: 'Artist',
       image: '/images/mystory/about_section4_artist.png?v=2', // ?v=2 forces browsers to load the replaced photo
       buttonText: 'View My Canvas',
-      link: '/#artist'
+      link: 'https://www.etsy.com/in-en/shop/CanvasandQuotations?etsrc=sdt'
     },
     {
       title: 'Poet',
       image: '/images/mystory/about_section4_poet.png',
       imagePosition: '82% center',
       buttonText: 'Read My Poems',
-      link: '/poems-articles'
+      link: 'https://spillwords.com/author/monikachugh/'
     },
     {
       title: 'Podcast',
       image: '/images/section_13_podcast.png',
       imagePosition: 'center 30%',
       buttonText: 'Listen to My Podcast',
-      link: '/#podcast'
+      link: 'https://www.youtube.com/@monikachugh23'
     },
     {
       title: 'Writer',
       image: '/images/section_13_writer_v2.webp',
       imagePosition: 'center 20%',
       buttonText: 'Read My Articles',
-      link: '/poems-articles'
+      link: 'https://community.thriveglobal.com/author/monika-chugh/'
     }
   ];
 

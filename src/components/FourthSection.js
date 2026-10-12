@@ -12,6 +12,7 @@ export default function FourthSection() {
       id: 1,
       title: "quote cafe",
       cover: "/images/home_section4_book1.svg",
+      shopLink: "https://www.amazon.com/dp/B0CPZ1TYVL",
       frame: { svgW: 246, svgH: 355, x: 0, y: 0, w: 245.8, h: 354.3 },
       description: "Some stories wait until we find the courage to share them. Quote Café began when I found mine. A sanctuary of reflections, affirmations, and short poems on self-love, forgiveness, and letting go. This is my story. Perhaps you’ll find a little of yours here."
     },
@@ -19,6 +20,7 @@ export default function FourthSection() {
       id: 2,
       title: "a quote zone with affirmations",
       cover: "/images/home_section4_book2.svg",
+      shopLink: "https://www.amazon.com/dp/B0DH3YGXX3",
       frame: { svgW: 277, svgH: 385, x: 24.2, y: 12.2, w: 245.8, h: 354.3 },
       description: "“Take care of yourself; the world can wait.” A reminder I often gave my patients, and slowly learned to offer myself. A Quiet Zone With Affirmations began in my journals, with words I needed to hear. In my own company, writing became a daily ritual. Make a little room for yourself here."
     },
@@ -26,6 +28,7 @@ export default function FourthSection() {
       id: 3,
       title: "Rebirth",
       cover: "/images/home_section4_book3.svg",
+      shopLink: "https://www.amazon.com/dp/B0B2KF763Q",
       frame: { svgW: 254, svgH: 355, x: 0, y: 0, w: 253.3, h: 354.3 },
       description: "The phoenix is the symbol of renewal and rebirth. As one life ends, a nest is built, the old phoenix sets fire to itself, and a new one emerges from the ashes. Rebirth and renewal are never easy, as the stories of these brave women will testify. Each shares a story of a fragmented and fractured life."
     }
@@ -204,7 +207,9 @@ export default function FourthSection() {
                   
                   {/* Shop Now CTA */}
                   <a 
-                    href="#shop" 
+                    href={book.shopLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-decoration-none d-inline-flex align-items-center justify-content-center px-4 py-2 transition-all section4-shop-btn"
                     style={{
                       fontFamily: "'Larken-Light', 'Larken-Thin', 'Lora', serif",

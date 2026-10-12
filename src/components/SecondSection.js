@@ -99,7 +99,10 @@ export default function SecondSection() {
 
                 {/* Elegant Editorial Arrow Link - brown color, moved towards the right */}
                 <a
-                  href="#books"
+                  href="https://www.etsy.com/in-en/listing/4538635078/lotus-whispers-journal-guided"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Lotus Whispers journal on Etsy"
                   className="second-section-arrow-btn text-decoration-none flex-shrink-0 d-inline-flex align-items-center justify-content-center mt-2 mt-md-0 ms-auto ms-md-3"
                   style={{
                     color: '#A44E0E',

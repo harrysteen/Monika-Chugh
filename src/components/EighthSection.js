@@ -24,7 +24,7 @@ export default function EighthSection() {
           </div>
 
           <a 
-            href="/books" 
+            href="/poems-articles" 
             className="text-decoration-none px-4 py-2 mt-3 mt-md-0 d-inline-flex align-items-center justify-content-center transition-all section8-header-btn"
             style={{
               fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",

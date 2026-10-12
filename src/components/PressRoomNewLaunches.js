@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import BellIcon from './BellIcon';
 
 const launches = [
   {
@@ -219,10 +220,11 @@ export default function PressRoomNewLaunches() {
                     {book.cta === 'notify' ? (
                       <button
                         onClick={() => setNotified((prev) => ({ ...prev, [book.id]: !prev[book.id] }))}
-                        className="btn launch-cta text-decoration-none px-4 py-2 mt-auto"
+                        className="btn launch-cta text-decoration-none px-4 py-2 mt-auto d-inline-flex align-items-center justify-content-center gap-2"
                         style={buttonStyle(notified[book.id])}
                       >
-                        {notified[book.id] ? 'Subscribed!' : 'Get Notified'}
+                        <span>{notified[book.id] ? 'Subscribed!' : 'Get Notified'}</span>
+                        {!notified[book.id] && <BellIcon />}
                       </button>
                     ) : (
                       <a

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import BellIcon from './BellIcon';
 
 export default function BooksCatalog() {
   const [activeTab, setActiveTab] = useState('all'); // 'all' | 'upcoming'
@@ -377,11 +378,7 @@ export default function BooksCatalog() {
                             }}
                           >
                             <span>Notify Me</span>
-                            {/* Delicate Outline Bell Icon */}
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                            </svg>
+                            <BellIcon />
                           </button>
                         </div>
 
@@ -683,7 +680,7 @@ export default function BooksCatalog() {
                 />
                 <button
                   type="submit"
-                  className="btn py-2 text-white"
+                  className="btn py-2 text-white d-inline-flex align-items-center justify-content-center gap-2"
                   style={{
                     backgroundColor: '#7B380E',
                     borderColor: '#7B380E',
@@ -692,7 +689,8 @@ export default function BooksCatalog() {
                     fontWeight: 400
                   }}
                 >
-                  Notify Me Upon Launch
+                  <span>Notify Me Upon Launch</span>
+                  <BellIcon />
                 </button>
               </form>
             )}

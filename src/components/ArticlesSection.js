@@ -3,36 +3,54 @@
 const articles = [
   {
     id: 'love-myself',
+    date: 'April.2021',
+    readTime: '4 Min Read',
+    href: 'https://community.thriveglobal.com/finally-i-am-learning-to-love-myself/',
     title: 'Finally, I am learning to love myself!',
     image: '/images/poems/article_love_myself.webp',
     excerpt: 'i wanted validation. I wanted acceptance. I wanted a stamp of approval. Ironically, I needed to understand that SELF is a peaceful revolution within me to uplift myself.'
   },
   {
     id: 'off-she-goes',
+    date: 'Sep.2021',
+    readTime: '4 Min Read',
+    href: 'https://community.thriveglobal.com/and-off-she-goes-2/',
     title: '...and off she goes',
     image: '/images/poems/article_off_she_goes.webp',
     excerpt: '...now you sail away from the safe harbor to find your own corner. ...now you have to carve your own path. ...now you are off to great places...'
   },
   {
     id: 'forgive',
+    date: 'Feb.2021',
+    readTime: '3 Min Read',
+    href: 'https://community.thriveglobal.com/forgive-let-it-go-period/',
     title: 'Forgive, Let It Go- Period!',
     image: '/images/poems/article_forgive.webp',
     excerpt: 'We all talk about forgiveness. We all preach about forgiveness. We all share our experiences about forgiveness. Breathe- Let it go- Let it go!'
   },
   {
     id: 'storm',
+    date: 'Jan.2021',
+    readTime: '4 Min Read',
+    href: 'https://community.thriveglobal.com/the-storm-in-her/',
     title: 'The Storm in Her!',
     image: '/images/poems/article_storm.webp',
     excerpt: 'she needed help- I knew I was that one person who was given the chance to revive her back. I sincerely hope she is smiling wherever she is right now. Keep the good karma flowing!'
   },
   {
     id: 'kensho',
+    date: 'Dec.2020',
+    readTime: '4 Min Read',
+    href: 'https://community.thriveglobal.com/the-kensho-moment-a-glimpse-of-the-mystic-you/',
     title: 'The Kenshō Moment',
     image: '/images/poems/article_kensho.webp',
     excerpt: 'Kenshō and Satori what do these experiences really mean? Have you had your moments so far?'
   },
   {
     id: 'pendulum',
+    date: 'Dec.2020',
+    readTime: '7 Min Read',
+    href: 'https://community.thriveglobal.com/balance-escaping-the-pendulum/',
     title: 'escaping the pendulum..',
     image: '/images/poems/article_pendulum.webp',
     excerpt: 'my friend once asked me, “ why are you always dangling like a pendulum”? That got me thinking real hard!'
@@ -68,7 +86,9 @@ export default function ArticlesSection() {
           </div>
 
           <a
-            href="/blogs"
+            href="https://community.thriveglobal.com/author/monika-chugh/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="articles-view-all btn-figma-outline d-inline-flex align-items-center justify-content-center text-decoration-none"
             style={{
               fontFamily: "'Larken', 'Lora', serif",
@@ -89,7 +109,14 @@ export default function ArticlesSection() {
         {/* 6 article cards, 3 per row */}
         <div className="articles-grid">
           {articles.map((item, i) => (
-            <article key={item.id} className="article-card d-flex flex-column" style={{ backgroundColor: i % 2 ? '#FBF5EA' : '#F8EFE2' }}>
+            <a
+              key={item.id}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="article-card d-flex flex-column text-decoration-none"
+              style={{ backgroundColor: i % 2 ? '#FBF5EA' : '#F8EFE2' }}
+            >
               <div style={{ aspectRatio: '226 / 202' }} className="overflow-hidden">
                 <img src={item.image} alt={item.title} className="w-100 h-100 d-block" style={{ objectFit: 'cover' }} />
               </div>
@@ -112,11 +139,11 @@ export default function ArticlesSection() {
                   className="mt-auto pt-2 d-flex justify-content-between"
                   style={{ borderTop: '1px solid #A44E0E', fontFamily: "'Larken-Light', 'Larken', serif", fontSize: '11px', color: '#5C5248' }}
                 >
-                  <span>June.2024</span>
-                  <span>4 Min Read</span>
+                  <span>{item.date}</span>
+                  <span>{item.readTime}</span>
                 </div>
               </div>
-            </article>
+            </a>
           ))}
         </div>
 
@@ -128,6 +155,13 @@ export default function ArticlesSection() {
           flex-direction: column;
           align-items: center;
           gap: 16px;
+        }
+        .article-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .article-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 22px rgba(66, 34, 7, 0.12);
         }
         .articles-grid {
           display: grid;

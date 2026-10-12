@@ -51,7 +51,7 @@ export default function BookExploreMore({ currentSlug }) {
                 style={{
                   fontFamily: "'Larken', 'Lora', serif",
                   fontSize: '15px',
-                  color: '#62350A',
+                  color: '#A44E0E',
                   border: '1px solid #A44E0E',
                   borderRadius: 0,
                   backgroundColor: 'transparent',

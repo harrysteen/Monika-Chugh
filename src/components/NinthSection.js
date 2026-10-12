@@ -126,7 +126,7 @@ export default function NinthSection() {
             }}
           >
             <a 
-              href="#learn-more" 
+              href="/events" 
               className="text-decoration-none px-4 py-2 d-inline-flex align-items-center justify-content-center transition-all events-learn-more-btn"
               style={{
                 fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",
@@ -256,7 +256,7 @@ export default function NinthSection() {
           {/* Learn More Button */}
           <div className="text-center pt-2">
             <a 
-              href="#learn-more" 
+              href="/events" 
               className="text-decoration-none px-4 py-2 d-inline-flex align-items-center justify-content-center transition-all events-learn-more-btn"
               style={{
                 fontFamily: "'Larken-Light', 'Larken', 'Lora', serif",

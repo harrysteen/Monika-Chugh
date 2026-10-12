@@ -8,13 +8,13 @@ const slides = [
     id: 'rotary-poet-2025',
     image: '/images/press%20room/words_heard_1.webp',
     alt: 'International Rotary Poet of the Year 2025 - Delayed Gratification: Couldn’t Be Happier Than This!',
-    poemLink: '#'
+    poemLink: '/poems-articles#poem-total-me'
   },
   {
     id: 'figments-of-tomorrow',
     image: '/images/press%20room/words_heard_2.webp',
     alt: 'Where my words have found a home - “Unchained” in Figments of Tomorrow, a 2025 anthology',
-    poemLink: '#'
+    poemLink: '/poems-articles#poem-unchained'
   }
 ];
 

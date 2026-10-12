@@ -5,16 +5,16 @@ import React from 'react';
 // Card shapes (aspect ratios) and column widths follow the Figma design
 const galleryColumns = [
   [
-    { title: 'Who Am I?', label: 'Featured Poetry', image: '/images/gallery_who_am_i_1.webp', aspect: '248 / 328' },
-    { title: 'The Silent Soul', label: 'Featured Poetry', image: '/images/press%20room/gallery_the_silent_soul.webp', aspect: '248 / 213' }
+    { title: 'Who Am I?', link: 'https://spillwords.com/who-am-i-by-monika-chugh/', label: 'Featured Poetry', image: '/images/gallery_who_am_i_1.webp', aspect: '248 / 328' },
+    { title: 'The Silent Soul', link: 'https://spillwords.com/the-silent-soul/', label: 'Featured Poetry', image: '/images/press%20room/gallery_the_silent_soul.webp', aspect: '248 / 213' }
   ],
   [
-    { title: 'ME', label: 'Featured Poetry', image: '/images/gallery_me.webp', aspect: '310 / 240' },
-    { title: 'Balance', label: 'Featured Poetry', image: '/images/gallery_balance_1.webp', aspect: '310 / 233', position: 'center 62%' }
+    { title: 'ME', link: 'https://spillwords.com/me-by-monika-chugh/', label: 'Featured Poetry', image: '/images/gallery_me.webp', aspect: '310 / 240' },
+    { title: 'Balance', link: 'https://masticadoresusa.wordpress.com/2024/06/12/balance-by-monika-chugh/', label: 'Featured Poetry', image: '/images/gallery_balance_1.webp', aspect: '310 / 233', position: 'center 62%' }
   ],
   [
-    { title: 'Unchained', label: 'Featured Poetry', image: '/images/gallery_unchained.webp', aspect: '229 / 240', position: '62% center' },
-    { title: 'Nurture You', label: 'Featured Magazine', image: '/images/gallery_nurture_you.webp', aspect: '229 / 302' }
+    { title: 'Unchained', link: 'https://spillwords.com/unchained/', label: 'Featured Poetry', image: '/images/gallery_unchained.webp', aspect: '229 / 240', position: '62% center' },
+    { title: 'Nurture You', link: 'https://wellnessontime.samcart.com/products/wot-magazine-the-nurture-you-edition-print', label: 'Featured Magazine', image: '/images/gallery_nurture_you.webp', aspect: '229 / 302' }
   ]
 ];
 
@@ -53,12 +53,18 @@ export default function PressRoomGallery() {
           {galleryColumns.map((column, colIdx) => (
             <div key={colIdx} className={`press-gallery-col ${colIdx === 1 ? 'is-offset' : ''}`}>
               {column.map((item) => (
-                <div key={item.title} className="featured-gallery-card">
+                <a
+                  key={item.title}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="featured-gallery-card d-block text-decoration-none"
+                >
                   <div className="overflow-hidden" style={{ aspectRatio: item.aspect }}>
                     <img
+                      className="gallery-img w-100 h-100 d-block"
                       src={item.image}
                       alt={item.title}
-                      className="w-100 h-100 d-block"
                       style={{ objectFit: 'cover', objectPosition: item.position || 'center' }}
                     />
                   </div>
@@ -75,9 +81,11 @@ export default function PressRoomGallery() {
                     >
                       {item.title}
                     </h3>
-                    <i className="bi bi-arrow-right" style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }}></i>
+                    <span className="gallery-arrow" aria-hidden="true">
+                      <i className="bi bi-arrow-right"></i>
+                    </span>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           ))}
@@ -96,6 +104,46 @@ export default function PressRoomGallery() {
           display: flex;
           flex-direction: column;
           gap: 28px;
+        }
+        /* Hover: arrow slides right (and loops back in), photo zooms in a touch */
+        .gallery-img {
+          transition: transform 0.6s ease;
+        }
+        .featured-gallery-card:hover .gallery-img {
+          transform: scale(1.04);
+        }
+        .gallery-arrow {
+          display: inline-flex;
+          width: 32px;
+          height: 32px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          overflow: hidden;
+          font-size: 20px;
+          line-height: 1;
+          color: #62350A;
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .featured-gallery-card:hover .gallery-arrow {
+          background-color: #804112;
+          color: #FFFDF9;
+        }
+        .featured-gallery-card:hover .gallery-arrow i {
+          animation: gallery-arrow-slide 0.5s ease;
+        }
+        @keyframes gallery-arrow-slide {
+          0% { transform: translateX(0); }
+          45% { transform: translateX(120%); opacity: 0; }
+          50% { transform: translateX(-120%); opacity: 0; }
+          100% { transform: translateX(0); opacity: 1; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .featured-gallery-card:hover .gallery-arrow i,
+          .featured-gallery-card:hover .gallery-img {
+            animation: none;
+            transform: none;
+          }
         }
         @media (min-width: 768px) {
           .press-gallery {

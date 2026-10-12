@@ -53,7 +53,7 @@ export default function BookQuoteCallout({ onGetCopy }) {
             style={{
               fontFamily: "'Larken', 'Lora', serif",
               fontSize: '15px',
-              color: '#422207',
+              color: '#A44E0E',
               border: '1px solid #A44E0E',
               borderRadius: '2px',
               backgroundColor: 'transparent',
