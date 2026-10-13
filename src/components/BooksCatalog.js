@@ -19,6 +19,7 @@ export default function BooksCatalog() {
       cover: '/images/home_section4_book1.svg',
       description: 'What is Quote Café– Thoughts in a Cup? Life throws us surprise curve balls. We all go through the stings and spasms to escape the nerve-wracking circle. No exception; my life took a 360-degree turn with two major life-changing incidents. I was an emotionally shaken wreck with physical wounds...',
       learnMoreLink: '/books/quote-cafe',
+      amazonLink: 'https://www.amazon.com/dp/B0CPZ1TYVL',
       price: '$18.99',
       pages: '192 pages',
       publisher: 'Soulful Press International',
@@ -37,6 +38,7 @@ export default function BooksCatalog() {
       cover: '/images/home_section4_book2.svg',
       description: 'A Quiet Zone With Affirmations is my collection of affirmations that helped shape me where I am today. I found my voice in my new space—my journals where I started creating my positive affirmations, and my words echoed back just as I advised my patients, "take care of yourself; the world can wait." Our words to...',
       learnMoreLink: '/books/quiet-zone',
+      amazonLink: 'https://www.amazon.com/dp/B0DH3YGXX3',
       price: '$21.50',
       pages: '224 pages',
       publisher: 'Serenity House Publishing',
@@ -55,6 +57,7 @@ export default function BooksCatalog() {
       cover: '/images/home_section4_book3.svg',
       description: 'The phoenix is the symbol of renewal and rebirth. As one life ends, a nest is built, the old phoenix sets fire to itself, and a new one emerges from the ashes. Rebirth and renewal are never easy, as the stories of these brave women will testify. Each shares a story of a fragmented and fractured life. To feel safe and secure often means stepping through layers of darkness and fragments of yourself to find the light and a way back to who you truly are...',
       learnMoreLink: '/books/rebirth',
+      amazonLink: 'https://www.amazon.com/dp/B0B2KF763Q',
       price: '$22.00',
       pages: '240 pages',
       publisher: 'Phoenix Literary Works',
@@ -262,10 +265,11 @@ export default function BooksCatalog() {
                             Learn More
                           </a>
 
-                          <button
-                            type="button"
-                            onClick={() => setBuyModalBook(book)}
-                            className="books-btn-outline flex-grow-1 text-center"
+                          <a
+                            href={book.amazonLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="books-btn-outline flex-grow-1 text-center text-decoration-none"
                             style={{
                               padding: '8px 20px',
                               border: '1px solid #C4A57B',
@@ -280,7 +284,7 @@ export default function BooksCatalog() {
                             }}
                           >
                             Buy Now
-                          </button>
+                          </a>
                         </div>
 
                       </div>
@@ -532,7 +536,7 @@ export default function BooksCatalog() {
 
             <div className="d-flex flex-column gap-2 mb-4 text-start">
               <a 
-                href="https://amazon.com" 
+                href={buyModalBook.amazonLink || 'https://amazon.com'}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="d-flex align-items-center justify-content-between p-3 rounded border text-decoration-none text-dark hover-bg-light"

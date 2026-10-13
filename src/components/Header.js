@@ -19,7 +19,7 @@ export default function Header({ activePage = 'home' }) {
               <a href="/my-story" className={`figma-nav-item ${activePage === 'my-story' ? 'active' : ''}`}>My Story</a>
               <a href="/books" className={`figma-nav-item ${activePage === 'books' ? 'active' : ''}`}>Books</a>
               <a href="/blogs" className={`figma-nav-item ${activePage === 'blogs' ? 'active' : ''}`}>Blogs</a>
-              <a href="/#canvas-quotations" className="figma-nav-item">Canvas & Quotations</a>
+              <a href="https://www.etsy.com/in-en/shop/CanvasandQuotations?etsrc=sdt" target="_blank" rel="noopener noreferrer" className="figma-nav-item">Canvas & Quotations</a>
             </nav>
             {/* Horizontal Divider Line extending under Left Menu */}
             <div className="nav-horizontal-divider"></div>
@@ -47,7 +47,7 @@ export default function Header({ activePage = 'home' }) {
               <a href="/poems-articles" className={`figma-nav-item ${activePage === 'poems-articles' ? 'active' : ''}`}>Poems & Articles</a>
               <a href="/press-room" className={`figma-nav-item ${activePage === 'press-room' ? 'active' : ''}`}>Press Room</a>
               <a href="/events" className={`figma-nav-item ${activePage === 'events' ? 'active' : ''}`}>Events</a>
-              <a href="/#arogini" className="figma-nav-item">Arogini</a>
+              <a href="https://www.aarogini.com/arogini-in-action/" target="_blank" rel="noopener noreferrer" className="figma-nav-item">Arogini</a>
               <a href="/contact" className={`figma-nav-item ${activePage === 'contact' ? 'active' : ''}`}>Contact</a>
             </nav>
             {/* Horizontal Divider Line extending under Right Menu */}
@@ -79,11 +79,11 @@ export default function Header({ activePage = 'home' }) {
               <a href="/my-story" className={`figma-nav-item py-1 ${activePage === 'my-story' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>My Story</a>
               <a href="/books" className={`figma-nav-item py-1 ${activePage === 'books' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Books</a>
               <a href="/blogs" className={`figma-nav-item py-1 ${activePage === 'blogs' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Blogs</a>
-              <a href="/#canvas-quotations" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Canvas & Quotations</a>
+              <a href="https://www.etsy.com/in-en/shop/CanvasandQuotations?etsrc=sdt" target="_blank" rel="noopener noreferrer" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Canvas & Quotations</a>
               <a href="/poems-articles" className={`figma-nav-item py-1 ${activePage === 'poems-articles' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Poems & Articles</a>
               <a href="/press-room" className={`figma-nav-item py-1 ${activePage === 'press-room' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Press Room</a>
               <a href="/events" className={`figma-nav-item py-1 ${activePage === 'events' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Events</a>
-              <a href="/#arogini" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Arogini</a>
+              <a href="https://www.aarogini.com/arogini-in-action/" target="_blank" rel="noopener noreferrer" className="figma-nav-item py-1" onClick={() => setMobileMenuOpen(false)}>Arogini</a>
               <a href="/contact" className={`figma-nav-item py-1 ${activePage === 'contact' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Contact</a>
             </div>
           </div>

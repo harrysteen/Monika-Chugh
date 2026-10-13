@@ -4,6 +4,7 @@
 export const BOOKS = [
   {
     slug: 'quote-cafe',
+    amazonLink: 'https://www.amazon.com/dp/B0CPZ1TYVL',
     title: 'Quote Cafe – Thoughts In a Cup',
     shortTitle: 'Quote Café - Thoughts In a Cup',
     heroImage: '/images/books/quote_cafe_3d_stack.webp',
@@ -16,6 +17,7 @@ export const BOOKS = [
   },
   {
     slug: 'quiet-zone',
+    amazonLink: 'https://www.amazon.com/dp/B0DH3YGXX3',
     title: 'A Quiet Zone With Affirmations',
     shortTitle: 'A Quiet Zone With Affirmations',
     heroImage: '/images/books/quiet_zone_3d_stack.webp',
@@ -28,6 +30,7 @@ export const BOOKS = [
   },
   {
     slug: 'rebirth',
+    amazonLink: 'https://www.amazon.com/dp/B0B2KF763Q',
     title: 'Rebirth – The Phoenix Rising',
     shortTitle: 'Rebirth – The Phoenix Rising',
     heroImage: '/images/books/rebirth_3d_stack.webp',

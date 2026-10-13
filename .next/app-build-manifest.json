@@ -16,35 +16,30 @@
       "static/chunks/main-app.js",
       "static/chunks/app/books/page.js"
     ],
-    "/poems-articles/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/poems-articles/page.js"
-    ],
-    "/events/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/events/page.js"
-    ],
-    "/my-story/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/my-story/page.js"
-    ],
     "/books/quote-cafe/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/books/quote-cafe/page.js"
     ],
-    "/press-room/page": [
+    "/books/quiet-zone/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/press-room/page.js"
+      "static/chunks/app/books/quiet-zone/page.js"
+    ],
+    "/books/rebirth/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/books/rebirth/page.js"
     ],
     "/blogs/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/blogs/page.js"
+    ],
+    "/poems-articles/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/poems-articles/page.js"
     ]
   }
 }

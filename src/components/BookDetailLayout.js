@@ -24,12 +24,12 @@ export default function BookDetailLayout({ book, renderSections }) {
       <BookExploreMore currentSlug={book.slug} />
       <Footer />
 
-      <BookBuyModal open={showBuyModal} title={book.title} onClose={() => setShowBuyModal(false)} />
+      <BookBuyModal open={showBuyModal} title={book.title} amazonLink={book.amazonLink} onClose={() => setShowBuyModal(false)} />
     </main>
   );
 }
 
-function BookBuyModal({ open, title, onClose }) {
+function BookBuyModal({ open, title, amazonLink, onClose }) {
   return (
     <>
       {/* Buy Now / Order Modal */}
@@ -89,7 +89,7 @@ function BookBuyModal({ open, title, onClose }) {
 
             <div className="d-flex flex-column gap-3">
               <a 
-                href="https://www.amazon.com" 
+                href={amazonLink}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn py-3 px-4 d-flex align-items-center justify-content-between text-decoration-none shadow-sm rounded-1"

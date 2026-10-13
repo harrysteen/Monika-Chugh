@@ -60,10 +60,11 @@ export default function BookDetailHero({ book, onBuyNow }) {
             </p>
 
             <div>
-              <button
-                type="button"
-                onClick={onBuyNow}
-                className="btn-figma-outline px-5 py-2 text-decoration-none"
+              <a
+                href={book.amazonLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-figma-outline d-inline-block text-center px-5 py-2 text-decoration-none"
                 style={{
                   minWidth: '250px',
                   fontFamily: "'Larken', 'Lora', serif",
@@ -76,7 +77,7 @@ export default function BookDetailHero({ book, onBuyNow }) {
                 }}
               >
                 Buy Now
-              </button>
+              </a>
             </div>
 
           </div>

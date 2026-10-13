@@ -49,7 +49,10 @@ export default function TwelfthSection() {
 
               {/* YouTube Icon */}
               <a
-                href="#youtube"
+                href="https://www.youtube.com/@monikachugh23"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
                 className="d-flex align-items-center justify-content-center text-dark text-decoration-none rounded-circle transition-all hover-scale podcast-icon"
                 style={{ backgroundColor: '#422207', transition: 'transform 0.2s ease' }}
                 aria-label="Watch on YouTube"
@@ -80,7 +83,9 @@ export default function TwelfthSection() {
             {/* Listen Now Button */}
             <div className="position-relative z-1">
               <a
-                href="#listen-now"
+                href="https://www.youtube.com/@monikachugh23"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="podcast-btn text-decoration-none px-4 py-2 d-inline-flex align-items-center justify-content-center"
               >
                 Listen Now

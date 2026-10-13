@@ -1,9 +1,8 @@
 {
-  "/events/page": "app/events/page.js",
-  "/page": "app/page.js",
-  "/poems-articles/page": "app/poems-articles/page.js",
-  "/my-story/page": "app/my-story/page.js",
+  "/books/quiet-zone/page": "app/books/quiet-zone/page.js",
   "/books/quote-cafe/page": "app/books/quote-cafe/page.js",
-  "/books/page": "app/books/page.js",
-  "/blogs/page": "app/blogs/page.js"
+  "/books/rebirth/page": "app/books/rebirth/page.js",
+  "/blogs/page": "app/blogs/page.js",
+  "/page": "app/page.js",
+  "/poems-articles/page": "app/poems-articles/page.js"
 }

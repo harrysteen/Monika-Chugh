@@ -10,13 +10,38 @@ const PREVIEW = [
   'shimmering in golden light...'
 ];
 
+// Each card shows the opening lines of its poem and opens the published poem
 const poems = [
-  { id: 'silent-soul', title: 'The Silent Soul', image: '/images/poems/poem_silent_soul.webp' },
-  { id: 'who-am-i', title: 'Who Am I?', image: '/images/poems/poem_who_am_i.webp' },
-  { id: 'am-i-boring', title: 'Am I Boring?', image: '/images/poems/poem_am_i_boring.webp' },
-  { id: 'balance', title: 'Balance', image: '/images/poems/poem_balance.webp' },
-  { id: 'unchained', title: 'Unchained', image: '/images/poems/poem_unchained.webp' },
-  { id: 'me', title: 'Me', image: '/images/poems/poem_me.webp' }
+  {
+    id: 'silent-soul', title: 'The Silent Soul', image: '/images/poems/poem_silent_soul.webp',
+    link: 'https://spillwords.com/the-silent-soul/',
+    lines: PREVIEW
+  },
+  {
+    id: 'who-am-i', title: 'Who Am I?', image: '/images/poems/poem_who_am_i.webp',
+    link: 'https://spillwords.com/who-am-i-by-monika-chugh/',
+    lines: ['Who am I?', 'An amalgamation', 'Illusory and whimsical', 'Concrete and subliminal', 'Who am I?']
+  },
+  {
+    id: 'am-i-boring', title: 'Am I Boring?', image: '/images/poems/poem_am_i_boring.webp',
+    link: 'https://masticadoresusa.wordpress.com/2024/07/15/am-i-boring-by-monika-chugh/',
+    lines: ['i am away from the buzz', 'i am away from the commotion', 'i am away from the cacophonic chatter', 'i am away from the tumultuous', 'emotions..']
+  },
+  {
+    id: 'balance', title: 'Balance', image: '/images/poems/poem_balance.webp',
+    link: 'https://masticadoresusa.wordpress.com/2024/06/12/balance-by-monika-chugh/',
+    lines: ['an amalgamation', 'of tears and joy', 'sometimes on the edge', 'sometimes in the middle', 'sometimes on the top..']
+  },
+  {
+    id: 'unchained', title: 'Unchained', image: '/images/poems/poem_unchained.webp',
+    link: 'https://masticadoresusa.wordpress.com/2024/01/07/unchained-by-monika-chugh/',
+    lines: ['I had built walls around my heart', 'Soldered and cemented with stony eyes', 'Plastered to a tough gateway', 'Drugged with dusky emotions', 'Denied me to the nectarous petals..']
+  },
+  {
+    id: 'me', title: 'Me', image: '/images/poems/poem_me.webp',
+    link: 'https://spillwords.com/me-by-monika-chugh/',
+    lines: ['let the glorious sunlight', 'filter through your shadow', 'let the silver moonlight', 'purify your veneer', 'let the sparkling dewdrops..']
+  }
 ];
 
 export default function PoemsVerseCarousel() {
@@ -37,8 +62,11 @@ export default function PoemsVerseCarousel() {
     if (Math.abs(dx) > 3) drag.current.moved = true;
     trackRef.current.scrollLeft = drag.current.left - dx;
   };
+  // A drag that moved the row should not also open the card under the mouse
+  const justDragged = useRef(false);
   const endDrag = () => {
     if (!drag.current || !trackRef.current) return;
+    justDragged.current = drag.current.moved;
     const el = trackRef.current;
     el.classList.remove('is-dragging');
     // Settle on the nearest card once released
@@ -119,7 +147,9 @@ export default function PoemsVerseCarousel() {
             </p>
 
             <a
-              href="#all-poems"
+              href="https://spillwords.com/author/monikachugh/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-figma-outline d-inline-flex align-items-center justify-content-center text-decoration-none"
               style={{
                 fontFamily: "'Larken', 'Lora', serif",
@@ -150,7 +180,21 @@ export default function PoemsVerseCarousel() {
               onPointerLeave={endDrag}
             >
               {poems.map((poem) => (
-                <article key={poem.id} className="poem-card">
+                <article
+                  key={poem.id}
+                  className={`poem-card ${poem.link ? 'is-link' : ''}`}
+                  role={poem.link ? 'link' : undefined}
+                  tabIndex={poem.link ? 0 : undefined}
+                  aria-label={poem.link ? `Read ${poem.title}` : undefined}
+                  onClick={() => {
+                    if (!poem.link) return;
+                    if (justDragged.current) { justDragged.current = false; return; }
+                    window.open(poem.link, '_blank', 'noopener,noreferrer');
+                  }}
+                  onKeyDown={(e) => {
+                    if (poem.link && e.key === 'Enter') window.open(poem.link, '_blank', 'noopener,noreferrer');
+                  }}
+                >
                   <h3
                     className="text-center mb-3"
                     style={{
@@ -178,8 +222,8 @@ export default function PoemsVerseCarousel() {
                         color: '#62350A'
                       }}
                     >
-                      {PREVIEW.map((line) => (
-                        <span key={line} className="d-block">{line}</span>
+                      {poem.lines.map((line, i) => (
+                        <span key={i} className="d-block">{line}</span>
                       ))}
                     </div>
                     <i className="bi bi-arrow-right flex-shrink-0" style={{ fontSize: '20px', color: '#62350A', lineHeight: 1 }} aria-hidden="true"></i>
@@ -239,6 +283,14 @@ export default function PoemsVerseCarousel() {
           border: 3px solid #F8EDD8;
           box-shadow: 0 6px 14px rgba(66, 34, 7, 0.12);
           padding: 20px 20px 16px;
+        }
+        .poem-card.is-link {
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .poem-card.is-link:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 22px rgba(66, 34, 7, 0.16);
         }
         .poems-progress {
           position: relative;
