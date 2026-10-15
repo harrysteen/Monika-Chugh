@@ -57,6 +57,13 @@ const articles = [
   }
 ];
 
+// The heading font has no "ō", so the browser would draw it in a different, smaller font.
+// Draw a normal "o" from the heading font with a small line above it instead.
+const withMacrons = (text) =>
+  text.split('ō').flatMap((part, i) =>
+    i === 0 ? [part] : [<span key={i} className="macron-o">o</span>, part]
+  );
+
 export default function ArticlesSection() {
   return (
     <section className="py-5 bg-cream" style={{ backgroundColor: '#FFFDF9' }}>
@@ -126,7 +133,7 @@ export default function ArticlesSection() {
                   className="mb-2"
                   style={{ fontFamily: "'Beautique Display', 'Cormorant Garamond', serif", fontSize: 'clamp(14px, 1.2vw, 16px)', color: '#422207', fontWeight: 400 }}
                 >
-                  {item.title}
+                  {withMacrons(item.title)}
                 </h3>
                 <p
                   className="mb-3"
@@ -155,6 +162,20 @@ export default function ArticlesSection() {
           flex-direction: column;
           align-items: center;
           gap: 16px;
+        }
+        :global(.macron-o) {
+          position: relative;
+          display: inline-block;
+        }
+        :global(.macron-o)::after {
+          content: '';
+          position: absolute;
+          left: 12%;
+          right: 12%;
+          top: 0.12em;
+          height: 0.06em;
+          min-height: 1px;
+          background: currentColor;
         }
         .article-card {
           transition: transform 0.3s ease, box-shadow 0.3s ease;

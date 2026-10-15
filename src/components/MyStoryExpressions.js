@@ -127,7 +127,7 @@ export default function MyStoryExpressions() {
             onClick={() => scrollByCard('left')}
             disabled={!canScrollLeft}
             aria-label="Previous cards"
-            className="btn rounded-circle p-0 d-flex align-items-center justify-content-center flex-shrink-0"
+            className="circle-arrow-btn btn rounded-circle p-0 d-flex align-items-center justify-content-center flex-shrink-0"
             style={arrowStyle(canScrollLeft)}
           >
             <i className="bi bi-chevron-left" style={{ fontSize: '14px' }}></i>
@@ -225,7 +225,7 @@ export default function MyStoryExpressions() {
             onClick={() => scrollByCard('right')}
             disabled={!canScrollRight}
             aria-label="Next cards"
-            className="btn rounded-circle p-0 d-flex align-items-center justify-content-center flex-shrink-0"
+            className="circle-arrow-btn btn rounded-circle p-0 d-flex align-items-center justify-content-center flex-shrink-0"
             style={arrowStyle(canScrollRight)}
           >
             <i className="bi bi-chevron-right" style={{ fontSize: '14px' }}></i>

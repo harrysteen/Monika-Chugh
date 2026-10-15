@@ -33,7 +33,7 @@ export default function BlogGridSection({ posts = [], searchQuery = '' }) {
   }, [selectedCategory, query]);
 
   return (
-    <section className="py-4 py-md-5 bg-cream" style={{ backgroundColor: '#FFFDF9' }}>
+    <section className="pt-4 pb-4 pb-md-5 bg-cream" style={{ backgroundColor: '#FFFDF9' }}>
       <div className="container-fluid px-3 px-md-4 px-lg-5 max-w-1400 mx-auto">
 
         {/* Section Heading matching Figma */}

@@ -2,7 +2,26 @@
 
 import { useEffect } from 'react';
 
-const STORAGE_KEY = 'kit_form_dismissed_998bd02e5b';
+// When someone closes or submits the popup we remember the time, and show it again after
+// 15 days (the same "show once every 15 days" set on the form in Kit). A new key name, so
+// browsers that closed the old popup (which then hid it forever) see it again.
+const STORAGE_KEY = 'kit_form_dismissed_at_998bd02e5b';
+const HIDE_FOR_MS = 15 * 24 * 60 * 60 * 1000;
+
+const rememberDismissed = () => {
+  try {
+    localStorage.setItem(STORAGE_KEY, String(Date.now()));
+  } catch (e) {}
+};
+
+const recentlyDismissed = () => {
+  try {
+    const at = Number(localStorage.getItem(STORAGE_KEY));
+    return at > 0 && Date.now() - at < HIDE_FOR_MS;
+  } catch (e) {
+    return false;
+  }
+};
 
 export default function KitFormPopup() {
   useEffect(() => {
@@ -12,7 +31,7 @@ export default function KitFormPopup() {
     if (window.location.pathname.startsWith('/studio')) return;
 
     // 1. Check if user already dismissed/closed or submitted the popup
-    if (localStorage.getItem(STORAGE_KEY) === 'true') {
+    if (recentlyDismissed()) {
       return;
     }
 
@@ -40,14 +59,14 @@ export default function KitFormPopup() {
         (target.innerText && target.innerText.trim() === '×' && target.closest('.formkit-modal, .formkit-form, [data-uid="998bd02e5b"]'));
 
       if (isCloseBtn) {
-        localStorage.setItem(STORAGE_KEY, 'true');
+        rememberDismissed();
       }
     };
 
     // 4. Mark form as dismissed whenever user submits the form
     const handleDocumentSubmit = (e) => {
       if (e.target && e.target.closest && e.target.closest('.formkit-form, [data-uid="998bd02e5b"]')) {
-        localStorage.setItem(STORAGE_KEY, 'true');
+        rememberDismissed();
       }
     };
 
@@ -58,7 +77,7 @@ export default function KitFormPopup() {
         if (!btn.dataset.dismissListenerAdded) {
           btn.dataset.dismissListenerAdded = 'true';
           btn.addEventListener('click', () => {
-            localStorage.setItem(STORAGE_KEY, 'true');
+            rememberDismissed();
           });
         }
       });

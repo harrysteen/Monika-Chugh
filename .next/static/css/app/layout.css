@@ -1489,6 +1489,28 @@ body {
   }
 }
 
+/* Blog post: thin brown line between the "Latest Blogs" sidebar and the article (desktop) */
+@media (min-width: 992px) {
+  .blog-article-col {
+    border-left: 1px solid #C4A57B;
+    padding-left: 2.5rem !important;
+  }
+}
+
+/* Round ‹ › arrow buttons site-wide: same hover as the "my books" arrows on the home page */
+.circle-arrow-btn {
+  transition: all 0.3s ease !important;
+}
+.circle-arrow-btn:hover:not(:disabled) {
+  background-color: #7B380E !important;
+  color: #FFFDF9 !important;
+  border-color: #7B380E !important;
+  transform: translateY(-1px);
+}
+.circle-arrow-btn:hover:not(:disabled) i {
+  color: #FFFDF9 !important;
+}
+
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./node_modules/bootstrap/dist/css/bootstrap.min.css ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************************/

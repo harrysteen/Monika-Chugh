@@ -244,18 +244,11 @@ export default function Footer() {
               }}
             >
               <span style={{ opacity: 0.85 }}>Made by</span>
-              <span 
-                className="d-inline-flex align-items-center px-2 py-1 rounded"
-                style={{
-                  backgroundColor: 'rgba(98, 53, 10, 0.06)',
-                  border: '1px solid rgba(184, 139, 88, 0.35)',
-                  color: '#422207',
-                  fontWeight: 500,
-                  letterSpacing: '0.02em'
-                }}
-              >
-                <span>Studio Dezu</span>
-              </span>
+              <img
+                src="/images/studiodezu_logo_brown.png"
+                alt="Studio Dezu"
+                style={{ height: '24px', width: 'auto', display: 'block' }}
+              />
             </a>
           </div>
         </div>

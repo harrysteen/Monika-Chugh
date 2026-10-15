@@ -45,7 +45,7 @@ export default function EventsMomentsFilter({ activeTab = 'quote-cafe', onTabCha
             
             {/* Left Arrow Button */}
             <button 
-              className="btn p-0 d-flex align-items-center justify-content-center flex-shrink-0" 
+              className="circle-arrow-btn btn p-0 d-flex align-items-center justify-content-center flex-shrink-0" 
               onClick={() => handleScroll('left')}
               aria-label="Scroll left"
               style={{
@@ -99,7 +99,7 @@ export default function EventsMomentsFilter({ activeTab = 'quote-cafe', onTabCha
 
             {/* Right Arrow Button */}
             <button 
-              className="btn p-0 d-flex align-items-center justify-content-center flex-shrink-0" 
+              className="circle-arrow-btn btn p-0 d-flex align-items-center justify-content-center flex-shrink-0" 
               onClick={() => handleScroll('right')}
               aria-label="Scroll right"
               style={{

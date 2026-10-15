@@ -119,7 +119,7 @@ export default function ThirdSection() {
                 <button
                   onClick={prevBook}
                   aria-label="Previous Book"
-                  className="btn rounded-circle d-flex align-items-center justify-content-center transition-all p-0"
+                  className="circle-arrow-btn btn rounded-circle d-flex align-items-center justify-content-center transition-all p-0"
                   style={{
                     width: '42px',
                     height: '42px',
@@ -147,7 +147,7 @@ export default function ThirdSection() {
                 <button
                   onClick={nextBook}
                   aria-label="Next Book"
-                  className="btn rounded-circle d-flex align-items-center justify-content-center transition-all p-0"
+                  className="circle-arrow-btn btn rounded-circle d-flex align-items-center justify-content-center transition-all p-0"
                   style={{
                     width: '42px',
                     height: '42px',

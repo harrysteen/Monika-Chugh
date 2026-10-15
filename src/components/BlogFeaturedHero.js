@@ -4,19 +4,8 @@ export default function BlogFeaturedHero({ post, onSearch, searchQuery }) {
   const href = post ? `/blogs/${post.slug}` : '/blogs';
 
   return (
-    <section className="pt-5 pb-4 bg-cream" style={{ backgroundColor: '#FFFDF9' }}>
+    <section className="pt-5 pb-0 bg-cream" style={{ backgroundColor: '#FFFDF9' }}>
       <div className="container-fluid px-3 px-md-4 px-lg-5 max-w-1400 mx-auto">
-
-        {/* Search Bar matching Figma */}
-        <div className="text-center mt-3 mt-md-4 mb-5">
-          <input
-            type="text"
-            placeholder="Search for any blog..."
-            value={searchQuery}
-            onChange={(e) => onSearch && onSearch(e.target.value)}
-            className="blog-search-box mx-auto text-center"
-          />
-        </div>
 
         {/* Featured "Recently Added Blog" Card - the newest post */}
         {post && (
@@ -117,6 +106,17 @@ export default function BlogFeaturedHero({ post, onSearch, searchQuery }) {
           </div>
         </div>
         )}
+
+        {/* Search bar - below the featured blog, just above the blog list */}
+        <div className="text-center mt-5 mb-3">
+          <input
+            type="text"
+            placeholder="Search for any blog..."
+            value={searchQuery}
+            onChange={(e) => onSearch && onSearch(e.target.value)}
+            className="blog-search-box mx-auto text-center"
+          />
+        </div>
 
       </div>
     </section>

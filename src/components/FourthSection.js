@@ -105,7 +105,7 @@ export default function FourthSection() {
             <button
               type="button"
               onClick={() => handleScroll('left')}
-              className="btn rounded-circle p-0 d-flex align-items-center justify-content-center top-scroll-btn"
+              className="circle-arrow-btn btn rounded-circle p-0 d-flex align-items-center justify-content-center top-scroll-btn"
               style={{
                 width: '42px',
                 height: '42px',
@@ -125,7 +125,7 @@ export default function FourthSection() {
             <button
               type="button"
               onClick={() => handleScroll('right')}
-              className="btn rounded-circle p-0 d-flex align-items-center justify-content-center top-scroll-btn"
+              className="circle-arrow-btn btn rounded-circle p-0 d-flex align-items-center justify-content-center top-scroll-btn"
               style={{
                 width: '42px',
                 height: '42px',

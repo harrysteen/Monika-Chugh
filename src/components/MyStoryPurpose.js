@@ -57,7 +57,9 @@ export default function MyStoryPurpose() {
                 fontWeight: 300
               }}
             >
-              My work has always circled one question: how do we help people see clearly, not just with their eyes, but with their whole being? As a doctor, that means restoring sight to children who might otherwise never read a book or recognize their mother&apos;s face. As an Ayurvedic counselor, it means helping people notice what their bodies and minds have been telling them all along. As a writer, it means putting words to the parts of being human we feel but rarely say aloud. And through Ārogini, it means carrying all of this into communities where clear sight, in every sense, is still a privilege rather than a given.
+              My work has always circled one question: how do we help people see clearly, not just with their eyes, but with their whole being?
+              <br />
+              As a doctor, that means restoring sight to children who might otherwise never read a book or recognize their mother&apos;s face. As an Ayurvedic counselor, it means helping people notice what their bodies and minds have been telling them all along. As a writer, it means putting words to the parts of being human we feel but rarely say aloud. And through Ārogini, it means carrying all of this into communities where clear sight, in every sense, is still a privilege rather than a given.
             </p>
 
             {/* Paragraph 2 */}
@@ -71,7 +73,23 @@ export default function MyStoryPurpose() {
                 fontWeight: 300
               }}
             >
-              Medicine taught me how the eye works. Ayurveda taught me how the whole person works. Writing taught me how to make sense of both. Together, they have given me a way of seeing that is uniquely my own, one that brings science, awareness, and the human experience into the same conversation. None of these are separate callings to me. They&apos;re different lenses on the same purpose: helping people see, feel, and live a little more clearly than before.
+              Medicine taught me how the eye works. Ayurveda taught me how the whole person works. Writing taught me how to make sense of both. Together, they have given me a way of seeing that is uniquely my own, one that brings science, awareness, and the human experience into the same conversation.
+              <br />
+              None of these are separate callings to me. They&apos;re different lenses on the same purpose: helping people see, feel, and live a little more clearly than before.
+            </p>
+
+            {/* Paragraph 3 */}
+            <p 
+              className="mb-5" 
+              style={{ 
+                fontFamily: "'Larken-Light', 'Larken', 'Lora', serif", 
+                fontSize: '15px', 
+                color: '#4A423B', 
+                lineHeight: '1.85',
+                fontWeight: 300
+              }}
+            >
+              Much of who I am began with my parents. My father always says, &ldquo;There is no substitute for hard work,&rdquo; and he gave me the courage to dream beyond boundaries. My mother, a calm pillar of few words, taught me more about grace than words ever could. They believed in me long before I knew what I was capable of. Their love gave me roots, and their trust gave me wings. Wherever life takes me, a part of everything I do will always belong to them.
             </p>
 
             {/* Quote / Accent Block */}

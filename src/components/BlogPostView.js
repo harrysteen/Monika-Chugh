@@ -188,7 +188,7 @@ export default function BlogPostView({ post, latestPosts = [], relatedPosts = []
           </div>
 
           {/* Right Column: Article Text (first letter shown as a drop cap) */}
-          <div className="col-12 col-lg-8 col-xl-9 ps-lg-4">
+          <div className="col-12 col-lg-8 col-xl-9 ps-lg-4 blog-article-col">
             <div
               className="blog-portable-body"
               style={{
