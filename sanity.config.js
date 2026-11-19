@@ -11,7 +11,7 @@ export default defineConfig({
   basePath: '/studio',
   projectId: projectId || 'not-configured',
   dataset,
-  title: 'Monika Chugh — Blogs',
+  title: 'Monika Chugh — Website',
   schema: { types: schemaTypes },
   plugins: [structureTool(), visionTool({ defaultApiVersion: apiVersion })]
 });

@@ -3,95 +3,12 @@
 import { useState } from 'react';
 import BellIcon from './BellIcon';
 
-export default function BooksCatalog() {
+export default function BooksCatalog({ publishedBooks = [], upcomingBooks = [] }) {
   const [activeTab, setActiveTab] = useState('all'); // 'all' | 'upcoming'
   const [activeModalBook, setActiveModalBook] = useState(null);
   const [buyModalBook, setBuyModalBook] = useState(null);
   const [notifyModalBook, setNotifyModalBook] = useState(null);
   const [notifySuccess, setNotifySuccess] = useState(false);
-
-  const publishedBooks = [
-    {
-      id: 1,
-      tag: null,
-      title: 'Quote Café - Thoughts In a Cup',
-      flatlay: '/images/books/book_quote_cafe_flatlay.png',
-      cover: '/images/home_section4_book1.svg',
-      description: 'What is Quote Café– Thoughts in a Cup? Life throws us surprise curve balls. We all go through the stings and spasms to escape the nerve-wracking circle. No exception; my life took a 360-degree turn with two major life-changing incidents. I was an emotionally shaken wreck with physical wounds...',
-      learnMoreLink: '/books/quote-cafe',
-      amazonLink: 'https://www.amazon.com/dp/B0CPZ1TYVL',
-      price: '$18.99',
-      pages: '192 pages',
-      publisher: 'Soulful Press International',
-      isbn: '978-1-954321-01-2',
-      synopsis: 'Quote Café is a soothing anthology of introspective musings, contemplative verses, and artistic affirmations brewed to comfort the restless heart. Each page serves as a warm cup of inspiration, guiding readers to embrace stillness and mindful introspection.',
-      quotes: [
-        '"In the quiet corners of your mind, let hope brew slowly like morning coffee."',
-        '"You are not the storm; you are the cup that holds the calm."'
-      ]
-    },
-    {
-      id: 2,
-      tag: null,
-      title: 'A Quiet Zone With Affirmations',
-      flatlay: '/images/books/book_quiet_zone_flatlay.png',
-      cover: '/images/home_section4_book2.svg',
-      description: 'A Quiet Zone With Affirmations is my collection of affirmations that helped shape me where I am today. I found my voice in my new space—my journals where I started creating my positive affirmations, and my words echoed back just as I advised my patients, "take care of yourself; the world can wait." Our words to...',
-      learnMoreLink: '/books/quiet-zone',
-      amazonLink: 'https://www.amazon.com/dp/B0DH3YGXX3',
-      price: '$21.50',
-      pages: '224 pages',
-      publisher: 'Serenity House Publishing',
-      isbn: '978-1-954321-02-9',
-      synopsis: 'A Quiet Zone With Affirmations invites you into a gentle sanctuary of daily positive affirmations, lyrical reflections, and transformative self-love practices. Designed with ethereal butterfly motifs, it guides readers toward grounding serenity and inner peace.',
-      quotes: [
-        '"A peaceful home is built not of brick and mortar, but of the thoughts you choose to harbor."',
-        '"Whisper gentleness to yourself, for you are blooming in quiet ways."'
-      ]
-    },
-    {
-      id: 3,
-      tag: null,
-      title: 'Rebirth – The Phoenix Rising',
-      flatlay: '/images/books/book_rebirth_flatlay.png',
-      cover: '/images/home_section4_book3.svg',
-      description: 'The phoenix is the symbol of renewal and rebirth. As one life ends, a nest is built, the old phoenix sets fire to itself, and a new one emerges from the ashes. Rebirth and renewal are never easy, as the stories of these brave women will testify. Each shares a story of a fragmented and fractured life. To feel safe and secure often means stepping through layers of darkness and fragments of yourself to find the light and a way back to who you truly are...',
-      learnMoreLink: '/books/rebirth',
-      amazonLink: 'https://www.amazon.com/dp/B0B2KF763Q',
-      price: '$22.00',
-      pages: '240 pages',
-      publisher: 'Phoenix Literary Works',
-      isbn: '978-1-954321-03-6',
-      synopsis: 'Rebirth and renewal are never easy, as the stories of these brave women will testify. To feel safe and secure often means stepping through layers of darkness and fragments of yourself to find the light and a way back to who you truly are.',
-      quotes: [
-        '"From the ashes of what was, the soul shapes its wings to rise anew."'
-      ]
-    }
-  ];
-
-  const upcomingBooks = [
-    {
-      id: 4,
-      title: 'Pañcha',
-      flatlay: '/images/books/book_pancha_flatlay.png',
-      cover: '/images/home_section3_pancha_big.svg',
-      description: 'Before I studied Ayurveda, I wrote from raw emotions. Later, I discovered the five elements had been there all along. Pañcha is that silent opening: five elements, five poems each, one whole.'
-    },
-    {
-      id: 5,
-      title: 'Mindset Mentor',
-      flatlay: '/images/books/book_mindset_mentor_flatlay.png',
-      cover: '/images/home_section3_mindset_mentor_big.svg',
-      description: 'Mindset mentor is a living collection of affirmation words that shaped my own journey and now belong to you. Let them meet you in your uncertain moments and walk with you toward the person you aspire to be.'
-    },
-    {
-      id: 6,
-      title: "It's 12:01 am, Whispers of the Night.",
-      flatlay: '/images/books/book_whispers_flatlay.png',
-      cover: '/images/home_section3_whispers_1201_big.svg',
-      description: 'My silent conversation with myself, before I close my eyes to sleep at night. I have my favorites, simple yet powerful. And here they are for you.'
-    }
-  ];
 
   return (
     <section className="pt-4 pb-5 overflow-hidden" style={{ backgroundColor: '#FFFDF9' }}>
@@ -176,7 +93,7 @@ export default function BooksCatalog() {
                       >
                         <img 
                           src={book.flatlay} 
-                          alt={book.title} 
+                          alt={book.flatlayAlt || book.title} 
                           className="w-100 h-100 object-fit-cover d-block rounded-1"
                           style={{ transition: 'transform 0.4s ease' }}
                         />
@@ -265,7 +182,7 @@ export default function BooksCatalog() {
                             Learn More
                           </a>
 
-                          <a
+                          {book.amazonLink && <a
                             href={book.amazonLink}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -284,7 +201,7 @@ export default function BooksCatalog() {
                             }}
                           >
                             Buy Now
-                          </a>
+                          </a>}
                         </div>
 
                       </div>
@@ -317,7 +234,7 @@ export default function BooksCatalog() {
                       >
                         <img 
                           src={item.flatlay} 
-                          alt={item.title} 
+                          alt={item.flatlayAlt || item.title} 
                           className="w-100 h-100 object-fit-cover d-block rounded-1"
                           style={{ transition: 'transform 0.4s ease' }}
                         />
