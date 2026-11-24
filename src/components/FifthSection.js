@@ -1,6 +1,9 @@
 'use client';
 
-export default function FifthSection() {
+// The quote comes from Sanity (see src/sanity/lib/quoteOfTheMonth.js)
+export default function FifthSection({ quote }) {
+  const lines = quote?.lines || [];
+  const author = quote?.author;
   return (
     <section id="quote-of-the-month" className="py-4 py-md-5 bg-cream overflow-hidden" style={{ backgroundColor: '#FFFDF9' }}>
       <div className="container px-3 px-md-4 px-lg-5">
@@ -26,21 +29,23 @@ export default function FifthSection() {
             {/* Quotation Poem Body Text (Center aligned poem) */}
             <div className="quote-body mx-auto text-center">
               <p className="mb-0">
-                the universe has accepted me<br />
-                i am a whole being<br />
-                my heart is open<br />
-                i am ready<br />
-                this is just the beginning<br />
-                a peaceful revolution within me
+                {lines.map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < lines.length - 1 && <br />}
+                  </span>
+                ))}
               </p>
             </div>
 
             {/* Author Signature aligned to the right of poem */}
-            <div className="text-end quote-author-container">
-              <span className="quote-author">
-                ~ monika
-              </span>
-            </div>
+            {author && (
+              <div className="text-end quote-author-container">
+                <span className="quote-author">
+                  ~ {author}
+                </span>
+              </div>
+            )}
 
           </div>
         </div>

@@ -14,8 +14,13 @@ import TwelfthSection from '../components/TwelfthSection';
 import ThirteenthSection from '../components/ThirteenthSection';
 import FourteenthSection from '../components/FourteenthSection';
 import Footer from '../components/Footer';
+import { getQuoteOfTheMonth } from '../sanity/lib/quoteOfTheMonth';
 
-export default function Home() {
+// Re-check Sanity for a new quote of the month at most once a minute
+export const revalidate = 60;
+
+export default async function Home() {
+  const quote = await getQuoteOfTheMonth();
   return (
     <main className="min-vh-100 bg-cream text-dark overflow-hidden">
       <Header />
@@ -23,7 +28,7 @@ export default function Home() {
       <SecondSection />
       <ThirdSection />
       <FourthSection />
-      <FifthSection />
+      <FifthSection quote={quote} />
       <SixthSection />
       <SeventhSection />
       <EighthSection />

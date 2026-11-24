@@ -2,49 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-const PREVIEW = [
-  'stripping my soul',
-  'shattering the illusions',
-  'grasping the rainbow hues',
-  'traveling to a utopian land',
-  'shimmering in golden light...'
-];
-
-// Each card shows the opening lines of its poem and opens the published poem
-const poems = [
-  {
-    id: 'silent-soul', title: 'The Silent Soul', image: '/images/poems/poem_silent_soul.webp',
-    link: 'https://spillwords.com/the-silent-soul/',
-    lines: PREVIEW
-  },
-  {
-    id: 'who-am-i', title: 'Who Am I?', image: '/images/poems/poem_who_am_i.webp',
-    link: 'https://spillwords.com/who-am-i-by-monika-chugh/',
-    lines: ['Who am I?', 'An amalgamation', 'Illusory and whimsical', 'Concrete and subliminal', 'Who am I?']
-  },
-  {
-    id: 'am-i-boring', title: 'Am I Boring?', image: '/images/poems/poem_am_i_boring.webp',
-    link: 'https://masticadoresusa.wordpress.com/2024/07/15/am-i-boring-by-monika-chugh/',
-    lines: ['i am away from the buzz', 'i am away from the commotion', 'i am away from the cacophonic chatter', 'i am away from the tumultuous', 'emotions..']
-  },
-  {
-    id: 'balance', title: 'Balance', image: '/images/poems/poem_balance.webp',
-    link: 'https://masticadoresusa.wordpress.com/2024/06/12/balance-by-monika-chugh/',
-    lines: ['an amalgamation', 'of tears and joy', 'sometimes on the edge', 'sometimes in the middle', 'sometimes on the top..']
-  },
-  {
-    id: 'unchained', title: 'Unchained', image: '/images/poems/poem_unchained.webp',
-    link: 'https://masticadoresusa.wordpress.com/2024/01/07/unchained-by-monika-chugh/',
-    lines: ['I had built walls around my heart', 'Soldered and cemented with stony eyes', 'Plastered to a tough gateway', 'Drugged with dusky emotions', 'Denied me to the nectarous petals..']
-  },
-  {
-    id: 'me', title: 'Me', image: '/images/poems/poem_me.webp',
-    link: 'https://spillwords.com/me-by-monika-chugh/',
-    lines: ['let the glorious sunlight', 'filter through your shadow', 'let the silver moonlight', 'purify your veneer', 'let the sparkling dewdrops..']
-  }
-];
-
-export default function PoemsVerseCarousel() {
+// Each card shows the opening lines of its poem and opens the published poem.
+// Poems come from Sanity (see src/sanity/lib/poems.js).
+export default function PoemsVerseCarousel({ poems = [] }) {
   const trackRef = useRef(null);
   // Progress bar: thumb size = visible share of the row, position = how far it is scrolled
   const [bar, setBar] = useState({ size: 0.45, offset: 0 });
@@ -93,7 +53,7 @@ export default function PoemsVerseCarousel() {
       el.removeEventListener('scroll', update);
       window.removeEventListener('resize', update);
     };
-  }, []);
+  }, [poems.length]);
 
   return (
     <section className="py-5 bg-cream" style={{ backgroundColor: '#FFFDF9' }}>
@@ -208,7 +168,7 @@ export default function PoemsVerseCarousel() {
                   </h3>
 
                   <div className="overflow-hidden mb-3" style={{ aspectRatio: '206 / 146' }}>
-                    <img src={poem.image} alt={poem.title} className="w-100 h-100 d-block" style={{ objectFit: 'cover' }} draggable={false} />
+                    <img src={poem.image} alt={poem.imageAlt || poem.title} className="w-100 h-100 d-block" style={{ objectFit: 'cover' }} draggable={false} />
                   </div>
 
                   <div className="d-flex align-items-end justify-content-between gap-2">
